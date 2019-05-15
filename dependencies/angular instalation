@@ -1,0 +1,24 @@
+angular instalation
+
+
+https://nodejs.org/en/download/
+NODEJS
+
+VERSION=v10.15.3
+DISTRO=linux-x64
+sudo mkdir -p nodejs
+sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C nodejs 
+export PATH=node-$VERSION-$DISTRO/bin:$PATH
+
+typescript
+sudo apt install node-typescript
+sudo npm install -g typescript
+
+angular/cli
+sudo npm install -g @angular/cli
+
+
+
+UNLOCK FILE AND SUBFILE 
+sudo chown -hR luiz primeiro-projeto
+

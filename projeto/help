@@ -1,0 +1,31 @@
+#	CIÊNCIA DA COMPUTAÇÃO
+#
+#	USO DE METAHEURÍSCA EM UMA FERRAMENTA DE AUXÍLIO PARA COMPRAS DE CARTAS DE MAGIC: THE GATHERING
+#
+#	Luiz Eduardo Pereira
+#
+
+Módulo names_resolver:
+
+	AllCards.json:
+		* Repositório completo com informações de todas as cartas de Magic;
+		* https://mtgjson.com/downloads/compiled/
+
+	card_names_filter:
+		* Filtra o arquivo AllCards.json
+		* Saída: Arquivos serializados utilizando pickle 
+			cards_english.pkl: Conjunto de todas as cartas em inglês
+			cards_portuguese.pkl: Dicionário de todas as cartas em português e sua equivalente em inglês. (Nem todas as cartas possuem versão portugues)
+	
+	names_resolver.py:
+		* Recebe uma lista de cartas do usuário;
+		* Remove toda acentuação;
+		* Altera todas as letras para minúscula;
+		* Converte todos os nomes de cartas em português para sua equivalente em inglês;
+		* Verifica se as cartas recebidas existem:
+			Caso afirmativo: Retorna a nova lista formatada, pronta para ser enviada ao Módulo crawler;
+			Caso negativo: Retorna uma lista das cartas não encontradas, para que o usuário possa submeter uma nova lista;
+
+Módulo crawler:
+
+	Sub 
