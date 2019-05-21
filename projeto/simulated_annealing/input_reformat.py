@@ -26,7 +26,7 @@ def list_reformat(_id):
     card_dict_temp = db.request_queue.find_one({'_id': _id}, {'cards': 1, '_id':0})
     cont = 0
     card_dict = {}
-    for key, value in card_dict_temp['cards'].items():
+    for key, value in dict(sorted(card_dict_temp['cards'].items(), key=lambda kv: kv[0])).items():
         card_dict[cont] = ((key, int(value))) 
         cont += 1
     return(card_dict)

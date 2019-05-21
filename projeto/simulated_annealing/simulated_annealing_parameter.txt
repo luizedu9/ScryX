@@ -1,4 +1,22 @@
-# Parametros de temperatura
-INITIAL_TEMPERATURE 20000
+#######################################################################################################
+#                                                                                                     #
+#                                               TEMPERATURE                                           #
+#                                                                                                     #
+#######################################################################################################
+
+INITIAL_TEMPERATURE 1000
+FINAL_TEMPERATURE 10
 COOLING_SCHEDULE GEOMETRIC
 ALPHA 0.9
+
+#######################################################################################################
+#                                                                                                     #
+#                                             ROULETTE WHEEL                                          #
+#                                                                                                     #
+#######################################################################################################
+
+# Tipos: UNIFORM  - Todas as opções possuem a mesma chance
+#		 QUANTITY - Diretamente proporcional à quantidade
+#		 PRICE    - Inversamente proporcional ao preço
+#		 BOTH     - Relativo a preço e quantidade 
+ROULETTE_OPTION UNIFORM
