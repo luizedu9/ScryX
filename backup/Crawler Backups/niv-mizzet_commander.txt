@@ -38,12 +38,9 @@
 1 Tamiyo's Epiphany
 1 Commander's Sphere
 1 Mind Spring
-1 Expansion // Explosion
 1 Epic Experiment
 1 Mana Geyser
-1 Commit // Memory
 1 Swarm Intelligence
-1 Invert // Invent
 1 Metallurgic Summonings
 1 Invoke the Firemind
 1 Jaya Ballard

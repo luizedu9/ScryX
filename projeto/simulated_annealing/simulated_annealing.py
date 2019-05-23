@@ -17,6 +17,7 @@
 #   Versão 1.0 - Implementação do primeiro pseudocodigo do artigo "Pareto Simulated Annealing"
 
 import random
+import copy
 
 from input_reformat import *
 from error_exception import *
@@ -85,13 +86,19 @@ def cooling_geometric():
 # SENDO N O NUMERO DE CARTAS.
 # roulette_values = (menor valor, maior valor, id da carta)
 
-def roulette_wheel(card):
+def roulette_wheel(card, exception):
+    # EXCEPTION É A LOJA QUE JA ESTÁ SENDO USADA
     global roulette_values
     rand = random.uniform(0.00000001, 100)
+    boolean = False
     # PARA CADA FATIA DA ROLETA NA POSIÇÃO DA CARTA, ENCONTRE A LOJA CORRESPONDENTE AO RANDOM 
     for value in roulette_values[card]:
-        if ((rand > value[0]) and (rand <= value[1])):
-            return(value[2])
+        if (((rand > value[0]) and (rand <= value[1])) or (boolean == True)):
+            if (value[2] == exception):
+                boolean = True
+            else:
+                return(value[2])
+    return(None)
 
 def init_roulette_wheel():
     global roulette_option
@@ -135,6 +142,71 @@ def roulette_both():
 
 #######################################################################################################
 #                                                                                                     #
+#                                             FIRST SOLUTION                                          #
+#                                                                                                     #
+#######################################################################################################
+
+def init_first_solution(empty_table):
+    result_table = copy.deepcopy(empty_table)
+    for card, value in card_dict.items():
+        quantity_remnant = value[1]
+        store = ''
+        stores = []
+        while (quantity_remnant > 0):
+            store = roulette_wheel(card, store)
+            if (store == None):
+                break
+            if not(store in stores):
+                stores.append(store)
+                if (get_quantity(content_table[card][store]) >= quantity_remnant):
+                    result_table[card][store] = (set_quantity(quantity_remnant, content_table[card][store]))
+                    break
+                else:
+                    result_table[card][store] = (set_quantity(quantity_remnant, content_table[card][store]))
+                    quantity_remnant -= get_quantity(result_table[card][store])
+    return(result_table)
+
+#######################################################################################################
+#                                                                                                     #
+#                                              OPERATIONS                                             #
+#                                                                                                     #
+#######################################################################################################
+
+# DADO UMA TABELA DE RESULTADOS, SOMA O VALOR TOTAL
+def get_fitness(result_table):
+    price = 0
+    for row in result_table:
+        for cow in row:
+            price += get_price(cow)
+    return(price)
+
+# ESSA FUNÇÃO RETORNA UMA LISTA DE TUPLA DE QUANTIDADE E PREÇO RELATIVO A QUANTIDADE DE CARTAS PASSADAS POR PARAMETRO
+def set_quantity(quantity, field):
+    # FIELD É O CAMPO DA MATRIZ QUE CONTEM UMA LISTA DE TUPLAS DE (QUANTIDADE, PREÇO)
+    quantity_list_result = []
+    for tuplex in field:
+        if (tuplex[0] >= quantity):
+            quantity_list_result.append((quantity, tuplex[1]))
+            return(quantity_list_result)
+        else:
+            quantity_list_result.append((tuplex[0], tuplex[1]))
+            quantity -= tuplex[0]
+    return(quantity_list_result)
+
+def get_quantity(field):
+    quantity = 0
+    for tuplex in field:
+        quantity += tuplex[0]
+    return(quantity)
+
+def get_price(field):
+    price = 0
+    for tuplex in field:
+        price += tuplex[0] * tuplex[1]
+    return(price)
+
+#######################################################################################################
+#                                                                                                     #
 #                                                 MAIN                                                #
 #                                                                                                     #
 #######################################################################################################
@@ -144,31 +216,26 @@ cooling_options = {'GEOMETRIC': cooling_geometric}
 roulette_options = {'UNIFORM': roulette_uniform, 'QUANTITY': roulette_quantity, 'PRICE': roulette_price, 'BOTH': roulette_both}
 
 print('SIMULATED ANNEALING INICIADO...')
+# INICIALIZA OS PARAMETROS DO "simulated_annealing_parameter.txt"
 initialize_parameters()
-card_dict, store_dict, content_table = run_input_reformat('1', 'steste.csv')
-init_roulette_wheel()
+# INICIALIZA AS ESTRUTURAS DE DADOS DO PROGRAMA
+card_dict, store_dict, content_table, empty_table = run_input_reformat('2', 'steste.csv')
 
+# INICIALIZA A ROLETA
+init_roulette_wheel()
+# GERA UMA SOLUÇÃO INICIAL
+solutions = []
+solutions.append(init_first_solution(empty_table))
+
+print(get_fitness(content_table))
+
+# ENQUANTO TEMPERATURA ESTIVER MAIOR QUE TEMPERATURA_FIM
 while (temperature_list[1] > temperature_list[4]):
     cooling_scheme()
-    valor = roulette_wheel(0)
-    print(temperature_list[1])
+    valor = roulette_wheel(1, '')
+    #print(valor)
 
 print('***** FIM *****')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 """

@@ -41,20 +41,23 @@ def crawler_reformat(csv_file, card_dict):
     cont_store = 0
     card_dict_temp = {}
     cont_card = 0
+    cont = 0
     for row in sortedlist:
         # ADICIONA 'ID LOJA: NOME LOJA' NO DICIONARIO
         if not(row['store'] in store_dict_temp):
             store_dict_temp[row['store']] = cont_store
             cont_store += 1
         if not(row['card'] in card_dict_temp):
+            cont += 1
             card_dict_temp[row['card']] = cont_card
             cont_card += 1
     # CRIA A MATRIZ DE CARTASX, LOJASY
     content_table = [[[] for x in range(len(store_dict_temp))] for y in range(len(card_dict_temp))] 
+    empty_table = [[[] for x in range(len(store_dict_temp))] for y in range(len(card_dict_temp))] 
     for row in sortedlist:
-        content_table[card_dict_temp[row['card']]][store_dict_temp[row['store']]].append((row['quantity'], row['value']))
+        content_table[card_dict_temp[row['card']]][store_dict_temp[row['store']]].append((int(row['quantity']), float(row['value'])))
     store_dict = dict(map(reversed, store_dict_temp.items()))
-    return(card_dict, store_dict, content_table)
+    return(card_dict, store_dict, content_table, empty_table)
 
 def run_input_reformat(card_id, crawler_file):
     return(crawler_reformat(crawler_file, list_reformat(card_id)))

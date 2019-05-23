@@ -15,7 +15,7 @@ from pymongo import MongoClient
 
 # GERA O LINK DA CARTA
 def card_link_mount(card):
-    return ('https://www.ligamagic.com.br/?view=cards%2Fsearch&card=' + card.replace(' ', '+'))
+    return ('https://www.ligamagic.com.br/?view=cards/card&card=' + card.replace(' ', '+'))
 
 # GERA O LINK DA LOJA    
 def store_link_mount(store):

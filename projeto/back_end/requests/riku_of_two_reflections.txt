@@ -1,0 +1,66 @@
+1 Akroan Conscriptor
+1 Artisan of Forms
+1 Meletis Astronomer
+1 Labyrinth Champion
+1 Pheres-Band Thunderhoof
+1 Centaur Battlemaster
+1 Akroan Crusader
+1 Staunch-Hearted Warrior
+1 Satyr Hoplite
+1 Setessan Oathsworn
+1 Sage of Hours
+1 War-Wing Siren
+1 Surrak Dragonclaw
+1 Triton Fortune Hunter
+1 Wavecrash Triton
+1 Battlefield Thaumaturge
+1 Shaman of the Great Hunt
+1 Yasova Dragonclaw
+1 Hidden Strings
+1 Izzet Charm
+1 Primal Amulet
+1 Simic Charm
+1 Temur Charm
+1 Expedite
+1 Shimmering Wings
+1 Temur Ascendancy
+1 Bioshift
+1 Flames of the Firebrand
+1 Crown of Flames
+1 Giant Growth
+1 Give (Give/Take)
+1 Defy Gravity
+1 Wild Defiance
+1 Slip Through Space
+1 Lace with Moonglove
+1 Cackling Counterpart
+1 Uncaged Fury
+1 Ghostform
+1 Crimson Wisps
+1 Wild Hunger
+1 Brute Force
+1 Brute Strength
+1 Sylvan Might
+1 Aqueous Form
+1 Artful Dodge
+1 Sure Strike
+1 Warriors' Lesson
+1 Mark of Fury
+1 Groundswell
+1 Fury Charm
+1 Open into Wonder
+1 Trap Essence
+1 Irresistible Prey
+1 Ordeal of Nylea
+1 Ordeal of Thassa
+1 Fall of the Hammer
+1 Rancor
+1 Wild Ricochet
+1 Rite of Replication
+1 Increasing Savagery
+1 Solidarity of Heroes
+1 Weapon Surge
+1 Triton Tactics
+1 Increasing Vengeance
+
+1 Riku of Two Reflections
