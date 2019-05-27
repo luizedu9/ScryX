@@ -9,10 +9,9 @@
 #   run_simulated_annealing.py:
 #   Este modulo tem como objetivo iniciar a metaheuristica.
 #
-#	python3 run_simulated_annealing.py lista_id resultado_crawler
+#	python3 run_simulated_annealing.py cartas_name_id resultado_crawler
 
 import os
 import sys
 
-os.system('python3 -B simulated_annealing.py')
-#os.system('python3 simulated_annealing.py ' +  sys.argv[1] + ' ' + sys.argv[2])
+os.system('python3 -B simulated_annealing.py ' + sys.argv[1] + ' ' + sys.argv[2])

@@ -4,10 +4,15 @@
 #                                                                                                     #
 #######################################################################################################
 
-INITIAL_TEMPERATURE 1000
+# COOLING_SCHEDULE é a função a ser utilizada para resfriar o sistema
+# Tipos: GEOMETRIC - T = T * ALPHA
+# REHEAT é a quantidade de vezes que o sistema irá se reaquecer
+
+INITIAL_TEMPERATURE 10000
 FINAL_TEMPERATURE 10
 COOLING_SCHEDULE GEOMETRIC
 ALPHA 0.99
+REHEAT 2
 
 #######################################################################################################
 #                                                                                                     #
@@ -20,3 +25,15 @@ ALPHA 0.99
 #		 PRICE    - Inversamente proporcional ao preço
 #		 BOTH     - Relativo a preço e quantidade 
 ROULETTE_OPTION UNIFORM
+
+#######################################################################################################
+#                                                                                                     #
+#                                          ACCEPTANCE CRITERIA                                        #
+#                                                                                                     #
+#######################################################################################################
+
+# Tipos: C, SL, W - DE ACORDO COM REGRAS PROPOSTAS POR CZYZAK ET AL.
+# LAMBDA É O PESO PARA CADA OBJETIVO
+ACCEPTANCE_OPTION SL
+LAMBDA1 1
+LAMBDA2 0

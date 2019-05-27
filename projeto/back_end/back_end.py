@@ -56,7 +56,7 @@ def research_assistant(card_dict, _id, user):
     with cd('../crawler'):
         os.system('python3 -B run_crawler.py ' +  _id + ' ' + 'saida.csv')
     with cd('../simulated_annealing'):
-        os.system('python3 -B run_simulated_annealing.py')
+        os.system('python3 -B run_simulated_annealing.py ' + _id + ' ' + '../simulated_annealing/saida.csv')
 
 #######################################################################################################
 #                                                                                                     #

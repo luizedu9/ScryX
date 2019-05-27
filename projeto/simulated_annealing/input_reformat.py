@@ -53,7 +53,7 @@ def crawler_reformat(csv_file, card_dict):
             cont_card += 1
     # CRIA A MATRIZ DE CARTASX, LOJASY
     content_table = [[[] for x in range(len(store_dict_temp))] for y in range(len(card_dict_temp))] 
-    empty_table = [[[] for x in range(len(store_dict_temp))] for y in range(len(card_dict_temp))] 
+    empty_table = [[0 for x in range(len(store_dict_temp))] for y in range(len(card_dict_temp))] 
     for row in sortedlist:
         content_table[card_dict_temp[row['card']]][store_dict_temp[row['store']]].append((int(row['quantity']), float(row['value'])))
     store_dict = dict(map(reversed, store_dict_temp.items()))
