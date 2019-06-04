@@ -20,6 +20,9 @@ import random
 import copy
 import sys
 import math
+import threading
+from multiprocessing import Process, Array
+import time
 
 from input_reformat import *
 from error_exception import *
@@ -36,6 +39,7 @@ def initialize_parameters():
     global roulette_option
     global acceptance_option
     global weight_list
+    global n_thread
     initial_temperature = 0
     alpha = 0
     cooling_option = ''
@@ -44,6 +48,7 @@ def initialize_parameters():
     roulette_option = ''
     acceptance_option = ''
     weight_list = []
+    n_thread = 1
 
     try:
         file = open('simulated_annealing_parameter.txt', 'r', encoding="utf-8")
@@ -69,6 +74,8 @@ def initialize_parameters():
                 acceptance_option = parameter[1]
             elif ((parameter[0] == 'LAMBDA1') or (parameter[0] == 'LAMBDA2')):
                 weight_list.append(float(parameter[1]))
+            elif (parameter[0] == 'N_THREAD'):
+                n_thread = int(parameter[1])
     file.close()
 
     temperature = initial_temperature
@@ -80,13 +87,13 @@ def initialize_parameters():
 #                                                                                                                   #
 #####################################################################################################################
 
-def cooling_scheme():
+def cooling_scheme(current_temperature):
     global temperature_list
-    cooling_options[temperature_list[3]]()
+    return(cooling_options[temperature_list[3]](current_temperature))
 
-def cooling_geometric():
+def cooling_geometric(current_temperature):
     global temperature_list
-    temperature_list[1] = temperature_list[2] * temperature_list[1]
+    return(temperature_list[2] * current_temperature)
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -179,12 +186,12 @@ def roulette_both():
 #####################################################################################################################
 
 # OS CRITERIOS DE ACEITAÇÃO C, SL E W SE ENCONTRAM NO ARTIGO DO CZYZAK ET AL.
-def rule_c(x, y):
+def rule_c(x, y, current_temperature):
     global temperature_list
     global weight_list
     result = 0
     for i in range(len(weight_list)):
-        temp = (weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / temperature_list[1]))
+        temp = (weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / current_temperature))
         if (temp > result):
             result = temp
     result = math.exp(result)
@@ -192,28 +199,26 @@ def rule_c(x, y):
         return(1)
     return(result)
 
-def rule_sl(x, y):
+def rule_sl(x, y, current_temperature):
     global temperature_list
     global weight_list
     result = 0
-    #print('-----')
-    for i in range(len(weight_list)):
-        #print(str(fitness_options[i](x)) + ' ' + str(fitness_options[i](y)))
-        result += weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / temperature_list[1])
-        #print(str(weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / temperature_list[1])) + ' = ' + str(weight_list[i]) + ' * (( ' + str(fitness_options[i](x)) + ' - ' + str(fitness_options[i](y)) + ') / ' + str(temperature_list[1]) + ' )')
-        #print(result)
-    #print(result)
-    result = math.exp(result)
-    if (result >= 1):
-        return(1)
+    try:
+        for i in range(len(weight_list)):
+            result += weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / current_temperature)
+        result = math.exp(result)
+        if (result >= 1):
+            return(1)
+    except:
+        print(result)
     return(result)
 
-def rule_w(x, y):
+def rule_w(x, y, current_temperature):
     global temperature_list
     global weight_list
     result = 1
     for i in range(len(weight_list)):
-        temp = (weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / temperature_list[1]))
+        temp = (weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / current_temperature))
         if (temp < result):
             result = temp
     result = math.exp(result)
@@ -363,6 +368,54 @@ def get_price_content(result_table, i, j):
 
 #####################################################################################################################
 #                                                                                                                   #
+#                                                       THREADS                                                     #
+#                                                                                                                   #
+#####################################################################################################################
+
+def execute_thread(id_thread):
+
+    print('|-----------------------------THREAD ' +  str (id_thread) + ' INICIADA-----------------------------|')
+
+    # GERA UMA SOLUÇÃO INICIAL
+    solutions = []
+    solutions.append(init_first_solution(empty_table))
+    solution = copy.deepcopy(solutions[0])
+
+    cont = 0
+    for i in range(temperature_list[5]):
+        current_temperature = temperature_list[0]
+        # ENQUANTO TEMPERATURA ESTIVER MAIOR QUE TEMPERATURA_FIM
+        while ((current_temperature > temperature_list[4])):
+            more_one_round = False
+            # GERA UMA NOVA SOLUÇÃO TROCANDO A QUANTIDADE DE DETERMINADA CARTA PARA NOVA LOJA
+            for card in card_dict.items():
+                new_solution = swap_change_all([list(x) for x in solution], card)
+                if (random.uniform(0, 1) <= acceptance_options[acceptance_option](solution, new_solution, current_temperature)):
+                    solution = new_solution
+                    if (get_fitness_price(new_solution) < melhor[id_thread]):
+                        more_one_round = True
+                        melhor[id_thread] = get_fitness_price(new_solution)
+                        #print('----------------' + str(melhor[id_thread]) + '----------------------------' + str(id_thread))
+            current_temperature = cooling_scheme(current_temperature)
+            #print('------' + str(current_temperature) + ' ' + str(id_thread))
+            cont += 1
+
+    print('|----------------------------THREAD ' +  str (id_thread) + ' FINALIZADA----------------------------|')
+
+def initialize_thread():
+    threads = list()
+    for index in range(n_thread):
+        thread = Process(target=execute_thread, args=(index,))
+        threads.append(thread)
+        thread.start()
+    return(threads)
+
+def terminate_thread(threads):
+    for index, thread in enumerate(threads):
+        thread.join()
+
+#####################################################################################################################
+#                                                                                                                   #
 #                                                         MAIN                                                      #
 #                                                                                                                   #
 #####################################################################################################################
@@ -385,10 +438,6 @@ card_dict, store_dict, content_table, empty_table = run_input_reformat(sys.argv[
 
 # INICIALIZA A ROLETA
 init_roulette_wheel()
-# GERA UMA SOLUÇÃO INICIAL
-solutions = []
-solutions.append(init_first_solution(empty_table))
-solution = copy.deepcopy(solutions[0])
 
 #################################################
 #                                               #
@@ -399,40 +448,18 @@ solution = copy.deepcopy(solutions[0])
 
 #### ROLETA VICIADA
 #### FRETE 
+#### PARETO
 
-cont = 0
-melhor = 100000
+melhor = Array('d', range(n_thread))
 
-"""
-for j in range(len(content_table[0])):
-    quantity = 0
-    for i in range(len(content_table)):
-        quantity +=  
-"""
+for i in range(n_thread):
+    melhor[i] = 100000
 
+threads = initialize_thread()
+terminate_thread(threads)
 
-
-for i in range(temperature_list[5]):
-    temperature_list[1] = temperature_list[0]
-    # ENQUANTO TEMPERATURA ESTIVER MAIOR QUE TEMPERATURA_FIM
-    while ((temperature_list[1] > temperature_list[4]) or (more_one_round == True)):
-        more_one_round = False
-        # GERA UMA NOVA SOLUÇÃO TROCANDO A QUANTIDADE DE DETERMINADA CARTA PARA NOVA LOJA
-        for card in card_dict.items():
-            new_solution = swap_change_all(copy.deepcopy(solution), card)
-            acceptance = acceptance_options[acceptance_option](solution, new_solution)
-            randi = random.uniform(0, 1)
-            if (randi <= acceptance):
-                solution = new_solution
-                if (get_fitness_price(new_solution) < melhor):
-                    more_one_round = True
-                    melhor = get_fitness_price(new_solution)
-                    print('----------------' + str(melhor))
-        cooling_scheme()
-        print('------' + str(temperature_list[1]))
-        cont += 1
-
-print('Resultado' + str(melhor))
+print()
+print('Resultado' + str(melhor[:]))
 
 print()
 print('|---------------------------------------------------------------------------|')
