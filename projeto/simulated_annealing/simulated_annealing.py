@@ -143,7 +143,24 @@ def roulette_uniform():
 # TODO
 def roulette_quantity():
     global roulette_values
-    pass
+    roulette_values = []
+    # PARA CADA CARTA...
+    for i in range(len(card_dict)):
+        roulette_values.append([])
+        # ...VERIFICA QUANTAS LOJAS A POSSUI...
+        store_temp = []
+        for j in range(len(content_table[i])):
+            # SE CAMPO DA MATRIZ NÃO ESTA VAZIO
+            if (content_table[i][j]):
+                store_temp.append(j)
+        # ...E ADICIONA FATIAS DA ROLETA PARA ESSA LOJA 
+        percent = 100 / len(store_temp)
+        rangex = 0
+        rangey = 0
+        for store in store_temp:
+            rangey += percent
+            roulette_values[i].append((float('%.2f'%rangex), float('%.2f'%rangey), store))
+            rangex = rangey
 
 # TODO
 def roulette_price():
@@ -179,8 +196,13 @@ def rule_sl(x, y):
     global temperature_list
     global weight_list
     result = 0
+    #print('-----')
     for i in range(len(weight_list)):
+        #print(str(fitness_options[i](x)) + ' ' + str(fitness_options[i](y)))
         result += weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / temperature_list[1])
+        #print(str(weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / temperature_list[1])) + ' = ' + str(weight_list[i]) + ' * (( ' + str(fitness_options[i](x)) + ' - ' + str(fitness_options[i](y)) + ') / ' + str(temperature_list[1]) + ' )')
+        #print(result)
+    #print(result)
     result = math.exp(result)
     if (result >= 1):
         return(1)
@@ -275,10 +297,15 @@ def set_quantity(result_table, card):
 # DADO UMA TABELA DE RESULTADOS, SOMA O VALOR TOTAL
 def get_fitness_price(result_table):
     price = 0
+    #print('-----')
     for i in range(len(result_table)):
         for j in range(len(result_table[i])):
             if (result_table[i][j] != 0):
+                #print(str(price + get_price_content(result_table, i, j)) + ' = ' + str(price) + ' + ' + str(get_price_content(result_table, i, j)))
                 price += get_price_content(result_table, i, j)
+                #print('#####3' + str(get_price_content(result_table, i, j)))
+                #print(price)
+    #print(price)
     return(price)
 
 # O FITNESS DE QUANTIDADE CONTA QUANTAS CARTAS ESTÃO FALTANDO. OU SEJA, QUANTO MAIOR O RESULTADO, MAIS CARTAS ESTÃO FALTANDO
@@ -376,85 +403,38 @@ solution = copy.deepcopy(solutions[0])
 cont = 0
 melhor = 100000
 
+"""
+for j in range(len(content_table[0])):
+    quantity = 0
+    for i in range(len(content_table)):
+        quantity +=  
+"""
+
+
+
 for i in range(temperature_list[5]):
     temperature_list[1] = temperature_list[0]
     # ENQUANTO TEMPERATURA ESTIVER MAIOR QUE TEMPERATURA_FIM
-    while (temperature_list[1] > temperature_list[4]):
+    while ((temperature_list[1] > temperature_list[4]) or (more_one_round == True)):
+        more_one_round = False
         # GERA UMA NOVA SOLUÇÃO TROCANDO A QUANTIDADE DE DETERMINADA CARTA PARA NOVA LOJA
         for card in card_dict.items():
-            #print(solution)
-            new_solution = copy.deepcopy(swap_change_all(solution, card))
-            #print(new_solution)
+            new_solution = swap_change_all(copy.deepcopy(solution), card)
             acceptance = acceptance_options[acceptance_option](solution, new_solution)
-            #print(solution)
-            #print(new_solution)
-            if (random.uniform(0, 1) <= acceptance):
+            randi = random.uniform(0, 1)
+            if (randi <= acceptance):
                 solution = new_solution
-                #print('#####' + str(acceptance))
-                #solutions.append(new_solution)
                 if (get_fitness_price(new_solution) < melhor):
+                    more_one_round = True
                     melhor = get_fitness_price(new_solution)
                     print('----------------' + str(melhor))
-                    print(new_solution)
         cooling_scheme()
-        print(temperature_list[1])
+        print('------' + str(temperature_list[1]))
         cont += 1
 
 print('Resultado' + str(melhor))
-
-"""
-print(cont)
-
-melhor = 1000000
-for i in solutions:
-    temp = get_fitness_price(i)
-    if (temp < melhor):
-        melhor = temp
-print(temp)
-"""
 
 print()
 print('|---------------------------------------------------------------------------|')
 print('|------------------------------------FIM------------------------------------|')
 print('|---------------------------------------------------------------------------|')
-
-"""
-*Select a starting solution x in D
-*Update set M of potentially efficient solutions with x
-*T:=To
-*repeat
-    Construct Y in V(x)
-    Update set M of potentially efficient solutions with y
-    *x := y (accept y) with probability p(x,y, T,A)
-    if the conditions of changing the temperature are fulfilled then
-        *decrease T
-*until the stop conditions are fulfilled
-"""
-"""
-def init_first_solution(empty_table):
-    global total_card_quantity
-    total_card_quantity = 0
-    result_table = copy.deepcopy(empty_table)
-    for card, value in card_dict.items():
-        quantity_remnant = value[1]
-        store = ''
-        stores = []
-        total_card_quantity += value[1]
-        # ENQUANTO QUANTIDADE DE CARTAS NÃO ACABAR, COLOCA EM NOVAS LOJAS
-        while (quantity_remnant > 0):
-            store = roulette_wheel(card, store)
-            if (store == None):
-                break
-            # SE NÃO É NENHUMA DAS LOJAS JÁ UTILIZADAS
-            if not(store in stores):
-                stores.append(store)
-                # SE TIVER ACABADO A QUANTIDADE DE CARTAS, BREAK
-                if (get_quantity_content(content_table[card][store]) >= quantity_remnant):
-                    result_table[card][store] = quantity_remnant
-                    break
-                # SE NÃO CONTINUA ATÉ QUE TODAS AS CARTAS TENHAM SIDO ALOCADAS
-                else:
-                    result_table[card][store] = get_quantity_content(content_table[card][store])
-                    quantity_remnant -= result_table[card][store]
-    return(result_table)
-"""

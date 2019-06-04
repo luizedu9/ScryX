@@ -8,11 +8,11 @@
 # Tipos: GEOMETRIC - T = T * ALPHA
 # REHEAT é a quantidade de vezes que o sistema irá se reaquecer
 
-INITIAL_TEMPERATURE 10000
-FINAL_TEMPERATURE 10
+INITIAL_TEMPERATURE 50
+FINAL_TEMPERATURE 0.1
 COOLING_SCHEDULE GEOMETRIC
-ALPHA 0.99
-REHEAT 2
+ALPHA 0.95
+REHEAT 3
 
 #######################################################################################################
 #                                                                                                     #
@@ -35,5 +35,5 @@ ROULETTE_OPTION UNIFORM
 # Tipos: C, SL, W - DE ACORDO COM REGRAS PROPOSTAS POR CZYZAK ET AL.
 # LAMBDA É O PESO PARA CADA OBJETIVO
 ACCEPTANCE_OPTION SL
-LAMBDA1 1
-LAMBDA2 0
+LAMBDA1 0.8
+LAMBDA2 0.2
