@@ -42,6 +42,7 @@ def initialize_parameters():
     global weight_list
     global n_thread
     global n_solution_pool
+    global pareto_timeout
     initial_temperature = 0
     alpha = 0
     cooling_option = ''
@@ -52,6 +53,7 @@ def initialize_parameters():
     weight_list = []
     n_thread = 1
     n_solution_pool = 0
+    pareto_timeout = 0
 
     try:
         file = open('simulated_annealing_parameter.txt', 'r', encoding="utf-8")
@@ -75,12 +77,14 @@ def initialize_parameters():
                 roulette_option = parameter[1]
             elif (parameter[0] == 'ACCEPTANCE_OPTION'):
                 acceptance_option = parameter[1]
-            elif ((parameter[0] == 'LAMBDA1') or (parameter[0] == 'LAMBDA2')):
+            elif ((parameter[0] == 'LAMBDA1') or (parameter[0] == 'LAMBDA2') or (parameter[0] == 'LAMBDA3')):
                 weight_list.append(float(parameter[1]))
             elif (parameter[0] == 'N_THREAD'):
                 n_thread = int(parameter[1])
             elif (parameter[0] == 'N_SOLUTION_POOL'):
                 n_solution_pool = int(parameter[1])
+            elif (parameter[0] == 'PARETO_TIMEOUT'):
+                pareto_timeout = int(parameter[1])
     file.close()
 
     temperature = initial_temperature
@@ -202,7 +206,7 @@ def rule_c(x, y, current_temperature):
     global weight_list
     result = 0
     for i in range(len(weight_list)):
-        temp = (weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / current_temperature))
+        temp = weight_list[i] * ((x[i+1] - y[i+1]) / current_temperature)
         if (temp > result):
             result = temp
     result = math.exp(result)
@@ -214,14 +218,11 @@ def rule_sl(x, y, current_temperature):
     global temperature_list
     global weight_list
     result = 0
-    try:
-        for i in range(len(weight_list)):
-            result += weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / current_temperature)
-        result = math.exp(result)
-        if (result >= 1):
-            return(1)
-    except:
-        print(result)
+    for i in range(len(weight_list)):
+        result += weight_list[i] * ((x[i+1] - y[i+1]) / current_temperature)
+    result = math.exp(result)
+    if (result >= 1):
+        return(1)
     return(result)
 
 def rule_w(x, y, current_temperature):
@@ -229,7 +230,7 @@ def rule_w(x, y, current_temperature):
     global weight_list
     result = 1
     for i in range(len(weight_list)):
-        temp = (weight_list[i] * ((fitness_options[i](x) - fitness_options[i](y)) / current_temperature))
+        temp = weight_list[i] * ((x[i+1] - y[i+1]) / current_temperature)
         if (temp < result):
             result = temp
     result = math.exp(result)
@@ -328,36 +329,19 @@ def set_quantity(result_table, card):
                 quantity_remnant -= result_table[card[0]][store]
     return(result_table)
 
-# DADO UMA TABELA DE RESULTADOS, SOMA O VALOR TOTAL
-def get_fitness_price(result_table):
+# RETORNA UMA TUPLA COM OS FITNESS DOS OBJETIVOS 
+def get_fitness(result_table):
+    global total_card_quantity
+    quantity = 0
     price = 0
-    #print('-----')
+    stores = set()
     for i in range(len(result_table)):
         for j in range(len(result_table[i])):
             if (result_table[i][j] != 0):
-                #print(str(price + get_price_content(result_table, i, j)) + ' = ' + str(price) + ' + ' + str(get_price_content(result_table, i, j)))
                 price += get_price_content(result_table, i, j)
-                #print('#####3' + str(get_price_content(result_table, i, j)))
-                #print(price)
-    #print(price)
-    return(price)
-
-# O FITNESS DE QUANTIDADE CONTA QUANTAS CARTAS ESTÃO FALTANDO. OU SEJA, QUANTO MAIOR O RESULTADO, MAIS CARTAS ESTÃO FALTANDO
-def get_fitness_quantity(result_table):
-    global total_card_quantity
-    quantity = 0
-    for i in range(len(result_table)):
-        for j in range(len(result_table[i])):
-            quantity += result_table[i][j]
-    return(total_card_quantity - quantity)
-
-# DADO UMA TABELA DE RESULTADOS, SOMA O VALOR TOTAL
-def get_quantity(result_table):
-    quantity = 0
-    for i in range(len(result_table)):
-        for j in range(len(result_table[i])):
-            quantity += result_table[i][j]
-    return(quantity)
+                quantity += result_table[i][j]
+                stores.add(store_dict[j])
+    return( (price, (total_card_quantity - quantity), len(stores)))            
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -401,12 +385,18 @@ def get_price_content(result_table, i, j):
 #                                                                                                                   #
 #####################################################################################################################
 
+# ESSA THREAD PROCURA POR CANDIDATOS A SOLUÇÃO
 def execute_thread(solution_deliver, id_thread):
 
     print('|-----------------------------THREAD ' +  str (id_thread) + ' INICIADA-----------------------------|')
 
-    # GERA UMA SOLUÇÃO INICIAL
-    solution = copy.deepcopy(init_first_solution(empty_table))
+    # GERA UMA SOLUÇÃO INICIAL - TUPLA DE (0 CONTEUDO DA SOLUÇÃO, 1 OBJETIVO1, 2 OBJETIVO2, ... )
+    result_table = [list(x) for x in init_first_solution(empty_table)]
+    objectives = get_fitness(result_table)
+    objective1 = objectives[0]
+    objective2 = objectives[1]
+    objective3 = objectives[2]
+    solution = (result_table, objective1, objective2, objective3)
 
     # REPITA N VEZES, SENDO N O NUMERO DE REAQUECIMENTOS DO SISTEMA
     for i in range(temperature_list[5]):
@@ -415,60 +405,71 @@ def execute_thread(solution_deliver, id_thread):
         while ((current_temperature > temperature_list[4])):
             # GERA UMA NOVA SOLUÇÃO TROCANDO A QUANTIDADE DE DETERMINADA CARTA PARA NOVA LOJA
             for card in card_dict.items():
-                new_solution = swap_change_all([list(x) for x in solution], card)
+                result_table = swap_change_all([list(x) for x in solution[0]], card)
+                objectives = get_fitness(result_table)
+                objective1 = objectives[0]
+                objective2 = objectives[1]
+                objective3 = objectives[2]
+                new_solution = (result_table, objective1, objective2, objective3)                
                 if (random.uniform(0, 1) <= acceptance_options[acceptance_option](solution, new_solution, current_temperature)):
                     solution = new_solution
                     # ENTREGA A SOLUÇÃO PARA A THREAD RESPONSAVEL
                     solution_deliver.put(solution)
-                    #print('send')
-                    
-                    if (get_fitness_price(new_solution) < melhor[id_thread]):
-                        melhor[id_thread] = get_fitness_price(new_solution)
+                    if (new_solution[1] < melhor[id_thread]):
+                        melhor[id_thread] = new_solution[1]
                         print('----------------' + str("%.2f" % melhor[id_thread]) + '----------------------------' + str(id_thread))
                     
             current_temperature = cooling_scheme(current_temperature)
 
     print('|----------------------------THREAD ' +  str (id_thread) + ' FINALIZADA----------------------------|')
 
+# ESSA THREAD DADO UM CONJUNTO DE CANDIDATOS A SOLUÇÕES ENCONTRA A FRONTEIRA DE PARETO
 def pareto_thread(solution_deliver):
     global solutions
     global n_solution_pool
+    global pareto_timeout
+    global weight_list
 
     print('|---------------------------THREAD PARETO INICIADA--------------------------|')
+    
+    solutions = []
+
     try:
-        
+        # Recebe possiveis soluções, quando recebe o suficiente, calcula a Fronteira de Pareto
         while (True):
-            solutions.append(solution_deliver.get(timeout=2))
-            #print('receive')
-            #print(len(solutions))
+            # SE NÃO RECEBER NADA EM pareto_timeout, EXECUTA O except PARA FINALIZAR A THREAD
+            solutions.append(solution_deliver.get(timeout=pareto_timeout))
             if (len(solutions) >= n_solution_pool):
-                i = 0
+                first_pass = True
                 for solution in solutions:
-                    if (i == 0):
-                        solutions_calculated = np.array([(get_fitness_price(solution), get_fitness_quantity(solution))])
-                        i = 1
+                    if (first_pass):
+                        solutions_calculated = np.array([(solution[1], solution[2], solution[3])])
+                        first_pass = False
                     else:
-                        solutions_calculated = np.append(solutions_calculated, [(get_fitness_price(solution), get_fitness_quantity(solution))], axis=0)
-                new_solution_index = pareto(solutions_calculated)
-                new_solution = []
-                for i in new_solution_index:
-                    new_solution.append([list(x) for x in solutions[i]])
-                solutions = new_solution
-                #print('Pareto ' + str(get_fitness_price(new_solution[0])))
+                        solutions_calculated = np.append(solutions_calculated, [(solution[1], solution[2], solution[3])], axis=0)
+                new_solutions_index = pareto(solutions_calculated)
+                new_solutions = []
+                for index in new_solutions_index:
+                    result_table = [list(x) for x in solutions[index][0]]
+                    new_solutions.append( (result_table, solutions[index][1], solutions[index][2], solutions[index][3]) )
+                solutions = new_solutions
+                print('.')
     except:
-        i = 0
+        first_pass = True
         for solution in solutions:
-            if (i == 0):
-                solutions_calculated = np.array([(get_fitness_price(solution), get_fitness_quantity(solution))])
-                i = 1
+            if (first_pass):
+                solutions_calculated = np.array([(solution[1], solution[2], solution[3])])
+                first_pass = False
             else:
-                solutions_calculated = np.append(solutions_calculated, [(get_fitness_price(solution), get_fitness_quantity(solution))], axis=0)
-        new_solution_index = pareto(solutions_calculated)
-        new_solution = []
-        for i in new_solution_index:
-            new_solution.append([list(x) for x in solutions[i]])
-        solutions = new_solution
-        print('Pareto ' + str(get_fitness_price(new_solution[0])))
+                solutions_calculated = np.append(solutions_calculated, [(solution[1], solution[2], solution[3])], axis=0)
+        new_solutions_index = pareto(solutions_calculated)
+        new_solutions = []
+        for index in new_solutions_index:
+            result_table = [list(x) for x in solutions[index][0]]
+            new_solutions.append( (result_table, solutions[index][1], solutions[index][2], solutions[index][3]) )
+        solutions = new_solutions
+        print(solutions[0])
+        print('RESULTADO ' + str(solutions[0][1]))
     
     print('|-------------------------THREAD PARETO FINALIZADA--------------------------|')
 
@@ -479,19 +480,22 @@ def initialize_thread():
 
     # INICIALIZA THREAD QUE CALCULA AS SOLUÇÕES FINAIS
     solution_thread = Process(target=pareto_thread, args=(solution_deliver,))
+    #solution_thread.daemon = True
     solution_thread.start()
 
     # INICIALIZA THREADS DE BUSCA DE SOLUÇÕES
     for index in range(n_thread):
         thread = Process(target=execute_thread, args=(solution_deliver, index,))
+        thread.daemon = True
         threads.append(thread)
         thread.start()
     return(threads, solution_thread)
 
 def terminate_thread(threads, solution_thread):
+    solution_thread.join()
     for index, thread in enumerate(threads):
         thread.join()
-    solution_thread.join()
+    #solution_thread.join()
 
 
 #####################################################################################################################
@@ -504,7 +508,6 @@ def terminate_thread(threads, solution_thread):
 cooling_options = {'GEOMETRIC': cooling_geometric}
 roulette_options = {'UNIFORM': roulette_uniform, 'QUANTITY': roulette_quantity, 'PRICE': roulette_price, 'BOTH': roulette_both}
 acceptance_options = {'C': rule_c, 'SL': rule_sl, 'W': rule_w}
-fitness_options = {0: get_fitness_price, 1: get_fitness_quantity}
 
 print('|---------------------------------------------------------------------------|')
 print('|------------------------SIMULATED ANNEALING INICIADO-----------------------|')
@@ -518,7 +521,6 @@ card_dict, store_dict, content_table, empty_table = run_input_reformat(sys.argv[
 # INICIALIZA A ROLETA
 initialize_roulette_wheel()
 initialize_total_card_quantity()
-solutions = []
 
 #################################################
 #                                               #
@@ -528,19 +530,15 @@ solutions = []
 
 
 #### ROLETA VICIADA
-#### FRETE 
-#### PARETO
+#### SWAP CHANGE ONE
+#### FRETE EM PREÇO, E NÃO COMO OBJETIVO
 
 melhor = Array('d', range(n_thread))
-
 for i in range(n_thread):
     melhor[i] = 100000
 
 threads, solution_thread = initialize_thread()
 terminate_thread(threads, solution_thread)
-
-print()
-print('Resultado' + str(solutions))
 
 print()
 print('|---------------------------------------------------------------------------|')

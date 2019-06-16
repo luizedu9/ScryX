@@ -11,8 +11,8 @@
 INITIAL_TEMPERATURE 50
 FINAL_TEMPERATURE 0.1
 COOLING_SCHEDULE GEOMETRIC
-ALPHA 0.9
-REHEAT 1
+ALPHA 0.97
+REHEAT 2
 
 #######################################################################################################
 #                                                                                                     #
@@ -21,9 +21,10 @@ REHEAT 1
 #######################################################################################################
 
 # Tipos: UNIFORM  - Todas as opções possuem a mesma chance
-#		 QUANTITY - Diretamente proporcional à quantidade
-#		 PRICE    - Inversamente proporcional ao preço
-#		 BOTH     - Relativo a preço e quantidade 
+#		 QUANTITY - Diretamente proporcional à quantidade - AINDA NÃO EXISTE
+#		 PRICE    - Inversamente proporcional ao preço - AINDA NÃO EXISTE
+#		 BOTH     - Relativo a preço e quantidade - AINDA NÃO EXISTE
+
 ROULETTE_OPTION UNIFORM
 
 #######################################################################################################
@@ -32,11 +33,16 @@ ROULETTE_OPTION UNIFORM
 #                                                                                                     #
 #######################################################################################################
 
-# Tipos: C, SL, W - DE ACORDO COM REGRAS PROPOSTAS POR CZYZAK ET AL.
-# LAMBDA É O PESO PARA CADA OBJETIVO
+# ACCEPTANCE_OPTION - Tipos: C, SL, W - de acordo com as regras proposta por CZYZAK ET AL.
+# LAMBDA é o peso para cada objetivo
+# LAMBDA1: Preço total
+# LAMBDA2: Quantidade de cartas
+# LAMBDA3: Quantidade de lojas
+
 ACCEPTANCE_OPTION SL
-LAMBDA1 0.8
-LAMBDA2 0.2
+LAMBDA1 0.6
+LAMBDA2 0
+LAMBDA3 0.4
 
 #######################################################################################################
 #                                                                                                     #
@@ -45,5 +51,8 @@ LAMBDA2 0.2
 #######################################################################################################
 
 # N_SOLUTIONS_POOL é o maximo de possiveis soluções que eu armazeno antes de calcular as soluções reais
-N_THREAD 2
-N_SOLUTION_POOL 100
+# PARETO_TIMEOUT é o tempo maximo (em segundos) que a thread que calcula soluções vai esperar sem receber soluções antes de encerrar
+
+N_THREAD 1
+N_SOLUTION_POOL 50
+PARETO_TIMEOUT 5
