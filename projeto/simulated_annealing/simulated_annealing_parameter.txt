@@ -11,7 +11,7 @@
 INITIAL_TEMPERATURE 50
 FINAL_TEMPERATURE 0.1
 COOLING_SCHEDULE GEOMETRIC
-ALPHA 0.97
+ALPHA 0.99
 REHEAT 2
 
 #######################################################################################################
@@ -40,9 +40,9 @@ ROULETTE_OPTION UNIFORM
 # LAMBDA3: Quantidade de lojas
 
 ACCEPTANCE_OPTION SL
-LAMBDA1 0.6
+LAMBDA1 0.2
 LAMBDA2 0
-LAMBDA3 0.4
+LAMBDA3 0.8
 
 #######################################################################################################
 #                                                                                                     #
@@ -53,6 +53,6 @@ LAMBDA3 0.4
 # N_SOLUTIONS_POOL é o maximo de possiveis soluções que eu armazeno antes de calcular as soluções reais
 # PARETO_TIMEOUT é o tempo maximo (em segundos) que a thread que calcula soluções vai esperar sem receber soluções antes de encerrar
 
-N_THREAD 1
-N_SOLUTION_POOL 50
+N_THREAD 6
+N_SOLUTION_POOL 2000
 PARETO_TIMEOUT 5

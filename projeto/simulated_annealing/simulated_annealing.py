@@ -34,26 +34,25 @@ from error_exception import *
 #                                                                                                                   #
 #####################################################################################################################
 
-# TEMPERATURE_LIST = (0 TEMPERATURA_INICIAL, 1 TEMPERATURA_ATUAL, 2 ALPHA, 3 COOLING_OPTION, 4 FINAL_TEMPERATURE, 5 REHEAT)
 def initialize_parameters():
-    global temperature_list
-    global roulette_option
-    global acceptance_option
-    global weight_list
-    global n_thread
-    global n_solution_pool
-    global pareto_timeout
-    initial_temperature = 0
-    alpha = 0
-    cooling_option = ''
-    final_temperature = 0
-    reheat = 0
-    roulette_option = ''
-    acceptance_option = ''
-    weight_list = []
-    n_thread = 1
-    n_solution_pool = 0
-    pareto_timeout = 0
+    global TEMPERATURE_LIST
+    global ROULETTE_OPTION
+    global ACCEPTANCE_OPTION
+    global WEIGHT_LIST
+    global N_THREAD
+    global N_SOLUTION_POOL
+    global PARETO_TIMEOUT
+    INITITAL_TEMPERATURE = 0
+    ALPHA = 0
+    COOLING_OPTION = ''
+    FINAL_TEMPERATURE = 0
+    REHEAT = 0
+    ROULETTE_OPTION = ''
+    ACCEPTANCE_OPTION = ''
+    WEIGHT_LIST = []
+    N_THREAD = 1
+    N_SOLUTION_POOL = 0
+    PARETO_TIMEOUT = 0
 
     try:
         file = open('simulated_annealing_parameter.txt', 'r', encoding="utf-8")
@@ -64,31 +63,31 @@ def initialize_parameters():
         if not((str(line).strip()) and (line[0] == '#')): # IGNORA SE VAZIO OU COMENTARIO
             parameter = line.split(" ", 1)
             if (parameter[0] == 'INITIAL_TEMPERATURE'):
-                initial_temperature = float(parameter[1])
+                INITITAL_TEMPERATURE = float(parameter[1])
             elif (parameter[0] == 'COOLING_SCHEDULE'):
-                cooling_option = parameter[1]
+                COOLING_OPTION = parameter[1]
             elif (parameter[0] == 'ALPHA'):
-                alpha = float(parameter[1])
+                ALPHA = float(parameter[1])
             elif (parameter[0] == 'FINAL_TEMPERATURE'):
-                final_temperature = float(parameter[1])
+                FINAL_TEMPERATURE = float(parameter[1])
             elif (parameter[0] == 'REHEAT'):
-                reheat = int(parameter[1])
+                REHEAT = int(parameter[1])
             elif (parameter[0] == 'ROULETTE_OPTION'):
-                roulette_option = parameter[1]
+                ROULETTE_OPTION = parameter[1]
             elif (parameter[0] == 'ACCEPTANCE_OPTION'):
-                acceptance_option = parameter[1]
+                ACCEPTANCE_OPTION = parameter[1]
             elif ((parameter[0] == 'LAMBDA1') or (parameter[0] == 'LAMBDA2') or (parameter[0] == 'LAMBDA3')):
-                weight_list.append(float(parameter[1]))
+                WEIGHT_LIST.append(float(parameter[1]))
             elif (parameter[0] == 'N_THREAD'):
-                n_thread = int(parameter[1])
+                N_THREAD = int(parameter[1])
             elif (parameter[0] == 'N_SOLUTION_POOL'):
-                n_solution_pool = int(parameter[1])
+                N_SOLUTION_POOL = int(parameter[1])
             elif (parameter[0] == 'PARETO_TIMEOUT'):
-                pareto_timeout = int(parameter[1])
+                PARETO_TIMEOUT = int(parameter[1])
     file.close()
 
-    temperature = initial_temperature
-    temperature_list = [initial_temperature, temperature, alpha, cooling_option, final_temperature, reheat]
+    # TEMPERATURE_LIST = (0 TEMPERATURA_INICIAL, 1 TEMPERATURA_ATUAL, 2 ALPHA, 3 COOLING_OPTION, 4 FINAL_TEMPERATURE, 5 REHEAT)
+    TEMPERATURE_LIST = [INITITAL_TEMPERATURE, INITITAL_TEMPERATURE, ALPHA, COOLING_OPTION, FINAL_TEMPERATURE, REHEAT]
 
 def initialize_total_card_quantity():
     global total_card_quantity
@@ -103,12 +102,12 @@ def initialize_total_card_quantity():
 #####################################################################################################################
 
 def cooling_scheme(current_temperature):
-    global temperature_list
-    return(cooling_options[temperature_list[3]](current_temperature))
+    global TEMPERATURE_LIST
+    return(cooling_options[TEMPERATURE_LIST[3]](current_temperature))
 
 def cooling_geometric(current_temperature):
-    global temperature_list
-    return(temperature_list[2] * current_temperature)
+    global TEMPERATURE_LIST
+    return(TEMPERATURE_LIST[2] * current_temperature)
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -138,8 +137,8 @@ def roulette_wheel(card, exception):
     return(roulette_values[card][0][2])
 
 def initialize_roulette_wheel():
-    global roulette_option
-    roulette_options[roulette_option]()
+    global ROULETTE_OPTION
+    roulette_options[ROULETTE_OPTION]()
 
 def roulette_uniform():
     global roulette_values
@@ -202,11 +201,11 @@ def roulette_both():
 
 # OS CRITERIOS DE ACEITAÇÃO C, SL E W SE ENCONTRAM NO ARTIGO DO CZYZAK ET AL.
 def rule_c(x, y, current_temperature):
-    global temperature_list
-    global weight_list
+    global TEMPERATURE_LIST
+    global WEIGHT_LIST
     result = 0
-    for i in range(len(weight_list)):
-        temp = weight_list[i] * ((x[i+1] - y[i+1]) / current_temperature)
+    for i in range(len(WEIGHT_LIST)):
+        temp = WEIGHT_LIST[i] * ((x[i+1] - y[i+1]) / current_temperature)
         if (temp > result):
             result = temp
     result = math.exp(result)
@@ -215,22 +214,22 @@ def rule_c(x, y, current_temperature):
     return(result)
 
 def rule_sl(x, y, current_temperature):
-    global temperature_list
-    global weight_list
+    global TEMPERATURE_LIST
+    global WEIGHT_LIST
     result = 0
-    for i in range(len(weight_list)):
-        result += weight_list[i] * ((x[i+1] - y[i+1]) / current_temperature)
+    for i in range(len(WEIGHT_LIST)):
+        result += WEIGHT_LIST[i] * ((x[i+1] - y[i+1]) / current_temperature)
     result = math.exp(result)
     if (result >= 1):
         return(1)
     return(result)
 
 def rule_w(x, y, current_temperature):
-    global temperature_list
-    global weight_list
+    global TEMPERATURE_LIST
+    global WEIGHT_LIST
     result = 1
-    for i in range(len(weight_list)):
-        temp = weight_list[i] * ((x[i+1] - y[i+1]) / current_temperature)
+    for i in range(len(WEIGHT_LIST)):
+        temp = WEIGHT_LIST[i] * ((x[i+1] - y[i+1]) / current_temperature)
         if (temp < result):
             result = temp
     result = math.exp(result)
@@ -341,7 +340,7 @@ def get_fitness(result_table):
                 price += get_price_content(result_table, i, j)
                 quantity += result_table[i][j]
                 stores.add(store_dict[j])
-    return( (price, (total_card_quantity - quantity), len(stores)))            
+    return( (price, (total_card_quantity - quantity), len(stores) * 100))            
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -393,27 +392,24 @@ def execute_thread(solution_deliver, id_thread):
     # GERA UMA SOLUÇÃO INICIAL - TUPLA DE (0 CONTEUDO DA SOLUÇÃO, 1 OBJETIVO1, 2 OBJETIVO2, ... )
     result_table = [list(x) for x in init_first_solution(empty_table)]
     objectives = get_fitness(result_table)
-    objective1 = objectives[0]
-    objective2 = objectives[1]
-    objective3 = objectives[2]
+    objective1, objective2, objective3 = objectives[0], objectives[1], objectives[2]
     solution = (result_table, objective1, objective2, objective3)
 
     # REPITA N VEZES, SENDO N O NUMERO DE REAQUECIMENTOS DO SISTEMA
-    for i in range(temperature_list[5]):
-        current_temperature = temperature_list[0]
+    for i in range(TEMPERATURE_LIST[5]):
+        current_temperature = TEMPERATURE_LIST[0]
         # ENQUANTO TEMPERATURA ESTIVER MAIOR QUE TEMPERATURA_FIM
-        while ((current_temperature > temperature_list[4])):
+        while ((current_temperature > TEMPERATURE_LIST[4])):
             # GERA UMA NOVA SOLUÇÃO TROCANDO A QUANTIDADE DE DETERMINADA CARTA PARA NOVA LOJA
             for card in card_dict.items():
                 result_table = swap_change_all([list(x) for x in solution[0]], card)
                 objectives = get_fitness(result_table)
-                objective1 = objectives[0]
-                objective2 = objectives[1]
-                objective3 = objectives[2]
+                objective1, objective2, objective3 = objectives[0], objectives[1], objectives[2]
                 new_solution = (result_table, objective1, objective2, objective3)                
-                if (random.uniform(0, 1) <= acceptance_options[acceptance_option](solution, new_solution, current_temperature)):
+                if (random.uniform(0, 1) <= acceptance_options[ACCEPTANCE_OPTION](solution, new_solution, current_temperature)):
                     solution = new_solution
                     # ENTREGA A SOLUÇÃO PARA A THREAD RESPONSAVEL
+                    #if (len(solutions) >= N_SOLUTION_POOL)
                     solution_deliver.put(solution)
                     if (new_solution[1] < melhor[id_thread]):
                         melhor[id_thread] = new_solution[1]
@@ -426,9 +422,9 @@ def execute_thread(solution_deliver, id_thread):
 # ESSA THREAD DADO UM CONJUNTO DE CANDIDATOS A SOLUÇÕES ENCONTRA A FRONTEIRA DE PARETO
 def pareto_thread(solution_deliver):
     global solutions
-    global n_solution_pool
-    global pareto_timeout
-    global weight_list
+    global N_SOLUTION_POOL
+    global PARETO_TIMEOUT
+    global WEIGHT_LIST
 
     print('|---------------------------THREAD PARETO INICIADA--------------------------|')
     
@@ -437,9 +433,9 @@ def pareto_thread(solution_deliver):
     try:
         # Recebe possiveis soluções, quando recebe o suficiente, calcula a Fronteira de Pareto
         while (True):
-            # SE NÃO RECEBER NADA EM pareto_timeout, EXECUTA O except PARA FINALIZAR A THREAD
-            solutions.append(solution_deliver.get(timeout=pareto_timeout))
-            if (len(solutions) >= n_solution_pool):
+            # SE NÃO RECEBER NADA EM PARETO_TIMEOUT, EXECUTA O except PARA FINALIZAR A THREAD
+            solutions.append(solution_deliver.get(timeout=PARETO_TIMEOUT))
+            if (len(solutions) >= N_SOLUTION_POOL):
                 first_pass = True
                 for solution in solutions:
                     if (first_pass):
@@ -453,7 +449,6 @@ def pareto_thread(solution_deliver):
                     result_table = [list(x) for x in solutions[index][0]]
                     new_solutions.append( (result_table, solutions[index][1], solutions[index][2], solutions[index][3]) )
                 solutions = new_solutions
-                print('.')
     except:
         first_pass = True
         for solution in solutions:
@@ -468,8 +463,9 @@ def pareto_thread(solution_deliver):
             result_table = [list(x) for x in solutions[index][0]]
             new_solutions.append( (result_table, solutions[index][1], solutions[index][2], solutions[index][3]) )
         solutions = new_solutions
-        print(solutions[0])
-        print('RESULTADO ' + str(solutions[0][1]))
+        print('RESULTADOS:')
+        for solution in solutions:
+            print('Valor: ' + str(solution[1]) + ' / Lojas: ' + str(solution[3]))
     
     print('|-------------------------THREAD PARETO FINALIZADA--------------------------|')
 
@@ -480,11 +476,11 @@ def initialize_thread():
 
     # INICIALIZA THREAD QUE CALCULA AS SOLUÇÕES FINAIS
     solution_thread = Process(target=pareto_thread, args=(solution_deliver,))
-    #solution_thread.daemon = True
+    solution_thread.daemon = True
     solution_thread.start()
 
     # INICIALIZA THREADS DE BUSCA DE SOLUÇÕES
-    for index in range(n_thread):
+    for index in range(N_THREAD):
         thread = Process(target=execute_thread, args=(solution_deliver, index,))
         thread.daemon = True
         threads.append(thread)
@@ -492,11 +488,9 @@ def initialize_thread():
     return(threads, solution_thread)
 
 def terminate_thread(threads, solution_thread):
-    solution_thread.join()
     for index, thread in enumerate(threads):
         thread.join()
-    #solution_thread.join()
-
+    solution_thread.join()
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -533,8 +527,8 @@ initialize_total_card_quantity()
 #### SWAP CHANGE ONE
 #### FRETE EM PREÇO, E NÃO COMO OBJETIVO
 
-melhor = Array('d', range(n_thread))
-for i in range(n_thread):
+melhor = Array('d', range(N_THREAD))
+for i in range(N_THREAD):
     melhor[i] = 100000
 
 threads, solution_thread = initialize_thread()
