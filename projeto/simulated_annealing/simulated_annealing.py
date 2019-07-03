@@ -41,7 +41,6 @@ def initialize_parameters():
     global WEIGHT_LIST
     global N_THREAD
     global N_SOLUTION_POOL
-    global PARETO_TIMEOUT
     INITITAL_TEMPERATURE = 0
     ALPHA = 0
     COOLING_OPTION = ''
@@ -52,7 +51,6 @@ def initialize_parameters():
     WEIGHT_LIST = []
     N_THREAD = 1
     N_SOLUTION_POOL = 0
-    PARETO_TIMEOUT = 0
 
     try:
         file = open('simulated_annealing_parameter.txt', 'r', encoding="utf-8")
@@ -82,8 +80,6 @@ def initialize_parameters():
                 N_THREAD = int(parameter[1])
             elif (parameter[0] == 'N_SOLUTION_POOL'):
                 N_SOLUTION_POOL = int(parameter[1])
-            elif (parameter[0] == 'PARETO_TIMEOUT'):
-                PARETO_TIMEOUT = int(parameter[1])
     file.close()
 
     # TEMPERATURE_LIST = (0 TEMPERATURA_INICIAL, 1 TEMPERATURA_ATUAL, 2 ALPHA, 3 COOLING_OPTION, 4 FINAL_TEMPERATURE, 5 REHEAT)
@@ -161,24 +157,35 @@ def roulette_uniform():
             roulette_values[i].append((float('%.2f'%rangex), float('%.2f'%rangey), store))
             rangex = rangey
 
-# TODO
+# ESSA ROLETA DEFINE UMA CHANCE MAIOR DE SER SELECIONADA PARA LOJAS QUE POSSUEM MAIS CARTAS
 def roulette_quantity():
     global roulette_values
     roulette_values = []
+
+    store_score = [] # NUMERO DE CARTAS TOTAL DE CADA LOJA
+    for i in range(len(content_table[0])): # PASSA EM CADA LOJA
+        store_score.append(0)
+        for j in range(len(content_table)):
+            temp = get_quantity_content(content_table[j][i]) # PASSA EM CADA CARTA
+            if (temp > card_dict[j][1]):
+                temp = card_dict[j][1]
+            store_score[i] += temp
     # PARA CADA CARTA...
     for i in range(len(card_dict)):
         roulette_values.append([])
         # ...VERIFICA QUANTAS LOJAS A POSSUI...
         store_temp = []
+        score_temp = 0
         for j in range(len(content_table[i])):
             # SE CAMPO DA MATRIZ NÃO ESTA VAZIO
             if (content_table[i][j]):
                 store_temp.append(j)
+                score_temp += store_score[j]
         # ...E ADICIONA FATIAS DA ROLETA PARA ESSA LOJA 
-        percent = 100 / len(store_temp)
         rangex = 0
         rangey = 0
         for store in store_temp:
+            percent = store_score[store] * 100 / score_temp
             rangey += percent
             roulette_values[i].append((float('%.2f'%rangex), float('%.2f'%rangey), store))
             rangex = rangey
@@ -208,7 +215,10 @@ def rule_c(x, y, current_temperature):
         temp = WEIGHT_LIST[i] * ((x[i+1] - y[i+1]) / current_temperature)
         if (temp > result):
             result = temp
-    result = math.exp(result)
+    try:
+        result = math.exp(result)
+    except:
+        return(1)
     if (result >= 1):
         return(1)
     return(result)
@@ -219,7 +229,10 @@ def rule_sl(x, y, current_temperature):
     result = 0
     for i in range(len(WEIGHT_LIST)):
         result += WEIGHT_LIST[i] * ((x[i+1] - y[i+1]) / current_temperature)
-    result = math.exp(result)
+    try:
+        result = math.exp(result)
+    except:
+        return(1)
     if (result >= 1):
         return(1)
     return(result)
@@ -232,7 +245,10 @@ def rule_w(x, y, current_temperature):
         temp = WEIGHT_LIST[i] * ((x[i+1] - y[i+1]) / current_temperature)
         if (temp < result):
             result = temp
-    result = math.exp(result)
+    try:
+        result = math.exp(result)
+    except:
+        return(1)
     if (result >= 1):
         return(1)
     return(result)
@@ -281,27 +297,6 @@ def init_first_solution(empty_table):
 def swap_change_all(result_table, card):
     return(set_quantity(result_table, card))
 
-##### PROVAVELMENTE ERRADO CONFERIR, ACHO QUE TA DEIXANDO PASSAR PRA LOJA DESTINO MAIS CARTAS QUE TEM, ACHO
-##### VARIAVEL CARD DO PARAMETRO DIFERENTE DO OUTRO SWAP, ESSE CARD É APENAS O ID, NO OUTRO É A TUPLA (ID, (NOME, QUANTIDADE))
-
-# ESTE SWAP ESCOLHE UMA POSIÇÃO DA MATRIZ E MUDA A QUANTIDADE QUE ESTÁ LA PARA OUTRA POSIÇÃO, SENDO QUE SE NÃO
-# OUVER ESPAÇO PARA TODAS AS CARTAS NA NOVA POSIÇÃO, ALGUMAS FICARÃO NA POSIÇÃO ORIGINAL
-def swap_change_one(result_table, card):
-    store_destination = roulette_wheel(card, store_origin)
-    quantity_origin = result_table[card][store_origin]
-    quantity_destination = result_table[card][store_destination]
-    # will_stay É A QUANTIDADE DE CARTAS QUE NÃO IRÃO MUDAR DE LOJA
-    will_stay = quantity_origin - (card_dict[card][1] - quantity_destination)
-    # SE will_stay É MAIOR OU IGUAL A ZERO, ENTÃO POSIÇÃO ORIGEM RECEBE A QUANTIDADE DE CARTAS QUE 
-    # IRÃO FICAR E O RESTANTE VAI PARA A POSIÇÃO DESTINO 
-    if (will_stay >= 0):
-        result_table[card][store_origin] = will_stay
-        result_table[card][store_destination] += quantity_origin - will_stay
-    # SE NÃO OUVER CARTAS SUFICIENTES PARA FICAR, PASSA TUDO PARA A OUTRA POSIÇÃO
-    else:
-        result_table[card][store_origin] = 0
-        result_table[card][store_destination] += quantity_origin
-
 # ZERA A LINHA DE QUANTIDADE E COLOCA A QUANTIDADE EM NOVAS POSIÇÕES
 def set_quantity(result_table, card):
     quantity_remnant = card[1][1]
@@ -340,7 +335,7 @@ def get_fitness(result_table):
                 price += get_price_content(result_table, i, j)
                 quantity += result_table[i][j]
                 stores.add(store_dict[j])
-    return( (price, (total_card_quantity - quantity), len(stores) * 100))            
+    return( (price, (total_card_quantity - quantity), len(stores) * 1000))            
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -387,6 +382,8 @@ def get_price_content(result_table, i, j):
 # ESSA THREAD PROCURA POR CANDIDATOS A SOLUÇÃO
 def execute_thread(solution_deliver, id_thread):
 
+    global N_SOLUTION_POOL
+
     print('|-----------------------------THREAD ' +  str (id_thread) + ' INICIADA-----------------------------|')
 
     # GERA UMA SOLUÇÃO INICIAL - TUPLA DE (0 CONTEUDO DA SOLUÇÃO, 1 OBJETIVO1, 2 OBJETIVO2, ... )
@@ -394,6 +391,7 @@ def execute_thread(solution_deliver, id_thread):
     objectives = get_fitness(result_table)
     objective1, objective2, objective3 = objectives[0], objectives[1], objectives[2]
     solution = (result_table, objective1, objective2, objective3)
+    solutions = []
 
     # REPITA N VEZES, SENDO N O NUMERO DE REAQUECIMENTOS DO SISTEMA
     for i in range(TEMPERATURE_LIST[5]):
@@ -408,64 +406,57 @@ def execute_thread(solution_deliver, id_thread):
                 new_solution = (result_table, objective1, objective2, objective3)                
                 if (random.uniform(0, 1) <= acceptance_options[ACCEPTANCE_OPTION](solution, new_solution, current_temperature)):
                     solution = new_solution
+                    solutions.append(solution)
                     # ENTREGA A SOLUÇÃO PARA A THREAD RESPONSAVEL
-                    #if (len(solutions) >= N_SOLUTION_POOL)
-                    solution_deliver.put(solution)
+                    if (len(solutions) >= N_SOLUTION_POOL):
+                        solution_deliver.put(solutions)
+                        solutions = []
+                    # APENAS PRINT ***
                     if (new_solution[1] < melhor[id_thread]):
                         melhor[id_thread] = new_solution[1]
                         print('----------------' + str("%.2f" % melhor[id_thread]) + '----------------------------' + str(id_thread))
                     
             current_temperature = cooling_scheme(current_temperature)
 
+    solution_deliver.put(solutions)
+    solution_deliver.put('thread_finished')
     print('|----------------------------THREAD ' +  str (id_thread) + ' FINALIZADA----------------------------|')
 
 # ESSA THREAD DADO UM CONJUNTO DE CANDIDATOS A SOLUÇÕES ENCONTRA A FRONTEIRA DE PARETO
 def pareto_thread(solution_deliver):
     global solutions
     global N_SOLUTION_POOL
-    global PARETO_TIMEOUT
     global WEIGHT_LIST
+    global N_THREAD
 
     print('|---------------------------THREAD PARETO INICIADA--------------------------|')
     
     solutions = []
+    n_thread_cont = N_THREAD
 
-    try:
-        # Recebe possiveis soluções, quando recebe o suficiente, calcula a Fronteira de Pareto
-        while (True):
-            # SE NÃO RECEBER NADA EM PARETO_TIMEOUT, EXECUTA O except PARA FINALIZAR A THREAD
-            solutions.append(solution_deliver.get(timeout=PARETO_TIMEOUT))
-            if (len(solutions) >= N_SOLUTION_POOL):
-                first_pass = True
-                for solution in solutions:
-                    if (first_pass):
-                        solutions_calculated = np.array([(solution[1], solution[2], solution[3])])
-                        first_pass = False
-                    else:
-                        solutions_calculated = np.append(solutions_calculated, [(solution[1], solution[2], solution[3])], axis=0)
-                new_solutions_index = pareto(solutions_calculated)
-                new_solutions = []
-                for index in new_solutions_index:
-                    result_table = [list(x) for x in solutions[index][0]]
-                    new_solutions.append( (result_table, solutions[index][1], solutions[index][2], solutions[index][3]) )
-                solutions = new_solutions
-    except:
-        first_pass = True
-        for solution in solutions:
-            if (first_pass):
-                solutions_calculated = np.array([(solution[1], solution[2], solution[3])])
-                first_pass = False
-            else:
-                solutions_calculated = np.append(solutions_calculated, [(solution[1], solution[2], solution[3])], axis=0)
-        new_solutions_index = pareto(solutions_calculated)
-        new_solutions = []
-        for index in new_solutions_index:
-            result_table = [list(x) for x in solutions[index][0]]
-            new_solutions.append( (result_table, solutions[index][1], solutions[index][2], solutions[index][3]) )
-        solutions = new_solutions
-        print('RESULTADOS:')
-        for solution in solutions:
-            print('Valor: ' + str(solution[1]) + ' / Lojas: ' + str(solution[3]))
+    # REPITA ATÉ QUE TODAS AS THREADS PRODUTORAS TENHAM SIDO FINALIZADAS
+    while (n_thread_cont > 0):
+        message = solution_deliver.get()
+        if (message == 'thread_finished'):
+            n_thread_cont -= 1
+        else:
+            solutions += message
+            first_pass = True
+            for solution in solutions:
+                if (first_pass):
+                    solutions_calculated = np.array([(solution[1], solution[2], solution[3])])
+                    first_pass = False
+                else:
+                    solutions_calculated = np.append(solutions_calculated, [(solution[1], solution[2], solution[3])], axis=0)
+            new_solutions_index = pareto(solutions_calculated)
+            new_solutions = []
+            for index in new_solutions_index:
+                result_table = [list(x) for x in solutions[index][0]]
+                new_solutions.append( (result_table, solutions[index][1], solutions[index][2], solutions[index][3]) )
+            solutions = new_solutions
+    print('RESULTADOS:')
+    for solution in solutions:
+        print('Valor: ' + str(solution[1]) + ' / Lojas: ' + str(solution[3]))
     
     print('|-------------------------THREAD PARETO FINALIZADA--------------------------|')
 
@@ -522,14 +513,14 @@ initialize_total_card_quantity()
 #                                               #
 #################################################
 
-
-#### ROLETA VICIADA
 #### SWAP CHANGE ONE
-#### FRETE EM PREÇO, E NÃO COMO OBJETIVO
 
 melhor = Array('d', range(N_THREAD))
 for i in range(N_THREAD):
     melhor[i] = 100000
+
+
+
 
 threads, solution_thread = initialize_thread()
 terminate_thread(threads, solution_thread)

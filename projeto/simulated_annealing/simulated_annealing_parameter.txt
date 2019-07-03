@@ -21,11 +21,11 @@ REHEAT 2
 #######################################################################################################
 
 # Tipos: UNIFORM  - Todas as opções possuem a mesma chance
-#		 QUANTITY - Diretamente proporcional à quantidade - AINDA NÃO EXISTE
+#		 QUANTITY - Diretamente proporcional à quantidade
 #		 PRICE    - Inversamente proporcional ao preço - AINDA NÃO EXISTE
 #		 BOTH     - Relativo a preço e quantidade - AINDA NÃO EXISTE
 
-ROULETTE_OPTION UNIFORM
+ROULETTE_OPTION QUANTITY
 
 #######################################################################################################
 #                                                                                                     #
@@ -40,9 +40,9 @@ ROULETTE_OPTION UNIFORM
 # LAMBDA3: Quantidade de lojas
 
 ACCEPTANCE_OPTION SL
-LAMBDA1 0.2
+LAMBDA1 0.3
 LAMBDA2 0
-LAMBDA3 0.8
+LAMBDA3 0.7
 
 #######################################################################################################
 #                                                                                                     #
@@ -54,5 +54,4 @@ LAMBDA3 0.8
 # PARETO_TIMEOUT é o tempo maximo (em segundos) que a thread que calcula soluções vai esperar sem receber soluções antes de encerrar
 
 N_THREAD 6
-N_SOLUTION_POOL 2000
-PARETO_TIMEOUT 5
+N_SOLUTION_POOL 1000
