@@ -1,0 +1,75 @@
+#######################################################################################################
+#                                                                                                     #
+#                                               TEMPERATURE                                           #
+#                                                                                                     #
+#######################################################################################################
+
+# COOLING_SCHEDULE é a função a ser utilizada para resfriar o sistema
+# Tipos: GEOMETRIC - T = T * ALPHA
+# REHEAT é a quantidade de vezes que o sistema irá se reaquecer
+
+INITIAL_TEMPERATURE 50
+FINAL_TEMPERATURE 0.1
+COOLING_SCHEDULE GEOMETRIC
+ALPHA 0.9
+REHEAT 2
+
+#######################################################################################################
+#                                                                                                     #
+#                                             ROULETTE WHEEL                                          #
+#                                                                                                     #
+#######################################################################################################
+
+# Tipos: UNIFORM  - Todas as opções possuem a mesma chance
+#		 QUANTITY - Diretamente proporcional à quantidade
+#		 PRICE    - Inversamente proporcional ao preço - AINDA NÃO EXISTE
+#		 BOTH     - Relativo a preço e quantidade - AINDA NÃO EXISTE
+
+ROULETTE_OPTION QUANTITY
+
+#######################################################################################################
+#                                                                                                     #
+#                                           ACCEPTANCE CRITERIA                                       #
+#                                                                                                     #
+#######################################################################################################
+
+# ACCEPTANCE_OPTION - Tipos: SL, W - de acordo com as regras proposta por CZYZAK ET AL.
+# LAMBDA é o peso para cada objetivo
+# LAMBDA1: Preço total
+# LAMBDA2: Quantidade de cartas
+# LAMBDA3: Quantidade de lojas
+
+ACCEPTANCE_OPTION W
+LAMBDA1 0.5
+LAMBDA2 0
+LAMBDA3 0.5
+
+#######################################################################################################
+#                                                                                                     #
+#                                               FITNESS                                               #
+#                                                                                                     #
+#######################################################################################################
+
+# Os resultados do fitness devem ser alterados do seu valor real, para que funções como o pareto e o
+# criterio de aceitação consiga diferenciar mudanças entre duas soluções.
+# Ex. Para o criterio de aceitação, 1 - 2 lojas não possui tanta diferença, mas 1000 - 2000 sim. 
+
+# PRICE_INCREASE é a taxa de aumento por loja no preço (Valor de 0 a 1000)
+# QUANTITY_INCREASE é a taxa de aumento por carta (Valor de 1 a 1000)
+# STORE_INCREASE é a taxa de aumento por loja (Valor de 1 a 1000)
+
+PRICE_INCREASE 10
+QUANTITY_INCREASE 1000
+STORE_INCREASE 1000
+
+#######################################################################################################
+#                                                                                                     #
+#                                               THREADS                                               #
+#                                                                                                     #
+#######################################################################################################
+
+# N_SOLUTIONS_POOL é o maximo de possiveis soluções que eu armazeno antes de calcular as soluções reais
+# PARETO_TIMEOUT é o tempo maximo (em segundos) que a thread que calcula soluções vai esperar sem receber soluções antes de encerrar
+
+N_THREAD 4
+N_SOLUTION_POOL 1000

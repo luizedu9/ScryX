@@ -16,14 +16,16 @@
 #
 #   Versão 1.0 - Implementação do primeiro pseudocodigo do artigo "Pareto Simulated Annealing"
 
-import random
-import copy
-import sys
-import math
 import threading
 from multiprocessing import Process, Array, Queue
-import time
+import sys
 import numpy as np
+import pygmo as pg
+import math
+import time
+import random
+import copy
+
 
 from input_reformat import *
 from error_exception import *
@@ -39,6 +41,9 @@ def initialize_parameters():
     global ROULETTE_OPTION
     global ACCEPTANCE_OPTION
     global WEIGHT_LIST
+    global PRICE_INCREASE
+    global QUANTITY_INCREASE
+    global STORE_INCREASE
     global N_THREAD
     global N_SOLUTION_POOL
     INITITAL_TEMPERATURE = 0
@@ -49,6 +54,9 @@ def initialize_parameters():
     ROULETTE_OPTION = ''
     ACCEPTANCE_OPTION = ''
     WEIGHT_LIST = []
+    PRICE_INCREASE = 0
+    QUANTITY_INCREASE = 1
+    STORE_INCREASE = 1
     N_THREAD = 1
     N_SOLUTION_POOL = 0
 
@@ -76,6 +84,12 @@ def initialize_parameters():
                 ACCEPTANCE_OPTION = parameter[1]
             elif ((parameter[0] == 'LAMBDA1') or (parameter[0] == 'LAMBDA2') or (parameter[0] == 'LAMBDA3')):
                 WEIGHT_LIST.append(float(parameter[1]))
+            elif (parameter[0] == 'PRICE_INCREASE'):
+                PRICE_INCREASE = int(parameter[1])
+            elif (parameter[0] == 'QUANTITY_INCREASE'):
+                QUANTITY_INCREASE = int(parameter[1])
+            elif (parameter[0] == 'STORE_INCREASE'):
+                STORE_INCREASE = int(parameter[1])  
             elif (parameter[0] == 'N_THREAD'):
                 N_THREAD = int(parameter[1])
             elif (parameter[0] == 'N_SOLUTION_POOL'):
@@ -207,22 +221,6 @@ def roulette_both():
 #####################################################################################################################
 
 # OS CRITERIOS DE ACEITAÇÃO C, SL E W SE ENCONTRAM NO ARTIGO DO CZYZAK ET AL.
-def rule_c(x, y, current_temperature):
-    global TEMPERATURE_LIST
-    global WEIGHT_LIST
-    result = 0
-    for i in range(len(WEIGHT_LIST)):
-        temp = WEIGHT_LIST[i] * ((x[i+1] - y[i+1]) / current_temperature)
-        if (temp > result):
-            result = temp
-    try:
-        result = math.exp(result)
-    except:
-        return(1)
-    if (result >= 1):
-        return(1)
-    return(result)
-
 def rule_sl(x, y, current_temperature):
     global TEMPERATURE_LIST
     global WEIGHT_LIST
@@ -284,8 +282,42 @@ def init_first_solution(empty_table):
     result_table = copy.deepcopy(empty_table)
     # PARA CADA CARTA, ESCOLHA UMA OU MAIS LOJAS PARA SE COMPRAR
     for card in card_dict.items():
-        result_table = set_quantity(result_table, card)
+        result_table = swap_change_all(result_table, card)
     return(result_table)
+
+#####################################################################################################################
+#                                                                                                                   #
+#                                                 OPERATIONS CONTENT TABLE                                          #
+#                                                                                                                   #
+#####################################################################################################################
+
+def get_quantity_content(field):
+    quantity = 0
+    for tuplex in field:
+        quantity += tuplex[0]
+    return(quantity)
+
+def get_price_content(result_table, i, j):
+    price = 0
+    quantity = result_table[i][j]
+    for tuplex in content_table[i][j]:
+        if (tuplex[0] >= quantity):
+            price += quantity * tuplex[1]
+            break
+        else:
+            price += tuplex[0] * tuplex[1]
+            quantity -= tuplex[0]
+    return(price)
+
+# RETORNA TODOS OS PREÇOS DE DETERMINADA CARTA EM DETERMINADA LOJA
+def get_content(i, j):
+    content = []
+    try:
+        for k in content_table[i][j]:
+            content.append(k)
+        return(content)
+    except: # SIGNIFICA QUE ESSA LOJA NÃO POSSUI ESSA CARTA
+        return(None)
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -295,10 +327,6 @@ def init_first_solution(empty_table):
 
 # ESTE SWAP ZERA TODA A LINHA DA CARTA, E ESCOLHE UMA OU MAIS POSIÇÕES NOVAS PARA A QUANTIDADE
 def swap_change_all(result_table, card):
-    return(set_quantity(result_table, card))
-
-# ZERA A LINHA DE QUANTIDADE E COLOCA A QUANTIDADE EM NOVAS POSIÇÕES
-def set_quantity(result_table, card):
     quantity_remnant = card[1][1]
     store = ''
     stores = []
@@ -323,7 +351,11 @@ def set_quantity(result_table, card):
                 quantity_remnant -= result_table[card[0]][store]
     return(result_table)
 
-# RETORNA UMA TUPLA COM OS FITNESS DOS OBJETIVOS 
+def set_quantity(result_table, card, store, value):
+    result_table[card][store] = value
+    return(result_table)
+
+# RETORNA UMA TUPLA COM OS FITNESS DOS OBJETIVOS (COM INCREMENTADORES)
 def get_fitness(result_table):
     global total_card_quantity
     quantity = 0
@@ -335,43 +367,198 @@ def get_fitness(result_table):
                 price += get_price_content(result_table, i, j)
                 quantity += result_table[i][j]
                 stores.add(store_dict[j])
-    return( (price, (total_card_quantity - quantity), len(stores) * 1000))            
+    return( (price + (len(stores) * PRICE_INCREASE), (total_card_quantity - quantity) * QUANTITY_INCREASE, len(stores) * STORE_INCREASE))
 
-#####################################################################################################################
-#                                                                                                                   #
-#                                                 OPERATIONS CONTENT TABLE                                          #
-#                                                                                                                   #
-#####################################################################################################################
-
-# ESSA FUNÇÃO RETORNA UMA LISTA DE TUPLA DE QUANTIDADE E PREÇO RELATIVO A QUANTIDADE DE CARTAS PASSADAS POR PARAMETRO
-def set_quantity_content(quantity, field):
-    # FIELD É O CAMPO DA MATRIZ QUE CONTEM UMA LISTA DE TUPLAS DE (QUANTIDADE, PREÇO)
-    quantity_list_result = []
-    for tuplex in field:
-        if (tuplex[0] >= quantity):
-            quantity_list_result.append((quantity, tuplex[1]))
-            return(quantity_list_result)
-        else:
-            quantity_list_result.append((tuplex[0], tuplex[1]))
-            quantity -= tuplex[0]
-    return(quantity_list_result)
-
-def get_quantity_content(field):
+# RETORNA UMA TUPLA COM OS FITNESS DOS OBJETIVOS (SEM INCREMENTADORES)
+def get_final_fitness(result_table):
+    global total_card_quantity
     quantity = 0
-    for tuplex in field:
-        quantity += tuplex[0]
-    return(quantity)
-
-def get_price_content(result_table, i, j):
     price = 0
-    quantity = result_table[i][j]
-    for tuplex in content_table[i][j]:
-        if (quantity <= tuplex[0]):
-            price += quantity * tuplex[1]
-        else:
-            price += tuplex[0] * tuplex[1]
-            quantity -= tuplex[0]
-    return(price)
+    stores = set()
+    for i in range(len(result_table)):
+        for j in range(len(result_table[i])):
+            if (result_table[i][j] != 0):
+                price += get_price_content(result_table, i, j)
+                quantity += result_table[i][j]
+                stores.add(store_dict[j])
+    return( (price, (total_card_quantity - quantity), len(stores)) )
+
+# REMOVE UMA LOJA DA COMPRA. STORES SÃO AS POSSIVEIS LOJAS QUE IRÃO RECEBER AS CARTAS E STORE É A LOJA A SER REMOVIDA.
+def change_store(result_table, stores, store):
+    for i in range(len(result_table)): # PARA CADA CARTA
+        quantity = result_table[i][store] # GUARDA QUANTAS CARTAS A LOJA POSSUI
+        result_table[i][store] = 0 # ZERA A LOJA A SER REMOVIDA
+        if (quantity != 0): # SE A QUANTIDADE DE CARTAS QUE A LOJA POSSUIA FOR MAIOR QUE ZERO 
+            for key, value in stores.items(): # PASSA POR CADA LOJA CANDIDATA
+                if (key == store): # IGNORA A LOJA QUE FOI REMOVIDA
+                    break
+                if (get_quantity_content(content_table[i][key]) > result_table[i][key]):
+                    quantity_available = get_quantity_content(content_table[i][key]) - result_table[i][key]
+                    if (quantity_available <= quantity):
+                        result_table[i][key] += quantity_available
+                        quantity -= quantity_available
+                    else:
+                        result_table[i][key] += quantity
+                        break
+                    if (quantity == 0):
+                        break
+    return(result_table)
+
+# ARMAZENA O INDEX DAS COLUNAS QUE POSSUEM CARTAS
+def find_stores(result_table):
+    stores = []
+    for i in range(len(result_table[0])):
+        for j in range(len(result_table)):
+            if (result_table[j][i] != 0):
+                stores.append(i)
+                break
+    return(stores)
+
+# ARMAZENA O INDEX E A QUANTIDADE DAS COLUNAS QUE POSSUEM CARTAS { id : quantidade_cartas}
+def find_quantity(result_table):
+    dict_quantity = {}
+    for i in range(len(result_table)):
+        for j in range(len(result_table[0])):
+            if (result_table[i][j] != 0):
+                try:
+                    dict_quantity[j] += result_table[i][j]
+                except:
+                    dict_quantity[j] = result_table[i][j]
+    return(dict_quantity)
+
+# CRIA UMA LISTA EM ORDEM CRESCENTE POR PREÇO DA CARTA 
+def find_lesser(result_table, stores, card):
+    sort_stores = []
+    for store in stores:
+        contents = get_content(card, store)
+        if (contents != None):
+            for content in contents:
+                sort_stores.append( (store, content[0], content[1]) ) # ID LOJA, QUANTIDADE, PREÇO
+    sort_stores.sort(key=lambda tup: tup[2])
+    return(sort_stores)
+
+#####################################################################################################################
+#                                                                                                                   #
+#                                                   POST OPTIMIZATION                                               #
+#                                                                                                                   #
+#####################################################################################################################
+
+# SOLUTION - TUPLA DE (0 CONTEUDO DA SOLUÇÃO, 1 OBJETIVO1, 2 OBJETIVO2, ... )
+def post_optimization(solutions):
+
+    # O METODO ESCOLHIDO PARA A PÓS OTIMIZAÇÃO É PRIMEIRAMENTE REALOCAR TODAS AS CARTAS UTILIZANDO O 
+    # METODO GULOSO COM AS LOJAS PRE SELECIONADAS. DEPOIS REMOVER A LOJA COM MENOS QUANTITATIVO E 
+    # TENTAR COLOCAR AS CARTAS NAS OUTRAS LOJAS DA SOLUÇÃO. ENQUANTO O RESULTADO ESTIVER MELHORANDO, 
+    # CONTINUA REMOVENDO LOJAS.
+
+    # PARA CADA SOLUÇÃO, TENTA CRIAR UMA NOVA
+    for solution in solutions:
+
+        if (solution[3] != (1 * STORE_INCREASE)): # SE SOLUÇÃO TIVER MAIS DE UMA LOJA, CONTINUE
+
+            dict_quantity = {}
+            for i in range(len(solution[0])):
+                for j in range(len(solution[0][0])):
+                    if (solution[0][i][j] != 0):
+                        try:
+                            dict_quantity[j] += solution[0][i][j]
+                        except:
+                            dict_quantity[j] = solution[0][i][j]
+            print(dict_quantity)
+
+            result_table = [list(x) for x in solution[0]]
+
+            result_table = greedy_method(result_table)
+            objective1, objective2, objective3 = get_fitness(result_table)
+            new_solution = ( (result_table, objective1, objective2, objective3) )
+            solutions.append(new_solution)
+
+            #dict_quantity = find_quantity(result_table)
+            """
+            # ESCOLHE A LOJA COM MENOR QUANTIDADE DE CARTAS
+            lesser = 9999
+            chosen_one = None
+            for key, value in dict_quantity.items():
+                if (value < lesser):
+                    lesser = value
+                    chosen_one = key
+
+            result_table = change_store(result_table, dict_quantity, chosen_one)
+            objective1, objective2, objective3 = get_fitness(result_table)
+            new_solution = ( (result_table, objective1, objective2, objective3) )
+            print(pg.pareto_dominance([solution[1], solution[2], solution[3]], [new_solution[1], new_solution[2], solution[3]]))
+            print(pg.pareto_dominance([new_solution[1], new_solution[2], solution[3]], [solution[1], solution[2], solution[3]]))
+            if (pg.pareto_dominance([solution[1], solution[2], solution[3]], [new_solution[1], new_solution[2], solution[3]]) == False):
+                solutions.append(new_solution)
+            """
+            # SO PRINT **********************************************************
+            dict_quantity = {}
+            for i in range(len(new_solution[0])):
+                for j in range(len(new_solution[0][0])):
+                    if (new_solution[0][i][j] != 0):
+                        try:
+                            dict_quantity[j] += new_solution[0][i][j]
+                        except:
+                            dict_quantity[j] = new_solution[0][i][j]
+            print(dict_quantity)
+            break
+            print(get_final_fitness(new_solution[0]))
+            print('-------')
+
+    return(solutions)
+
+# REALOCA TODAS AS CARTAS NAS LOJAS SELECIONADAS
+def greedy_method(result_table):
+
+    # O METODO GULOSO REMOVE TODAS AS CARTAS DE SUAS POSIÇÕES ATUAIS E RECOLOCA EM NOVAS POSIÇÕES
+    # SEGUINDO SEMPRE O MENOR PREÇO. AS LOJAS CANDIDATAS A REALOCAÇÃO SERÃO APENAS AQUELAS SELECIONADAS
+    # NA SOLUÇÃO DO SIMULATED ANNEALING.
+
+    stores = find_stores(result_table)
+
+    teste = list(map(list, zip(*content_table)))
+    for i in range(len(teste)):
+        cat = ''
+        if i in stores:
+            
+            for j in range(len(teste[i])):
+                cat += str(j) + ' ' + str(teste[i][j]) + ' | '
+            print(cat)
+            print()
+    print('---')
+
+    teste = list(map(list, zip(*result_table)))
+    for i in range(len(teste)):
+        if i in stores:
+            print(teste[i])
+
+
+    
+    result_table = [list(x) for x in empty_table] # ZERA RESULT TABLE
+    # PARA CADA CARTA, CRIA UMA LISTA ORDENADA POR PREÇO
+    for card in range(len(result_table)):
+        sort_stores = find_lesser(result_table, stores, card)
+        quantity_remnant = card_dict[card][1] # QUANTIDADE DE CARTAS REQUERIDAS
+        for store in sort_stores: # ENQUANTO NÃO ALOCAR TODAS AS UNIDADES DE UMA CARTA, REPITA 
+            #print(quantity_remnant)
+            if (quantity_remnant == 0):
+                break
+            # SE QUANTIDADE DA LOJA FOR MAIOR QUE QUANTIDADE A SE ALOCADA, ENTÃO ENCERRA O LOOP
+            if (store[1] >= quantity_remnant):
+                set_quantity(result_table, card, store[0], quantity_remnant + result_table[card][store[0]])
+                break
+            else:
+                value = quantity_remnant - (quantity_remnant - store[1])
+                set_quantity(result_table, card, store[0], result_table[card][store[0]] + value )
+                quantity_remnant -= value
+
+    print('------')
+    teste = list(map(list, zip(*result_table)))
+    for i in range(len(teste)):
+        if i in stores:
+            print(teste[i])
+
+    return(result_table)
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -395,6 +582,9 @@ def execute_thread(solution_deliver, id_thread):
 
     # REPITA N VEZES, SENDO N O NUMERO DE REAQUECIMENTOS DO SISTEMA
     for i in range(TEMPERATURE_LIST[5]):
+        if (id_thread == 0):
+            print("|----------------------- PROGRESSO SIMULATED ANNEALING ------------ " + str('%.2f'%((100 * i) / TEMPERATURE_LIST[5])) + " %")
+        
         current_temperature = TEMPERATURE_LIST[0]
         # ENQUANTO TEMPERATURA ESTIVER MAIOR QUE TEMPERATURA_FIM
         while ((current_temperature > TEMPERATURE_LIST[4])):
@@ -411,11 +601,7 @@ def execute_thread(solution_deliver, id_thread):
                     if (len(solutions) >= N_SOLUTION_POOL):
                         solution_deliver.put(solutions)
                         solutions = []
-                    # APENAS PRINT ***
-                    if (new_solution[1] < melhor[id_thread]):
-                        melhor[id_thread] = new_solution[1]
-                        print('----------------' + str("%.2f" % melhor[id_thread]) + '----------------------------' + str(id_thread))
-                    
+
             current_temperature = cooling_scheme(current_temperature)
 
     solution_deliver.put(solutions)
@@ -423,7 +609,7 @@ def execute_thread(solution_deliver, id_thread):
     print('|----------------------------THREAD ' +  str (id_thread) + ' FINALIZADA----------------------------|')
 
 # ESSA THREAD DADO UM CONJUNTO DE CANDIDATOS A SOLUÇÕES ENCONTRA A FRONTEIRA DE PARETO
-def pareto_thread(solution_deliver):
+def pareto_thread(solution_deliver, result_deliver):
     global solutions
     global N_SOLUTION_POOL
     global WEIGHT_LIST
@@ -454,19 +640,21 @@ def pareto_thread(solution_deliver):
                 result_table = [list(x) for x in solutions[index][0]]
                 new_solutions.append( (result_table, solutions[index][1], solutions[index][2], solutions[index][3]) )
             solutions = new_solutions
-    print('RESULTADOS:')
-    for solution in solutions:
-        print('Valor: ' + str(solution[1]) + ' / Lojas: ' + str(solution[3]))
     
+    # ENTREGA SOLUÇÃO PARA O MAIN
+    result_deliver.put(solutions)
+
     print('|-------------------------THREAD PARETO FINALIZADA--------------------------|')
 
 def initialize_thread():
     global solution_deliver
+    global result_deliver
     threads = list()
     solution_deliver = Queue()
+    result_deliver = Queue()
 
     # INICIALIZA THREAD QUE CALCULA AS SOLUÇÕES FINAIS
-    solution_thread = Process(target=pareto_thread, args=(solution_deliver,))
+    solution_thread = Process(target=pareto_thread, args=(solution_deliver, result_deliver,))
     solution_thread.daemon = True
     solution_thread.start()
 
@@ -481,7 +669,12 @@ def initialize_thread():
 def terminate_thread(threads, solution_thread):
     for index, thread in enumerate(threads):
         thread.join()
+    solutions = result_deliver.get()   
     solution_thread.join()
+
+    print("|----------------------- PROGRESSO SIMULATED ANNEALING ------------ 100.00 %")
+
+    return(solutions)
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -492,7 +685,7 @@ def terminate_thread(threads, solution_thread):
 # CONSTANTES
 cooling_options = {'GEOMETRIC': cooling_geometric}
 roulette_options = {'UNIFORM': roulette_uniform, 'QUANTITY': roulette_quantity, 'PRICE': roulette_price, 'BOTH': roulette_both}
-acceptance_options = {'C': rule_c, 'SL': rule_sl, 'W': rule_w}
+acceptance_options = {'SL': rule_sl, 'W': rule_w}
 
 print('|---------------------------------------------------------------------------|')
 print('|------------------------SIMULATED ANNEALING INICIADO-----------------------|')
@@ -514,16 +707,41 @@ initialize_total_card_quantity()
 #################################################
 
 #### SWAP CHANGE ONE
+#### TODO IMPORTANTE: SE NÃO HOUVER ESTOQUE SUFICIENTE DE ALGUMA CARTA, O PROGRAMA NÃO CONTINUA, PORQUE QUER CRIAR SEMPRE SOLUÇÕES
+   # QUE NÃO FALTA CARTAS
+#### CHANGE_STORE FAZER PEGAR AS MAIS BARATAS PRIMEIRO
 
-melhor = Array('d', range(N_THREAD))
-for i in range(N_THREAD):
-    melhor[i] = 100000
-
-
-
-
+# UTILIZA THREADS PARA ENCONTRAR A SOLUÇÃO
 threads, solution_thread = initialize_thread()
-terminate_thread(threads, solution_thread)
+solutions = terminate_thread(threads, solution_thread)
+
+print()
+print('|---------------------------------------------------------------------------|')
+print('|-----------------------SIMULATED ANNEALING FINALIZADO----------------------|')
+print('|---------------------------------------------------------------------------|')
+print()
+print('RESULTADOS:')
+for solution in solutions:
+    objectives = get_final_fitness(solution[0])
+    print('Valor: ' + str(objectives[0]) + ' / Lojas: ' + str(objectives[2]) + ' / Faltou: ' + str(objectives[1]))
+
+print('|---------------------------------------------------------------------------|')
+print('|---------------------------PÓS OTIMIZAÇÃO INICIADA-------------------------|')
+print('|---------------------------------------------------------------------------|')
+print()
+
+# UTILIZA UMA PÓS OTIMIZAÇÃO PARA TENTAR MELHORAR A SOLUÇÃO
+solutions = post_optimization(solutions)
+
+print('|---------------------------------------------------------------------------|')
+print('|---------------------------PÓS OTIMIZAÇÃO FINALIZADA-------------------------|')
+print('|---------------------------------------------------------------------------|')
+print()
+
+print('RESULTADOS:')
+for solution in solutions:
+    objectives = get_final_fitness(solution[0])
+    print('Valor: ' + str(objectives[0]) + ' / Lojas: ' + str(objectives[2]) + ' / Faltou: ' + str(objectives[1]))
 
 print()
 print('|---------------------------------------------------------------------------|')
