@@ -22,8 +22,8 @@ REHEAT 2
 
 # Tipos: UNIFORM  - Todas as opções possuem a mesma chance
 #		 QUANTITY - Diretamente proporcional à quantidade
-#		 PRICE    - Inversamente proporcional ao preço - AINDA NÃO EXISTE
-#		 BOTH     - Relativo a preço e quantidade - AINDA NÃO EXISTE
+#		 PRICE    - Inversamente proporcional ao preço - *** NÃO IMPLEMENTADO ***
+#		 BOTH     - Relativo a preço e quantidade - *** NÃO IMPLEMENTADO ***
 
 ROULETTE_OPTION QUANTITY
 
@@ -36,7 +36,7 @@ ROULETTE_OPTION QUANTITY
 # ACCEPTANCE_OPTION - Tipos: SL, W - de acordo com as regras proposta por CZYZAK ET AL.
 # LAMBDA é o peso para cada objetivo
 # LAMBDA1: Preço total
-# LAMBDA2: Quantidade de cartas
+# LAMBDA2: Quantidade de cartas - *** NÃO IMPLEMENTADO ***
 # LAMBDA3: Quantidade de lojas
 
 ACCEPTANCE_OPTION W
@@ -68,8 +68,16 @@ STORE_INCREASE 1000
 #                                                                                                     #
 #######################################################################################################
 
-# N_SOLUTIONS_POOL é o maximo de possiveis soluções que eu armazeno antes de calcular as soluções reais
-# PARETO_TIMEOUT é o tempo maximo (em segundos) que a thread que calcula soluções vai esperar sem receber soluções antes de encerrar
+# N_THREAD é o número de threads. Muitas threads não aumenta tanto a eficiencia (Ver número de núcleos).
+# N_SOLUTIONS_POOL é o maximo de possiveis soluções que eu armazeno antes de calcular as soluções reais.
 
 N_THREAD 4
 N_SOLUTION_POOL 1000
+
+#######################################################################################################
+#                                                                                                     #
+#                                               OUTPUT                                                #
+#                                                                                                     #
+#######################################################################################################
+
+OUTPUT TERMINAL

@@ -383,27 +383,6 @@ def get_final_fitness(result_table):
                 stores.add(store_dict[j])
     return( (price, (total_card_quantity - quantity), len(stores)) )
 
-# REMOVE UMA LOJA DA COMPRA. STORES SÃO AS POSSIVEIS LOJAS QUE IRÃO RECEBER AS CARTAS E STORE É A LOJA A SER REMOVIDA.
-def change_store(result_table, stores, store):
-    for i in range(len(result_table)): # PARA CADA CARTA
-        quantity = result_table[i][store] # GUARDA QUANTAS CARTAS A LOJA POSSUI
-        result_table[i][store] = 0 # ZERA A LOJA A SER REMOVIDA
-        if (quantity != 0): # SE A QUANTIDADE DE CARTAS QUE A LOJA POSSUIA FOR MAIOR QUE ZERO 
-            for key, value in stores.items(): # PASSA POR CADA LOJA CANDIDATA
-                if (key == store): # IGNORA A LOJA QUE FOI REMOVIDA
-                    break
-                if (get_quantity_content(content_table[i][key]) > result_table[i][key]):
-                    quantity_available = get_quantity_content(content_table[i][key]) - result_table[i][key]
-                    if (quantity_available <= quantity):
-                        result_table[i][key] += quantity_available
-                        quantity -= quantity_available
-                    else:
-                        result_table[i][key] += quantity
-                        break
-                    if (quantity == 0):
-                        break
-    return(result_table)
-
 # ARMAZENA O INDEX DAS COLUNAS QUE POSSUEM CARTAS
 def find_stores(result_table):
     stores = []
@@ -451,97 +430,49 @@ def post_optimization(solutions):
     # TENTAR COLOCAR AS CARTAS NAS OUTRAS LOJAS DA SOLUÇÃO. ENQUANTO O RESULTADO ESTIVER MELHORANDO, 
     # CONTINUA REMOVENDO LOJAS.
 
+    remove_list = [] # GUARDA AS SOLUÇÕES QUE FORAM DOMINADAS PARA SER APAGADAS NO FINAL DA EXECUÇÃO
+
     # PARA CADA SOLUÇÃO, TENTA CRIAR UMA NOVA
-    for solution in solutions:
+    for i in range(len(solutions)):
+        solution = solutions[i]
 
-        if (solution[3] != (1 * STORE_INCREASE)): # SE SOLUÇÃO TIVER MAIS DE UMA LOJA, CONTINUE
+        # OTIMIZA SOLUÇÃO ATUAL UTILIZANDO O METODO GULOSO
+        stores = find_stores(solution[0]) # ENCONTRA LOJAS QUE POSSUEM CARTAS
+        result_table = greedy_method(solution[0], stores) # USA O METODO GULOSO PARA REALOCAR AS CARTAS
+        objective1, objective2, objective3 = get_fitness(result_table)
+        solution = ( (result_table, objective1, objective2, objective3) )
+        solutions[i] = solution
 
-            dict_quantity = {}
-            for i in range(len(solution[0])):
-                for j in range(len(solution[0][0])):
-                    if (solution[0][i][j] != 0):
-                        try:
-                            dict_quantity[j] += solution[0][i][j]
-                        except:
-                            dict_quantity[j] = solution[0][i][j]
-            print(dict_quantity)
-
-            result_table = [list(x) for x in solution[0]]
-
-            result_table = greedy_method(result_table)
+        # REMOVE A LOJA COM MENOR QUANTIDADE DE CARTAS PARA TENTAR CRIAR UMA NOVA SOLUÇAO
+        if (solution[3] != (1 * STORE_INCREASE)): # SE SOLUÇÃO TIVER MAIS DE UMA LOJA, CONTINUE   
+            stores.remove(sorted(find_quantity(result_table).items(), key=lambda item: item[1])[0][0]) # REMOVE UMA LOJA
+            result_table = greedy_method(result_table, stores) # RECRIA SOLUÇÃO
             objective1, objective2, objective3 = get_fitness(result_table)
             new_solution = ( (result_table, objective1, objective2, objective3) )
-            solutions.append(new_solution)
-
-            #dict_quantity = find_quantity(result_table)
-            """
-            # ESCOLHE A LOJA COM MENOR QUANTIDADE DE CARTAS
-            lesser = 9999
-            chosen_one = None
-            for key, value in dict_quantity.items():
-                if (value < lesser):
-                    lesser = value
-                    chosen_one = key
-
-            result_table = change_store(result_table, dict_quantity, chosen_one)
-            objective1, objective2, objective3 = get_fitness(result_table)
-            new_solution = ( (result_table, objective1, objective2, objective3) )
-            print(pg.pareto_dominance([solution[1], solution[2], solution[3]], [new_solution[1], new_solution[2], solution[3]]))
-            print(pg.pareto_dominance([new_solution[1], new_solution[2], solution[3]], [solution[1], solution[2], solution[3]]))
             if (pg.pareto_dominance([solution[1], solution[2], solution[3]], [new_solution[1], new_solution[2], solution[3]]) == False):
                 solutions.append(new_solution)
-            """
-            # SO PRINT **********************************************************
-            dict_quantity = {}
-            for i in range(len(new_solution[0])):
-                for j in range(len(new_solution[0][0])):
-                    if (new_solution[0][i][j] != 0):
-                        try:
-                            dict_quantity[j] += new_solution[0][i][j]
-                        except:
-                            dict_quantity[j] = new_solution[0][i][j]
-            print(dict_quantity)
-            break
-            print(get_final_fitness(new_solution[0]))
-            print('-------')
+            # SE A NOVA SOLUÇÃO DOMINA A ANTIGA E A QUANTIDADE DE CARTAS QUE FALTAM NÃO AUMENTAR, REMOVE SOLUÇÃO ANTIGA
+            if (pg.pareto_dominance([new_solution[1], new_solution[2], solution[3]], [solution[1], solution[2], solution[3]]) and new_solution[3] <= solution[3]):
+                remove_list.append(solution)
+
+    # REMOVE SOLUÇÕES QUE: FORAM DOMINADAS E TEVE A QUANTIDADE DE CARTAS QUE FALTARAM AUMENTOU
+    for solution in remove_list:
+        solutions.remove(solution)
 
     return(solutions)
 
 # REALOCA TODAS AS CARTAS NAS LOJAS SELECIONADAS
-def greedy_method(result_table):
-
+def greedy_method(result_table, stores):
     # O METODO GULOSO REMOVE TODAS AS CARTAS DE SUAS POSIÇÕES ATUAIS E RECOLOCA EM NOVAS POSIÇÕES
     # SEGUINDO SEMPRE O MENOR PREÇO. AS LOJAS CANDIDATAS A REALOCAÇÃO SERÃO APENAS AQUELAS SELECIONADAS
     # NA SOLUÇÃO DO SIMULATED ANNEALING.
-
-    stores = find_stores(result_table)
-
-    teste = list(map(list, zip(*content_table)))
-    for i in range(len(teste)):
-        cat = ''
-        if i in stores:
-            
-            for j in range(len(teste[i])):
-                cat += str(j) + ' ' + str(teste[i][j]) + ' | '
-            print(cat)
-            print()
-    print('---')
-
-    teste = list(map(list, zip(*result_table)))
-    for i in range(len(teste)):
-        if i in stores:
-            print(teste[i])
-
-
-    
     result_table = [list(x) for x in empty_table] # ZERA RESULT TABLE
     # PARA CADA CARTA, CRIA UMA LISTA ORDENADA POR PREÇO
-    for card in range(len(result_table)):
-        sort_stores = find_lesser(result_table, stores, card)
+    for card in range(len(result_table)): # PARA CADA CARTA, FAÇA
+        sort_stores = find_lesser(result_table, stores, card) # CRIA UMA LISTA DE TUPLAS DE PREÇO EM ORDEM CRESCENTE
         quantity_remnant = card_dict[card][1] # QUANTIDADE DE CARTAS REQUERIDAS
         for store in sort_stores: # ENQUANTO NÃO ALOCAR TODAS AS UNIDADES DE UMA CARTA, REPITA 
-            #print(quantity_remnant)
-            if (quantity_remnant == 0):
+            if (quantity_remnant == 0): # SE ACABOU A QUANTIDADE A COLOCAR, SAI DO LAÇO
                 break
             # SE QUANTIDADE DA LOJA FOR MAIOR QUE QUANTIDADE A SE ALOCADA, ENTÃO ENCERRA O LOOP
             if (store[1] >= quantity_remnant):
@@ -551,13 +482,6 @@ def greedy_method(result_table):
                 value = quantity_remnant - (quantity_remnant - store[1])
                 set_quantity(result_table, card, store[0], result_table[card][store[0]] + value )
                 quantity_remnant -= value
-
-    print('------')
-    teste = list(map(list, zip(*result_table)))
-    for i in range(len(teste)):
-        if i in stores:
-            print(teste[i])
-
     return(result_table)
 
 #####################################################################################################################
@@ -720,10 +644,12 @@ print('|------------------------------------------------------------------------
 print('|-----------------------SIMULATED ANNEALING FINALIZADO----------------------|')
 print('|---------------------------------------------------------------------------|')
 print()
+
 print('RESULTADOS:')
 for solution in solutions:
     objectives = get_final_fitness(solution[0])
-    print('Valor: ' + str(objectives[0]) + ' / Lojas: ' + str(objectives[2]) + ' / Faltou: ' + str(objectives[1]))
+    print('Valor: ' + str('%.2f'%objectives[0]) + ' / Lojas: ' + str(objectives[2]) + ' / Faltou: ' + str(objectives[1]))
+print()
 
 print('|---------------------------------------------------------------------------|')
 print('|---------------------------PÓS OTIMIZAÇÃO INICIADA-------------------------|')
@@ -741,9 +667,49 @@ print()
 print('RESULTADOS:')
 for solution in solutions:
     objectives = get_final_fitness(solution[0])
-    print('Valor: ' + str(objectives[0]) + ' / Lojas: ' + str(objectives[2]) + ' / Faltou: ' + str(objectives[1]))
+    print('Valor: ' + str('%.2f'%objectives[0]) + ' / Lojas: ' + str(objectives[2]) + ' / Faltou: ' + str(objectives[1]))
 
 print()
 print('|---------------------------------------------------------------------------|')
 print('|------------------------------------FIM------------------------------------|')
 print('|---------------------------------------------------------------------------|')
+
+"""
+    teste = list(map(list, zip(*content_table)))
+    for i in range(len(teste)):
+        cat = ''
+        if i in stores:
+            
+            for j in range(len(teste[i])):
+                cat += str(j) + ' ' + str(teste[i][j]) + ' | '
+            print(cat)
+            print()
+    print('---')
+
+    teste = list(map(list, zip(*result_table)))
+    for i in range(len(teste)):
+        if i in stores:
+            print(teste[i])
+
+            # REMOVE UMA LOJA DA COMPRA. STORES SÃO AS POSSIVEIS LOJAS QUE IRÃO RECEBER AS CARTAS E STORE É A LOJA A SER REMOVIDA.
+def change_store(result_table, stores, store):
+    for i in range(len(result_table)): # PARA CADA CARTA
+        quantity = result_table[i][store] # GUARDA QUANTAS CARTAS A LOJA POSSUI
+        result_table[i][store] = 0 # ZERA A LOJA A SER REMOVIDA
+        if (quantity != 0): # SE A QUANTIDADE DE CARTAS QUE A LOJA POSSUIA FOR MAIOR QUE ZERO 
+            for key, value in stores.items(): # PASSA POR CADA LOJA CANDIDATA
+                if (key == store): # IGNORA A LOJA QUE FOI REMOVIDA
+                    break
+                if (get_quantity_content(content_table[i][key]) > result_table[i][key]):
+                    quantity_available = get_quantity_content(content_table[i][key]) - result_table[i][key]
+                    if (quantity_available <= quantity):
+                        result_table[i][key] += quantity_available
+                        quantity -= quantity_available
+                    else:
+                        result_table[i][key] += quantity
+                        break
+                    if (quantity == 0):
+                        break
+    return(result_table)
+
+"""
