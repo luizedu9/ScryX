@@ -35,7 +35,7 @@ def crawler_reformat(csv_file, card_dict):
     # ORDENA ARQUIVO CSV
     with open(csv_file, newline='') as file:
         reader = csv.DictReader(file, delimiter=",")
-        sortedlist = sorted(reader, key=lambda row:(row['card'], row['store'], row['value'], row['quantity']), reverse=False)
+        sortedlist = sorted(reader, key=lambda row:(row['card'], row['store'], float(row['value']), int(row['quantity'])), reverse=False)
     # CRIA UM DICIONARIO COM TODAS AS LOJAS QUE SERÃO UTILIZADAS
     store_dict_temp = {}
     cont_store = 0
@@ -61,24 +61,3 @@ def crawler_reformat(csv_file, card_dict):
 
 def run_input_reformat(card_id, crawler_file):
     return(crawler_reformat(crawler_file, list_reformat(card_id)))
-
-
-
-
-"""
-    quantity = int(row['quantity'])
-        price = float(row['value'])
-        # SE CARTA ATUAL É A MESMA DA ITERAÇÃO ANTERIOR, ENTÃO ENTRA AQUI PARA VERIFICAR SE ELA AINDA PRECISA DE MAIS CARTAS
-        if ((previous_card == card_dict_temp[row['card']]) and (previous_store == store_dict_temp[row['store']])):
-            if (remaning_card <= quantity):
-                content_table[previous_card][previous_store].append((remaning_card, value))
-                remaning_card = 0
-            else:
-                content_table[previous_card][previous_store].append((quantity, value))
-                remaning_card -= quantity
-        else:
-            previous_card = card_dict_temp[row['card']]
-            previous_store = store_dict_temp[row['store']]
-            if ( <= quantity):
-            content_table[previous_card][previous_store].append((quantity, value))
-"""

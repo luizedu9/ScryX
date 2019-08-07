@@ -11,7 +11,7 @@
 INITIAL_TEMPERATURE 50
 FINAL_TEMPERATURE 0.1
 COOLING_SCHEDULE GEOMETRIC
-ALPHA 0.9
+ALPHA 0.99
 REHEAT 2
 
 #######################################################################################################
@@ -71,7 +71,7 @@ STORE_INCREASE 1000
 # N_THREAD é o número de threads. Muitas threads não aumenta tanto a eficiencia (Ver número de núcleos).
 # N_SOLUTIONS_POOL é o maximo de possiveis soluções que eu armazeno antes de calcular as soluções reais.
 
-N_THREAD 4
+N_THREAD 6
 N_SOLUTION_POOL 1000
 
 #######################################################################################################

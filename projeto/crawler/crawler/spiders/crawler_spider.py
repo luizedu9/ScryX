@@ -64,6 +64,10 @@ class CrawlerSpider(scrapy.Spider):
             if ('0 unid.' in quantity[i]): # NÃO EXISTE ESTOQUE DESTA CARTA
                 pass
             elif ("desconto" in value[i].extract()): # POSSUI DESCONTO, MODO DE SCRAPYING DIFERENTE
-                yield {'card': card, 'store': store, 'quantity': quantity[i].split()[0], 'value': (''.join(value[i].xpath('./font/text()').extract())).split()[1].replace('.', '').replace(',', '.')}
+                price = (''.join(value[i].xpath('./font/text()').extract())).split()[1].replace('.', '').replace(',', '.')
+                if (price != '0.00'):
+                    yield {'card': card, 'store': store, 'quantity': quantity[i].split()[0], 'value': price}
             else:
-                yield {'card': card, 'store': store, 'quantity': quantity[i].split()[0], 'value': (''.join(value[i].xpath('./text()').extract())).split()[1].replace('.', '').replace(',', '.')}
+                price = (''.join(value[i].xpath('./text()').extract())).split()[1].replace('.', '').replace(',', '.')
+                if (price != '0.00'):
+                    yield {'card': card, 'store': store, 'quantity': quantity[i].split()[0], 'value': price}

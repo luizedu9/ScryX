@@ -1,0 +1,4376 @@
+card,store,quantity,value
+set adrift,Player`s Stop,1,0.99
+set adrift,Player`s Stop,1,3.99
+set adrift,Player`s Stop,1,0.99
+memory sluice,Shandalar,1,8.50
+memory sluice,Shandalar,1,2.50
+memory sluice,TCGeeK,6,3.50
+memory sluice,TCGeeK,6,2.70
+memory sluice,TCGeeK,1,9.90
+memory sluice,TCGeeK,1,1.20
+set adrift,Magicbembarato,6,0.81
+set adrift,Magicbembarato,1,3.21
+"jace, memory adept",TCGeeK,1,59.90
+"jace, memory adept",Fire Ice Card Games,1,17.50
+crypt incursion,TCGeeK,2,16.00
+"jace, memory adept",Bazar de Bagdá,5,29.99
+"jace, memory adept",Bazar de Bagdá,3,29.99
+"jace, memory adept",Bazar de Bagdá,2,26.99
+"jace, memory adept",Bazar de Bagdá,1,29.99
+"jace, memory adept",Bazar de Bagdá,1,49.99
+"jace, memory adept",Bazar de Bagdá,1,21.99
+"jace, memory adept",Bazar de Bagdá,1,26.99
+"jace, memory adept",Bazar de Bagdá,1,29.99
+crypt incursion,Bazar de Bagdá,31,2.49
+crypt incursion,Bazar de Bagdá,1,2.49
+crypt incursion,Bazar de Bagdá,1,15.99
+set adrift,ManaFix.net,101,0.45
+set adrift,ManaFix.net,1,9.95
+crypt incursion,VAULT,7,1.50
+crypt incursion,VAULT,1,1.50
+crypt incursion,VAULT,1,15.00
+island,Shandalar,17,7.45
+island,Shandalar,3,0.95
+island,Shandalar,2,27.45
+island,Shandalar,2,0.95
+island,Shandalar,2,15.75
+island,Shandalar,2,59.95
+island,Shandalar,1,14.90
+island,Shandalar,1,5.45
+island,Shandalar,1,7.95
+island,ManaFix.net,1,394.95
+swamp,Cards Of Paradise,404,0.60
+swamp,Cards Of Paradise,192,13.40
+swamp,Cards Of Paradise,48,11.80
+swamp,Cards Of Paradise,42,0.40
+swamp,Cards Of Paradise,38,0.40
+swamp,Cards Of Paradise,27,10.20
+swamp,Cards Of Paradise,14,0.40
+swamp,Cards Of Paradise,12,3.80
+swamp,Cards Of Paradise,6,7.80
+swamp,Cards Of Paradise,6,7.80
+swamp,Cards Of Paradise,5,0.60
+swamp,Cards Of Paradise,5,19.80
+swamp,Cards Of Paradise,3,0.80
+swamp,Cards Of Paradise,3,239.80
+swamp,Cards Of Paradise,2,0.40
+swamp,Cards Of Paradise,2,3.80
+swamp,Cards Of Paradise,2,0.80
+swamp,Cards Of Paradise,2,3.80
+swamp,Cards Of Paradise,1,3.80
+swamp,Cards Of Paradise,1,0.80
+swamp,Cards Of Paradise,1,3.80
+island,Magic House Games,4,0.50
+island,Magic House Games,4,29.00
+island,Magic House Games,1,0.50
+island,Magic House Games,1,90.00
+island,Magic House Games,1,6.00
+island,Magic House Games,1,14.90
+island,Magic House Games,1,7.50
+island,Magic House Games,1,44.90
+island,Magic House Games,1,25.00
+island,Power9,3,699.99
+island,Power9,1,32.00
+island,Power9,3,19.99
+island,Power9,8,0.20
+island,Card Tutor,11,17.95
+island,Card Tutor,8,2.95
+island,Card Tutor,2,11.95
+island,Card Tutor,1,49.50
+island,VampireX TCG,48,0.43
+island,VampireX TCG,47,0.87
+island,VampireX TCG,26,12.31
+island,VampireX TCG,5,50.15
+island,VampireX TCG,5,25.51
+island,VampireX TCG,4,0.22
+island,VampireX TCG,3,21.11
+island,VampireX TCG,2,0.22
+island,VampireX TCG,1,39.59
+island,VampireX TCG,1,5.27
+island,Inside Games,29,2.00
+island,Inside Games,24,10.00
+island,Inside Games,5,50.00
+island,Inside Games,3,10.00
+island,Inside Games,1,4.00
+island,Inside Games,1,4.00
+island,Inside Games,1,6.00
+island,Newstation,9,14.00
+island,Newstation,5,8.00
+island,Newstation,1,49.00
+island,Newstation,1,48.00
+evolving wilds,Ascensão,3,0.05
+evolving wilds,Ascensão,1,1.80
+island,Nerdz Cards,4,44.90
+island,Nerdz Cards,1,14.90
+island,Bazar de Bagdá,64,19.99
+island,Bazar de Bagdá,32,11.99
+island,Bazar de Bagdá,5,49.99
+island,Bazar de Bagdá,5,44.99
+island,Bazar de Bagdá,5,29.99
+island,Bazar de Bagdá,3,39.99
+island,Bazar de Bagdá,2,17.99
+island,Bazar de Bagdá,1,3.99
+island,Legends Game Store,2,41.39
+island,Legends Game Store,9,8.09
+island,Toca do Quati,6,35.00
+island,Toca do Quati,4,40.00
+island,Toca do Quati,2,10.00
+evolving wilds,Bazar de Bagdá,36,0.49
+evolving wilds,Bazar de Bagdá,34,0.49
+evolving wilds,Bazar de Bagdá,34,0.49
+evolving wilds,Bazar de Bagdá,27,0.49
+evolving wilds,Bazar de Bagdá,22,0.49
+evolving wilds,Bazar de Bagdá,18,0.49
+evolving wilds,Bazar de Bagdá,15,0.49
+evolving wilds,Bazar de Bagdá,12,0.49
+evolving wilds,Bazar de Bagdá,9,0.49
+evolving wilds,Bazar de Bagdá,9,0.49
+evolving wilds,Bazar de Bagdá,9,0.49
+evolving wilds,Bazar de Bagdá,8,0.49
+evolving wilds,Bazar de Bagdá,8,0.49
+evolving wilds,Bazar de Bagdá,6,0.49
+evolving wilds,Bazar de Bagdá,6,3.99
+evolving wilds,Bazar de Bagdá,6,0.49
+evolving wilds,Bazar de Bagdá,6,0.49
+evolving wilds,Bazar de Bagdá,5,0.49
+evolving wilds,Bazar de Bagdá,4,29.99
+evolving wilds,Bazar de Bagdá,4,0.49
+evolving wilds,Bazar de Bagdá,4,0.49
+evolving wilds,Bazar de Bagdá,3,0.49
+evolving wilds,Bazar de Bagdá,2,3.99
+evolving wilds,Bazar de Bagdá,2,3.99
+evolving wilds,Bazar de Bagdá,1,0.49
+evolving wilds,Bazar de Bagdá,1,3.99
+evolving wilds,Bazar de Bagdá,1,3.99
+evolving wilds,Bazar de Bagdá,1,3.99
+evolving wilds,Bazar de Bagdá,1,0.49
+island,Power Up Games,1,2.50
+island,Power Up Games,1,40.00
+island,Overrun Geek Store,4,42.50
+island,Overrun Geek Store,1,1.50
+evolving wilds,Overrun Geek Store,4,0.25
+evolving wilds,Overrun Geek Store,4,6.00
+evolving wilds,Overrun Geek Store,4,3.00
+evolving wilds,Overrun Geek Store,4,0.25
+evolving wilds,Overrun Geek Store,4,0.25
+evolving wilds,Overrun Geek Store,4,0.90
+evolving wilds,Overrun Geek Store,4,0.25
+evolving wilds,Overrun Geek Store,4,24.90
+evolving wilds,Overrun Geek Store,2,0.52
+evolving wilds,Overrun Geek Store,2,0.25
+evolving wilds,Overrun Geek Store,2,3.00
+evolving wilds,Overrun Geek Store,1,0.25
+evolving wilds,VampireX TCG,25,6.15
+evolving wilds,VampireX TCG,18,0.35
+evolving wilds,VampireX TCG,9,0.43
+evolving wilds,VampireX TCG,9,0.43
+evolving wilds,VampireX TCG,9,0.43
+evolving wilds,VampireX TCG,9,0.43
+evolving wilds,VampireX TCG,9,0.43
+evolving wilds,VampireX TCG,9,0.43
+evolving wilds,VampireX TCG,9,0.43
+evolving wilds,VampireX TCG,8,0.61
+evolving wilds,VampireX TCG,7,0.43
+evolving wilds,VampireX TCG,7,0.43
+evolving wilds,VampireX TCG,6,0.43
+evolving wilds,VampireX TCG,6,0.43
+evolving wilds,VampireX TCG,4,0.61
+evolving wilds,VampireX TCG,4,0.43
+evolving wilds,VampireX TCG,4,0.43
+evolving wilds,VampireX TCG,3,0.87
+evolving wilds,VampireX TCG,3,3.51
+evolving wilds,VampireX TCG,2,23.75
+evolving wilds,VampireX TCG,2,0.87
+evolving wilds,VampireX TCG,2,4.39
+evolving wilds,VampireX TCG,2,2.98
+evolving wilds,VampireX TCG,1,0.43
+evolving wilds,VampireX TCG,1,0.43
+evolving wilds,VampireX TCG,1,0.43
+evolving wilds,VampireX TCG,1,4.39
+evolving wilds,VampireX TCG,1,4.39
+evolving wilds,VampireX TCG,1,0.61
+evolving wilds,VampireX TCG,1,0.33
+evolving wilds,VampireX TCG,1,3.30
+evolving wilds,VampireX TCG,1,23.75
+evolving wilds,VampireX TCG,1,0.43
+evolving wilds,VampireX TCG,1,4.39
+evolving wilds,Treasure Cards,19,0.14
+evolving wilds,Treasure Cards,6,0.09
+evolving wilds,Treasure Cards,4,0.14
+evolving wilds,Treasure Cards,3,0.09
+evolving wilds,Treasure Cards,3,0.09
+evolving wilds,Treasure Cards,3,0.23
+evolving wilds,Treasure Cards,2,0.09
+evolving wilds,Treasure Cards,2,0.23
+evolving wilds,Treasure Cards,1,3.60
+evolving wilds,Treasure Cards,1,40.00
+evolving wilds,Treasure Cards,1,0.09
+evolving wilds,Treasure Cards,1,0.09
+evolving wilds,Treasure Cards,1,0.23
+evolving wilds,Treasure Cards,1,0.09
+evolving wilds,Treasure Cards,1,3.60
+evolving wilds,Treasure Cards,1,0.09
+evolving wilds,Treasure Cards,1,0.14
+evolving wilds,Treasure Cards,1,0.14
+evolving wilds,Legends Game Store,2,22.49
+evolving wilds,Legends Game Store,1,2.69
+evolving wilds,Legends Game Store,1,1.79
+evolving wilds,Legends Game Store,2,1.79
+evolving wilds,Legends Game Store,3,0.44
+evolving wilds,Legends Game Store,4,0.44
+evolving wilds,Legends Game Store,2,0.44
+evolving wilds,Legends Game Store,2,0.44
+evolving wilds,Legends Game Store,4,0.44
+evolving wilds,Legends Game Store,1,0.44
+evolving wilds,Legends Game Store,1,0.44
+evolving wilds,Legends Game Store,3,0.44
+evolving wilds,Legends Game Store,1,0.44
+evolving wilds,Legends Game Store,7,0.44
+evolving wilds,Legends Game Store,8,0.44
+evolving wilds,Legends Game Store,14,0.44
+evolving wilds,Legends Game Store,1,0.41
+evolving wilds,Legends Game Store,2,0.41
+evolving wilds,Pharaoh\'s Shop,27,0.80
+evolving wilds,Pharaoh\'s Shop,7,0.20
+evolving wilds,Pharaoh\'s Shop,6,0.50
+evolving wilds,Pharaoh\'s Shop,4,0.20
+evolving wilds,Pharaoh\'s Shop,4,0.20
+evolving wilds,Pharaoh\'s Shop,3,0.50
+evolving wilds,Pharaoh\'s Shop,3,0.15
+evolving wilds,Pharaoh\'s Shop,2,0.30
+evolving wilds,Pharaoh\'s Shop,2,0.50
+evolving wilds,Pharaoh\'s Shop,2,0.20
+evolving wilds,Pharaoh\'s Shop,2,0.20
+evolving wilds,Pharaoh\'s Shop,2,27.00
+evolving wilds,Pharaoh\'s Shop,2,0.30
+evolving wilds,Pharaoh\'s Shop,2,0.50
+evolving wilds,Pharaoh\'s Shop,2,0.15
+evolving wilds,Pharaoh\'s Shop,1,0.20
+evolving wilds,Pharaoh\'s Shop,1,0.15
+evolving wilds,Pharaoh\'s Shop,1,0.15
+evolving wilds,Pharaoh\'s Shop,1,0.30
+evolving wilds,Pharaoh\'s Shop,1,0.20
+evolving wilds,Pharaoh\'s Shop,1,0.12
+evolving wilds,Pharaoh\'s Shop,1,0.20
+evolving wilds,Pharaoh\'s Shop,1,0.25
+evolving wilds,Pharaoh\'s Shop,1,3.00
+evolving wilds,Pharaoh\'s Shop,1,2.80
+evolving wilds,Newstation,12,1.25
+evolving wilds,Newstation,8,1.00
+evolving wilds,Newstation,8,1.00
+evolving wilds,Newstation,8,1.00
+evolving wilds,Newstation,8,0.50
+evolving wilds,Newstation,8,0.50
+evolving wilds,Newstation,8,0.75
+evolving wilds,Newstation,8,1.00
+evolving wilds,Newstation,8,0.50
+evolving wilds,Newstation,8,0.50
+evolving wilds,Newstation,8,7.00
+evolving wilds,Newstation,7,1.00
+evolving wilds,Newstation,3,18.90
+evolving wilds,Newstation,3,1.00
+evolving wilds,Newstation,2,1.00
+evolving wilds,Newstation,1,1.00
+evolving wilds,Newstation,1,4.00
+evolving wilds,Newstation,1,1.00
+evolving wilds,Newstation,1,1.00
+evolving wilds,Newstation,1,1.00
+evolving wilds,Newstation,1,1.00
+evolving wilds,Porto Livre Games,2,20.83
+evolving wilds,Porto Livre Games,16,1.27
+evolving wilds,Porto Livre Games,8,0.25
+evolving wilds,Porto Livre Games,4,0.21
+evolving wilds,Porto Livre Games,2,0.21
+evolving wilds,Porto Livre Games,1,0.21
+evolving wilds,Porto Livre Games,2,0.21
+evolving wilds,Porto Livre Games,9,0.21
+evolving wilds,Porto Livre Games,12,0.21
+evolving wilds,Chuck TCG,1,0.50
+evolving wilds,CHQ Cards,119,1.90
+evolving wilds,Chuck TCG,1,0.50
+evolving wilds,Chuck TCG,4,0.50
+evolving wilds,Chuck TCG,3,0.50
+evolving wilds,Chuck TCG,8,0.50
+evolving wilds,Chuck TCG,4,0.50
+evolving wilds,Chuck TCG,2,0.50
+evolving wilds,Chuck TCG,8,0.50
+evolving wilds,Chuck TCG,2,0.50
+evolving wilds,Chuck TCG,2,0.50
+evolving wilds,Chuck TCG,1,0.50
+evolving wilds,Chuck TCG,1,0.50
+evolving wilds,Chuck TCG,8,0.50
+evolving wilds,Chuck TCG,4,0.50
+evolving wilds,Chuck TCG,3,0.50
+evolving wilds,Chuck TCG,3,0.50
+evolving wilds,Chuck TCG,14,0.50
+evolving wilds,Chuck TCG,3,3.00
+evolving wilds,Chuck TCG,2,3.00
+evolving wilds,Chuck TCG,26,4.00
+evolving wilds,Chuck TCG,1,6.50
+evolving wilds,Chuck TCG,1,17.50
+evolving wilds,Chuck TCG,1,27.50
+evolving wilds,CHQ Cards,53,0.60
+evolving wilds,CHQ Cards,48,0.70
+evolving wilds,CHQ Cards,48,0.70
+evolving wilds,CHQ Cards,46,0.70
+evolving wilds,CHQ Cards,42,0.60
+evolving wilds,CHQ Cards,19,0.60
+evolving wilds,CHQ Cards,16,0.70
+evolving wilds,CHQ Cards,13,0.70
+evolving wilds,CHQ Cards,12,0.70
+evolving wilds,CHQ Cards,9,0.60
+evolving wilds,CHQ Cards,8,0.80
+evolving wilds,CHQ Cards,8,0.70
+evolving wilds,CHQ Cards,8,0.60
+evolving wilds,CHQ Cards,7,0.70
+evolving wilds,CHQ Cards,6,0.60
+evolving wilds,CHQ Cards,6,19.90
+evolving wilds,CHQ Cards,5,0.70
+evolving wilds,CHQ Cards,4,0.80
+evolving wilds,CHQ Cards,4,0.60
+evolving wilds,CHQ Cards,4,1.20
+evolving wilds,CHQ Cards,3,6.50
+evolving wilds,CHQ Cards,3,0.70
+evolving wilds,CHQ Cards,1,0.70
+evolving wilds,CHQ Cards,1,0.60
+evolving wilds,CHQ Cards,1,1.20
+evolving wilds,CHQ Cards,1,0.60
+evolving wilds,LIMIAR STORE,8,0.40
+evolving wilds,LIMIAR STORE,5,0.42
+evolving wilds,LIMIAR STORE,3,0.40
+evolving wilds,LIMIAR STORE,3,0.49
+evolving wilds,LIMIAR STORE,2,0.36
+evolving wilds,LIMIAR STORE,2,0.39
+evolving wilds,LIMIAR STORE,2,0.39
+evolving wilds,LIMIAR STORE,2,0.35
+evolving wilds,LIMIAR STORE,2,0.40
+evolving wilds,LIMIAR STORE,1,0.49
+evolving wilds,LIMIAR STORE,1,0.37
+evolving wilds,LIMIAR STORE,1,0.38
+evolving wilds,LIMIAR STORE,1,0.42
+evolving wilds,LIMIAR STORE,1,0.38
+evolving wilds,LIMIAR STORE,1,0.42
+evolving wilds,LIMIAR STORE,1,0.41
+evolving wilds,LIMIAR STORE,1,19.20
+evolving wilds,Lets Collect,101,1.31
+evolving wilds,Lets Collect,22,0.30
+evolving wilds,Lets Collect,22,0.30
+evolving wilds,Lets Collect,22,0.30
+evolving wilds,Lets Collect,21,0.30
+evolving wilds,Lets Collect,21,0.30
+evolving wilds,Lets Collect,21,0.23
+evolving wilds,Lets Collect,18,0.30
+evolving wilds,Lets Collect,15,0.30
+evolving wilds,Lets Collect,11,0.30
+evolving wilds,Lets Collect,11,0.23
+evolving wilds,Lets Collect,9,0.30
+evolving wilds,Lets Collect,8,0.30
+evolving wilds,Lets Collect,8,0.30
+evolving wilds,Lets Collect,8,0.33
+evolving wilds,Lets Collect,6,0.30
+evolving wilds,Lets Collect,5,18.86
+evolving wilds,Lets Collect,2,0.30
+evolving wilds,Lets Collect,1,0.30
+evolving wilds,Flow Games,1,19.00
+evolving wilds,Flow Games,2,4.78
+evolving wilds,Flow Games,4,0.48
+evolving wilds,Flow Games,3,0.24
+evolving wilds,Flow Games,2,0.24
+evolving wilds,Flow Games,1,0.24
+evolving wilds,Flow Games,3,0.24
+evolving wilds,Flow Games,1,0.24
+evolving wilds,Flow Games,4,0.24
+evolving wilds,Flow Games,2,0.24
+evolving wilds,Multiverso Cards Comercio de Jogos e Acessorios Lt,7,0.30
+evolving wilds,Multiverso Cards Comercio de Jogos e Acessorios Lt,2,0.30
+evolving wilds,Multiverso Cards Comercio de Jogos e Acessorios Lt,2,15.54
+evolving wilds,Multiverso Cards Comercio de Jogos e Acessorios Lt,2,0.30
+evolving wilds,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,15.54
+evolving wilds,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,2.00
+evolving wilds,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,0.30
+evolving wilds,Basics Cards,1,15.99
+evolving wilds,Basics Cards,1,12.99
+evolving wilds,Basics Cards,1,0.15
+evolving wilds,Basics Cards,3,0.15
+evolving wilds,Basics Cards,1,0.15
+evolving wilds,Basics Cards,2,0.15
+evolving wilds,Basics Cards,2,0.15
+evolving wilds,Basics Cards,1,0.15
+evolving wilds,Basics Cards,7,0.15
+evolving wilds,Basics Cards,1,0.12
+evolving wilds,Basics Cards,1,0.12
+evolving wilds,Shandalar,4,4.50
+evolving wilds,Shandalar,4,0.35
+evolving wilds,Shandalar,3,0.45
+evolving wilds,Shandalar,3,0.45
+evolving wilds,Shandalar,3,0.45
+evolving wilds,Shandalar,2,17.25
+evolving wilds,Shandalar,2,5.17
+evolving wilds,Shandalar,1,0.45
+evolving wilds,Shandalar,1,0.45
+evolving wilds,Shandalar,1,0.45
+evolving wilds,Shandalar,1,2.50
+evolving wilds,Shandalar,1,0.45
+evolving wilds,Shandalar,1,0.45
+evolving wilds,Shandalar,1,0.35
+evolving wilds,Shandalar,1,0.45
+evolving wilds,Magicbembarato,13,0.61
+evolving wilds,Magicbembarato,13,0.63
+evolving wilds,Magicbembarato,8,0.64
+evolving wilds,Magicbembarato,8,0.61
+evolving wilds,Magicbembarato,6,0.79
+evolving wilds,Magicbembarato,6,0.61
+evolving wilds,Magicbembarato,6,0.61
+evolving wilds,Magicbembarato,6,0.61
+evolving wilds,Magicbembarato,6,0.61
+evolving wilds,Magicbembarato,6,0.61
+evolving wilds,Magicbembarato,6,0.61
+evolving wilds,Magicbembarato,6,0.63
+evolving wilds,Magicbembarato,6,0.99
+evolving wilds,Magicbembarato,6,0.61
+evolving wilds,Magicbembarato,6,0.61
+evolving wilds,Magicbembarato,6,0.61
+evolving wilds,Magicbembarato,6,0.61
+evolving wilds,Magicbembarato,6,0.63
+evolving wilds,Magicbembarato,5,0.67
+evolving wilds,Magicbembarato,5,0.85
+evolving wilds,Magicbembarato,4,0.96
+evolving wilds,Magicbembarato,4,0.67
+evolving wilds,Magicbembarato,4,0.85
+evolving wilds,Magicbembarato,4,0.77
+evolving wilds,Magicbembarato,4,0.96
+evolving wilds,Magicbembarato,4,0.85
+evolving wilds,Magicbembarato,1,2.65
+evolving wilds,Magicbembarato,1,11.72
+evolving wilds,Magicbembarato,1,9.32
+evolving wilds,Player`s Stop,1,0.45
+evolving wilds,Player`s Stop,1,9.99
+evolving wilds,Player`s Stop,1,0.45
+evolving wilds,Player`s Stop,1,0.45
+evolving wilds,Konklave FunStore,1,9.60
+evolving wilds,Konklave FunStore,2,4.68
+evolving wilds,Konklave FunStore,1,4.00
+evolving wilds,Konklave FunStore,1,4.00
+evolving wilds,Konklave FunStore,1,4.00
+evolving wilds,Konklave FunStore,4,0.43
+evolving wilds,Konklave FunStore,3,0.40
+evolving wilds,Konklave FunStore,3,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,1,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,3,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,1,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,3,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Konklave FunStore,4,0.40
+evolving wilds,Inside Games,126,1.50
+evolving wilds,Inside Games,74,0.50
+evolving wilds,Inside Games,71,0.50
+evolving wilds,Inside Games,36,0.50
+evolving wilds,Inside Games,35,0.25
+evolving wilds,Inside Games,33,0.50
+evolving wilds,Inside Games,33,0.50
+evolving wilds,Inside Games,33,0.50
+evolving wilds,Inside Games,29,0.50
+evolving wilds,Inside Games,24,0.50
+evolving wilds,Inside Games,24,0.50
+evolving wilds,Inside Games,23,8.00
+evolving wilds,Inside Games,23,0.50
+evolving wilds,Inside Games,22,0.50
+evolving wilds,Inside Games,21,0.50
+evolving wilds,Inside Games,15,0.50
+evolving wilds,Inside Games,15,0.50
+evolving wilds,Inside Games,15,0.50
+evolving wilds,Inside Games,14,0.50
+evolving wilds,Inside Games,13,0.25
+evolving wilds,Inside Games,12,0.50
+evolving wilds,Inside Games,12,0.50
+evolving wilds,Inside Games,6,0.50
+evolving wilds,Inside Games,6,3.50
+evolving wilds,Inside Games,1,0.50
+evolving wilds,Inside Games,1,4.00
+evolving wilds,Inside Games,1,0.50
+evolving wilds,Cards Outlet,41,0.59
+evolving wilds,Cards Outlet,41,0.62
+evolving wilds,Cards Outlet,39,0.59
+evolving wilds,Cards Outlet,38,0.59
+evolving wilds,Cards Outlet,32,0.59
+evolving wilds,Cards Outlet,32,0.59
+evolving wilds,Cards Outlet,28,0.59
+evolving wilds,Cards Outlet,24,0.59
+evolving wilds,Cards Outlet,22,0.59
+evolving wilds,Cards Outlet,22,0.62
+evolving wilds,Cards Outlet,21,0.66
+evolving wilds,Cards Outlet,16,0.62
+evolving wilds,Cards Outlet,12,0.96
+evolving wilds,Cards Outlet,9,0.84
+evolving wilds,Cards Outlet,8,0.62
+evolving wilds,Cards Outlet,7,0.78
+evolving wilds,Cards Outlet,4,0.66
+evolving wilds,Cards Outlet,4,0.59
+evolving wilds,Cards Outlet,4,0.84
+evolving wilds,Cards Outlet,4,0.59
+evolving wilds,Cards Outlet,3,0.91
+evolving wilds,Cards Outlet,3,0.91
+evolving wilds,Cards Outlet,2,0.84
+evolving wilds,Cards Outlet,2,0.95
+evolving wilds,Cards Outlet,1,8.75
+evolving wilds,Cards Outlet,1,3.49
+evolving wilds,Cards Outlet,34,0.59
+evolving wilds,Cards Outlet,6,0.66
+evolving wilds,Cards Outlet,4,0.62
+evolving wilds,Cards Outlet,4,0.59
+evolving wilds,Cards Outlet,4,0.91
+evolving wilds,Cards Outlet,4,0.59
+evolving wilds,Cards Outlet,4,0.66
+evolving wilds,Cards Outlet,4,0.59
+evolving wilds,City Class Games,43,0.45
+evolving wilds,Cards Outlet,4,0.96
+evolving wilds,Cards Outlet,4,0.84
+evolving wilds,Cards Outlet,4,0.72
+evolving wilds,Cards Outlet,4,0.59
+evolving wilds,Cards Outlet,4,0.62
+evolving wilds,Cards Outlet,4,0.84
+evolving wilds,Cards Outlet,4,0.62
+evolving wilds,Cards Outlet,4,0.62
+evolving wilds,Cards Outlet,4,0.59
+evolving wilds,Cards Outlet,4,0.59
+evolving wilds,Cards Outlet,4,0.78
+evolving wilds,City Class Games,41,0.45
+evolving wilds,City Class Games,35,0.45
+evolving wilds,City Class Games,32,0.45
+evolving wilds,City Class Games,19,0.45
+evolving wilds,City Class Games,15,0.45
+evolving wilds,City Class Games,13,0.45
+evolving wilds,City Class Games,12,0.36
+evolving wilds,City Class Games,6,0.36
+evolving wilds,City Class Games,5,2.75
+evolving wilds,City Class Games,4,0.36
+evolving wilds,City Class Games,3,0.36
+evolving wilds,City Class Games,3,0.36
+evolving wilds,City Class Games,2,0.36
+evolving wilds,City Class Games,2,1.83
+evolving wilds,City Class Games,2,0.36
+evolving wilds,City Class Games,1,9.19
+evolving wilds,City Class Games,1,3.67
+evolving wilds,City Class Games,1,3.49
+evolving wilds,City Class Games,1,6.43
+evolving wilds,VAULT,8,0.50
+evolving wilds,VAULT,6,0.50
+evolving wilds,VAULT,6,0.50
+evolving wilds,VAULT,5,0.50
+evolving wilds,VAULT,5,6.50
+evolving wilds,VAULT,5,0.50
+evolving wilds,VAULT,4,0.50
+evolving wilds,VAULT,3,0.50
+evolving wilds,VAULT,1,0.50
+evolving wilds,VAULT,1,0.50
+evolving wilds,VAULT,1,0.50
+evolving wilds,VAULT,1,0.50
+evolving wilds,VAULT,1,0.50
+evolving wilds,VAULT,1,0.50
+evolving wilds,VAULT,1,0.50
+evolving wilds,VAULT,1,5.00
+evolving wilds,VAULT,1,4.50
+evolving wilds,VAULT,1,6.00
+evolving wilds,VAULT,1,5.00
+evolving wilds,VAULT,1,0.50
+evolving wilds,VAULT,1,5.00
+evolving wilds,Cards Of Paradise,795,0.40
+evolving wilds,Cards Of Paradise,319,0.40
+evolving wilds,Cards Of Paradise,319,0.40
+evolving wilds,Cards Of Paradise,318,0.40
+evolving wilds,Cards Of Paradise,162,0.40
+evolving wilds,Cards Of Paradise,108,0.40
+evolving wilds,Cards Of Paradise,102,0.40
+evolving wilds,Cards Of Paradise,49,0.40
+evolving wilds,Cards Of Paradise,46,0.40
+evolving wilds,Cards Of Paradise,46,0.40
+evolving wilds,Cards Of Paradise,46,0.40
+evolving wilds,Cards Of Paradise,45,0.40
+evolving wilds,Cards Of Paradise,37,0.40
+evolving wilds,Cards Of Paradise,34,0.40
+evolving wilds,Cards Of Paradise,33,0.40
+evolving wilds,Cards Of Paradise,17,0.40
+evolving wilds,Cards Of Paradise,13,0.40
+evolving wilds,Cards Of Paradise,12,7.80
+evolving wilds,Cards Of Paradise,12,0.40
+evolving wilds,Cards Of Paradise,11,3.80
+evolving wilds,Cards Of Paradise,9,0.40
+evolving wilds,Cards Of Paradise,7,3.80
+evolving wilds,Cards Of Paradise,7,0.40
+evolving wilds,Cards Of Paradise,3,3.80
+evolving wilds,Cards Of Paradise,1,3.80
+evolving wilds,Cards Of Paradise,1,3.80
+evolving wilds,Cards Of Paradise,1,3.80
+evolving wilds,Cards Of Paradise,1,3.80
+evolving wilds,Cards Of Paradise,1,3.80
+evolving wilds,Cards Of Paradise,1,3.80
+evolving wilds,Legion Board & Card Games,8,0.25
+evolving wilds,Legion Board & Card Games,5,0.29
+evolving wilds,Legion Board & Card Games,5,0.24
+evolving wilds,Legion Board & Card Games,5,0.24
+evolving wilds,Legion Board & Card Games,3,0.24
+evolving wilds,Legion Board & Card Games,3,6.60
+evolving wilds,Legion Board & Card Games,2,0.24
+evolving wilds,Legion Board & Card Games,2,0.24
+evolving wilds,Legion Board & Card Games,2,0.43
+evolving wilds,Legion Board & Card Games,1,0.33
+evolving wilds,Legion Board & Card Games,1,0.24
+evolving wilds,Legion Board & Card Games,1,0.24
+evolving wilds,Legion Board & Card Games,1,0.24
+evolving wilds,Pi Games,15,0.49
+evolving wilds,Pi Games,8,0.75
+evolving wilds,Pi Games,7,0.75
+evolving wilds,Pi Games,6,0.75
+evolving wilds,Pi Games,6,0.39
+evolving wilds,Pi Games,5,0.75
+evolving wilds,Pi Games,5,0.20
+evolving wilds,Pi Games,4,0.49
+evolving wilds,Pi Games,4,0.75
+evolving wilds,Pi Games,2,0.39
+evolving wilds,Pi Games,2,0.39
+evolving wilds,Pi Games,2,0.75
+evolving wilds,Pi Games,2,0.49
+evolving wilds,Pi Games,1,0.59
+evolving wilds,Pi Games,1,2.99
+evolving wilds,Pi Games,1,0.89
+evolving wilds,Pi Games,1,1.50
+evolving wilds,Pi Games,1,0.75
+evolving wilds,Skull Games,4,0.49
+evolving wilds,Skull Games,2,3.50
+evolving wilds,Skull Games,1,6.47
+evolving wilds,Skull Games,1,0.25
+evolving wilds,Skull Games,1,0.25
+evolving wilds,Skull Games,1,0.35
+evolving wilds,Padrinho: Card Store,11,0.25
+evolving wilds,Padrinho: Card Store,9,0.25
+evolving wilds,Padrinho: Card Store,9,0.99
+evolving wilds,Padrinho: Card Store,9,0.25
+evolving wilds,Padrinho: Card Store,7,0.25
+evolving wilds,Padrinho: Card Store,6,5.00
+evolving wilds,Padrinho: Card Store,6,0.25
+evolving wilds,Padrinho: Card Store,4,0.25
+evolving wilds,Padrinho: Card Store,3,0.25
+evolving wilds,Padrinho: Card Store,3,0.25
+evolving wilds,Padrinho: Card Store,2,0.25
+evolving wilds,Padrinho: Card Store,2,1.75
+evolving wilds,Padrinho: Card Store,1,0.25
+evolving wilds,Padrinho: Card Store,1,0.25
+evolving wilds,Universo Magic,8,0.20
+evolving wilds,Universo Magic,6,0.20
+evolving wilds,Gideon\'s Palace,2,6.50
+evolving wilds,Universo Magic,1,5.00
+evolving wilds,Xaracards,13,4.99
+evolving wilds,Xaracards,1,2.00
+evolving wilds,Cabala MtG,11,0.25
+evolving wilds,Cabala MtG,9,0.25
+evolving wilds,Cabala MtG,2,5.00
+evolving wilds,Cabala MtG,1,0.25
+evolving wilds,Cabala MtG,1,0.25
+evolving wilds,Cabala MtG,1,0.25
+evolving wilds,Cabala MtG,1,0.25
+evolving wilds,Cabala MtG,1,0.25
+evolving wilds,Cabala MtG,1,0.25
+evolving wilds,Cabala MtG,1,0.25
+evolving wilds,Cabala MtG,1,0.25
+evolving wilds,Mineral Games,5,5.95
+evolving wilds,Mineral Games,2,1.50
+evolving wilds,Mineral Games,9,0.25
+evolving wilds,Mineral Games,7,0.20
+evolving wilds,Mineral Games,33,0.20
+evolving wilds,Mineral Games,8,0.20
+evolving wilds,Mineral Games,2,0.20
+evolving wilds,Mineral Games,15,0.20
+evolving wilds,Mineral Games,1,0.20
+evolving wilds,Mineral Games,3,0.20
+evolving wilds,Mineral Games,17,0.20
+evolving wilds,Neowalkers Geek Store,19,0.48
+evolving wilds,Neowalkers Geek Store,17,0.48
+evolving wilds,Neowalkers Geek Store,8,0.48
+evolving wilds,Neowalkers Geek Store,8,0.48
+evolving wilds,Neowalkers Geek Store,5,0.48
+evolving wilds,Neowalkers Geek Store,5,0.48
+evolving wilds,Neowalkers Geek Store,4,0.48
+evolving wilds,Neowalkers Geek Store,4,0.48
+evolving wilds,Neowalkers Geek Store,3,0.48
+evolving wilds,Neowalkers Geek Store,3,0.48
+evolving wilds,Neowalkers Geek Store,3,0.48
+evolving wilds,Neowalkers Geek Store,3,0.48
+evolving wilds,Neowalkers Geek Store,3,0.48
+evolving wilds,Neowalkers Geek Store,2,0.48
+evolving wilds,Neowalkers Geek Store,2,0.48
+evolving wilds,Neowalkers Geek Store,2,0.48
+evolving wilds,Neowalkers Geek Store,2,0.48
+evolving wilds,Neowalkers Geek Store,1,0.48
+evolving wilds,Loja Grimorium,22,0.50
+evolving wilds,Neowalkers Geek Store,1,0.48
+evolving wilds,Neowalkers Geek Store,1,0.48
+evolving wilds,Neowalkers Geek Store,1,0.48
+evolving wilds,Neowalkers Geek Store,1,0.48
+evolving wilds,Neowalkers Geek Store,1,0.48
+evolving wilds,Neowalkers Geek Store,1,0.48
+evolving wilds,Neowalkers Geek Store,1,0.48
+evolving wilds,Neowalkers Geek Store,1,4.98
+evolving wilds,Neowalkers Geek Store,1,3.50
+evolving wilds,Loja Grimorium,22,0.49
+evolving wilds,Loja Grimorium,21,0.49
+evolving wilds,Loja Grimorium,18,0.49
+evolving wilds,Loja Grimorium,14,0.75
+evolving wilds,Loja Grimorium,13,0.50
+evolving wilds,Loja Grimorium,13,0.49
+evolving wilds,Loja Grimorium,12,0.50
+evolving wilds,Loja Grimorium,12,0.75
+evolving wilds,Loja Grimorium,11,0.50
+evolving wilds,Loja Grimorium,9,0.50
+evolving wilds,Loja Grimorium,8,0.49
+evolving wilds,Loja Grimorium,8,0.49
+evolving wilds,Loja Grimorium,8,0.50
+evolving wilds,Loja Grimorium,8,0.49
+evolving wilds,Loja Grimorium,8,0.49
+evolving wilds,Loja Grimorium,7,0.50
+evolving wilds,Loja Grimorium,7,0.49
+evolving wilds,Loja Grimorium,6,0.49
+evolving wilds,Loja Grimorium,6,0.50
+evolving wilds,Loja Grimorium,6,2.99
+evolving wilds,Loja Grimorium,5,0.49
+evolving wilds,Loja Grimorium,4,0.49
+evolving wilds,Loja Grimorium,3,0.49
+evolving wilds,Loja Grimorium,3,0.49
+evolving wilds,Loja Grimorium,2,0.50
+evolving wilds,Loja Grimorium,2,0.49
+evolving wilds,Loja Grimorium,1,0.49
+evolving wilds,Loja Grimorium,1,0.50
+evolving wilds,Loja Grimorium,1,4.99
+evolving wilds,Magic House Games,1,3.00
+evolving wilds,Magic House Games,1,3.99
+evolving wilds,Magic House Games,1,3.60
+evolving wilds,Magic House Games,1,4.95
+evolving wilds,A Taverna,1,0.22
+evolving wilds,A Taverna,1,0.22
+evolving wilds,A Taverna,2,0.25
+evolving wilds,A Taverna,4,0.25
+evolving wilds,A Taverna,2,4.95
+evolving wilds,A Taverna,3,4.95
+evolving wilds,Geex Hobby Store,77,0.15
+evolving wilds,Geex Hobby Store,16,0.15
+evolving wilds,Geex Hobby Store,9,0.15
+evolving wilds,Geex Hobby Store,1,1.25
+evolving wilds,Geex Hobby Store,1,4.49
+evolving wilds,Geex Hobby Store,1,0.15
+evolving wilds,RED Jogos,11,4.80
+evolving wilds,RED Jogos,1,2.00
+evolving wilds,RED Jogos,16,1.00
+evolving wilds,RED Jogos,2,0.50
+evolving wilds,RED Jogos,5,0.50
+evolving wilds,RED Jogos,2,0.50
+evolving wilds,RED Jogos,2,0.50
+evolving wilds,ProNerd,1,4.29
+evolving wilds,MTG Caxias Cards,17,0.99
+evolving wilds,MTG Caxias Cards,12,0.49
+evolving wilds,MTG Caxias Cards,9,0.49
+evolving wilds,MTG Caxias Cards,7,0.49
+evolving wilds,MTG Caxias Cards,5,0.50
+evolving wilds,MTG Caxias Cards,3,0.49
+evolving wilds,MTG Caxias Cards,3,0.50
+evolving wilds,MTG Caxias Cards,1,3.99
+evolving wilds,MTG Caxias Cards,1,0.49
+evolving wilds,Medieval Cards,9,0.48
+evolving wilds,Medieval Cards,5,3.80
+evolving wilds,TCGeeK,25,0.80
+evolving wilds,TCGeeK,23,0.70
+evolving wilds,TCGeeK,23,0.45
+evolving wilds,TCGeeK,17,0.80
+evolving wilds,TCGeeK,16,0.80
+evolving wilds,TCGeeK,9,0.45
+evolving wilds,TCGeeK,8,0.80
+evolving wilds,TCGeeK,8,0.80
+evolving wilds,TCGeeK,7,0.70
+evolving wilds,TCGeeK,5,1.50
+evolving wilds,TCGeeK,5,0.80
+evolving wilds,TCGeeK,5,0.50
+evolving wilds,TCGeeK,4,0.50
+evolving wilds,TCGeeK,3,0.80
+evolving wilds,TCGeeK,3,1.50
+evolving wilds,TCGeeK,3,0.80
+evolving wilds,TCGeeK,2,0.70
+evolving wilds,TCGeeK,2,0.80
+evolving wilds,TCGeeK,2,0.80
+evolving wilds,TCGeeK,2,0.80
+evolving wilds,TCGeeK,2,0.80
+evolving wilds,TCGeeK,2,0.80
+evolving wilds,TCGeeK,2,0.60
+evolving wilds,TCGeeK,2,0.70
+evolving wilds,TCGeeK,1,0.70
+evolving wilds,TCGeeK,1,0.80
+evolving wilds,TCGeeK,1,0.70
+evolving wilds,TCGeeK,1,3.50
+evolving wilds,TCGeeK,1,3.50
+evolving wilds,TCGeeK,1,0.80
+evolving wilds,TCGeeK,1,0.50
+evolving wilds,Liga Arena,1,0.29
+evolving wilds,House of Cards - Card Games,19,0.25
+evolving wilds,Liga Arena,1,0.29
+evolving wilds,Liga Arena,1,3.71
+evolving wilds,Liga Arena,1,0.33
+evolving wilds,Liga Arena,1,0.29
+evolving wilds,Liga Arena,4,1.84
+evolving wilds,Liga Arena,4,0.29
+evolving wilds,Liga Arena,6,0.38
+evolving wilds,House of Cards - Card Games,18,0.25
+evolving wilds,House of Cards - Card Games,17,0.25
+evolving wilds,House of Cards - Card Games,17,0.25
+evolving wilds,House of Cards - Card Games,16,0.25
+evolving wilds,House of Cards - Card Games,14,0.25
+evolving wilds,House of Cards - Card Games,12,0.25
+evolving wilds,House of Cards - Card Games,11,0.25
+evolving wilds,House of Cards - Card Games,11,0.25
+evolving wilds,House of Cards - Card Games,9,0.25
+evolving wilds,House of Cards - Card Games,7,0.25
+evolving wilds,House of Cards - Card Games,7,0.25
+evolving wilds,House of Cards - Card Games,6,0.25
+evolving wilds,House of Cards - Card Games,6,0.25
+evolving wilds,House of Cards - Card Games,5,0.25
+evolving wilds,House of Cards - Card Games,4,0.25
+evolving wilds,House of Cards - Card Games,3,0.25
+evolving wilds,House of Cards - Card Games,3,0.25
+evolving wilds,House of Cards - Card Games,3,0.25
+evolving wilds,House of Cards - Card Games,3,0.25
+evolving wilds,House of Cards - Card Games,3,0.25
+evolving wilds,House of Cards - Card Games,2,0.25
+evolving wilds,House of Cards - Card Games,2,0.25
+evolving wilds,House of Cards - Card Games,1,3.95
+evolving wilds,Cards Store,8,0.50
+evolving wilds,Cards Store,2,3.49
+evolving wilds,Card Castle,4,0.24
+evolving wilds,Card Castle,3,0.24
+evolving wilds,Card Castle,2,0.24
+evolving wilds,Card Castle,2,3.49
+evolving wilds,Card Castle,2,0.24
+evolving wilds,Card Castle,2,0.24
+evolving wilds,Card Castle,1,0.24
+evolving wilds,Card Castle,1,0.24
+evolving wilds,Card Castle,1,0.24
+evolving wilds,Card Castle,1,0.24
+evolving wilds,Card Tutor,19,0.50
+evolving wilds,Card Tutor,14,0.50
+evolving wilds,Card Tutor,9,0.35
+evolving wilds,Card Tutor,8,0.35
+evolving wilds,Card Tutor,8,0.50
+evolving wilds,Card Tutor,5,0.50
+evolving wilds,Card Tutor,5,0.50
+evolving wilds,Card Tutor,4,0.50
+evolving wilds,Card Tutor,3,0.50
+evolving wilds,Card Tutor,1,2.95
+evolving wilds,Load or Cast,2,3.25
+evolving wilds,Load or Cast,2,0.35
+evolving wilds,Load or Cast,3,0.35
+evolving wilds,Load or Cast,7,0.35
+evolving wilds,Load or Cast,4,0.30
+evolving wilds,Load or Cast,1,0.30
+evolving wilds,Load or Cast,8,0.30
+evolving wilds,Load or Cast,6,0.30
+evolving wilds,Load or Cast,14,0.30
+evolving wilds,Load or Cast,2,0.30
+evolving wilds,Load or Cast,8,0.30
+evolving wilds,Load or Cast,2,0.30
+evolving wilds,Load or Cast,15,0.30
+evolving wilds,Load or Cast,18,0.25
+evolving wilds,Load or Cast,12,0.25
+evolving wilds,Load or Cast,8,0.25
+evolving wilds,Load or Cast,2,0.25
+evolving wilds,Load or Cast,18,0.25
+evolving wilds,Load or Cast,27,0.10
+evolving wilds,Reino Magic,11,0.25
+evolving wilds,Reino Magic,1,3.00
+evolving wilds,CL TCG,8,0.23
+evolving wilds,CL TCG,6,0.11
+evolving wilds,CL TCG,4,0.11
+evolving wilds,CL TCG,4,0.11
+evolving wilds,CL TCG,3,0.11
+evolving wilds,CL TCG,2,0.11
+evolving wilds,CL TCG,2,0.11
+evolving wilds,CL TCG,1,0.11
+evolving wilds,CL TCG,1,3.25
+evolving wilds,CL TCG,1,0.11
+evolving wilds,CL TCG,1,0.11
+evolving wilds,CL TCG,1,0.11
+evolving wilds,CL TCG,1,0.11
+evolving wilds,Toca do Quati,13,0.70
+evolving wilds,Toca do Quati,7,0.70
+evolving wilds,Toca do Quati,7,0.60
+evolving wilds,Toca do Quati,6,0.60
+evolving wilds,Toca do Quati,4,0.25
+evolving wilds,Toca do Quati,3,0.25
+evolving wilds,Toca do Quati,3,0.25
+evolving wilds,Toca do Quati,2,0.60
+evolving wilds,Toca do Quati,2,2.90
+evolving wilds,Toca do Quati,2,0.25
+evolving wilds,Toca do Quati,2,0.70
+evolving wilds,Toca do Quati,1,0.25
+evolving wilds,Toca do Quati,1,0.25
+evolving wilds,Nerdz Cards,28,0.25
+evolving wilds,Nerdz Cards,8,0.25
+evolving wilds,Nerdz Cards,6,2.90
+evolving wilds,Nerdz Cards,4,0.50
+evolving wilds,Nerdz Cards,1,1.90
+evolving wilds,Nerdz Cards,1,1.90
+evolving wilds,Top Deck RN,38,0.25
+evolving wilds,Top Deck RN,8,0.25
+evolving wilds,Top Deck RN,6,0.25
+evolving wilds,Top Deck RN,3,0.25
+evolving wilds,Top Deck RN,3,0.25
+evolving wilds,Top Deck RN,1,2.98
+evolving wilds,Top Deck RN,1,0.25
+evolving wilds,Power9,2,2.50
+evolving wilds,Power9,3,2.25
+evolving wilds,Power9,15,1.50
+evolving wilds,Power9,1,1.00
+evolving wilds,Power9,2,0.40
+evolving wilds,Power9,1,0.25
+evolving wilds,Power9,23,0.25
+evolving wilds,Power9,3,0.25
+evolving wilds,Power9,25,0.25
+evolving wilds,Power9,1,0.25
+evolving wilds,Power9,3,0.25
+evolving wilds,Power9,7,0.25
+evolving wilds,Power9,36,0.25
+evolving wilds,Power9,22,0.25
+evolving wilds,Power9,3,0.25
+evolving wilds,Power9,39,0.25
+evolving wilds,Power9,8,0.25
+evolving wilds,Power9,2,0.25
+evolving wilds,Power9,8,0.25
+evolving wilds,Power9,8,0.25
+evolving wilds,Power9,6,0.20
+evolving wilds,Power9,3,0.20
+evolving wilds,Power9,4,0.20
+evolving wilds,Power9,9,0.20
+evolving wilds,Power9,3,0.20
+evolving wilds,Power9,14,0.20
+evolving wilds,Magic Club,16,0.30
+evolving wilds,Magic Club,6,0.25
+evolving wilds,Magic Club,4,0.25
+evolving wilds,Magic Club,3,0.25
+evolving wilds,Magic Club,3,0.25
+evolving wilds,Magic Club,3,0.25
+evolving wilds,Magic Club,3,0.25
+evolving wilds,Magic Club,2,0.25
+evolving wilds,Magic Club,2,0.25
+evolving wilds,Magic Club,2,0.25
+evolving wilds,Magic Club,2,0.25
+evolving wilds,Magic Club,1,0.25
+evolving wilds,Magic Club,1,2.45
+evolving wilds,Magic Club,1,0.25
+evolving wilds,Magic Club,1,0.25
+evolving wilds,Magic Club,1,0.25
+evolving wilds,Magic Club,1,0.25
+evolving wilds,Magic Club,1,0.25
+evolving wilds,Tabuleria,16,0.50
+evolving wilds,Tabuleria,2,0.50
+evolving wilds,Tabuleria,1,0.25
+evolving wilds,Tabuleria,1,0.50
+evolving wilds,Tabuleria,1,2.00
+evolving wilds,MTG Cards Games,144,0.45
+evolving wilds,MTG Cards Games,142,0.45
+evolving wilds,MTG Cards Games,129,0.45
+evolving wilds,MTG Cards Games,126,0.65
+evolving wilds,MTG Cards Games,87,0.45
+evolving wilds,MTG Cards Games,78,0.45
+evolving wilds,MTG Cards Games,44,0.45
+evolving wilds,MTG Cards Games,37,0.45
+evolving wilds,MTG Cards Games,36,0.45
+evolving wilds,MTG Cards Games,31,0.45
+evolving wilds,MTG Cards Games,27,0.40
+evolving wilds,MTG Cards Games,23,0.45
+evolving wilds,MTG Cards Games,23,0.45
+evolving wilds,MTG Cards Games,23,0.45
+evolving wilds,MTG Cards Games,21,0.45
+evolving wilds,MTG Cards Games,21,0.45
+evolving wilds,MTG Cards Games,17,0.45
+evolving wilds,MTG Cards Games,11,0.45
+evolving wilds,MTG Cards Games,8,0.45
+evolving wilds,MTG Cards Games,8,0.45
+evolving wilds,MTG Cards Games,3,0.90
+evolving wilds,MTG Cards Games,1,1.95
+evolving wilds,Miragem Hobby,8,0.25
+evolving wilds,Miragem Hobby,1,0.25
+evolving wilds,Miragem Hobby,9,0.49
+evolving wilds,Miragem Hobby,16,0.49
+evolving wilds,Miragem Hobby,8,0.50
+evolving wilds,Miragem Hobby,3,0.65
+evolving wilds,Miragem Hobby,1,1.95
+evolving wilds,Miragem Hobby,2,2.95
+evolving wilds,Tutubahia,4,0.63
+evolving wilds,Tutubahia,4,0.63
+evolving wilds,Tutubahia,4,0.63
+evolving wilds,Tutubahia,4,0.63
+evolving wilds,Tutubahia,4,0.63
+evolving wilds,Tutubahia,4,0.63
+evolving wilds,Tutubahia,4,0.63
+evolving wilds,Tutubahia,2,1.25
+evolving wilds,WCG - World Card Games,2,1.30
+evolving wilds,WCG - World Card Games,1,0.45
+evolving wilds,WCG - World Card Games,1,0.45
+evolving wilds,WCG - World Card Games,3,0.45
+evolving wilds,WCG - World Card Games,6,0.45
+evolving wilds,WCG - World Card Games,4,0.45
+evolving wilds,DeckMasterGames,23,0.75
+evolving wilds,DeckMasterGames,21,0.75
+evolving wilds,DeckMasterGames,21,0.75
+evolving wilds,DeckMasterGames,15,0.75
+evolving wilds,DeckMasterGames,15,0.75
+evolving wilds,DeckMasterGames,11,0.75
+evolving wilds,DeckMasterGames,8,0.65
+evolving wilds,DeckMasterGames,7,0.75
+evolving wilds,DeckMasterGames,5,0.75
+evolving wilds,DeckMasterGames,5,1.10
+evolving wilds,DeckMasterGames,5,0.75
+evolving wilds,DeckMasterGames,5,0.75
+evolving wilds,DeckMasterGames,4,0.75
+evolving wilds,DeckMasterGames,4,0.75
+evolving wilds,DeckMasterGames,4,0.75
+evolving wilds,DeckMasterGames,3,0.75
+evolving wilds,DeckMasterGames,3,0.75
+evolving wilds,DeckMasterGames,3,0.70
+evolving wilds,DeckMasterGames,3,0.65
+evolving wilds,DeckMasterGames,2,0.75
+evolving wilds,DeckMasterGames,2,0.75
+evolving wilds,DeckMasterGames,2,0.75
+evolving wilds,DeckMasterGames,1,0.75
+evolving wilds,DeckMasterGames,1,0.75
+evolving wilds,DeckMasterGames,1,0.75
+evolving wilds,DeckMasterGames,1,0.75
+evolving wilds,Rayearth Games,9,0.15
+evolving wilds,Rayearth Games,1,1.00
+evolving wilds,Power Up Games,1,1.00
+evolving wilds,Portal,19,0.50
+evolving wilds,Portal,15,0.25
+evolving wilds,Portal,12,0.50
+evolving wilds,Portal,9,0.25
+evolving wilds,Portal,7,0.25
+evolving wilds,Portal,7,0.25
+evolving wilds,Portal,6,0.25
+evolving wilds,Portal,6,0.25
+evolving wilds,Portal,5,0.25
+evolving wilds,Portal,4,0.25
+evolving wilds,Portal,3,0.50
+evolving wilds,Portal,3,0.25
+evolving wilds,Portal,2,0.25
+evolving wilds,Portal,2,0.50
+evolving wilds,Portal,2,0.25
+evolving wilds,Portal,2,0.50
+evolving wilds,Portal,1,1.00
+evolving wilds,Portal,1,0.25
+evolving wilds,Portal,1,0.25
+evolving wilds,Território Card Games,4,0.99
+evolving wilds,Território Card Games,1,0.50
+evolving wilds,Território Card Games,7,0.50
+evolving wilds,Meruru,19,0.55
+evolving wilds,Meruru,18,0.55
+evolving wilds,Meruru,17,0.55
+evolving wilds,Meruru,17,0.55
+evolving wilds,Meruru,16,0.55
+evolving wilds,Meruru,13,0.55
+evolving wilds,Meruru,11,0.55
+evolving wilds,Meruru,9,0.55
+evolving wilds,Meruru,9,0.55
+evolving wilds,Meruru,9,0.55
+evolving wilds,Meruru,7,0.55
+evolving wilds,Meruru,6,0.55
+evolving wilds,Meruru,5,0.55
+evolving wilds,Meruru,5,0.55
+evolving wilds,Meruru,5,0.55
+evolving wilds,Meruru,4,0.55
+evolving wilds,Meruru,4,0.55
+evolving wilds,Meruru,3,0.55
+evolving wilds,Meruru,3,0.55
+evolving wilds,Meruru,2,0.75
+evolving wilds,Meruru,2,0.98
+evolving wilds,Meruru,2,0.55
+evolving wilds,Meruru,1,0.55
+evolving wilds,Meruru,1,0.55
+evolving wilds,Livraria do Infinito - MagicJebb,2,0.94
+evolving wilds,Livraria do Infinito - MagicJebb,2,0.17
+evolving wilds,Livraria do Infinito - MagicJebb,1,0.14
+evolving wilds,Livraria do Infinito - MagicJebb,2,0.14
+evolving wilds,Livraria do Infinito - MagicJebb,4,0.14
+evolving wilds,Livraria do Infinito - MagicJebb,3,0.13
+evolving wilds,Livraria do Infinito - MagicJebb,3,0.13
+evolving wilds,Livraria do Infinito - MagicJebb,4,0.12
+evolving wilds,Livraria do Infinito - MagicJebb,3,0.12
+evolving wilds,Livraria do Infinito - MagicJebb,4,0.11
+evolving wilds,Livraria do Infinito - MagicJebb,3,0.11
+evolving wilds,Livraria do Infinito - MagicJebb,4,0.11
+evolving wilds,Livraria do Infinito - MagicJebb,4,0.11
+evolving wilds,Livraria do Infinito - MagicJebb,4,0.11
+evolving wilds,Livraria do Infinito - MagicJebb,3,0.11
+evolving wilds,Livraria do Infinito - MagicJebb,3,0.09
+evolving wilds,ManaFix.net,12,0.75
+evolving wilds,ManaFix.net,7,0.75
+evolving wilds,ManaFix.net,7,0.75
+evolving wilds,ManaFix.net,6,0.75
+evolving wilds,ManaFix.net,6,0.75
+evolving wilds,ManaFix.net,5,0.75
+evolving wilds,ManaFix.net,5,0.75
+evolving wilds,ManaFix.net,4,0.75
+evolving wilds,ManaFix.net,3,0.75
+evolving wilds,ManaFix.net,3,0.75
+evolving wilds,ManaFix.net,2,0.75
+evolving wilds,ManaFix.net,2,0.55
+evolving wilds,ManaFix.net,2,0.75
+evolving wilds,ManaFix.net,2,0.75
+evolving wilds,ManaFix.net,2,0.45
+evolving wilds,ManaFix.net,1,0.75
+evolving wilds,ManaFix.net,1,0.75
+evolving wilds,Tolaria,9,0.50
+evolving wilds,New !QUEST STORE,6,0.50
+evolving wilds,Armada Nerd Hobby Store,9,0.50
+evolving wilds,Armada Nerd Hobby Store,6,0.50
+evolving wilds,Armada Nerd Hobby Store,5,0.50
+evolving wilds,Armada Nerd Hobby Store,4,0.50
+evolving wilds,Magic Store Brasil,4,0.50
+evolving wilds,Magic Store Brasil,14,0.50
+evolving wilds,Magic Store Brasil,28,0.50
+evolving wilds,Magic Store Brasil,1,0.50
+evolving wilds,Magic Store Brasil,1,0.50
+evolving wilds,Magic Store Brasil,2,0.50
+evolving wilds,Magic Store Brasil,4,0.50
+evolving wilds,Magic Store Brasil,2,0.50
+evolving wilds,Magic Store Brasil,27,0.50
+evolving wilds,Magic Store Brasil,5,0.50
+evolving wilds,Magic Store Brasil,4,0.50
+evolving wilds,Magic Store Brasil,2,0.50
+evolving wilds,Magic Store Brasil,4,0.50
+evolving wilds,Magic Store Brasil,59,0.50
+evolving wilds,Magic Store Brasil,6,0.50
+evolving wilds,Magic Store Brasil,2,0.50
+evolving wilds,Magic Store Brasil,2,0.50
+evolving wilds,Magic Store Brasil,19,0.50
+evolving wilds,Magic Store Brasil,3,0.40
+evolving wilds,Magic Store Brasil,1,0.40
+evolving wilds,Magic Store Brasil,1,0.40
+evolving wilds,Magic Store Brasil,3,0.40
+evolving wilds,Magic Store Brasil,4,0.40
+evolving wilds,Magic Store Brasil,1,0.40
+evolving wilds,Magic Store Brasil,1,0.10
+evolving wilds,Tokenlandia Cards,15,0.50
+evolving wilds,Tokenlandia Cards,14,0.50
+evolving wilds,Tokenlandia Cards,5,0.50
+evolving wilds,Tokenlandia Cards,5,0.50
+evolving wilds,Tokenlandia Cards,4,0.50
+evolving wilds,Tokenlandia Cards,3,0.50
+evolving wilds,Tokenlandia Cards,2,0.50
+evolving wilds,Tokenlandia Cards,2,0.50
+evolving wilds,Tokenlandia Cards,2,0.50
+evolving wilds,Tokenlandia Cards,1,0.50
+evolving wilds,Tokenlandia Cards,1,0.50
+evolving wilds,Tokenlandia Cards,1,0.50
+evolving wilds,Tokenlandia Cards,1,0.50
+evolving wilds,Tokenlandia Cards,1,0.50
+evolving wilds,Tokenlandia Cards,1,0.50
+evolving wilds,PRCShop,47,0.50
+evolving wilds,PRCShop,47,0.50
+evolving wilds,PRCShop,39,0.50
+evolving wilds,PRCShop,34,0.50
+evolving wilds,PRCShop,9,0.50
+evolving wilds,PRCShop,7,0.50
+evolving wilds,Mulligan Geek Store,19,0.50
+evolving wilds,Mulligan Geek Store,16,0.50
+evolving wilds,Mulligan Geek Store,15,0.50
+evolving wilds,Mulligan Geek Store,15,0.50
+evolving wilds,Mulligan Geek Store,12,0.50
+evolving wilds,Mulligan Geek Store,12,0.50
+evolving wilds,Mulligan Geek Store,9,0.50
+evolving wilds,Mulligan Geek Store,7,0.50
+evolving wilds,Mulligan Geek Store,5,0.25
+evolving wilds,Mulligan Geek Store,4,0.50
+evolving wilds,Mulligan Geek Store,4,0.50
+evolving wilds,Mulligan Geek Store,4,0.50
+evolving wilds,Mulligan Geek Store,4,0.50
+evolving wilds,Mulligan Geek Store,3,0.50
+evolving wilds,Mulligan Geek Store,3,0.50
+evolving wilds,Mulligan Geek Store,3,0.50
+evolving wilds,Mulligan Geek Store,1,0.50
+evolving wilds,Bahia Store,3,0.47
+evolving wilds,Cards Hall,18,0.45
+evolving wilds,Cards Hall,14,0.45
+evolving wilds,Cards Hall,14,0.45
+evolving wilds,Cards Hall,12,0.45
+evolving wilds,Cards Hall,11,0.45
+evolving wilds,Cards Hall,11,0.45
+evolving wilds,Cards Hall,11,0.45
+evolving wilds,Cards Hall,8,0.45
+evolving wilds,Cards Hall,7,0.45
+evolving wilds,Cards Hall,6,0.45
+evolving wilds,Cards Hall,6,0.45
+evolving wilds,Cards Hall,3,0.45
+evolving wilds,Cards Hall,2,0.45
+evolving wilds,Cards Hall,2,0.45
+evolving wilds,Cards Hall,1,0.45
+evolving wilds,Cards Hall,1,0.45
+evolving wilds,Magic Leste,8,0.39
+evolving wilds,Magic Leste,1,0.35
+evolving wilds,Magic Leste,2,0.34
+evolving wilds,Magic Leste,1,0.34
+evolving wilds,Magic Leste,2,0.34
+evolving wilds,Magic Leste,2,0.34
+evolving wilds,Magic Leste,2,0.34
+evolving wilds,Magic Leste,6,0.34
+evolving wilds,Magic Leste,16,0.34
+evolving wilds,Magic Leste,1,0.34
+evolving wilds,Magic Leste,14,0.19
+evolving wilds,Taverna Geek,16,0.15
+evolving wilds,Taverna Geek,15,0.15
+evolving wilds,Taverna Geek,14,0.30
+evolving wilds,Taverna Geek,12,0.10
+evolving wilds,Taverna Geek,11,0.20
+evolving wilds,Taverna Geek,6,0.15
+evolving wilds,Taverna Geek,5,0.20
+evolving wilds,Taverna Geek,5,0.15
+evolving wilds,Taverna Geek,4,0.25
+evolving wilds,Taverna Geek,4,0.15
+evolving wilds,Taverna Geek,3,0.15
+evolving wilds,Taverna Geek,2,0.30
+evolving wilds,Taverna Geek,2,0.20
+evolving wilds,Taverna Geek,1,0.30
+evolving wilds,Taverna Geek,1,0.20
+evolving wilds,Taverna Geek,1,0.20
+evolving wilds,Taverna Geek,1,0.25
+evolving wilds,Taverna Geek,1,0.30
+evolving wilds,Taverna Geek,1,0.25
+evolving wilds,Cards e Games,136,0.25
+evolving wilds,Cards e Games,35,0.25
+evolving wilds,Cards e Games,31,0.25
+evolving wilds,Cards e Games,27,0.25
+evolving wilds,Cards e Games,25,0.25
+evolving wilds,Cards e Games,19,0.25
+evolving wilds,Cards e Games,18,0.25
+evolving wilds,Cards e Games,18,0.25
+evolving wilds,Cards e Games,16,0.25
+evolving wilds,Cards e Games,16,0.25
+evolving wilds,Cards e Games,15,0.25
+evolving wilds,Cards e Games,7,0.25
+evolving wilds,Cards e Games,7,0.25
+evolving wilds,Cards e Games,4,0.25
+evolving wilds,Cards e Games,3,0.25
+evolving wilds,Cards e Games,2,0.25
+evolving wilds,Cards e Games,2,0.25
+evolving wilds,Cards e Games,1,0.25
+evolving wilds,Cards e Games,1,0.25
+evolving wilds,Loja Miracles,1,0.25
+evolving wilds,Loja Miracles,1,0.20
+evolving wilds,Loja Miracles,7,0.20
+evolving wilds,Loja Miracles,1,0.15
+evolving wilds,Loja Miracles,2,0.15
+evolving wilds,Loja Miracles,4,0.15
+evolving wilds,Loja Miracles,1,0.15
+evolving wilds,Loja Miracles,2,0.15
+evolving wilds,Loja Miracles,1,0.15
+evolving wilds,Loja Miracles,1,0.15
+evolving wilds,Loja Miracles,1,0.15
+evolving wilds,Loja Miracles,1,0.15
+evolving wilds,Loja Miracles,1,0.15
+evolving wilds,Segura Card & Games,9,0.25
+evolving wilds,Segura Card & Games,5,0.25
+evolving wilds,Segura Card & Games,2,0.21
+evolving wilds,Segura Card & Games,2,0.25
+evolving wilds,Segura Card & Games,1,0.25
+evolving wilds,Segura Card & Games,1,0.25
+evolving wilds,Hobby Center,1,0.25
+evolving wilds,Hobby Center,2,0.25
+evolving wilds,Hobby Center,3,0.25
+evolving wilds,Hobby Center,1,0.25
+evolving wilds,Hobby Center,1,0.25
+evolving wilds,Hobby Center,5,0.25
+evolving wilds,Hobby Center,1,0.25
+evolving wilds,Hobby Center,4,0.25
+evolving wilds,Hobby Center,1,0.25
+evolving wilds,Hobby Center,5,0.15
+evolving wilds,Hobby Center,1,0.15
+evolving wilds,Hobby Center,2,0.15
+evolving wilds,Arena Hobby Store,22,0.25
+evolving wilds,Arena Hobby Store,1,0.25
+evolving wilds,Prime MTG,8,0.25
+evolving wilds,Prime MTG,6,0.25
+evolving wilds,Prime MTG,6,0.24
+evolving wilds,Prime MTG,6,0.25
+evolving wilds,Prime MTG,2,0.25
+evolving wilds,Prime MTG,2,0.25
+evolving wilds,Prime MTG,2,0.25
+evolving wilds,Prime MTG,1,0.25
+evolving wilds,Prime MTG,1,0.25
+evolving wilds,Prime MTG,1,0.25
+evolving wilds,Prime MTG,1,0.25
+evolving wilds,Cúpula do Trovão,2,0.25
+evolving wilds,Elder Dragon Brasil,12,0.25
+evolving wilds,Elder Dragon Brasil,11,0.25
+evolving wilds,Elder Dragon Brasil,11,0.25
+evolving wilds,Elder Dragon Brasil,9,0.25
+evolving wilds,Elder Dragon Brasil,9,0.25
+evolving wilds,Elder Dragon Brasil,9,0.25
+evolving wilds,Elder Dragon Brasil,9,0.25
+evolving wilds,Elder Dragon Brasil,8,0.25
+evolving wilds,Elder Dragon Brasil,3,0.25
+evolving wilds,Condado Card Games,1,0.23
+evolving wilds,Loja Caverna do Dragão,3,0.20
+evolving wilds,Loja Blood Moon,7,0.20
+evolving wilds,Loja Blood Moon,7,0.20
+evolving wilds,Loja Blood Moon,7,0.20
+evolving wilds,Loja Blood Moon,3,0.20
+evolving wilds,Loja Blood Moon,2,0.20
+evolving wilds,Millennium Cards & Games,4,0.20
+evolving wilds,Millennium Cards & Games,2,0.20
+evolving wilds,Millennium Cards & Games,1,0.20
+evolving wilds,Millennium Cards & Games,1,0.20
+evolving wilds,Millennium Cards & Games,1,0.20
+evolving wilds,Millennium Cards & Games,1,0.20
+evolving wilds,Ilusões Industriais,1,0.15
+evolving wilds,Ilusões Industriais,1,0.15
+evolving wilds,Ilusões Industriais,1,0.15
+evolving wilds,Ilusões Industriais,1,0.15
+evolving wilds,Ilusões Industriais,2,0.15
+evolving wilds,Ilusões Industriais,1,0.15
+evolving wilds,LOJA CALABOUÇO - HOBBIES E COLECIONÁVEIS,1,0.14
+evolving wilds,LOJA CALABOUÇO - HOBBIES E COLECIONÁVEIS,1,0.10
+evolving wilds,Fire Ice Card Games,6,0.08
+evolving wilds,Fire Ice Card Games,3,0.08
+evolving wilds,Fire Ice Card Games,2,0.07
+evolving wilds,Fire Ice Card Games,2,0.08
+evolving wilds,Fire Ice Card Games,2,0.08
+evolving wilds,Fire Ice Card Games,1,0.08
+evolving wilds,Moinho de Vento Geek Store,24,0.10
+evolving wilds,Refúgio do Dragão,9,0.10
+island,Cards Store,2,39.00
+island,Cards Store,2,14.90
+island,Cards Store,1,36.00
+island,Cards Store,1,3.77
+island,Cards Store,1,15.00
+island,Cards Store,1,38.00
+island,Liga Arena,1,4.09
+island,Liga Arena,1,39.81
+island,Liga Arena,2,14.16
+island,Liga Arena,3,17.58
+island,Magic Club,13,16.75
+island,Magic Club,5,9.99
+island,Magic Club,1,23.00
+island,Magic Club,1,39.40
+island,Magic Club,1,29.00
+island,Magic Leste,3,29.90
+island,Magic Leste,1,24.90
+island,Magic Leste,22,6.99
+island,Magic Leste,1,0.30
+island,Magic Leste,8,0.30
+island,Treasure Cards,11,9.00
+island,Treasure Cards,11,5.39
+island,Treasure Cards,6,18.90
+island,Treasure Cards,1,27.00
+island,Treasure Cards,1,10.80
+island,Treasure Cards,1,0.25
+island,Load or Cast,1,25.45
+island,Load or Cast,1,15.20
+island,Load or Cast,2,15.20
+island,Load or Cast,3,8.15
+island,Load or Cast,8,7.70
+island,Load or Cast,1,3.80
+island,Load or Cast,1,2.90
+island,Load or Cast,1,2.90
+island,Load or Cast,3,1.90
+island,Load or Cast,3,1.90
+island,Load or Cast,9,0.45
+island,Load or Cast,2,0.30
+island,Cards e Games,2,24.99
+island,Cards e Games,1,0.49
+island,A Loja do Pai,3,28.00
+island,Meruru,18,1.75
+island,Meruru,14,1.75
+island,Meruru,8,19.90
+island,Meruru,8,16.98
+island,Meruru,5,24.95
+island,Meruru,1,21.95
+island,Goblin Hero Store,5,24.00
+island,TCGeeK,52,0.50
+island,TCGeeK,12,20.00
+island,TCGeeK,9,8.00
+island,TCGeeK,6,10.00
+island,TCGeeK,6,0.50
+island,TCGeeK,4,0.45
+island,TCGeeK,4,0.45
+island,TCGeeK,4,10.00
+island,TCGeeK,3,7.20
+island,TCGeeK,2,24.00
+island,TCGeeK,2,3.60
+island,TCGeeK,1,9.00
+island,TCGeeK,1,2.80
+island,TCGeeK,1,3.00
+island,TCGeeK,1,0.45
+island,Cards Of Paradise,171,15.80
+island,Cards Of Paradise,123,0.60
+island,Cards Of Paradise,37,0.40
+island,Cards Of Paradise,37,0.40
+island,Cards Of Paradise,35,0.40
+island,Cards Of Paradise,34,0.40
+island,Cards Of Paradise,33,11.80
+island,Cards Of Paradise,33,0.40
+island,Cards Of Paradise,32,0.40
+island,Cards Of Paradise,17,7.80
+island,Cards Of Paradise,17,10.20
+island,Cards Of Paradise,3,23.80
+island,Cards Of Paradise,2,3.80
+island,Cards Of Paradise,2,0.80
+island,Cards Of Paradise,2,7.80
+island,Cards Of Paradise,2,3.80
+island,Cards Of Paradise,2,3.80
+island,Cards Of Paradise,2,3.80
+island,Cards Of Paradise,1,0.80
+island,Cards Of Paradise,1,0.40
+island,Hobby Center,1,22.00
+island,Cabala MtG,1,22.00
+island,Cabala MtG,1,15.00
+island,Tokenlandia Cards,2,20.00
+island,Tokenlandia Cards,1,18.00
+island,Tutubahia,11,10.00
+island,Tutubahia,4,20.00
+island,Tutubahia,1,10.00
+island,Top Deck RN,1,19.99
+island,Loja Grimorium,66,0.49
+island,Loja Grimorium,35,6.99
+island,Loja Grimorium,16,0.49
+island,Loja Grimorium,15,0.49
+island,Loja Grimorium,14,0.49
+island,Loja Grimorium,11,19.99
+island,Loja Grimorium,6,0.49
+island,Loja Grimorium,5,0.25
+island,Loja Grimorium,2,1.99
+island,Loja Grimorium,2,2.99
+island,Loja Grimorium,1,9.99
+island,Loja Grimorium,1,1.99
+island,Magic Cat,2,19.90
+island,Cards Outlet,15,19.95
+island,Cards Outlet,2,0.75
+island,Chuck TCG,7,1.50
+island,Chuck TCG,9,1.50
+island,Chuck TCG,1,2.00
+island,Chuck TCG,1,3.00
+island,Chuck TCG,12,10.00
+island,Chuck TCG,9,12.50
+island,Chuck TCG,9,19.50
+island,Chuck TCG,3,19.50
+island,Chuck TCG,8,19.50
+island,Konklave FunStore,6,18.39
+island,Konklave FunStore,1,18.39
+island,Konklave FunStore,1,4.50
+island,Konklave FunStore,1,3.20
+island,Konklave FunStore,3,2.00
+island,Konklave FunStore,5,0.40
+island,O Grimório,26,17.90
+island,CHQ Cards,25,8.00
+island,CHQ Cards,7,19.90
+island,Mulligan Geek Store,37,18.25
+island,Mulligan Geek Store,21,12.25
+island,RED Jogos,1,15.00
+island,RED Jogos,17,10.00
+island,RED Jogos,3,9.60
+island,RED Jogos,12,9.60
+island,RED Jogos,9,7.20
+island,RED Jogos,18,8.00
+island,RED Jogos,1,6.40
+island,RED Jogos,1,5.00
+island,RED Jogos,2,4.50
+island,RED Jogos,3,3.00
+island,RED Jogos,1,3.00
+island,RED Jogos,1,2.50
+island,RED Jogos,1,2.00
+island,RED Jogos,9,2.00
+island,RED Jogos,3,2.00
+island,RED Jogos,16,0.50
+island,Multiverso Cards Comercio de Jogos e Acessorios Lt,4,8.34
+island,Multiverso Cards Comercio de Jogos e Acessorios Lt,4,6.00
+island,Multiverso Cards Comercio de Jogos e Acessorios Lt,4,4.32
+island,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,2.70
+island,Jaw Games,4,15.00
+island,Flow Games,2,16.24
+island,Jaw Games,4,15.00
+island,Jaw Games,2,8.00
+island,Jaw Games,2,0.15
+island,Flow Games,2,6.59
+island,Flow Games,1,4.30
+island,Flow Games,2,3.72
+island,Pharaoh\'s Shop,18,9.90
+island,Pharaoh\'s Shop,14,15.00
+island,Pharaoh\'s Shop,12,9.50
+island,Pharaoh\'s Shop,2,15.00
+island,ProNerd,1,15.77
+island,ProNerd,2,1.95
+island,ProNerd,8,1.20
+island,CL TCG,8,7.75
+island,CL TCG,4,0.20
+island,CL TCG,2,0.25
+island,CL TCG,1,15.00
+island,CL TCG,1,12.00
+island,GeeK Pit,3,15.00
+island,Geex Hobby Store,11,1.49
+island,Geex Hobby Store,2,14.99
+island,Livraria do Infinito - MagicJebb,1,14.45
+island,Livraria do Infinito - MagicJebb,4,6.80
+island,Livraria do Infinito - MagicJebb,1,3.83
+island,Livraria do Infinito - MagicJebb,1,0.43
+island,Livraria do Infinito - MagicJebb,2,0.23
+island,Livraria do Infinito - MagicJebb,4,0.19
+island,DeckMasterGames,4,11.88
+island,DeckMasterGames,3,14.90
+island,DeckMasterGames,1,12.00
+island,Medieval Cards,51,0.24
+island,Medieval Cards,36,9.50
+island,Pi Games,18,0.45
+island,Pi Games,11,4.99
+island,Pi Games,8,12.00
+island,Pi Games,7,0.33
+island,Pi Games,6,0.79
+island,Pi Games,2,0.99
+island,Pi Games,2,5.99
+island,Pi Games,2,12.99
+island,Pi Games,1,0.50
+island,Pi Games,1,4.49
+island,Pi Games,1,3.99
+island,Pi Games,1,1.99
+island,Ascensão,15,0.25
+island,Ascensão,1,0.45
+island,Ascensão,1,1.90
+island,Ascensão,1,2.30
+island,Ascensão,1,1.99
+island,Ascensão,1,11.95
+island,Ascensão,1,0.17
+island,Ascensão,1,0.38
+island,City Class Games,4,4.59
+island,City Class Games,3,5.51
+island,City Class Games,3,11.03
+island,City Class Games,1,3.67
+island,City Class Games,1,3.67
+island,City Class Games,1,3.67
+island,Gideon\'s Palace,16,1.50
+island,Gideon\'s Palace,5,0.30
+island,Gideon\'s Palace,4,1.50
+island,Gideon\'s Palace,3,10.00
+island,Gideon\'s Palace,1,9.00
+island,Gideon\'s Palace,1,3.00
+island,Armada Nerd Hobby Store,5,10.00
+island,Armada Nerd Hobby Store,1,2.50
+island,Legion Board & Card Games,22,9.45
+island,Legion Board & Card Games,7,0.95
+island,Legion Board & Card Games,4,2.85
+island,Legion Board & Card Games,1,2.85
+island,Millennium Cards & Games,1,9.00
+island,Millennium Cards & Games,1,2.00
+island,Monster Games Cards,2,10.00
+island,Mineral Games,9,9.00
+island,House of Cards - Card Games,8,8.95
+island,House of Cards - Card Games,2,6.95
+island,Xaracards,15,7.49
+island,Xaracards,2,0.99
+island,A Taverna,2,8.50
+island,Tabuleria,24,0.25
+island,Tabuleria,4,7.50
+island,Loja Caverna do Dragão,11,1.00
+island,Loja Caverna do Dragão,5,6.50
+island,Loja Caverna do Dragão,3,7.90
+island,Loja Caverna do Dragão,2,0.30
+island,Loja Caverna do Dragão,1,2.00
+island,Loja Caverna do Dragão,1,3.50
+island,Cards Hall,1,5.00
+island,Cards Hall,1,1.00
+island,Magic Store Brasil,1,3.00
+island,Magic Store Brasil,9,0.50
+island,Magic Store Brasil,2,0.50
+island,Magic Store Brasil,2,0.50
+island,Cúpula do Trovão,16,3.00
+island,Cúpula do Trovão,2,2.50
+island,MTG Caxias Cards,6,2.99
+island,MTG Caxias Cards,4,1.00
+island,under3,1,1.98
+island,under3,1,1.98
+island,Miragem Hobby,5,0.30
+island,Miragem Hobby,22,1.89
+island,Padrinho: Card Store,1,1.49
+island,Magicbembarato,6,0.98
+island,Lets Collect,45,0.68
+island,Lets Collect,41,0.41
+island,Lets Collect,41,0.45
+island,Lets Collect,36,0.45
+island,Lets Collect,35,0.68
+island,Lets Collect,26,0.68
+island,Lets Collect,6,0.68
+island,Lets Collect,1,0.41
+island,Lets Collect,1,0.45
+island,Player`s Stop,16,0.63
+island,Player`s Stop,7,0.35
+swamp,Tutubahia,9,8.75
+swamp,Tutubahia,4,17.50
+swamp,Tutubahia,3,240.00
+swamp,Tutubahia,2,20.00
+island,Território Card Games,4,0.50
+island,PRCShop,21,0.50
+swamp,Miragem Hobby,4,0.99
+swamp,Miragem Hobby,2,3.99
+swamp,Miragem Hobby,4,11.95
+swamp,Miragem Hobby,45,13.99
+swamp,Miragem Hobby,1,234.75
+swamp,TCGeeK,42,0.50
+swamp,TCGeeK,11,15.00
+swamp,TCGeeK,7,0.50
+swamp,TCGeeK,6,6.40
+swamp,TCGeeK,4,10.00
+swamp,TCGeeK,4,0.45
+swamp,TCGeeK,4,7.20
+swamp,TCGeeK,3,18.00
+swamp,TCGeeK,2,10.00
+swamp,TCGeeK,2,25.60
+swamp,TCGeeK,2,2.00
+swamp,TCGeeK,2,18.00
+swamp,TCGeeK,2,0.50
+swamp,TCGeeK,1,450.00
+swamp,TCGeeK,1,28.80
+swamp,TCGeeK,1,2.50
+swamp,Bazar de Bagdá,51,14.99
+swamp,Bazar de Bagdá,46,11.99
+swamp,Bazar de Bagdá,23,49.99
+swamp,Bazar de Bagdá,14,39.99
+swamp,Bazar de Bagdá,5,44.99
+swamp,Bazar de Bagdá,4,24.99
+swamp,Bazar de Bagdá,2,319.99
+swamp,Multiverso Cards Comercio de Jogos e Acessorios Lt,5,15.13
+swamp,Multiverso Cards Comercio de Jogos e Acessorios Lt,4,37.00
+swamp,Multiverso Cards Comercio de Jogos e Acessorios Lt,4,4.50
+swamp,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,260.00
+swamp,Chuck TCG,1,4.00
+swamp,Chuck TCG,1,6.50
+swamp,Chuck TCG,5,9.50
+swamp,Chuck TCG,13,12.50
+swamp,Chuck TCG,15,14.50
+swamp,Chuck TCG,7,19.50
+swamp,Chuck TCG,1,19.50
+swamp,Chuck TCG,1,249.50
+swamp,Moinho de Vento Geek Store,1,229.99
+swamp,Goblin Hero Store,7,20.00
+swamp,Goblin Hero Store,1,13.00
+swamp,Goblin Hero Store,1,130.00
+swamp,Toca do Quati,11,25.00
+swamp,Toca do Quati,6,16.00
+swamp,Toca do Quati,3,40.00
+swamp,Nerdz Cards,16,4.90
+swamp,Nerdz Cards,14,39.90
+swamp,Nerdz Cards,6,37.90
+swamp,Nerdz Cards,4,14.90
+swamp,Nerdz Cards,3,4.90
+swamp,Nerdz Cards,1,21.90
+swamp,Pharaoh\'s Shop,25,9.90
+swamp,Pharaoh\'s Shop,17,9.50
+swamp,Pharaoh\'s Shop,6,12.00
+swamp,Pharaoh\'s Shop,2,2.50
+swamp,Pharaoh\'s Shop,2,12.00
+swamp,Pharaoh\'s Shop,2,2.00
+swamp,Pharaoh\'s Shop,2,39.00
+swamp,Pharaoh\'s Shop,1,15.00
+swamp,Pharaoh\'s Shop,1,15.00
+swamp,Medieval Cards,42,0.24
+swamp,Medieval Cards,32,7.60
+swamp,Medieval Cards,9,15.20
+swamp,Medieval Cards,6,3.33
+swamp,Medieval Cards,2,37.99
+swamp,Inside Games,98,2.00
+swamp,Inside Games,14,10.00
+swamp,Inside Games,4,10.00
+swamp,Inside Games,3,50.00
+swamp,Inside Games,2,2.00
+swamp,Inside Games,1,4.00
+swamp,Magicbembarato,15,8.06
+swamp,Magicbembarato,13,2.55
+swamp,Magicbembarato,9,8.06
+swamp,Magicbembarato,6,5.39
+swamp,Magicbembarato,4,4.80
+swamp,Magicbembarato,4,5.39
+swamp,Magicbembarato,4,6.76
+swamp,Magicbembarato,3,3.56
+swamp,Magicbembarato,3,5.05
+swamp,Magicbembarato,3,8.08
+swamp,Magicbembarato,2,2.66
+swamp,Magicbembarato,2,7.66
+swamp,Magicbembarato,2,4.43
+swamp,Magicbembarato,1,35.58
+swamp,Magicbembarato,1,6.79
+swamp,Magicbembarato,1,8.88
+swamp,Magicbembarato,1,2.03
+swamp,Magicbembarato,1,4.44
+swamp,Magicbembarato,1,4.46
+swamp,Magicbembarato,1,5.07
+swamp,Magicbembarato,1,9.00
+swamp,Magicbembarato,1,6.26
+swamp,Magicbembarato,1,4.82
+swamp,Magicbembarato,1,5.20
+swamp,Magicbembarato,1,23.36
+swamp,Magicbembarato,1,6.80
+swamp,Lets Collect,32,0.68
+swamp,Lets Collect,26,0.68
+swamp,Lets Collect,22,0.68
+swamp,Lets Collect,22,0.68
+swamp,Lets Collect,21,0.68
+swamp,Lets Collect,19,0.68
+swamp,Lets Collect,18,0.68
+swamp,Lets Collect,12,0.68
+swamp,Lets Collect,9,0.41
+swamp,Lets Collect,7,0.45
+swamp,Lets Collect,5,0.45
+swamp,Lets Collect,4,0.45
+swamp,Lets Collect,2,35.96
+swamp,Magic Club,7,14.75
+swamp,Magic Club,1,37.90
+swamp,Magic Club,1,13.75
+swamp,Magic House Games,2,37.00
+swamp,Power9,1,32.00
+swamp,Power9,7,15.99
+swamp,Power9,8,0.20
+swamp,VampireX TCG,38,14.95
+swamp,VampireX TCG,36,0.43
+swamp,VampireX TCG,17,10.55
+swamp,VampireX TCG,17,11.43
+swamp,VampireX TCG,15,0.31
+swamp,VampireX TCG,11,19.35
+swamp,VampireX TCG,7,18.26
+swamp,VampireX TCG,2,35.19
+swamp,Cards Store,8,14.00
+swamp,Cards Store,3,10.00
+swamp,Cards Store,1,30.00
+swamp,Cards Store,1,3.00
+swamp,Card Tutor,9,13.95
+swamp,Card Tutor,8,2.95
+swamp,Card Tutor,6,29.95
+swamp,City Class Games,11,22.08
+swamp,Cúpula do Trovão,9,9.00
+swamp,City Class Games,7,12.65
+swamp,City Class Games,3,0.55
+swamp,City Class Games,1,29.43
+swamp,City Class Games,1,3.68
+swamp,City Class Games,1,0.78
+swamp,Cúpula do Trovão,1,25.00
+swamp,Cúpula do Trovão,1,3.00
+swamp,Newstation,7,14.00
+swamp,Newstation,4,19.00
+swamp,Newstation,4,13.00
+swamp,Newstation,4,25.00
+swamp,Newstation,4,11.00
+swamp,Newstation,2,3.00
+swamp,Newstation,1,22.00
+swamp,Newstation,1,8.00
+swamp,Shandalar,7,11.90
+swamp,Shandalar,1,11.90
+swamp,Shandalar,1,29.95
+swamp,Shandalar,1,0.95
+swamp,Shandalar,1,4.25
+swamp,House of Cards - Card Games,7,5.95
+swamp,House of Cards - Card Games,6,7.95
+swamp,House of Cards - Card Games,2,2.95
+swamp,House of Cards - Card Games,1,20.00
+swamp,A Loja do Pai,6,3.20
+swamp,A Loja do Pai,1,20.00
+swamp,Tokenlandia Cards,2,20.00
+swamp,Tokenlandia Cards,1,18.00
+swamp,Magic Leste,1,19.90
+swamp,Magic Leste,7,6.99
+swamp,Magic Leste,3,6.99
+swamp,Magic Leste,2,2.90
+swamp,Loja Grimorium,57,0.49
+swamp,Loja Grimorium,45,6.99
+swamp,Loja Grimorium,12,1.99
+swamp,Loja Grimorium,9,19.99
+swamp,Loja Grimorium,1,1.99
+swamp,Loja Grimorium,1,3.50
+ultimate price,Newstation,8,3.50
+ultimate price,Newstation,6,1.50
+ultimate price,Newstation,6,1.50
+ultimate price,Newstation,2,2.00
+ultimate price,Newstation,1,9.00
+ultimate price,Newstation,1,3.00
+swamp,Cards Hall,3,18.00
+swamp,Cabala MtG,1,17.00
+swamp,Cabala MtG,1,12.00
+swamp,RED Jogos,3,16.20
+swamp,Magic Store Brasil,1,19.40
+swamp,RED Jogos,1,11.20
+swamp,RED Jogos,13,9.60
+swamp,RED Jogos,32,9.60
+swamp,RED Jogos,11,6.40
+swamp,RED Jogos,22,8.00
+swamp,RED Jogos,5,5.60
+swamp,RED Jogos,2,4.00
+swamp,RED Jogos,4,3.00
+swamp,RED Jogos,1,3.00
+swamp,RED Jogos,16,0.50
+swamp,Magic Store Brasil,6,17.46
+swamp,Magic Store Brasil,1,5.00
+ultimate price,Magicbembarato,6,1.63
+ultimate price,Magicbembarato,6,8.57
+ultimate price,Magicbembarato,4,1.67
+ultimate price,Magicbembarato,1,10.74
+ultimate price,Cards Of Paradise,13,1.40
+ultimate price,Cards Of Paradise,2,1.40
+ultimate price,Cards Of Paradise,1,8.80
+ultimate price,Cards Of Paradise,1,1.40
+ultimate price,Prime MTG,1,9.90
+ultimate price,Card Tutor,8,0.50
+ultimate price,Card Tutor,3,0.75
+ultimate price,Card Tutor,1,4.50
+ultimate price,Magic Club,15,1.50
+ultimate price,Magic Club,7,0.75
+ultimate price,Magic Club,6,0.55
+ultimate price,Magic Club,5,1.75
+ultimate price,Magic Club,5,0.75
+ultimate price,Magic Club,1,4.20
+ultimate price,Tokenlandia Cards,1,4.00
+swamp,Cards e Games,1,16.50
+swamp,Cards e Games,1,15.99
+ultimate price,Bazar de Bagdá,42,0.75
+ultimate price,Bazar de Bagdá,27,0.75
+ultimate price,Bazar de Bagdá,18,2.49
+ultimate price,Bazar de Bagdá,2,3.99
+ultimate price,Bazar de Bagdá,1,2.99
+ultimate price,Player`s Stop,2,1.25
+ultimate price,Player`s Stop,1,3.99
+ultimate price,Player`s Stop,1,1.25
+island,Elder Dragon Brasil,75,0.18
+island,Elder Dragon Brasil,63,0.18
+island,Elder Dragon Brasil,48,0.35
+island,Elder Dragon Brasil,44,0.18
+island,Elder Dragon Brasil,39,0.35
+island,Elder Dragon Brasil,19,0.18
+island,Elder Dragon Brasil,9,0.18
+island,Taverna Geek,6,0.30
+island,Taverna Geek,2,0.15
+island,Taverna Geek,1,0.30
+island,Taverna Geek,1,0.20
+island,Prime MTG,12,0.25
+island,Prime MTG,4,0.22
+island,Prime MTG,2,0.30
+swamp,O Grimório,29,15.90
+swamp,Cards Outlet,92,2.25
+swamp,Cards Outlet,23,15.95
+swamp,Konklave FunStore,3,15.20
+swamp,Konklave FunStore,3,3.20
+swamp,Konklave FunStore,1,3.20
+swamp,Konklave FunStore,16,0.40
+swamp,Konklave FunStore,8,0.40
+swamp,Tabuleria,35,0.25
+swamp,Tabuleria,3,7.50
+swamp,Tabuleria,3,15.00
+swamp,Tabuleria,1,3.50
+swamp,Tabuleria,1,2.50
+swamp,Tabuleria,1,3.50
+swamp,Tabuleria,1,7.50
+swamp,Treasure Cards,4,14.50
+swamp,Treasure Cards,1,9.00
+swamp,Liga Arena,3,14.16
+swamp,Liga Arena,3,14.24
+swamp,CHQ Cards,24,8.00
+swamp,CHQ Cards,9,14.00
+swamp,Top Deck RN,3,14.98
+swamp,Top Deck RN,1,8.24
+swamp,Mulligan Geek Store,25,14.75
+swamp,DeckMasterGames,9,13.90
+swamp,Mulligan Geek Store,11,11.50
+ultimate price,VAULT,12,3.50
+ultimate price,VAULT,2,3.25
+ultimate price,VAULT,1,1.00
+ultimate price,Power9,1,3.95
+ultimate price,Power9,7,1.50
+ultimate price,Power9,11,0.50
+ultimate price,Power9,5,0.50
+ultimate price,Cards e Games,217,0.77
+ultimate price,Cards e Games,12,0.77
+ultimate price,Cards e Games,4,0.77
+ultimate price,Cards e Games,3,0.77
+ultimate price,Cards e Games,2,0.75
+ultimate price,Cards e Games,2,0.77
+ultimate price,Cards e Games,2,0.75
+ultimate price,Cards e Games,2,3.99
+ultimate price,Cards Store,1,3.89
+ultimate price,VampireX TCG,15,0.87
+ultimate price,VampireX TCG,3,1.75
+ultimate price,VampireX TCG,2,0.87
+ultimate price,VampireX TCG,1,1.75
+ultimate price,VampireX TCG,1,3.51
+ultimate price,City Class Games,11,1.09
+ultimate price,City Class Games,9,1.09
+ultimate price,City Class Games,1,3.67
+ultimate price,Magic Store Brasil,1,3.50
+ultimate price,Magic Store Brasil,12,1.00
+ultimate price,Magic Store Brasil,1,1.00
+ultimate price,Magic Store Brasil,2,0.45
+ultimate price,Power Up Games,4,0.85
+ultimate price,Power Up Games,1,1.00
+ultimate price,Power Up Games,1,3.50
+ultimate price,Porto Livre Games,1,3.32
+ultimate price,Porto Livre Games,1,0.84
+ultimate price,Skull Games,1,3.25
+ultimate price,Skull Games,1,0.43
+ultimate price,Skull Games,1,0.43
+ultimate price,Skull Games,1,0.93
+ultimate price,Neowalkers Geek Store,9,0.98
+ultimate price,Neowalkers Geek Store,5,1.35
+ultimate price,Neowalkers Geek Store,4,2.00
+ultimate price,Neowalkers Geek Store,3,3.00
+ultimate price,Neowalkers Geek Store,3,0.98
+ultimate price,Neowalkers Geek Store,1,1.35
+ultimate price,Neowalkers Geek Store,1,3.00
+ultimate price,Neowalkers Geek Store,1,0.98
+ultimate price,Load or Cast,1,3.00
+ultimate price,Load or Cast,8,0.50
+ultimate price,Load or Cast,6,0.50
+ultimate price,Load or Cast,6,0.45
+ultimate price,Load or Cast,9,0.45
+ultimate price,ManaFix.net,7,1.00
+ultimate price,ManaFix.net,4,1.00
+ultimate price,ManaFix.net,3,1.00
+ultimate price,ManaFix.net,3,2.75
+ultimate price,Goblin Hero Store,1,2.50
+ultimate price,Pharaoh\'s Shop,8,0.25
+ultimate price,Pharaoh\'s Shop,5,0.20
+ultimate price,Pharaoh\'s Shop,4,0.25
+ultimate price,Pharaoh\'s Shop,3,0.30
+ultimate price,Pharaoh\'s Shop,3,0.30
+ultimate price,Pharaoh\'s Shop,2,0.20
+ultimate price,Pharaoh\'s Shop,1,0.20
+ultimate price,Pharaoh\'s Shop,1,2.50
+ultimate price,Pharaoh\'s Shop,1,0.20
+ultimate price,Pharaoh\'s Shop,1,0.12
+ultimate price,Pharaoh\'s Shop,1,0.15
+ultimate price,Portal,14,1.00
+ultimate price,Portal,12,1.25
+ultimate price,Portal,4,1.00
+ultimate price,Portal,1,2.50
+ultimate price,RED Jogos,6,2.50
+ultimate price,Inside Games,24,2.50
+ultimate price,Inside Games,24,0.50
+ultimate price,Overrun Geek Store,3,2.50
+ultimate price,Overrun Geek Store,1,0.50
+ultimate price,Mulligan Geek Store,19,2.00
+ultimate price,Mulligan Geek Store,8,0.75
+ultimate price,Mulligan Geek Store,1,0.75
+ultimate price,MTG Cards Games,77,0.50
+ultimate price,MTG Cards Games,65,0.50
+ultimate price,MTG Cards Games,6,0.50
+ultimate price,MTG Cards Games,4,2.45
+ultimate price,LIMIAR STORE,4,0.63
+ultimate price,LIMIAR STORE,1,0.65
+ultimate price,LIMIAR STORE,1,2.11
+ultimate price,Legends Game Store,2,2.03
+ultimate price,Legends Game Store,5,0.89
+ultimate price,Legends Game Store,5,0.89
+ultimate price,Legends Game Store,1,0.89
+ultimate price,Legends Game Store,1,0.77
+ultimate price,Legends Game Store,4,0.77
+ultimate price,Legends Game Store,3,0.77
+ultimate price,Legends Game Store,2,0.77
+ultimate price,Tabuleria,1,2.00
+ultimate price,House of Cards - Card Games,13,1.95
+ultimate price,WCG - World Card Games,1,1.99
+ultimate price,WCG - World Card Games,2,1.49
+ultimate price,CHQ Cards,6,0.90
+ultimate price,CHQ Cards,1,1.80
+ultimate price,Treasure Cards,5,0.50
+ultimate price,Treasure Cards,4,0.50
+ultimate price,Treasure Cards,2,0.50
+ultimate price,Treasure Cards,2,1.80
+ultimate price,Treasure Cards,1,0.50
+swamp,Condado Card Games,4,12.60
+swamp,LIMIAR STORE,2,12.57
+swamp,LIMIAR STORE,1,11.82
+swamp,Loja Blood Moon,5,7.00
+swamp,Loja Blood Moon,3,12.00
+swamp,GeeK Pit,7,12.00
+swamp,GeeK Pit,1,10.00
+swamp,GeeK Pit,3,5.00
+swamp,Overrun Geek Store,2,12.00
+swamp,Geex Hobby Store,3,1.49
+swamp,Geex Hobby Store,1,11.99
+swamp,VAULT,1,12.00
+swamp,Porto Livre Games,29,10.63
+swamp,Porto Livre Games,6,0.21
+swamp,Prime MTG,12,0.25
+swamp,Pi Games,16,0.69
+swamp,Prime MTG,3,0.25
+swamp,Prime MTG,1,10.32
+swamp,Pi Games,11,4.99
+swamp,Pi Games,6,2.00
+swamp,Pi Games,4,3.99
+swamp,Pi Games,4,12.00
+swamp,Pi Games,3,3.99
+swamp,Pi Games,3,5.49
+swamp,Pi Games,2,3.99
+swamp,Pi Games,2,10.99
+swamp,Pi Games,1,3.99
+swamp,Pi Games,1,0.49
+swamp,Pi Games,1,5.99
+swamp,Hobby Center,1,10.00
+swamp,Hobby Center,6,4.00
+swamp,Hobby Center,1,4.00
+swamp,Load or Cast,2,9.85
+swamp,Load or Cast,1,9.85
+swamp,Load or Cast,3,8.75
+swamp,Load or Cast,11,7.55
+swamp,Load or Cast,3,7.50
+swamp,Load or Cast,1,3.55
+swamp,Load or Cast,2,2.85
+swamp,Load or Cast,7,2.00
+swamp,Load or Cast,7,2.00
+swamp,Load or Cast,26,1.40
+swamp,Load or Cast,63,1.40
+ultimate price,Taverna Geek,2,1.75
+ultimate price,Taverna Geek,1,0.15
+ultimate price,Shandalar,7,0.35
+ultimate price,Shandalar,3,1.75
+ultimate price,Shandalar,2,1.45
+ultimate price,Shandalar,1,1.40
+ultimate price,Shandalar,1,0.35
+ultimate price,Shandalar,1,0.45
+ultimate price,Shandalar,1,0.45
+ultimate price,CL TCG,4,1.75
+ultimate price,Livraria do Infinito - MagicJebb,4,1.62
+ultimate price,Livraria do Infinito - MagicJebb,2,0.85
+ultimate price,Livraria do Infinito - MagicJebb,4,0.14
+ultimate price,Cards Outlet,9,1.59
+ultimate price,Cards Outlet,9,1.64
+ultimate price,Cards Outlet,4,1.64
+ultimate price,Cards Outlet,4,1.59
+ultimate price,A Loja do Pai,1,1.60
+ultimate price,Magic Leste,1,1.50
+ultimate price,Magic Leste,2,0.15
+ultimate price,Magic Leste,1,0.15
+ultimate price,Cabala MtG,1,0.25
+ultimate price,Cabala MtG,1,1.50
+ultimate price,Konklave FunStore,1,1.60
+ultimate price,Konklave FunStore,1,1.60
+ultimate price,Konklave FunStore,4,1.20
+ultimate price,Miragem Hobby,15,0.99
+ultimate price,Miragem Hobby,12,1.50
+ultimate price,Chuck TCG,8,0.75
+ultimate price,Chuck TCG,1,0.75
+ultimate price,Chuck TCG,3,1.00
+ultimate price,Chuck TCG,1,1.00
+ultimate price,Chuck TCG,3,1.00
+ultimate price,Chuck TCG,1,1.00
+ultimate price,Chuck TCG,1,1.00
+ultimate price,Chuck TCG,8,1.50
+ultimate price,Cards Hall,3,0.45
+ultimate price,Cards Hall,3,1.49
+ultimate price,Card Castle,3,1.49
+ultimate price,Card Castle,2,1.49
+ultimate price,Medieval Cards,2,1.43
+ultimate price,Medieval Cards,2,1.14
+ultimate price,Medieval Cards,2,1.43
+ultimate price,Multiverso Cards Comercio de Jogos e Acessorios Lt,2,1.40
+ultimate price,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,0.30
+ultimate price,Loja Grimorium,6,1.50
+ultimate price,Loja Grimorium,6,1.50
+ultimate price,Loja Grimorium,5,1.50
+ultimate price,Loja Grimorium,5,1.50
+swamp,Livraria do Infinito - MagicJebb,3,8.41
+swamp,Livraria do Infinito - MagicJebb,1,5.20
+swamp,Livraria do Infinito - MagicJebb,1,0.43
+swamp,Livraria do Infinito - MagicJebb,3,0.21
+swamp,Livraria do Infinito - MagicJebb,2,0.19
+swamp,Legion Board & Card Games,24,9.45
+swamp,Legion Board & Card Games,14,9.03
+swamp,Legion Board & Card Games,2,2.85
+swamp,Legion Board & Card Games,2,2.85
+swamp,Gideon\'s Palace,5,9.00
+swamp,Gideon\'s Palace,1,3.00
+swamp,Armada Nerd Hobby Store,5,9.00
+swamp,Armada Nerd Hobby Store,2,2.50
+swamp,Jaw Games,28,8.00
+swamp,Jaw Games,1,5.00
+swamp,CL TCG,7,7.75
+swamp,CL TCG,4,0.20
+swamp,Loja Caverna do Dragão,16,0.25
+swamp,Loja Caverna do Dragão,4,6.50
+swamp,Loja Caverna do Dragão,3,0.25
+swamp,Loja Caverna do Dragão,3,7.50
+swamp,Loja Caverna do Dragão,2,0.25
+swamp,Loja Caverna do Dragão,1,0.20
+swamp,Loja Caverna do Dragão,1,0.20
+swamp,Loja Caverna do Dragão,1,0.25
+swamp,Loja Caverna do Dragão,1,2.00
+swamp,A Taverna,2,7.85
+swamp,Legends Game Store,12,7.19
+swamp,Legends Game Store,9,7.19
+swamp,Universo Magic,1,4.00
+swamp,Universo Magic,1,7.00
+ultimate price,TCGeeK,29,1.20
+ultimate price,TCGeeK,2,1.00
+ultimate price,TCGeeK,1,1.20
+ultimate price,Nerdz Cards,8,0.50
+ultimate price,Nerdz Cards,6,0.50
+ultimate price,Nerdz Cards,5,0.50
+ultimate price,Nerdz Cards,2,0.40
+ultimate price,Nerdz Cards,1,1.00
+ultimate price,Nerdz Cards,1,1.00
+ultimate price,Hobby Center,1,1.00
+ultimate price,Hobby Center,2,0.25
+ultimate price,Tolaria,1,1.19
+ultimate price,Toca do Quati,2,1.00
+ultimate price,Padrinho: Card Store,34,0.49
+ultimate price,Padrinho: Card Store,2,0.99
+ultimate price,Padrinho: Card Store,1,0.49
+swamp,Flow Games,1,6.69
+swamp,ProNerd,1,4.22
+swamp,ProNerd,3,1.98
+swamp,ProNerd,1,1.85
+ultimate price,Pi Games,2,0.89
+ultimate price,Pi Games,1,0.89
+ultimate price,MTG Caxias Cards,8,0.99
+ultimate price,MTG Caxias Cards,1,1.00
+ultimate price,Bahia Store,4,0.18
+ultimate price,Bahia Store,3,0.79
+ultimate price,Meruru,14,0.75
+ultimate price,Meruru,12,0.75
+ultimate price,Meruru,1,0.75
+ultimate price,Meruru,1,0.75
+ultimate price,Reino Magic,2,0.75
+ultimate price,Reino Magic,4,0.75
+ultimate price,Mineral Games,7,0.75
+ultimate price,Mineral Games,5,0.50
+swamp,Loja Miracles,1,3.50
+swamp,Loja Miracles,2,2.20
+swamp,Loja Miracles,1,1.20
+ultimate price,Lets Collect,2,0.75
+ultimate price,Liga Arena,1,0.48
+ultimate price,Liga Arena,1,0.67
+ultimate price,Liga Arena,1,0.67
+ultimate price,Liga Arena,1,0.48
+ultimate price,Liga Arena,1,0.48
+ultimate price,Liga Arena,2,0.67
+ultimate price,Ilusões Industriais,1,0.50
+ultimate price,Ilusões Industriais,1,0.50
+ultimate price,Jaw Games,1,0.50
+ultimate price,Loja Blood Moon,3,0.70
+ultimate price,Loja Blood Moon,3,0.70
+ultimate price,PRCShop,25,0.50
+ultimate price,Condado Card Games,8,0.36
+ultimate price,Condado Card Games,1,0.45
+wight of precinct six,Miragem Hobby,14,0.44
+wight of precinct six,Miragem Hobby,4,0.99
+wight of precinct six,Miragem Hobby,1,7.00
+wight of precinct six,Pi Games,9,0.82
+wight of precinct six,Pi Games,4,1.12
+wight of precinct six,Pi Games,1,0.87
+wight of precinct six,Pi Games,1,5.99
+wight of precinct six,Newstation,8,2.00
+wight of precinct six,Newstation,4,3.00
+wight of precinct six,Newstation,3,3.00
+wight of precinct six,Newstation,1,6.00
+wight of precinct six,Newstation,1,7.00
+wight of precinct six,Newstation,1,3.00
+wight of precinct six,Newstation,1,3.00
+wight of precinct six,Toca do Quati,6,2.00
+wight of precinct six,Toca do Quati,4,1.50
+wight of precinct six,Toca do Quati,1,1.50
+wight of precinct six,Toca do Quati,1,5.00
+wight of precinct six,VampireX TCG,8,0.87
+wight of precinct six,VampireX TCG,4,0.87
+wight of precinct six,VampireX TCG,2,0.87
+wight of precinct six,VampireX TCG,2,4.39
+wight of precinct six,Medieval Cards,4,4.28
+wight of precinct six,Medieval Cards,2,0.71
+wight of precinct six,Medieval Cards,1,0.86
+wight of precinct six,Medieval Cards,1,0.86
+wight of precinct six,PRCShop,13,0.50
+wight of precinct six,PRCShop,1,4.00
+wight of precinct six,Magicbembarato,4,1.75
+wight of precinct six,Magicbembarato,4,1.67
+wight of precinct six,Magicbembarato,4,1.92
+wight of precinct six,Magicbembarato,4,1.81
+wight of precinct six,Magicbembarato,4,1.67
+wight of precinct six,Magicbembarato,2,4.21
+wight of precinct six,Portal,23,1.75
+wight of precinct six,Portal,2,1.00
+wight of precinct six,Portal,1,1.50
+wight of precinct six,Portal,1,4.00
+wight of precinct six,Portal,1,1.00
+wight of precinct six,Magic House Games,9,0.22
+wight of precinct six,Magic House Games,3,0.22
+wight of precinct six,Magic House Games,2,5.99
+wight of precinct six,Magic House Games,1,0.22
+wight of precinct six,Bazar de Bagdá,45,1.99
+wight of precinct six,Bazar de Bagdá,18,3.99
+wight of precinct six,Bazar de Bagdá,1,1.99
+wight of precinct six,Bazar de Bagdá,1,1.49
+wight of precinct six,VAULT,1,3.00
+wight of precinct six,VAULT,1,0.50
+wight of precinct six,Konklave FunStore,1,3.19
+wight of precinct six,Konklave FunStore,1,0.80
+wight of precinct six,Hobby Center,1,3.00
+wight of precinct six,Hobby Center,5,0.50
+wight of precinct six,Power9,2,3.00
+wight of precinct six,Power9,8,2.50
+wight of precinct six,Power9,1,1.50
+wight of precinct six,Power9,3,1.00
+wight of precinct six,Power9,1,1.00
+wight of precinct six,Power9,3,0.75
+wight of precinct six,Power9,8,0.75
+wight of precinct six,Tutubahia,4,0.63
+wight of precinct six,Tutubahia,3,2.50
+wight of precinct six,Card Tutor,12,0.50
+wight of precinct six,Card Tutor,5,2.95
+wight of precinct six,House of Cards - Card Games,22,0.95
+wight of precinct six,House of Cards - Card Games,1,2.95
+wight of precinct six,MTG Cards Games,34,0.75
+wight of precinct six,MTG Cards Games,22,0.75
+wight of precinct six,MTG Cards Games,17,0.75
+wight of precinct six,MTG Cards Games,17,0.75
+wight of precinct six,MTG Cards Games,8,0.75
+wight of precinct six,MTG Cards Games,5,1.99
+wight of precinct six,MTG Cards Games,1,2.95
+wight of precinct six,Legends Game Store,2,2.69
+wight of precinct six,Legends Game Store,2,0.89
+wight of precinct six,Legends Game Store,13,0.89
+wight of precinct six,Legends Game Store,1,0.77
+wight of precinct six,Legends Game Store,1,0.77
+wight of precinct six,Legends Game Store,1,0.68
+swamp,MTG Cards Games,3,2.00
+wight of precinct six,Cards Store,8,0.99
+wight of precinct six,Cards Store,1,0.99
+wight of precinct six,Cards Store,1,2.90
+swamp,under3,8,0.19
+swamp,under3,8,0.19
+swamp,under3,6,0.19
+swamp,under3,5,0.19
+swamp,under3,3,0.19
+swamp,under3,1,1.48
+swamp,under3,1,1.48
+swamp,under3,1,0.19
+swamp,under3,1,0.19
+swamp,Meruru,13,1.75
+swamp,Meruru,9,1.75
+swamp,Padrinho: Card Store,7,0.25
+swamp,Padrinho: Card Store,1,0.99
+swamp,Padrinho: Card Store,1,1.49
+swamp,Ascensão,1,1.65
+swamp,Ascensão,4,0.35
+swamp,Ascensão,1,0.18
+swamp,Ascensão,1,1.85
+swamp,Ascensão,1,0.19
+swamp,MTG Caxias Cards,6,1.49
+swamp,Player`s Stop,8,0.35
+swamp,Player`s Stop,1,0.63
+ultimate price,Flow Games,2,0.38
+ultimate price,Flow Games,5,0.38
+ultimate price,Segura Card & Games,2,0.25
+ultimate price,Rayearth Games,4,0.22
+ultimate price,Top Deck RN,6,0.25
+ultimate price,A Taverna,1,0.22
+ultimate price,A Taverna,2,0.35
+ultimate price,Woohoo Store,3,0.20
+ultimate price,Loja Caverna do Dragão,1,0.20
+ultimate price,Basics Cards,5,0.19
+ultimate price,Basics Cards,2,0.16
+ultimate price,Basics Cards,2,0.16
+ultimate price,Basics Cards,1,0.14
+ultimate price,Hive Jogos,1,0.20
+ultimate price,under3,7,0.15
+ultimate price,under3,2,0.15
+ultimate price,under3,1,0.15
+ultimate price,under3,1,0.15
+wight of precinct six,Cards Of Paradise,29,0.40
+wight of precinct six,Cards Of Paradise,29,2.40
+wight of precinct six,Cards Of Paradise,26,0.40
+wight of precinct six,Cards Of Paradise,9,0.40
+wight of precinct six,Shandalar,1,2.45
+wight of precinct six,Neowalkers Geek Store,8,0.75
+wight of precinct six,Neowalkers Geek Store,2,2.00
+wight of precinct six,Overrun Geek Store,4,0.50
+wight of precinct six,Overrun Geek Store,4,2.25
+wight of precinct six,Overrun Geek Store,3,0.25
+wight of precinct six,Flow Games,2,2.39
+wight of precinct six,Flow Games,11,0.48
+wight of precinct six,Flow Games,5,0.48
+wight of precinct six,Flow Games,1,0.48
+wight of precinct six,Load or Cast,4,2.25
+wight of precinct six,Load or Cast,2,0.75
+wight of precinct six,Load or Cast,8,0.70
+wight of precinct six,Load or Cast,19,0.55
+wight of precinct six,Cards e Games,1,1.99
+wight of precinct six,Universo Magic,1,2.00
+wight of precinct six,Inside Games,29,1.00
+wight of precinct six,Inside Games,27,2.00
+wight of precinct six,Inside Games,1,1.25
+wight of precinct six,Inside Games,1,1.00
+wight of precinct six,Loja Grimorium,8,0.99
+wight of precinct six,Loja Grimorium,4,1.99
+wight of precinct six,Loja Grimorium,2,0.99
+wight of precinct six,Loja Grimorium,2,1.75
+wight of precinct six,Loja Grimorium,1,1.99
+wight of precinct six,Loja Grimorium,1,1.99
+wight of precinct six,Cards Outlet,4,1.64
+wight of precinct six,Cards Outlet,4,1.88
+wight of precinct six,Cards Outlet,1,1.74
+wight of precinct six,Cards Outlet,11,1.88
+wight of precinct six,Cards Outlet,9,1.74
+wight of precinct six,Cards Outlet,5,1.68
+wight of precinct six,Cards Outlet,5,1.64
+wight of precinct six,Cards Outlet,4,1.64
+wight of precinct six,Prime MTG,8,0.49
+wight of precinct six,Prime MTG,8,1.75
+wight of precinct six,Cards Hall,4,0.45
+wight of precinct six,Cards Hall,1,1.70
+wight of precinct six,Cards Hall,1,0.45
+wight of precinct six,City Class Games,34,0.46
+wight of precinct six,City Class Games,11,1.61
+wight of precinct six,TCGeeK,14,1.50
+wight of precinct six,TCGeeK,5,1.25
+wight of precinct six,TCGeeK,4,1.25
+wight of precinct six,TCGeeK,2,1.25
+wight of precinct six,Chuck TCG,11,1.50
+swamp,PRCShop,26,0.50
+swamp,Território Card Games,4,0.50
+wight of precinct six,Reino Magic,2,1.50
+swamp,WCG - World Card Games,6,0.49
+swamp,WCG - World Card Games,8,0.49
+swamp,New !QUEST STORE,5,0.50
+swamp,Taverna Geek,2,0.20
+swamp,Taverna Geek,1,0.20
+swamp,Taverna Geek,1,0.25
+swamp,Taverna Geek,1,0.35
+wight of precinct six,Mulligan Geek Store,26,1.50
+wight of precinct six,Mulligan Geek Store,7,1.50
+wight of precinct six,WCG - World Card Games,1,1.49
+wight of precinct six,WCG - World Card Games,1,0.99
+wight of precinct six,WCG - World Card Games,1,0.99
+wight of precinct six,Taverna Geek,1,1.15
+wight of precinct six,A Loja do Pai,1,1.44
+ultimate price,LOJA CALABOUÇO - HOBBIES E COLECIONÁVEIS,4,0.12
+wight of precinct six,Ascensão,1,1.40
+wight of precinct six,Meruru,7,1.25
+wight of precinct six,Meruru,6,0.75
+wight of precinct six,Meruru,5,0.55
+wight of precinct six,Meruru,5,1.25
+wight of precinct six,Meruru,2,0.75
+wight of precinct six,Meruru,1,0.75
+wight of precinct six,LIMIAR STORE,4,1.06
+wight of precinct six,LIMIAR STORE,1,0.95
+wight of precinct six,Magic Leste,4,0.99
+wight of precinct six,Magic Leste,1,0.99
+swamp,Elder Dragon Brasil,13,0.25
+wight of precinct six,Jaw Games,1,0.80
+wight of precinct six,ManaFix.net,7,0.75
+wight of precinct six,ManaFix.net,4,0.45
+wight of precinct six,ManaFix.net,1,0.45
+wight of precinct six,ProNerd,1,0.83
+wight of precinct six,ProNerd,1,0.83
+wight of precinct six,ProNerd,1,0.29
+wight of precinct six,Elder Dragon Brasil,8,0.70
+wight of precinct six,Magic Club,26,0.50
+wight of precinct six,Magic Club,2,0.75
+wight of precinct six,Magic Club,1,0.75
+wight of precinct six,Porto Livre Games,1,0.64
+wight of precinct six,Livraria do Infinito - MagicJebb,1,0.68
+wight of precinct six,Livraria do Infinito - MagicJebb,4,0.27
+wight of precinct six,Bahia Store,2,0.24
+wight of precinct six,Bahia Store,2,0.60
+wight of precinct six,Tabuleria,4,0.60
+wight of precinct six,Lets Collect,2,0.68
+wight of precinct six,Lets Collect,1,0.68
+wight of precinct six,Lets Collect,1,0.68
+wight of precinct six,RED Jogos,1,0.50
+wight of precinct six,Segura Card & Games,18,0.25
+wight of precinct six,Segura Card & Games,1,0.45
+wight of precinct six,Millennium Cards & Games,2,0.45
+wight of precinct six,CL TCG,1,0.34
+wight of precinct six,Padrinho: Card Store,2,0.25
+wight of precinct six,Padrinho: Card Store,1,0.25
+wight of precinct six,Fire Ice Card Games,2,0.19
+wight of precinct six,Fire Ice Card Games,1,0.19
+wight of precinct six,under3,1,0.20
+wight of precinct six,Loja Blood Moon,2,0.20
+wight of precinct six,Loja Blood Moon,2,0.20
+wight of precinct six,Loja Blood Moon,1,0.20
+nephalia drownyard,VAULT,3,2.25
+nephalia drownyard,VAULT,1,10.00
+wight of precinct six,Card Castle,24,0.29
+wight of precinct six,Card Castle,1,0.29
+wight of precinct six,Cabala MtG,16,0.30
+wight of precinct six,Cabala MtG,1,0.25
+nephalia drownyard,Pi Games,1,4.99
+nephalia drownyard,Cards Of Paradise,2,5.40
+nephalia drownyard,Cards Of Paradise,1,4.60
+nephalia drownyard,Card Tutor,1,9.95
+nephalia drownyard,Magicbembarato,4,4.28
+nephalia drownyard,Cards Outlet,4,4.16
+nephalia drownyard,Bazar de Bagdá,2,3.99
+nephalia drownyard,Hobby Center,3,3.50
+nephalia drownyard,Hobby Center,1,3.50
+nephalia drownyard,Hobby Center,1,3.50
+nephalia drownyard,Tokenlandia Cards,1,3.00
+nephalia drownyard,Inside Games,2,3.50
+nephalia drownyard,Território Card Games,1,3.00
+nephalia drownyard,Prime MTG,1,2.90
+nephalia drownyard,Konklave FunStore,3,2.80
+nephalia drownyard,Treasure Cards,1,2.70
+nephalia drownyard,LIMIAR STORE,2,2.58
+nephalia drownyard,Tutubahia,4,2.50
+nephalia drownyard,Taverna Geek,1,2.50
+nephalia drownyard,Loja Blood Moon,3,2.50
+nephalia drownyard,Overrun Geek Store,1,2.00
+nephalia drownyard,Overrun Geek Store,1,2.50
+nephalia drownyard,Miragem Hobby,2,2.75
+nephalia drownyard,Skull Games,4,2.49
+nephalia drownyard,Skull Games,1,1.99
+nephalia drownyard,Universo Magic,1,2.00
+nephalia drownyard,Xaracards,3,1.55
+nephalia drownyard,A Loja do Pai,3,2.00
+nephalia drownyard,Legion Board & Card Games,1,1.85
+nephalia drownyard,Meruru,1,1.89
+nephalia drownyard,Meruru,1,1.99
+crypt incursion,Porto Livre Games,1,10.63
+crypt incursion,VampireX TCG,9,2.02
+crypt incursion,VampireX TCG,1,12.31
+crypt incursion,Magicbembarato,6,3.81
+crypt incursion,Cards Outlet,4,3.74
+crypt incursion,Cards Outlet,5,3.74
+nephalia drownyard,Load or Cast,1,2.15
+crypt incursion,Newstation,1,2.50
+crypt incursion,Load or Cast,1,12.60
+crypt incursion,Load or Cast,3,1.20
+crypt incursion,Mulligan Geek Store,11,2.25
+crypt incursion,ManaFix.net,11,1.95
+crypt incursion,ManaFix.net,6,1.45
+crypt incursion,ManaFix.net,3,1.45
+crypt incursion,Chuck TCG,2,1.75
+crypt incursion,Chuck TCG,1,2.00
+crypt incursion,Skull Games,1,1.99
+crypt incursion,Inside Games,15,2.00
+crypt incursion,Loja Grimorium,24,1.99
+crypt incursion,Loja Grimorium,13,1.99
+crypt incursion,MTG Cards Games,61,1.99
+crypt incursion,CHQ Cards,3,1.90
+crypt incursion,City Class Games,2,1.83
+crypt incursion,Legends Game Store,1,1.79
+crypt incursion,Legends Game Store,1,1.58
+crypt incursion,Meruru,2,1.75
+crypt incursion,Meruru,1,1.75
+crypt incursion,Lets Collect,14,1.76
+crypt incursion,Universo Magic,1,1.50
+crypt incursion,Magic Club,2,1.90
+crypt incursion,Magic Club,1,1.50
+crypt incursion,Nerdz Cards,2,1.50
+crypt incursion,Power Up Games,2,1.00
+crypt incursion,Power Up Games,2,1.50
+crypt incursion,Tokenlandia Cards,1,1.50
+crypt incursion,PRCShop,3,1.50
+crypt incursion,Portal,3,1.50
+crypt incursion,MTG Caxias Cards,7,1.50
+crypt incursion,RED Jogos,2,1.50
+crypt incursion,A Taverna,2,1.50
+crypt incursion,A Taverna,1,1.50
+crypt incursion,Medieval Cards,13,1.43
+crypt incursion,Medieval Cards,11,1.19
+crypt incursion,Medieval Cards,1,1.19
+crypt incursion,LIMIAR STORE,2,1.39
+crypt incursion,LIMIAR STORE,2,1.39
+crypt incursion,LIMIAR STORE,1,1.30
+crypt incursion,Konklave FunStore,2,1.20
+crypt incursion,DeckMasterGames,19,1.49
+crypt incursion,DeckMasterGames,4,1.29
+crypt incursion,Elder Dragon Brasil,1,1.05
+crypt incursion,Taverna Geek,7,1.00
+crypt incursion,Overrun Geek Store,1,1.25
+crypt incursion,Pi Games,6,1.00
+crypt incursion,Pi Games,2,1.00
+crypt incursion,Padrinho: Card Store,2,0.99
+crypt incursion,Padrinho: Card Store,1,0.75
+crypt incursion,Padrinho: Card Store,1,0.49
+crypt incursion,Fire Ice Card Games,7,0.75
+crypt incursion,Condado Card Games,1,0.90
+crypt incursion,Player`s Stop,1,0.99
+crypt incursion,Basics Cards,1,0.79
+crypt incursion,Millennium Cards & Games,3,0.75
+pilfered plans,Tokenlandia Cards,4,0.50
+pilfered plans,Tokenlandia Cards,1,2.00
+pilfered plans,Portal,29,0.50
+pilfered plans,Portal,16,0.25
+pilfered plans,Portal,2,2.00
+crypt incursion,Legion Board & Card Games,86,0.71
+pilfered plans,Konklave FunStore,2,2.00
+pilfered plans,Konklave FunStore,4,0.40
+pilfered plans,Konklave FunStore,4,0.40
+pilfered plans,Bazar de Bagdá,39,0.49
+pilfered plans,Bazar de Bagdá,34,0.49
+pilfered plans,Bazar de Bagdá,1,2.99
+pilfered plans,Loja Grimorium,14,0.49
+pilfered plans,Loja Grimorium,13,0.49
+pilfered plans,Loja Grimorium,12,0.37
+pilfered plans,Loja Grimorium,1,2.99
+pilfered plans,VAULT,5,0.25
+pilfered plans,VAULT,3,1.50
+pilfered plans,VAULT,1,0.35
+pilfered plans,VAULT,1,0.35
+pilfered plans,VAULT,1,1.25
+pilfered plans,WCG - World Card Games,1,1.99
+pilfered plans,Shandalar,6,0.25
+pilfered plans,Shandalar,1,1.75
+pilfered plans,Shandalar,1,0.25
+pilfered plans,Shandalar,1,0.20
+pilfered plans,Shandalar,1,1.25
+pilfered plans,Shandalar,1,1.35
+pilfered plans,Legion Board & Card Games,33,0.19
+pilfered plans,Legion Board & Card Games,2,1.40
+pilfered plans,Neowalkers Geek Store,17,0.35
+pilfered plans,Neowalkers Geek Store,6,0.35
+pilfered plans,Neowalkers Geek Store,1,1.50
+pilfered plans,Neowalkers Geek Store,1,0.23
+pilfered plans,Magicbembarato,8,1.89
+pilfered plans,Magicbembarato,6,0.34
+pilfered plans,Magicbembarato,4,0.38
+pilfered plans,Newstation,8,0.50
+pilfered plans,Newstation,3,1.50
+pilfered plans,Lets Collect,32,0.25
+pilfered plans,Lets Collect,6,0.25
+pilfered plans,Lets Collect,2,1.35
+pilfered plans,Chuck TCG,1,0.50
+pilfered plans,Chuck TCG,2,0.50
+pilfered plans,Chuck TCG,1,0.50
+pilfered plans,Chuck TCG,4,0.50
+pilfered plans,Chuck TCG,1,0.75
+pilfered plans,Chuck TCG,3,1.50
+pilfered plans,Magic House Games,7,0.14
+pilfered plans,Magic House Games,1,0.14
+pilfered plans,Magic House Games,1,1.25
+pilfered plans,City Class Games,28,0.45
+pilfered plans,City Class Games,4,1.15
+pilfered plans,CHQ Cards,22,0.60
+pilfered plans,CHQ Cards,2,1.20
+pilfered plans,Power9,1,1.00
+pilfered plans,Power9,8,1.00
+pilfered plans,Power9,23,0.20
+pilfered plans,Power9,32,0.20
+pilfered plans,MTG Caxias Cards,1,1.50
+pilfered plans,Universo Magic,6,1.00
+pilfered plans,Universo Magic,4,0.10
+pilfered plans,Universo Magic,2,0.10
+pilfered plans,Padrinho: Card Store,19,0.25
+pilfered plans,Padrinho: Card Store,4,0.25
+pilfered plans,Padrinho: Card Store,1,0.99
+pilfered plans,Cards e Games,23,0.25
+pilfered plans,Cards e Games,4,0.24
+pilfered plans,Cards e Games,2,0.99
+pilfered plans,Cards e Games,1,0.24
+pilfered plans,Cards e Games,1,0.25
+pilfered plans,Magic Club,46,0.20
+pilfered plans,Magic Club,31,0.18
+pilfered plans,Magic Club,12,0.70
+pilfered plans,Magic Club,1,1.00
+pilfered plans,DeckMasterGames,2,0.98
+pilfered plans,DeckMasterGames,2,0.98
+pilfered plans,Jaw Games,1,0.10
+pilfered plans,Jaw Games,1,0.80
+pilfered plans,Tabuleria,1,0.90
+pilfered plans,MTG Cards Games,93,0.30
+pilfered plans,MTG Cards Games,46,0.35
+pilfered plans,MTG Cards Games,4,0.99
+pilfered plans,MTG Cards Games,2,0.99
+pilfered plans,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,0.84
+pilfered plans,Medieval Cards,37,0.24
+pilfered plans,Medieval Cards,7,0.24
+pilfered plans,Medieval Cards,1,0.24
+pilfered plans,Medieval Cards,1,0.71
+pilfered plans,Meruru,15,0.55
+pilfered plans,Meruru,12,0.55
+pilfered plans,Meruru,2,0.75
+pilfered plans,Meruru,2,0.55
+pilfered plans,Cards Hall,62,0.45
+pilfered plans,Cards Hall,1,0.75
+pilfered plans,Cards Hall,1,0.45
+pilfered plans,TCGeeK,11,0.50
+pilfered plans,TCGeeK,8,0.50
+pilfered plans,TCGeeK,1,0.40
+pilfered plans,Card Tutor,2,0.50
+pilfered plans,Ascensão,7,0.50
+pilfered plans,Mulligan Geek Store,5,0.50
+pilfered plans,PRCShop,7,0.50
+psychic strike,Loja Grimorium,96,0.75
+psychic strike,Loja Grimorium,7,0.75
+psychic strike,Loja Grimorium,1,5.99
+psychic strike,Cabala MtG,7,0.50
+psychic strike,Cabala MtG,1,5.00
+psychic strike,Bazar de Bagdá,14,1.25
+psychic strike,Bazar de Bagdá,12,1.25
+psychic strike,Bazar de Bagdá,3,4.99
+psychic strike,Toca do Quati,14,1.00
+psychic strike,Toca do Quati,5,3.00
+psychic strike,VampireX TCG,11,1.14
+psychic strike,VampireX TCG,1,4.39
+psychic strike,VampireX TCG,1,1.06
+psychic strike,Neowalkers Geek Store,12,0.75
+psychic strike,Neowalkers Geek Store,4,0.48
+psychic strike,Neowalkers Geek Store,1,3.00
+psychic strike,Neowalkers Geek Store,1,0.75
+pilfered plans,Magic Store Brasil,13,0.50
+pilfered plans,Magic Store Brasil,14,0.50
+psychic strike,Loja Blood Moon,7,0.75
+psychic strike,Loja Blood Moon,1,3.00
+psychic strike,Medieval Cards,12,1.19
+psychic strike,Medieval Cards,9,1.05
+psychic strike,Medieval Cards,4,1.19
+psychic strike,Medieval Cards,4,1.05
+psychic strike,Medieval Cards,1,0.90
+psychic strike,Cards Of Paradise,5,1.40
+psychic strike,TCGeeK,14,1.00
+psychic strike,Mulligan Geek Store,11,1.00
+psychic strike,Inside Games,24,1.25
+psychic strike,Magicbembarato,4,1.02
+psychic strike,Tokenlandia Cards,2,1.00
+psychic strike,Cards Outlet,4,0.99
+psychic strike,Cards Outlet,5,0.99
+psychic strike,MTG Cards Games,8,0.95
+pilfered plans,Skull Games,2,0.25
+pilfered plans,Skull Games,1,0.49
+pilfered plans,Liga Arena,5,0.42
+pilfered plans,Liga Arena,8,0.24
+pilfered plans,Cards Store,1,0.39
+psychic strike,Liga Arena,8,0.86
+pilfered plans,Valhala Store,2,0.40
+pilfered plans,Miragem Hobby,1,0.39
+pilfered plans,Overrun Geek Store,4,0.25
+pilfered plans,Overrun Geek Store,3,0.35
+pilfered plans,Overrun Geek Store,2,0.35
+psychic strike,VAULT,1,0.50
+psychic strike,VAULT,1,0.75
+psychic strike,Lets Collect,22,0.86
+pilfered plans,Power Up Games,11,0.33
+pilfered plans,Power Up Games,1,0.33
+pilfered plans,Power Up Games,4,0.33
+psychic strike,Card Tutor,7,0.75
+psychic strike,Portal,11,0.75
+psychic strike,Flow Games,6,0.72
+psychic strike,A Taverna,4,0.75
+psychic strike,RED Jogos,13,0.70
+psychic strike,Condado Card Games,5,0.68
+psychic strike,LIMIAR STORE,2,0.66
+psychic strike,Load or Cast,1,0.60
+psychic strike,Load or Cast,2,0.55
+psychic strike,Magic Club,34,0.60
+psychic strike,Magic Club,3,0.55
+psychic strike,Power9,13,0.75
+psychic strike,CHQ Cards,45,0.60
+psychic strike,Konklave FunStore,2,0.56
+psychic strike,Meruru,17,0.55
+psychic strike,Meruru,16,0.55
+psychic strike,Treasure Cards,3,0.54
+psychic strike,Treasure Cards,1,0.45
+psychic strike,Magic Store Brasil,1,0.50
+psychic strike,Skull Games,1,0.49
+psychic strike,Magic House Games,13,0.46
+psychic strike,Magic House Games,1,0.46
+psychic strike,Pharaoh\'s Shop,2,0.45
+psychic strike,Shandalar,2,0.45
+psychic strike,Shandalar,1,0.45
+psychic strike,Shandalar,1,0.35
+psychic strike,under3,4,0.44
+psychic strike,under3,3,0.44
+psychic strike,Legion Board & Card Games,8,0.33
+pilfered plans,Load or Cast,4,0.30
+pilfered plans,Load or Cast,17,0.30
+pilfered plans,Toca do Quati,13,0.20
+pilfered plans,Toca do Quati,2,0.25
+pilfered plans,ManaFix.net,76,0.25
+pilfered plans,House of Cards - Card Games,1,0.25
+pilfered plans,Pi Games,17,0.25
+pilfered plans,Pi Games,1,0.20
+pilfered plans,Ilusões Industriais,2,0.25
+pilfered plans,Ilusões Industriais,1,0.25
+pilfered plans,Ilusões Industriais,1,0.25
+pilfered plans,Inside Games,24,0.25
+pilfered plans,Flow Games,4,0.24
+pilfered plans,Flow Games,8,0.24
+psychic strike,Fire Ice Card Games,2,0.30
+pilfered plans,Mineral Games,8,0.25
+pilfered plans,Pharaoh\'s Shop,7,0.20
+pilfered plans,Pharaoh\'s Shop,5,0.15
+pilfered plans,Pharaoh\'s Shop,2,0.10
+pilfered plans,Condado Card Games,16,0.23
+pilfered plans,VampireX TCG,16,0.22
+pilfered plans,VampireX TCG,13,0.22
+pilfered plans,Taverna Geek,5,0.20
+pilfered plans,Taverna Geek,1,0.20
+pilfered plans,Nerdz Cards,14,0.19
+pilfered plans,Nerdz Cards,6,0.19
+pilfered plans,Nerdz Cards,5,0.14
+pilfered plans,Nerdz Cards,4,0.14
+pilfered plans,under3,4,0.15
+pilfered plans,Segura Card & Games,6,0.15
+pilfered plans,Segura Card & Games,1,0.15
+pilfered plans,Treasure Cards,2,0.09
+pilfered plans,Treasure Cards,1,0.18
+pilfered plans,ProNerd,1,0.16
+pilfered plans,Arena Hobby Store,27,0.15
+pilfered plans,Gideon\'s Palace,1,0.15
+pilfered plans,A Taverna,4,0.18
+pilfered plans,Hobby Center,2,0.15
+pilfered plans,Livraria do Infinito - MagicJebb,2,0.14
+pilfered plans,Livraria do Infinito - MagicJebb,4,0.08
+pilfered plans,Cúpula do Trovão,3,0.15
+pilfered plans,Hive Jogos,1,0.10
+pilfered plans,Cabala MtG,5,0.10
+pilfered plans,CL TCG,15,0.07
+fraying sanity,VampireX TCG,1,19.97
+fraying sanity,Bazar de Bagdá,12,14.99
+fraying sanity,Bazar de Bagdá,1,24.99
+fraying sanity,Bazar de Bagdá,1,24.99
+fraying sanity,Bazar de Bagdá,1,24.99
+fraying sanity,Bazar de Bagdá,1,21.99
+fraying sanity,Magicbembarato,4,17.12
+fraying sanity,Magicbembarato,2,25.42
+fraying sanity,Konklave FunStore,1,23.60
+fraying sanity,TCGeeK,2,9.00
+fraying sanity,TCGeeK,2,18.00
+fraying sanity,Inside Games,34,13.00
+fraying sanity,Inside Games,2,20.00
+fraying sanity,Neowalkers Geek Store,2,9.98
+fraying sanity,Neowalkers Geek Store,1,18.00
+fraying sanity,Portal,1,17.00
+fraying sanity,Pi Games,1,9.99
+fraying sanity,Pi Games,1,16.99
+fraying sanity,Loja Grimorium,1,16.99
+fraying sanity,Cards Outlet,2,16.33
+fraying sanity,Tutubahia,1,15.00
+fraying sanity,House of Cards - Card Games,2,7.95
+fraying sanity,House of Cards - Card Games,1,14.95
+fraying sanity,City Class Games,4,14.71
+fraying sanity,City Class Games,1,14.71
+fraying sanity,Universo Magic,2,13.00
+fraying sanity,Universo Magic,2,6.00
+fraying sanity,Universo Magic,1,13.00
+fraying sanity,Medieval Cards,2,9.03
+fraying sanity,Medieval Cards,2,14.25
+fraying sanity,Medieval Cards,1,6.18
+fraying sanity,MTG Cards Games,1,14.95
+fraying sanity,Mulligan Geek Store,3,13.75
+fraying sanity,Magic Club,8,10.70
+fraying sanity,Magic Club,6,11.90
+fraying sanity,Power9,5,11.90
+fraying sanity,Shandalar,4,8.75
+fraying sanity,Shandalar,2,12.90
+fraying sanity,Shandalar,1,8.25
+fraying sanity,Shandalar,1,8.25
+fraying sanity,Chuck TCG,5,11.50
+fraying sanity,Newstation,1,11.50
+fraying sanity,Cards Of Paradise,1,11.00
+fraying sanity,WCG - World Card Games,1,10.99
+fraying sanity,CL TCG,1,10.75
+fraying sanity,Hobby Center,1,9.00
+fraying sanity,Loja Blood Moon,3,8.00
+fraying sanity,Padrinho: Card Store,1,7.49
+fraying sanity,Card Tutor,3,7.95
+fraying sanity,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,7.98
+fraying sanity,Magic Leste,1,7.25
+fraying sanity,Refúgio do Dragão,1,7.20
+fraying sanity,Overrun Geek Store,4,7.00
+fraying sanity,Segura Card & Games,1,7.00
+"jace, memory adept",Cards Of Paradise,1,47.80
+fraying sanity,Tolaria,1,6.20
+"jace, memory adept",Card Tutor,1,21.95
+"jace, memory adept",Card Tutor,1,39.95
+fraying sanity,Mineral Games,1,7.50
+fraying sanity,Loja Caverna do Dragão,1,6.00
+fraying sanity,A Taverna,2,7.95
+fraying sanity,A Taverna,1,7.95
+"jace, memory adept",Mineral Games,1,34.49
+"jace, memory adept",VAULT,2,20.00
+"jace, memory adept",VAULT,1,20.00
+"jace, memory adept",VAULT,1,37.50
+"jace, memory adept",Loja Blood Moon,1,39.00
+"jace, memory adept",Loja Blood Moon,1,22.00
+"jace, memory adept",Tutubahia,4,23.75
+"jace, memory adept",Tutubahia,1,25.00
+"jace, memory adept",Tutubahia,1,23.75
+"jace, memory adept",Tutubahia,1,29.75
+"jace, memory adept",Portal,1,33.00
+"jace, memory adept",Universo Magic,2,21.00
+"jace, memory adept",Universo Magic,1,39.90
+"jace, memory adept",Inside Games,2,30.00
+"jace, memory adept",Inside Games,2,30.00
+"jace, memory adept",Inside Games,1,30.00
+"jace, memory adept",Mulligan Geek Store,1,29.75
+"jace, memory adept",Mulligan Geek Store,1,29.75
+"jace, memory adept",Chuck TCG,1,29.50
+"jace, memory adept",Chuck TCG,2,29.50
+"jace, memory adept",Magicbembarato,4,27.08
+"jace, memory adept",Magicbembarato,4,26.13
+"jace, memory adept",Magicbembarato,3,25.76
+"jace, memory adept",Cards Outlet,2,26.18
+"jace, memory adept",Cards Outlet,2,24.92
+"jace, memory adept",Cards Outlet,1,24.57
+"jace, memory adept",Cards Outlet,2,24.57
+"jace, memory adept",Cards Outlet,2,26.18
+"jace, memory adept",Cards Outlet,2,24.92
+"jace, memory adept",Hobby Center,1,25.00
+"jace, memory adept",Loja Grimorium,1,24.99
+"jace, memory adept",Magic Club,1,21.20
+"jace, memory adept",Magic Club,1,23.99
+"jace, memory adept",Newstation,1,24.90
+"jace, memory adept",Bahia Store,2,23.41
+"jace, memory adept",Valhala Store,2,23.00
+"jace, memory adept",VampireX TCG,2,22.66
+"jace, memory adept",VampireX TCG,2,22.66
+"jace, memory adept",VampireX TCG,1,22.66
+"jace, memory adept",VampireX TCG,1,19.35
+"jace, memory adept",VampireX TCG,1,21.55
+"jace, memory adept",Multiverso Cards Comercio de Jogos e Acessorios Lt,1,22.08
+"jace, memory adept",Player`s Stop,1,21.99
+"jace, memory adept",LIMIAR STORE,1,19.51
+"jace, memory adept",Pharaoh\'s Shop,1,19.00
+"jace, memory adept",Pharaoh\'s Shop,1,19.00
+"jace, memory adept",Pharaoh\'s Shop,1,20.00
+"jace, memory adept",Load or Cast,1,21.15
+"jace, memory adept",Load or Cast,1,19.00
+"jace, memory adept",Ilusões Industriais,1,19.90
+"jace, memory adept",Loja Miracles,1,19.90
+dismal backwater,Newstation,8,0.50
+dismal backwater,Newstation,3,1.00
+dismal backwater,Newstation,2,1.00
+dismal backwater,Newstation,1,4.00
+dismal backwater,Newstation,1,6.00
+"jace, memory adept",Cards Store,2,18.00
+"jace, memory adept",A Loja do Pai,1,18.40
+"jace, memory adept",Overrun Geek Store,1,18.00
+"jace, memory adept",Basics Cards,1,17.99
+dismal backwater,Magicbembarato,4,1.32
+dismal backwater,Magicbembarato,4,1.55
+dismal backwater,Magicbembarato,4,1.32
+dismal backwater,Magicbembarato,4,1.32
+dismal backwater,Magicbembarato,4,1.32
+dismal backwater,Magicbembarato,4,2.21
+dismal backwater,Magicbembarato,4,1.32
+dismal backwater,Magicbembarato,4,1.18
+dismal backwater,Magicbembarato,1,6.75
+dismal backwater,Medieval Cards,3,0.48
+dismal backwater,Medieval Cards,2,0.48
+dismal backwater,Medieval Cards,2,0.48
+dismal backwater,Medieval Cards,1,5.70
+dismal backwater,Medieval Cards,1,0.48
+dismal backwater,Medieval Cards,1,0.48
+dismal backwater,Loja Grimorium,3,0.99
+dismal backwater,Loja Grimorium,2,0.99
+dismal backwater,Loja Grimorium,2,0.99
+dismal backwater,Loja Grimorium,2,0.99
+dismal backwater,Loja Grimorium,2,0.99
+dismal backwater,Loja Grimorium,1,0.99
+dismal backwater,Loja Grimorium,1,4.99
+dismal backwater,Loja Grimorium,1,0.99
+"jace, memory adept",A Taverna,1,19.95
+dismal backwater,Konklave FunStore,2,5.10
+dismal backwater,Konklave FunStore,1,4.80
+dismal backwater,Konklave FunStore,1,4.80
+dismal backwater,Konklave FunStore,2,4.80
+dismal backwater,Konklave FunStore,4,0.80
+dismal backwater,Konklave FunStore,4,0.80
+dismal backwater,Konklave FunStore,4,0.80
+dismal backwater,Konklave FunStore,1,0.80
+dismal backwater,Konklave FunStore,1,0.80
+dismal backwater,Konklave FunStore,4,0.80
+dismal backwater,Konklave FunStore,4,0.43
+dismal backwater,VAULT,1,4.00
+dismal backwater,VAULT,1,0.75
+dismal backwater,VAULT,1,0.50
+dismal backwater,VAULT,1,0.50
+dismal backwater,VAULT,1,0.75
+dismal backwater,VAULT,1,0.75
+dismal backwater,VAULT,1,0.50
+dismal backwater,VAULT,1,0.76
+dismal backwater,VAULT,1,0.50
+dismal backwater,VAULT,1,4.50
+dismal backwater,VAULT,1,2.50
+dismal backwater,Chuck TCG,1,0.50
+dismal backwater,Chuck TCG,8,0.50
+dismal backwater,Chuck TCG,1,4.00
+dismal backwater,Chuck TCG,1,4.50
+dismal backwater,Shandalar,5,0.45
+dismal backwater,Shandalar,4,0.45
+dismal backwater,Shandalar,3,0.45
+dismal backwater,Shandalar,3,0.45
+dismal backwater,Shandalar,2,0.25
+dismal backwater,Shandalar,1,0.25
+dismal backwater,Shandalar,1,2.95
+dismal backwater,Shandalar,1,4.45
+dismal backwater,Shandalar,1,0.45
+dismal backwater,Shandalar,1,0.25
+dismal backwater,Shandalar,1,0.45
+dismal backwater,Flow Games,3,3.82
+dismal backwater,Flow Games,4,0.48
+dismal backwater,Load or Cast,3,3.25
+dismal backwater,Load or Cast,1,2.55
+dismal backwater,Load or Cast,1,2.55
+dismal backwater,Load or Cast,4,0.55
+dismal backwater,Load or Cast,1,0.55
+dismal backwater,Load or Cast,11,0.45
+dismal backwater,Load or Cast,7,0.45
+dismal backwater,Load or Cast,2,0.45
+dismal backwater,Load or Cast,7,0.40
+dismal backwater,Load or Cast,25,0.10
+dismal backwater,Cards Of Paradise,256,0.80
+dismal backwater,Cards Of Paradise,49,0.80
+dismal backwater,Cards Of Paradise,49,0.80
+dismal backwater,Cards Of Paradise,46,0.80
+dismal backwater,Cards Of Paradise,42,0.40
+dismal backwater,Cards Of Paradise,42,0.40
+dismal backwater,Cards Of Paradise,28,0.80
+dismal backwater,Cards Of Paradise,27,0.80
+dismal backwater,Cards Of Paradise,25,0.80
+dismal backwater,Cards Of Paradise,24,0.80
+dismal backwater,Cards Of Paradise,9,3.80
+dismal backwater,Cards Of Paradise,7,3.80
+dismal backwater,Cards Of Paradise,4,3.60
+dismal backwater,Skull Games,3,0.99
+dismal backwater,Skull Games,3,0.49
+dismal backwater,Skull Games,1,3.50
+dismal backwater,Legends Game Store,1,3.14
+dismal backwater,Legends Game Store,3,1.34
+dismal backwater,Legends Game Store,2,1.34
+dismal backwater,Legends Game Store,1,1.34
+dismal backwater,Legends Game Store,2,1.34
+dismal backwater,Legends Game Store,16,1.34
+dismal backwater,Magic House Games,1,3.00
+dismal backwater,Magic House Games,1,0.30
+dismal backwater,PRCShop,5,0.50
+dismal backwater,PRCShop,3,0.50
+dismal backwater,PRCShop,2,1.00
+dismal backwater,PRCShop,1,3.00
+dismal backwater,Território Card Games,1,3.11
+dismal backwater,Território Card Games,4,0.50
+dismal backwater,Pi Games,5,0.75
+dismal backwater,Pi Games,3,0.75
+dismal backwater,Pi Games,1,0.75
+dismal backwater,Pi Games,1,2.99
+dismal backwater,Toca do Quati,9,0.60
+dismal backwater,Toca do Quati,2,2.90
+dismal backwater,VampireX TCG,16,0.40
+dismal backwater,VampireX TCG,4,0.43
+dismal backwater,VampireX TCG,2,0.43
+dismal backwater,VampireX TCG,1,0.43
+dismal backwater,VampireX TCG,1,2.46
+dismal backwater,Magic Club,18,0.50
+dismal backwater,Magic Club,15,0.50
+dismal backwater,Magic Club,7,0.40
+dismal backwater,Magic Club,3,0.50
+dismal backwater,Magic Club,2,2.50
+dismal backwater,Magic Club,1,1.90
+dismal backwater,TCGeeK,29,0.70
+dismal backwater,TCGeeK,12,0.70
+dismal backwater,TCGeeK,11,0.70
+dismal backwater,TCGeeK,8,0.80
+dismal backwater,TCGeeK,2,2.50
+dismal backwater,TCGeeK,1,0.65
+dismal backwater,TCGeeK,1,0.65
+dismal backwater,TCGeeK,1,1.00
+dismal backwater,TCGeeK,1,1.00
+dismal backwater,TCGeeK,1,0.70
+dismal backwater,Pharaoh\'s Shop,38,0.65
+dismal backwater,Pharaoh\'s Shop,17,0.80
+dismal backwater,Pharaoh\'s Shop,15,0.65
+dismal backwater,Pharaoh\'s Shop,12,0.65
+dismal backwater,Pharaoh\'s Shop,12,0.65
+dismal backwater,Pharaoh\'s Shop,4,0.65
+dismal backwater,Pharaoh\'s Shop,2,0.65
+dismal backwater,Pharaoh\'s Shop,2,0.65
+dismal backwater,Pharaoh\'s Shop,1,2.00
+dismal backwater,Pharaoh\'s Shop,1,2.00
+dismal backwater,Pharaoh\'s Shop,1,1.50
+dismal backwater,Pharaoh\'s Shop,1,2.00
+dismal backwater,Power9,1,2.50
+dismal backwater,Power9,41,0.50
+dismal backwater,Power9,3,0.50
+dismal backwater,Power9,2,0.50
+dismal backwater,Inside Games,196,0.50
+dismal backwater,Inside Games,79,0.50
+dismal backwater,Inside Games,58,0.50
+dismal backwater,Inside Games,51,0.50
+dismal backwater,Inside Games,24,0.50
+dismal backwater,Inside Games,4,2.50
+dismal backwater,Cards Outlet,4,1.28
+dismal backwater,Cards Outlet,4,1.28
+dismal backwater,Cards Outlet,4,1.28
+dismal backwater,Cards Outlet,4,1.28
+dismal backwater,Cards Outlet,1,2.13
+dismal backwater,Cards Outlet,1,1.49
+dismal backwater,Cards Outlet,34,1.14
+dismal backwater,Cards Outlet,6,1.28
+dismal backwater,Cards Outlet,4,1.49
+dismal backwater,Cards Outlet,4,1.28
+dismal backwater,Cards Outlet,4,1.28
+dismal backwater,Cards Outlet,4,1.28
+dismal backwater,Cards Outlet,4,1.28
+dismal backwater,Treasure Cards,4,1.80
+dismal backwater,Treasure Cards,2,0.23
+dismal backwater,Treasure Cards,2,0.45
+dismal backwater,Treasure Cards,2,0.23
+dismal backwater,Treasure Cards,1,2.25
+dismal backwater,Treasure Cards,1,0.23
+dismal backwater,Universo Magic,5,0.20
+dismal backwater,Universo Magic,1,2.00
+dismal backwater,Armada Nerd Hobby Store,6,0.50
+dismal backwater,Armada Nerd Hobby Store,1,0.50
+dismal backwater,Armada Nerd Hobby Store,1,2.00
+dismal backwater,Portal,6,0.25
+dismal backwater,Portal,2,0.50
+dismal backwater,Portal,1,2.00
+dismal backwater,Cabala MtG,2,2.00
+dismal backwater,Cabala MtG,1,0.25
+dismal backwater,RED Jogos,1,2.00
+dismal backwater,RED Jogos,18,0.40
+dismal backwater,RED Jogos,9,0.50
+dismal backwater,RED Jogos,18,0.50
+dismal backwater,RED Jogos,1,0.50
+dismal backwater,RED Jogos,1,0.50
+dismal backwater,MTG Cards Games,232,0.40
+dismal backwater,MTG Cards Games,56,0.40
+dismal backwater,MTG Cards Games,15,0.40
+dismal backwater,MTG Cards Games,8,0.45
+dismal backwater,MTG Cards Games,5,0.50
+dismal backwater,MTG Cards Games,3,1.95
+dismal backwater,City Class Games,29,0.45
+dismal backwater,City Class Games,7,0.55
+dismal backwater,City Class Games,2,1.75
+dismal backwater,Gideon\'s Palace,9,0.50
+dismal backwater,Gideon\'s Palace,1,1.50
+dismal backwater,Padrinho: Card Store,14,0.25
+dismal backwater,Padrinho: Card Store,8,0.25
+dismal backwater,Padrinho: Card Store,2,0.20
+dismal backwater,Padrinho: Card Store,1,0.20
+dismal backwater,Padrinho: Card Store,1,1.49
+dismal backwater,Padrinho: Card Store,1,0.25
+dismal backwater,Tutubahia,4,1.25
+dismal backwater,Tutubahia,4,0.63
+dismal backwater,Tutubahia,4,0.63
+dismal backwater,Tutubahia,4,0.63
+dismal backwater,Tokenlandia Cards,4,1.00
+dismal backwater,Tokenlandia Cards,4,1.00
+dismal backwater,Tokenlandia Cards,2,1.00
+dismal backwater,Tokenlandia Cards,2,1.00
+dismal backwater,Tokenlandia Cards,1,1.00
+dismal backwater,Bazar de Bagdá,23,0.99
+dismal backwater,Bazar de Bagdá,17,0.99
+dismal backwater,Bazar de Bagdá,16,0.99
+dismal backwater,Bazar de Bagdá,8,0.99
+dismal backwater,Bazar de Bagdá,3,0.99
+dismal backwater,Bazar de Bagdá,2,0.99
+dismal backwater,Bazar de Bagdá,1,0.99
+dismal backwater,DeckMasterGames,2,0.90
+dismal backwater,LIMIAR STORE,7,0.62
+dismal backwater,LIMIAR STORE,4,0.49
+dismal backwater,LIMIAR STORE,2,0.58
+dismal backwater,LIMIAR STORE,1,0.73
+dismal backwater,LIMIAR STORE,1,0.41
+dismal backwater,LIMIAR STORE,1,0.76
+dismal backwater,LIMIAR STORE,1,0.52
+dismal backwater,CHQ Cards,17,0.60
+dismal backwater,CHQ Cards,15,0.70
+dismal backwater,CHQ Cards,8,0.70
+dismal backwater,CHQ Cards,4,0.90
+dismal backwater,CHQ Cards,3,0.90
+dismal backwater,CHQ Cards,3,0.80
+dismal backwater,CHQ Cards,2,0.70
+dismal backwater,Miragem Hobby,13,0.49
+dismal backwater,Miragem Hobby,5,0.75
+dismal backwater,Mulligan Geek Store,7,0.75
+dismal backwater,Mulligan Geek Store,4,0.75
+dismal backwater,Mulligan Geek Store,3,0.75
+dismal backwater,Mulligan Geek Store,1,0.75
+dismal backwater,Legion Board & Card Games,2,0.71
+dismal backwater,Magic Store Brasil,4,0.60
+dismal backwater,Magic Store Brasil,17,0.50
+dismal backwater,Nerdz Cards,27,0.50
+dismal backwater,Overrun Geek Store,3,0.52
+dismal backwater,Meruru,13,0.55
+dismal backwater,Meruru,3,0.55
+dismal backwater,Meruru,1,0.55
+dismal backwater,Meruru,1,0.55
+dismal backwater,Tolaria,8,0.50
+dismal backwater,A Taverna,1,0.40
+dismal backwater,A Taverna,1,0.50
+dismal backwater,New !QUEST STORE,7,0.50
+dismal backwater,Loja Blood Moon,8,0.50
+dismal backwater,Reino Magic,16,0.50
+dismal backwater,Cards Store,8,0.50
+dismal backwater,MTG Caxias Cards,12,0.49
+dismal backwater,MTG Caxias Cards,4,0.50
+dismal backwater,MTG Caxias Cards,3,0.50
+dismal backwater,MTG Caxias Cards,2,0.49
+dismal backwater,Lets Collect,8,0.50
+dismal backwater,Lets Collect,3,0.45
+dismal backwater,Tabuleria,16,0.50
+dismal backwater,Tabuleria,4,0.50
+dismal backwater,Tabuleria,1,0.35
+dismal backwater,WCG - World Card Games,3,0.49
+dismal backwater,WCG - World Card Games,1,0.35
+dismal backwater,WCG - World Card Games,2,0.49
+dismal backwater,WCG - World Card Games,7,0.49
+dismal backwater,WCG - World Card Games,7,0.49
+dismal backwater,WCG - World Card Games,1,0.45
+dismal backwater,Mineral Games,61,0.49
+dismal backwater,Mineral Games,9,0.49
+dismal backwater,Neowalkers Geek Store,5,0.48
+dismal backwater,Cards Hall,15,0.45
+dismal backwater,Cards Hall,2,0.45
+despise,VAULT,3,0.75
+despise,VAULT,1,0.50
+despise,VAULT,1,10.00
+despise,VAULT,1,0.75
+despise,VAULT,1,9.00
+despise,VAULT,1,0.75
+despise,VAULT,1,0.50
+despise,VAULT,1,9.00
+despise,Magicbembarato,4,1.11
+despise,Magicbembarato,4,1.02
+despise,Magicbembarato,2,5.22
+despise,Magicbembarato,2,8.98
+despise,Bahia Store,4,0.50
+despise,Bahia Store,3,0.85
+despise,Bahia Store,1,10.13
+despise,VampireX TCG,21,0.87
+despise,VampireX TCG,2,3.51
+despise,VampireX TCG,2,0.87
+despise,VampireX TCG,2,4.39
+despise,VampireX TCG,2,1.31
+despise,VampireX TCG,1,4.39
+despise,VampireX TCG,1,7.03
+despise,VampireX TCG,1,6.35
+despise,Pharaoh\'s Shop,13,0.25
+despise,Pharaoh\'s Shop,4,0.50
+despise,Pharaoh\'s Shop,1,0.50
+despise,Pharaoh\'s Shop,1,7.50
+despise,Pharaoh\'s Shop,1,0.14
+despise,CHQ Cards,1,8.90
+despise,Cards Of Paradise,2,7.80
+despise,Cards Of Paradise,1,2.20
+despise,Magic House Games,1,6.90
+despise,Magic House Games,1,4.99
+despise,Magic Club,7,0.95
+despise,Magic Club,4,0.75
+despise,Magic Club,1,5.90
+despise,Magic Club,1,3.99
+despise,Shandalar,4,4.35
+despise,Shandalar,1,5.70
+despise,Shandalar,1,0.35
+despise,Load or Cast,3,5.30
+despise,Load or Cast,1,3.55
+despise,Load or Cast,1,0.50
+despise,Load or Cast,5,0.50
+despise,Load or Cast,16,0.50
+despise,Bazar de Bagdá,38,1.49
+despise,Bazar de Bagdá,4,4.99
+despise,Bazar de Bagdá,3,4.99
+despise,Bazar de Bagdá,3,1.49
+despise,Bazar de Bagdá,1,4.99
+despise,Bazar de Bagdá,1,0.99
+despise,Multiverso Cards Comercio de Jogos e Acessorios Lt,4,0.30
+despise,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,4.79
+despise,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,0.30
+despise,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,0.30
+despise,Legion Board & Card Games,29,0.71
+despise,Legion Board & Card Games,2,0.71
+despise,Legion Board & Card Games,1,4.75
+despise,Inside Games,56,1.00
+despise,Inside Games,18,1.50
+despise,Inside Games,1,5.00
+despise,Liga Arena,1,4.28
+despise,Power9,1,4.00
+despise,Power9,36,0.75
+despise,Power9,1,0.50
+despise,TCGeeK,35,1.00
+despise,TCGeeK,3,4.00
+despise,Cabala MtG,2,3.80
+despise,Magic Leste,1,3.00
+despise,Magic Leste,2,0.19
+despise,Card Tutor,6,0.75
+despise,Card Tutor,4,0.95
+despise,Card Tutor,4,2.95
+despise,Nerdz Cards,12,0.19
+despise,Nerdz Cards,12,0.19
+despise,Nerdz Cards,4,0.24
+despise,Nerdz Cards,1,0.19
+despise,Nerdz Cards,1,2.00
+despise,RED Jogos,3,2.00
+despise,RED Jogos,8,0.50
+despise,RED Jogos,6,0.50
+despise,Universo Magic,1,2.00
+despise,Chuck TCG,2,1.50
+despise,Chuck TCG,3,1.50
+despise,Chuck TCG,1,2.00
+despise,Chuck TCG,5,2.00
+dismal backwater,Liga Arena,8,0.42
+despise,Portal,18,2.00
+despise,Portal,5,1.25
+despise,MTG Cards Games,24,1.15
+despise,MTG Cards Games,1,1.99
+despise,Loja Grimorium,4,1.99
+despise,Loja Grimorium,2,1.99
+despise,Loja Grimorium,1,0.99
+despise,Loja Grimorium,1,1.99
+despise,Loja Grimorium,1,1.99
+dismal backwater,Segura Card & Games,1,0.40
+dismal backwater,Segura Card & Games,1,0.20
+dismal backwater,Magic Leste,2,0.40
+dismal backwater,Magic Leste,12,0.24
+dismal backwater,Taverna Geek,14,0.15
+dismal backwater,Taverna Geek,9,0.25
+dismal backwater,Taverna Geek,6,0.15
+dismal backwater,Taverna Geek,2,0.40
+dismal backwater,Taverna Geek,2,0.40
+dismal backwater,Taverna Geek,1,0.20
+dismal backwater,Taverna Geek,1,0.20
+dismal backwater,Power Up Games,1,0.40
+dismal backwater,Power Up Games,1,0.40
+dismal backwater,Power Up Games,1,0.40
+dismal backwater,Card Tutor,12,0.35
+dismal backwater,Player`s Stop,6,0.35
+dismal backwater,Cards e Games,9,0.35
+dismal backwater,Cards e Games,9,0.35
+dismal backwater,Cards e Games,8,0.35
+dismal backwater,Cards e Games,7,0.35
+dismal backwater,Cards e Games,6,0.35
+dismal backwater,Cards e Games,5,0.35
+dismal backwater,Cards e Games,4,0.35
+dismal backwater,Cards e Games,4,0.35
+dismal backwater,CL TCG,17,0.35
+dismal backwater,CL TCG,1,0.18
+dismal backwater,Multiverso Cards Comercio de Jogos e Acessorios Lt,17,0.30
+dismal backwater,Hobby Center,3,0.25
+dismal backwater,Hobby Center,3,0.25
+despise,ManaFix.net,2,1.75
+dismal backwater,Loja Caverna do Dragão,3,0.25
+dismal backwater,Elder Dragon Brasil,3,0.35
+despise,Konklave FunStore,1,1.60
+despise,Konklave FunStore,4,1.20
+despise,Newstation,8,1.75
+despise,Newstation,6,1.75
+despise,Newstation,2,1.50
+despise,Player`s Stop,1,1.35
+despise,Condado Card Games,3,1.35
+despise,Power Up Games,1,1.00
+despise,Treasure Cards,6,0.68
+despise,Treasure Cards,4,0.68
+despise,Treasure Cards,2,0.68
+despise,Treasure Cards,2,1.35
+despise,Cards Outlet,5,0.99
+despise,Cards Outlet,4,1.06
+despise,Cards Outlet,5,0.99
+despise,Cards Outlet,4,1.06
+despise,Magic Store Brasil,9,1.00
+despise,Magic Store Brasil,5,1.00
+despise,Magic Store Brasil,1,0.60
+despise,Tokenlandia Cards,4,1.00
+despise,Tokenlandia Cards,1,1.00
+despise,Tokenlandia Cards,1,1.00
+despise,Cards e Games,3,0.99
+despise,Meruru,5,0.99
+despise,Meruru,5,0.99
+dismal backwater,Jaw Games,1,0.25
+despise,Neowalkers Geek Store,6,0.98
+despise,Neowalkers Geek Store,5,0.98
+dismal backwater,House of Cards - Card Games,5,0.25
+dismal backwater,House of Cards - Card Games,2,0.25
+dismal backwater,House of Cards - Card Games,2,0.25
+dismal backwater,Arena Hobby Store,1,0.25
+dismal backwater,Monster Games Cards,3,0.25
+dismal backwater,Monster Games Cards,2,0.25
+dismal backwater,Monster Games Cards,1,0.25
+dismal backwater,Condado Card Games,2,0.23
+dismal backwater,Porto Livre Games,8,0.25
+dismal backwater,Cúpula do Trovão,36,0.25
+dismal backwater,Cúpula do Trovão,6,0.25
+dismal backwater,Cúpula do Trovão,1,0.25
+dismal backwater,Loja do Bardo,4,0.20
+dismal backwater,Loja do Bardo,1,0.20
+dismal backwater,Loja do Bardo,1,0.20
+dismal backwater,Loja do Bardo,2,0.20
+dismal backwater,Loja do Bardo,1,0.20
+dismal backwater,Fire Ice Card Games,3,0.18
+dismal backwater,Fire Ice Card Games,1,0.18
+dismal backwater,Fire Ice Card Games,1,0.18
+dismal backwater,Fire Ice Card Games,1,0.18
+dismal backwater,Moinho de Vento Geek Store,12,0.10
+dismal backwater,Moinho de Vento Geek Store,1,0.19
+grafdigger's cage,Tutubahia,4,14.75
+grafdigger's cage,Tutubahia,1,89.75
+grafdigger's cage,Tutubahia,1,74.75
+grafdigger's cage,Porto Livre Games,3,53.50
+grafdigger's cage,Porto Livre Games,4,13.50
+grafdigger's cage,Pharaoh\'s Shop,3,50.00
+grafdigger's cage,Pharaoh\'s Shop,2,50.00
+grafdigger's cage,Pharaoh\'s Shop,2,33.90
+grafdigger's cage,Pharaoh\'s Shop,1,34.90
+grafdigger's cage,Pharaoh\'s Shop,1,90.00
+grafdigger's cage,Pharaoh\'s Shop,1,25.00
+grafdigger's cage,PRCShop,5,18.00
+grafdigger's cage,PRCShop,3,65.00
+grafdigger's cage,TCGeeK,8,11.00
+grafdigger's cage,TCGeeK,2,90.00
+grafdigger's cage,TCGeeK,1,29.90
+dismal backwater,Refúgio do Dragão,7,0.15
+dismal backwater,Bahia Store,4,0.12
+grafdigger's cage,City Class Games,8,18.39
+grafdigger's cage,City Class Games,1,55.19
+dismal backwater,Geex Hobby Store,12,0.15
+grafdigger's cage,Arena Hobby Store,1,50.00
+grafdigger's cage,Loja Caverna do Dragão,1,50.00
+grafdigger's cage,Bazar de Bagdá,21,11.99
+grafdigger's cage,Bazar de Bagdá,4,19.99
+grafdigger's cage,Bazar de Bagdá,3,49.99
+grafdigger's cage,VAULT,1,45.00
+grafdigger's cage,VampireX TCG,11,16.98
+grafdigger's cage,VampireX TCG,1,41.35
+grafdigger's cage,VampireX TCG,1,49.98
+grafdigger's cage,VampireX TCG,1,49.98
+grafdigger's cage,Medieval Cards,2,17.58
+grafdigger's cage,Medieval Cards,2,13.30
+grafdigger's cage,Medieval Cards,1,42.75
+grafdigger's cage,Medieval Cards,1,19.00
+grafdigger's cage,Medieval Cards,1,47.49
+grafdigger's cage,Magicbembarato,4,12.68
+grafdigger's cage,Magicbembarato,4,35.17
+grafdigger's cage,Magicbembarato,4,47.48
+grafdigger's cage,Newstation,4,16.90
+grafdigger's cage,Newstation,3,49.90
+grafdigger's cage,Newstation,1,30.00
+grafdigger's cage,Newstation,1,35.00
+grafdigger's cage,CHQ Cards,3,44.90
+grafdigger's cage,CHQ Cards,2,10.90
+grafdigger's cage,CHQ Cards,1,44.90
+despise,Medieval Cards,12,0.71
+despise,Medieval Cards,1,0.71
+despise,Medieval Cards,1,0.95
+despise,Medieval Cards,1,0.95
+grafdigger's cage,Inside Games,33,15.00
+grafdigger's cage,Inside Games,4,25.00
+grafdigger's cage,Inside Games,3,46.00
+grafdigger's cage,Inside Games,2,45.00
+grafdigger's cage,Pi Games,7,34.89
+grafdigger's cage,Pi Games,1,41.99
+grafdigger's cage,Pi Games,1,34.89
+grafdigger's cage,Pi Games,1,41.99
+grafdigger's cage,Hobby Center,1,42.00
+despise,Skull Games,3,0.75
+despise,Skull Games,1,0.93
+despise,Legends Game Store,7,0.89
+despise,Legends Game Store,1,0.89
+despise,Legends Game Store,2,0.89
+despise,Legends Game Store,3,0.89
+despise,Legends Game Store,1,0.86
+despise,MTG Caxias Cards,16,0.75
+despise,LIMIAR STORE,6,0.73
+despise,LIMIAR STORE,4,0.68
+despise,Porto Livre Games,1,0.64
+despise,Porto Livre Games,1,0.21
+despise,Mulligan Geek Store,14,0.75
+despise,Flow Games,1,0.72
+despise,PRCShop,24,0.50
+grafdigger's cage,Moinho de Vento Geek Store,3,39.99
+grafdigger's cage,Cards Outlet,8,12.46
+grafdigger's cage,Cards Outlet,4,12.46
+grafdigger's cage,Cards Outlet,4,34.00
+grafdigger's cage,Flow Games,1,33.43
+grafdigger's cage,Flow Games,4,11.46
+grafdigger's cage,Flow Games,1,19.00
+grafdigger's cage,Mineral Games,2,39.95
+grafdigger's cage,Mineral Games,6,12.95
+grafdigger's cage,Power9,2,38.99
+grafdigger's cage,Power9,1,18.00
+grafdigger's cage,Power9,1,15.00
+grafdigger's cage,Power9,4,11.50
+grafdigger's cage,Fire Ice Card Games,1,24.50
+grafdigger's cage,Fire Ice Card Games,1,30.00
+grafdigger's cage,Cards Hall,3,9.99
+grafdigger's cage,Cards Hall,2,34.49
+grafdigger's cage,Cards Hall,1,34.48
+grafdigger's cage,Legion Board & Card Games,1,22.75
+grafdigger's cage,Legion Board & Card Games,1,33.25
+grafdigger's cage,Legion Board & Card Games,1,9.26
+grafdigger's cage,Player`s Stop,6,13.99
+grafdigger's cage,Player`s Stop,2,29.99
+grafdigger's cage,CL TCG,1,31.75
+grafdigger's cage,Neowalkers Geek Store,4,14.98
+grafdigger's cage,Neowalkers Geek Store,1,30.00
+grafdigger's cage,Cards Of Paradise,44,11.80
+grafdigger's cage,Cards Of Paradise,42,11.80
+grafdigger's cage,Cards Of Paradise,4,31.80
+grafdigger's cage,Cards Of Paradise,3,31.80
+grafdigger's cage,Cards Of Paradise,1,15.80
+grafdigger's cage,Valhala Store,1,30.00
+grafdigger's cage,Valhala Store,1,28.00
+grafdigger's cage,Konklave FunStore,2,25.08
+grafdigger's cage,Konklave FunStore,3,12.33
+grafdigger's cage,Konklave FunStore,1,12.33
+grafdigger's cage,MTG Cards Games,6,11.95
+grafdigger's cage,MTG Cards Games,1,31.95
+grafdigger's cage,Tabuleria,12,9.75
+grafdigger's cage,Tabuleria,3,25.00
+grafdigger's cage,Tabuleria,2,29.75
+grafdigger's cage,Magic Club,3,9.95
+grafdigger's cage,Magic Club,1,26.90
+grafdigger's cage,Universo Magic,1,10.00
+grafdigger's cage,Universo Magic,1,25.00
+grafdigger's cage,Chuck TCG,3,24.50
+grafdigger's cage,Chuck TCG,1,24.50
+grafdigger's cage,Magic Leste,1,24.90
+grafdigger's cage,Magic Leste,3,9.50
+grafdigger's cage,Cúpula do Trovão,9,10.00
+grafdigger's cage,Cúpula do Trovão,2,20.00
+grafdigger's cage,Cúpula do Trovão,2,10.00
+grafdigger's cage,Cúpula do Trovão,2,24.00
+grafdigger's cage,Liga Arena,4,23.66
+despise,Cards Store,4,0.50
+despise,Mineral Games,1,0.49
+despise,Mineral Games,6,0.49
+despise,Taverna Geek,5,0.45
+despise,Pi Games,1,0.29
+despise,Segura Card & Games,1,0.25
+despise,Millennium Cards & Games,1,0.45
+despise,Loja Caverna do Dragão,4,0.25
+despise,Hobby Center,2,0.25
+despise,WCG - World Card Games,1,0.25
+despise,Top Deck RN,4,0.25
+despise,Top Deck RN,3,0.25
+despise,Gideon\'s Palace,3,0.25
+despise,Padrinho: Card Store,11,0.25
+despise,Ilusões Industriais,4,0.25
+despise,Ilusões Industriais,1,0.25
+despise,Overrun Geek Store,1,0.25
+despise,Card Castle,1,0.24
+despise,Card Castle,1,0.24
+despise,ProNerd,1,0.21
+despise,ProNerd,1,0.21
+despise,Xaracards,9,0.15
+despise,under3,1,0.18
+despise,Basics Cards,1,0.16
+grafdigger's cage,Cabala MtG,1,20.00
+despise,A Taverna,1,0.20
+grafdigger's cage,Skull Games,1,19.99
+grafdigger's cage,LOJA CALABOUÇO - HOBBIES E COLECIONÁVEIS,1,19.99
+grafdigger's cage,LOJA CALABOUÇO - HOBBIES E COLECIONÁVEIS,2,12.00
+grafdigger's cage,A Taverna,1,19.95
+grafdigger's cage,Shandalar,1,19.90
+grafdigger's cage,Meruru,1,19.98
+grafdigger's cage,Mulligan Geek Store,8,9.75
+grafdigger's cage,Mulligan Geek Store,2,19.75
+grafdigger's cage,Portal,4,18.00
+grafdigger's cage,DeckMasterGames,1,16.75
+grafdigger's cage,Load or Cast,12,16.20
+grafdigger's cage,MTG Caxias Cards,3,15.00
+grafdigger's cage,Legends Game Store,5,17.99
+grafdigger's cage,Loja Grimorium,3,14.99
+grafdigger's cage,Gideon\'s Palace,2,14.00
+grafdigger's cage,Loja Blood Moon,2,14.00
+grafdigger's cage,Loja Blood Moon,1,14.00
+grafdigger's cage,Tokenlandia Cards,2,14.00
+grafdigger's cage,New !QUEST STORE,2,15.00
+grafdigger's cage,Lets Collect,3,13.95
+grafdigger's cage,Miragem Hobby,8,14.95
+grafdigger's cage,Território Card Games,1,12.94
+grafdigger's cage,Reino Magic,3,12.00
+grafdigger's cage,Reino Magic,2,12.00
+grafdigger's cage,RED Jogos,4,12.00
+grafdigger's cage,Card Tutor,3,11.95
+grafdigger's cage,Cards Store,4,10.00
+grafdigger's cage,Cards Store,1,10.00
+grafdigger's cage,LIMIAR STORE,2,11.78
+grafdigger's cage,WCG - World Card Games,3,10.99
+grafdigger's cage,WCG - World Card Games,2,10.99
+grafdigger's cage,Magic Store Brasil,4,10.50
+grafdigger's cage,Multiverso Cards Comercio de Jogos e Acessorios Lt,2,10.00
+grafdigger's cage,Elder Dragon Brasil,2,10.00
+grafdigger's cage,Overrun Geek Store,4,9.90
+grafdigger's cage,Geex Hobby Store,2,9.99
+grafdigger's cage,Rayearth Games,5,9.90
+grafdigger's cage,A Loja do Pai,28,9.65
+set adrift,Loja Grimorium,12,0.49
+set adrift,Loja Grimorium,4,0.49
+set adrift,Loja Grimorium,3,1.99
+set adrift,Loja Grimorium,2,1.99
+grafdigger's cage,Refúgio do Dragão,2,9.45
+grafdigger's cage,Ascensão,2,9.42
+grafdigger's cage,Ascensão,1,9.43
+grafdigger's cage,Ascensão,2,9.43
+grafdigger's cage,Ascensão,2,9.43
+set adrift,Konklave FunStore,1,3.20
+set adrift,Konklave FunStore,4,0.80
+set adrift,CHQ Cards,41,0.80
+set adrift,CHQ Cards,1,1.60
+set adrift,Magic Leste,1,1.50
+set adrift,Magic Leste,18,0.19
+set adrift,Power Up Games,2,0.85
+set adrift,Power Up Games,16,1.00
+set adrift,Bazar de Bagdá,6,1.25
+set adrift,Liga Arena,5,0.94
+set adrift,House of Cards - Card Games,4,0.95
+set adrift,Medieval Cards,12,0.71
+set adrift,Medieval Cards,7,0.71
+set adrift,Medieval Cards,4,0.95
+set adrift,Medieval Cards,2,0.95
+set adrift,City Class Games,7,0.83
+set adrift,LIMIAR STORE,2,0.55
+set adrift,Cards Of Paradise,318,0.80
+set adrift,Armada Nerd Hobby Store,4,0.75
+set adrift,Portal,27,0.50
+set adrift,Meruru,1,0.75
+set adrift,Inside Games,24,0.50
+set adrift,Chuck TCG,7,0.50
+set adrift,PRCShop,16,0.50
+set adrift,Lets Collect,32,0.45
+set adrift,Legends Game Store,1,0.44
+set adrift,Cards Hall,1,0.45
+set adrift,Magic Club,9,0.40
+set adrift,Load or Cast,17,0.40
+set adrift,Card Tutor,6,0.35
+set adrift,Pharaoh\'s Shop,19,0.35
+set adrift,Pharaoh\'s Shop,16,0.35
+set adrift,Pharaoh\'s Shop,1,0.25
+set adrift,MTG Cards Games,15,0.35
+set adrift,Bahia Store,2,0.33
+set adrift,Shandalar,4,0.25
+set adrift,Pi Games,3,0.33
+set adrift,Power9,12,0.30
+set adrift,MTG Caxias Cards,7,0.25
+set adrift,Loja Caverna do Dragão,8,0.25
+set adrift,Overrun Geek Store,4,0.25
+set adrift,Top Deck RN,1,0.25
+set adrift,Moinho de Vento Geek Store,6,0.25
+set adrift,Arena Hobby Store,7,0.25
+set adrift,Cabala MtG,9,0.25
+set adrift,Legion Board & Card Games,19,0.24
+set adrift,Mineral Games,4,0.25
+set adrift,Neowalkers Geek Store,3,0.23
+set adrift,Treasure Cards,6,0.23
+set adrift,Treasure Cards,4,0.23
+set adrift,ProNerd,4,0.21
+set adrift,Segura Card & Games,4,0.20
+set adrift,Millennium Cards & Games,2,0.20
+set adrift,Padrinho: Card Store,6,0.20
+set adrift,CL TCG,17,0.17
+set adrift,Ascensão,7,0.10
+codex shredder,Card Tutor,9,0.95
+codex shredder,Card Tutor,6,14.95
+set adrift,Taverna Geek,1,0.15
+codex shredder,Chuck TCG,9,0.75
+codex shredder,Chuck TCG,4,0.75
+codex shredder,Chuck TCG,1,14.50
+set adrift,RED Jogos,8,0.15
+codex shredder,VAULT,3,0.95
+codex shredder,VAULT,2,0.95
+codex shredder,VAULT,1,14.50
+codex shredder,VAULT,1,17.50
+set adrift,Cúpula do Trovão,15,0.15
+codex shredder,Magic House Games,1,14.50
+codex shredder,Magic House Games,1,0.50
+set adrift,Hive Jogos,3,0.10
+codex shredder,Konklave FunStore,3,1.60
+codex shredder,City Class Games,1,1.83
+codex shredder,Tokenlandia Cards,11,1.00
+codex shredder,Tokenlandia Cards,1,13.50
+codex shredder,Pi Games,1,1.99
+codex shredder,LOJA CALABOUÇO - HOBBIES E COLECIONÁVEIS,1,9.99
+codex shredder,Neowalkers Geek Store,1,1.48
+codex shredder,Loja Blood Moon,4,1.50
+codex shredder,Loja Blood Moon,1,1.25
+codex shredder,Loja Blood Moon,1,1.50
+codex shredder,Loja Grimorium,19,1.50
+codex shredder,Loja Grimorium,17,1.50
+codex shredder,Bazar de Bagdá,11,1.49
+codex shredder,Bazar de Bagdá,3,1.49
+codex shredder,Bazar de Bagdá,1,0.99
+codex shredder,CHQ Cards,34,1.20
+codex shredder,Cards Outlet,9,1.17
+codex shredder,Cards Outlet,4,1.17
+codex shredder,Condado Card Games,12,1.35
+codex shredder,Hobby Center,3,1.20
+codex shredder,Mulligan Geek Store,6,1.25
+codex shredder,Magicbembarato,4,1.19
+codex shredder,Liga Arena,2,1.14
+codex shredder,ManaFix.net,9,1.00
+codex shredder,ManaFix.net,9,1.00
+codex shredder,Magic Store Brasil,2,1.00
+codex shredder,Magic Store Brasil,1,0.30
+codex shredder,Legends Game Store,2,1.13
+codex shredder,Legends Game Store,3,1.13
+codex shredder,Legends Game Store,1,0.89
+codex shredder,Legends Game Store,1,0.89
+codex shredder,RED Jogos,8,1.00
+codex shredder,Xaracards,2,0.99
+codex shredder,Inside Games,4,1.00
+codex shredder,Magic Club,4,0.99
+codex shredder,Portal,1,1.00
+codex shredder,House of Cards - Card Games,5,0.95
+codex shredder,DeckMasterGames,5,0.99
+codex shredder,Território Card Games,4,0.99
+codex shredder,Medieval Cards,4,0.67
+codex shredder,Medieval Cards,2,0.67
+codex shredder,Medieval Cards,1,0.86
+codex shredder,Medieval Cards,1,0.86
+codex shredder,Medieval Cards,1,0.33
+codex shredder,Miragem Hobby,1,0.90
+codex shredder,Player`s Stop,2,0.99
+codex shredder,Meruru,6,0.75
+codex shredder,Meruru,5,0.75
+codex shredder,LIMIAR STORE,4,0.80
+codex shredder,Toca do Quati,4,0.75
+codex shredder,Nerdz Cards,6,0.75
+codex shredder,Nerdz Cards,4,0.75
+codex shredder,Nerdz Cards,1,0.50
+codex shredder,Mineral Games,9,0.75
+codex shredder,Mineral Games,4,0.50
+codex shredder,Overrun Geek Store,2,0.75
+codex shredder,Elder Dragon Brasil,2,0.70
+codex shredder,Pharaoh\'s Shop,3,0.65
+codex shredder,Pharaoh\'s Shop,1,0.65
+codex shredder,Load or Cast,5,0.65
+codex shredder,Load or Cast,14,0.65
+codex shredder,VampireX TCG,8,0.66
+codex shredder,Shandalar,2,0.65
+codex shredder,Cards Store,8,0.49
+codex shredder,Cards Store,4,0.49
+codex shredder,Cards Store,4,0.60
+codex shredder,Cards Store,1,0.60
+codex shredder,Valhala Store,8,0.50
+codex shredder,Basics Cards,1,0.49
+codex shredder,Top Deck RN,4,0.34
+codex shredder,MTG Caxias Cards,4,0.49
+codex shredder,Porto Livre Games,3,0.42
+codex shredder,Segura Card & Games,3,0.35
+memory sluice,Chuck TCG,4,4.00
+memory sluice,VAULT,5,3.50
+memory sluice,Skull Games,1,3.99
+codex shredder,Arsenal Nerd,2,0.29
+memory sluice,Cards Of Paradise,77,3.80
+memory sluice,Portal,5,3.50
+memory sluice,Loja Caverna do Dragão,1,3.50
+memory sluice,Loja Grimorium,5,3.50
+memory sluice,Magic Club,4,2.99
+memory sluice,Magic Club,1,3.50
+memory sluice,MTG Cards Games,49,3.50
+memory sluice,Magicbembarato,4,3.02
+memory sluice,Flow Games,1,3.10
+memory sluice,Flow Games,3,3.06
+memory sluice,Medieval Cards,2,3.33
+memory sluice,Cards Outlet,6,2.94
+memory sluice,Magic Store Brasil,19,2.90
+memory sluice,Liga Arena,1,2.76
+memory sluice,Liga Arena,1,2.76
+memory sluice,VampireX TCG,2,2.86
+memory sluice,Bazar de Bagdá,45,2.75
+memory sluice,Overrun Geek Store,1,2.75
+memory sluice,RED Jogos,2,2.55
+memory sluice,Cabala MtG,9,2.50
+memory sluice,Cabala MtG,1,2.00
+memory sluice,Inside Games,4,2.50
+memory sluice,under3,6,2.32
+memory sluice,under3,1,2.09
+memory sluice,Reino Magic,1,2.50
+memory sluice,Mulligan Geek Store,12,2.25
+mind sculpt,Magicbembarato,4,2.81
+mind sculpt,Magicbembarato,4,2.81
+mind sculpt,Magicbembarato,2,10.92
+mind sculpt,Magicbembarato,1,2.25
+tome scour,Porto Livre Games,1,4.17
+tome scour,Porto Livre Games,3,1.06
+jace's phantasm,Tutubahia,4,2.25
+jace's phantasm,Tutubahia,4,0.63
+jace's phantasm,Tutubahia,3,5.00
+jace's phantasm,Tutubahia,1,2.25
+mind sculpt,Cúpula do Trovão,6,0.15
+mind sculpt,Cúpula do Trovão,3,0.15
+dream twist,Chuck TCG,5,0.50
+dream twist,Chuck TCG,1,1.00
+mind sculpt,Treasure Cards,5,0.90
+mind sculpt,Treasure Cards,3,0.90
+mind sculpt,Treasure Cards,2,0.90
+mind sculpt,Treasure Cards,1,0.90
+mind sculpt,Treasure Cards,1,0.90
+mind sculpt,Treasure Cards,1,4.50
+tome scour,Newstation,2,4.90
+increasing confusion,Magicbembarato,4,5.45
+increasing confusion,Magicbembarato,1,10.62
+tome scour,Hobby Center,1,4.00
+tome scour,Hobby Center,2,0.50
+tome scour,Hobby Center,2,0.50
+dream twist,Shandalar,4,0.45
+dream twist,Shandalar,1,0.35
+dream twist,Shandalar,1,0.95
+increasing confusion,Shandalar,1,2.45
+increasing confusion,Inside Games,2,5.50
+increasing confusion,Inside Games,1,10.00
+increasing confusion,Newstation,4,5.00
+increasing confusion,Newstation,1,9.00
+increasing confusion,Bazar de Bagdá,7,6.49
+increasing confusion,Bazar de Bagdá,2,5.99
+increasing confusion,Card Tutor,3,9.95
+increasing confusion,Loja Grimorium,2,6.25
+increasing confusion,Portal,1,6.00
+increasing confusion,Portal,1,9.00
+increasing confusion,Mulligan Geek Store,4,6.00
+increasing confusion,Mineral Games,1,8.00
+increasing confusion,Cards Of Paradise,2,7.80
+increasing confusion,Meruru,2,4.35
+increasing confusion,Meruru,1,8.98
+increasing confusion,Meruru,1,4.35
+increasing confusion,MTG Cards Games,4,5.95
+increasing confusion,Porto Livre Games,2,5.53
+increasing confusion,Magic Store Brasil,3,5.40
+increasing confusion,Magic Store Brasil,1,4.00
+increasing confusion,Tutubahia,3,5.00
+increasing confusion,Tutubahia,1,5.00
+increasing confusion,Cabala MtG,2,5.00
+increasing confusion,Liga Arena,1,3.99
+increasing confusion,Liga Arena,1,3.99
+increasing confusion,Liga Arena,5,5.61
+increasing confusion,CHQ Cards,5,5.70
+increasing confusion,Magic House Games,1,5.25
+increasing confusion,Cards Outlet,4,5.24
+increasing confusion,Treasure Cards,1,4.49
+increasing confusion,Chuck TCG,1,4.50
+increasing confusion,Prime MTG,1,4.99
+increasing confusion,Cards Store,3,4.50
+increasing confusion,Power Up Games,1,4.60
+increasing confusion,Legends Game Store,2,4.49
+increasing confusion,Legends Game Store,3,4.49
+increasing confusion,Pi Games,1,4.48
+increasing confusion,Medieval Cards,1,3.99
+increasing confusion,Medieval Cards,1,3.33
+increasing confusion,Taverna Geek,2,4.00
+increasing confusion,Card Castle,2,3.99
+increasing confusion,Card Castle,2,3.99
+increasing confusion,Card Castle,1,3.74
+increasing confusion,Overrun Geek Store,3,4.00
+increasing confusion,Hive Jogos,1,3.90
+increasing confusion,Geex Hobby Store,1,3.99
+increasing confusion,Geex Hobby Store,1,3.75
+increasing confusion,Geex Hobby Store,1,3.99
+increasing confusion,Geex Hobby Store,1,3.75
+increasing confusion,Top Deck RN,3,3.89
+dream twist,Cards Of Paradise,44,3.80
+dream twist,Cards Of Paradise,43,0.80
+dream twist,Magic Store Brasil,1,3.50
+dream twist,Magic Store Brasil,118,0.50
+dream twist,Magic Store Brasil,12,0.50
+dream twist,Magic Store Brasil,1,0.40
+increasing confusion,MTG Caxias Cards,1,3.00
+increasing confusion,Condado Card Games,1,2.64
+dream twist,Magicbembarato,4,1.11
+dream twist,Magicbembarato,4,1.02
+dream twist,Magicbembarato,3,4.50
+increasing confusion,LOJA CALABOUÇO - HOBBIES E COLECIONÁVEIS,1,2.99
+dream twist,Newstation,1,0.50
+dream twist,Newstation,1,3.90
+dream twist,Medieval Cards,36,0.48
+dream twist,Medieval Cards,11,0.48
+dream twist,Medieval Cards,6,0.48
+dream twist,Medieval Cards,5,0.48
+dream twist,Medieval Cards,4,0.48
+dream twist,Medieval Cards,2,2.28
+dream twist,Liga Arena,2,0.67
+dream twist,Liga Arena,2,0.67
+dream twist,Liga Arena,3,1.81
+dream twist,Liga Arena,8,0.38
+dream twist,City Class Games,4,0.37
+dream twist,City Class Games,1,2.76
+dream twist,Card Tutor,6,0.50
+dream twist,Card Tutor,1,2.95
+dream twist,VampireX TCG,2,1.75
+dream twist,VampireX TCG,1,1.66
+dream twist,Tokenlandia Cards,2,0.50
+dream twist,Tokenlandia Cards,1,2.00
+dream twist,Magic Club,6,0.50
+dream twist,Magic Club,6,0.45
+dream twist,Magic Club,3,1.45
+dream twist,Prime MTG,2,1.50
+dream twist,Portal,37,1.25
+dream twist,Portal,13,0.50
+dream twist,Cards Outlet,4,0.99
+dream twist,Cards Outlet,2,1.06
+dream twist,Cards Outlet,8,0.99
+dream twist,Cards Outlet,6,1.06
+dream twist,Miragem Hobby,1,1.50
+dream twist,Lets Collect,28,0.45
+dream twist,Lets Collect,1,1.35
+dream twist,Cards e Games,3,0.49
+dream twist,Cards e Games,1,0.46
+dream twist,Cards e Games,1,1.50
+dream twist,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,1.12
+dream twist,VAULT,1,1.00
+dream twist,RED Jogos,6,1.00
+dream twist,RED Jogos,19,0.25
+dream twist,Segura Card & Games,2,0.30
+dream twist,Segura Card & Games,1,1.00
+dream twist,Segura Card & Games,1,0.20
+dream twist,Hobby Center,2,1.00
+dream twist,Hobby Center,52,0.25
+dream twist,Universo Magic,1,1.00
+dream twist,TCGeeK,24,0.50
+dream twist,TCGeeK,4,0.50
+dream twist,TCGeeK,1,1.00
+dream twist,Tabuleria,3,0.25
+dream twist,Tabuleria,1,1.00
+dream twist,MTG Cards Games,17,0.50
+dream twist,MTG Cards Games,14,0.50
+dream twist,MTG Cards Games,1,0.99
+dream twist,Pharaoh\'s Shop,8,0.25
+dream twist,Pharaoh\'s Shop,2,0.20
+dream twist,Pharaoh\'s Shop,1,1.00
+dream twist,Pharaoh\'s Shop,1,0.20
+dream twist,Arena Hobby Store,11,0.20
+dream twist,Arena Hobby Store,3,0.99
+dream twist,Arena Hobby Store,1,0.20
+dream twist,Loja Grimorium,27,0.99
+dream twist,Loja Grimorium,12,0.99
+dream twist,Loja Grimorium,7,0.99
+dream twist,Flow Games,1,0.96
+dream twist,Cards Hall,11,0.45
+dream twist,Cards Hall,1,0.94
+dream twist,Livraria do Infinito - MagicJebb,2,0.85
+dream twist,Livraria do Infinito - MagicJebb,4,0.14
+dream twist,Nerdz Cards,3,0.75
+dream twist,Tutubahia,4,0.63
+dream twist,Tutubahia,4,0.63
+dream twist,Bazar de Bagdá,62,0.75
+dream twist,CHQ Cards,37,0.70
+jace's phantasm,Portal,14,6.00
+jace's phantasm,Portal,14,6.00
+jace's phantasm,Portal,4,12.00
+dream twist,Meruru,19,0.55
+dream twist,Meruru,9,0.55
+dream twist,Meruru,8,0.55
+jace's phantasm,Cards Of Paradise,28,3.80
+jace's phantasm,Newstation,8,2.00
+jace's phantasm,Newstation,7,3.00
+jace's phantasm,Newstation,3,12.00
+jace's phantasm,Chuck TCG,6,2.00
+jace's phantasm,Chuck TCG,2,5.50
+jace's phantasm,Chuck TCG,1,9.50
+jace's phantasm,Monster Games Cards,1,11.00
+jace's phantasm,Medieval Cards,92,1.90
+jace's phantasm,Medieval Cards,5,9.49
+jace's phantasm,TCGeeK,8,3.00
+jace's phantasm,TCGeeK,1,9.00
+jace's phantasm,Toca do Quati,1,8.00
+dream twist,Power Up Games,4,0.50
+dream twist,Toca do Quati,6,0.50
+dream twist,Toca do Quati,4,0.50
+dream twist,Toca do Quati,2,0.50
+dream twist,PRCShop,9,0.50
+dream twist,Mulligan Geek Store,3,0.50
+dream twist,Inside Games,62,0.50
+dream twist,Overrun Geek Store,4,0.50
+dream twist,Overrun Geek Store,4,0.25
+dream twist,Monster Games Cards,1,0.49
+dream twist,Skull Games,1,0.49
+dream twist,Skull Games,1,0.49
+dream twist,Pi Games,1,0.49
+dream twist,Porto Livre Games,4,0.38
+jace's phantasm,Neowalkers Geek Store,6,1.75
+jace's phantasm,Neowalkers Geek Store,2,1.98
+jace's phantasm,Neowalkers Geek Store,1,1.35
+jace's phantasm,Neowalkers Geek Store,1,8.00
+jace's phantasm,Neowalkers Geek Store,1,8.00
+jace's phantasm,Neowalkers Geek Store,1,1.98
+jace's phantasm,Cards Store,8,3.50
+jace's phantasm,Cards Store,2,7.50
+jace's phantasm,Cards Store,1,3.99
+jace's phantasm,Mineral Games,1,7.50
+jace's phantasm,Segura Card & Games,2,6.90
+jace's phantasm,Segura Card & Games,1,1.50
+jace's phantasm,House of Cards - Card Games,8,1.95
+jace's phantasm,House of Cards - Card Games,4,7.95
+jace's phantasm,House of Cards - Card Games,1,1.95
+jace's phantasm,City Class Games,25,3.21
+jace's phantasm,City Class Games,13,6.43
+jace's phantasm,City Class Games,4,3.67
+jace's phantasm,VampireX TCG,26,3.51
+jace's phantasm,VampireX TCG,6,3.51
+jace's phantasm,VampireX TCG,5,3.51
+jace's phantasm,VampireX TCG,1,6.15
+jace's phantasm,Skull Games,1,5.99
+jace's phantasm,Bazar de Bagdá,41,2.49
+jace's phantasm,Bazar de Bagdá,18,5.99
+jace's phantasm,Bazar de Bagdá,3,2.49
+jace's phantasm,Cards e Games,1,6.00
+jace's phantasm,Cards e Games,1,5.00
+jace's phantasm,Loja Grimorium,9,3.99
+jace's phantasm,Loja Grimorium,7,2.99
+jace's phantasm,Loja Grimorium,5,5.99
+jace's phantasm,Loja Grimorium,2,3.99
+jace's phantasm,VAULT,1,5.50
+jace's phantasm,VAULT,1,2.25
+jace's phantasm,LIMIAR STORE,4,2.20
+jace's phantasm,LIMIAR STORE,1,5.88
+jace's phantasm,DeckMasterGames,1,1.48
+jace's phantasm,DeckMasterGames,1,5.89
+jace's phantasm,Mulligan Geek Store,26,2.00
+jace's phantasm,Magicbembarato,4,2.21
+jace's phantasm,Magicbembarato,4,2.84
+jace's phantasm,Magicbembarato,4,1.90
+jace's phantasm,Magicbembarato,1,5.67
+jace's phantasm,Load or Cast,2,5.40
+jace's phantasm,Load or Cast,2,2.20
+jace's phantasm,Load or Cast,3,1.90
+jace's phantasm,Load or Cast,2,1.90
+jace's phantasm,Load or Cast,33,1.60
+jace's phantasm,ManaFix.net,2,2.45
+jace's phantasm,ManaFix.net,1,4.95
+jace's phantasm,Power9,8,5.00
+jace's phantasm,Power9,6,2.50
+jace's phantasm,Power9,8,2.00
+jace's phantasm,Power9,1,1.50
+jace's phantasm,Card Tutor,1,4.95
+jace's phantasm,Card Tutor,1,1.25
+jace's phantasm,CL TCG,1,4.75
+jace's phantasm,MTG Cards Games,11,1.25
+jace's phantasm,MTG Cards Games,4,4.45
+jace's phantasm,MTG Cards Games,1,1.25
+jace's phantasm,Miragem Hobby,2,4.75
+dream twist,Load or Cast,1,0.35
+dream twist,Load or Cast,16,0.35
+dream twist,Load or Cast,7,0.35
+jace's phantasm,A Loja do Pai,1,4.00
+jace's phantasm,Reino Magic,1,4.00
+dream twist,House of Cards - Card Games,1,0.25
+dream twist,Mineral Games,3,0.25
+dream twist,Padrinho: Card Store,2,0.25
+dream twist,MTG Caxias Cards,5,0.25
+dream twist,Elder Dragon Brasil,8,0.25
+dream twist,Legion Board & Card Games,4,0.24
+dream twist,Legion Board & Card Games,1,0.24
+dream twist,Card Castle,6,0.22
+dream twist,Card Castle,3,0.24
+dream twist,Card Castle,1,0.22
+dream twist,Condado Card Games,1,0.23
+dream twist,Loja Blood Moon,4,0.20
+dream twist,Loja Blood Moon,1,0.18
+dream twist,Cabala MtG,1,0.20
+dream twist,Basics Cards,1,0.15
+dream twist,Basics Cards,1,0.11
+dream twist,Basics Cards,1,0.09
+dream twist,Taverna Geek,2,0.15
+jace's phantasm,Inside Games,34,3.50
+jace's phantasm,Inside Games,22,4.00
+jace's phantasm,Inside Games,14,3.50
+dream twist,Bahia Store,4,0.10
+jace's phantasm,CHQ Cards,4,3.50
+jace's phantasm,Taverna Geek,1,3.20
+jace's phantasm,Legends Game Store,2,3.14
+jace's phantasm,Legends Game Store,4,3.14
+jace's phantasm,Legends Game Store,3,2.69
+jace's phantasm,Prime MTG,8,2.90
+jace's phantasm,Prime MTG,8,1.45
+jace's phantasm,Cards Outlet,4,1.83
+jace's phantasm,Cards Outlet,4,2.76
+jace's phantasm,Pi Games,7,2.68
+dream twist,Fire Ice Card Games,16,0.08
+jace's phantasm,Hobby Center,1,2.50
+jace's phantasm,Hobby Center,6,2.50
+jace's phantasm,Hobby Center,2,2.00
+jace's phantasm,Hobby Center,4,2.25
+jace's phantasm,Ascensão,1,2.90
+jace's phantasm,LOJA CALABOUÇO - HOBBIES E COLECIONÁVEIS,3,2.49
+jace's phantasm,WCG - World Card Games,1,2.49
+jace's phantasm,WCG - World Card Games,2,2.49
+jace's phantasm,Magic Club,3,2.49
+jace's phantasm,Konklave FunStore,4,2.40
+jace's phantasm,Konklave FunStore,4,2.40
+jace's phantasm,Meruru,1,2.25
+jace's phantasm,Shandalar,6,2.25
+jace's phantasm,Shandalar,1,2.25
+jace's phantasm,Shandalar,1,1.45
+jace's phantasm,Shandalar,1,2.20
+jace's phantasm,Liga Arena,1,2.14
+jace's phantasm,Lets Collect,2,2.03
+jace's phantasm,Universo Magic,1,2.00
+jace's phantasm,Overrun Geek Store,4,1.00
+jace's phantasm,Overrun Geek Store,2,2.00
+jace's phantasm,Tabuleria,2,1.50
+jace's phantasm,Tabuleria,1,1.75
+jace's phantasm,A Taverna,1,1.75
+jace's phantasm,A Taverna,2,1.75
+jace's phantasm,A Taverna,1,1.95
+jace's phantasm,Livraria de Alexandria,1,1.50
+jace's phantasm,Loja do Bardo,1,1.50
+jace's phantasm,Porto Livre Games,1,1.06
+jace's phantasm,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,1.20
+jace's phantasm,Card Castle,5,0.99
+jace's phantasm,Card Castle,4,0.98
+jace's phantasm,Card Castle,1,0.98
+jace's phantasm,Card Castle,1,0.99
+jace's phantasm,Livraria do Infinito - MagicJebb,1,1.02
+jace's phantasm,Livraria do Infinito - MagicJebb,1,0.85
+jace's phantasm,PRCShop,2,1.00
+jace's phantasm,Cards Hall,6,1.00
+jace's phantasm,Xaracards,3,0.90
+jace's phantasm,Fire Ice Card Games,1,0.90
+tome scour,Loja Grimorium,53,0.99
+tome scour,Loja Grimorium,3,0.99
+tome scour,Loja Grimorium,1,3.99
+tome scour,Loja Grimorium,1,0.99
+tome scour,Loja Grimorium,1,3.99
+tome scour,VAULT,1,4.00
+jace's phantasm,Padrinho: Card Store,3,0.99
+jace's phantasm,under3,8,0.89
+jace's phantasm,under3,6,0.98
+jace's phantasm,Loja Caverna do Dragão,1,0.90
+tome scour,MTG Caxias Cards,17,0.75
+tome scour,MTG Caxias Cards,1,2.00
+tome scour,Lets Collect,2,2.93
+tome scour,Lets Collect,1,2.93
+tome scour,RED Jogos,1,3.00
+tome scour,RED Jogos,1,0.70
+tome scour,Bazar de Bagdá,21,1.75
+tome scour,Bazar de Bagdá,18,1.75
+tome scour,Bazar de Bagdá,9,1.25
+tome scour,Bazar de Bagdá,3,1.75
+tome scour,Bazar de Bagdá,1,1.25
+tome scour,Bazar de Bagdá,1,2.99
+tome scour,Bazar de Bagdá,1,1.25
+tome scour,Magicbembarato,4,1.11
+tome scour,Magicbembarato,4,1.11
+tome scour,Magicbembarato,4,1.11
+tome scour,Magicbembarato,1,3.56
+tome scour,VampireX TCG,6,1.31
+tome scour,VampireX TCG,4,1.40
+tome scour,VampireX TCG,1,2.63
+tome scour,Konklave FunStore,4,1.60
+tome scour,Konklave FunStore,1,0.80
+tome scour,Mulligan Geek Store,11,1.50
+tome scour,Mulligan Geek Store,8,1.50
+tome scour,Mulligan Geek Store,8,1.50
+tome scour,DeckMasterGames,2,1.55
+tome scour,DeckMasterGames,1,1.55
+tome scour,Tutubahia,4,1.25
+tome scour,ManaFix.net,8,0.95
+tome scour,ManaFix.net,5,1.25
+tome scour,ManaFix.net,4,0.95
+tome scour,ManaFix.net,2,1.25
+tome scour,ManaFix.net,1,0.95
+tome scour,ManaFix.net,1,0.75
+tome scour,Neowalkers Geek Store,1,1.48
+tome scour,Inside Games,4,1.50
+tome scour,Inside Games,3,1.25
+tome scour,Nerdz Cards,2,1.25
+tome scour,Nerdz Cards,1,1.25
+tome scour,Nerdz Cards,1,1.25
+tome scour,Card Tutor,4,1.25
+tome scour,Portal,23,0.75
+tome scour,Portal,1,1.25
+tome scour,Legends Game Store,1,1.13
+tome scour,Cards Outlet,1,1.06
+tome scour,Cards Outlet,9,1.06
+tome scour,Cards Outlet,9,1.06
+tome scour,Cards Outlet,8,1.06
+tome scour,Toca do Quati,1,1.00
+tome scour,Magic Store Brasil,12,1.00
+tome scour,Magic Store Brasil,15,1.00
+tome scour,Magic Store Brasil,15,1.00
+tome scour,Magic Store Brasil,2,0.80
+tome scour,TCGeeK,6,1.00
+tome scour,TCGeeK,3,0.90
+tome scour,TCGeeK,2,0.90
+tome scour,Power9,9,1.00
+tome scour,Power9,1,1.00
+tome scour,Power9,2,1.00
+tome scour,Power9,1,0.75
+tome scour,CHQ Cards,2,1.00
+tome scour,Skull Games,2,0.99
+tome scour,Skull Games,1,0.99
+tome scour,Meruru,5,0.99
+tome scour,Meruru,4,0.75
+tome scour,Meruru,4,0.99
+tome scour,Meruru,1,0.75
+tome scour,Meruru,1,0.99
+tome scour,Meruru,1,0.99
+tome scour,Monster Games Cards,1,0.99
+tome scour,Monster Games Cards,1,0.99
+tome scour,Monster Games Cards,1,0.99
+tome scour,Flow Games,3,0.96
+tome scour,A Taverna,4,0.95
+tome scour,LIMIAR STORE,1,0.93
+thought scour,Magic House Games,2,39.99
+thought scour,VampireX TCG,2,2.63
+thought scour,VampireX TCG,1,40.47
+thought scour,VampireX TCG,1,1.31
+tome scour,Cards Hall,5,0.75
+tome scour,Cards Hall,1,0.75
+tome scour,Load or Cast,1,0.85
+tome scour,Load or Cast,13,0.75
+tome scour,Load or Cast,16,0.75
+tome scour,Load or Cast,2,0.65
+tome scour,Tokenlandia Cards,7,0.80
+tome scour,Tokenlandia Cards,3,0.80
+tome scour,Tokenlandia Cards,2,0.80
+tome scour,Segura Card & Games,6,0.50
+tome scour,Segura Card & Games,4,0.75
+tome scour,Segura Card & Games,1,0.50
+tome scour,Padrinho: Card Store,2,0.75
+tome scour,Padrinho: Card Store,1,0.49
+tome scour,Multiverso Cards Comercio de Jogos e Acessorios Lt,2,0.60
+tome scour,Ilusões Industriais,1,0.75
+tome scour,Shandalar,1,0.70
+tome scour,WCG - World Card Games,1,0.70
+tome scour,Cabala MtG,1,0.70
+tome scour,Cabala MtG,1,0.70
+tome scour,Loja Caverna do Dragão,4,0.60
+tome scour,Loja Caverna do Dragão,1,0.60
+tome scour,Fire Ice Card Games,4,0.40
+tome scour,Fire Ice Card Games,3,0.40
+tome scour,Tolaria,1,0.50
+tome scour,Condado Card Games,1,0.47
+thought scour,Pharaoh\'s Shop,2,33.00
+thought scour,Pharaoh\'s Shop,1,35.00
+thought scour,ManaFix.net,3,2.95
+thought scour,ManaFix.net,1,29.95
+thought scour,ManaFix.net,1,9.95
+thought scour,Miragem Hobby,9,3.99
+thought scour,Miragem Hobby,2,34.95
+thought scour,VAULT,6,2.00
+thought scour,VAULT,2,1.75
+thought scour,VAULT,2,1.75
+thought scour,VAULT,1,1.50
+thought scour,VAULT,1,1.50
+thought scour,VAULT,1,27.50
+thought scour,VAULT,1,13.50
+thought scour,Portal,8,4.25
+thought scour,Portal,1,33.00
+thought scour,Tutubahia,2,30.00
+thought scour,Tutubahia,1,30.00
+thought scour,Loja Grimorium,7,5.50
+thought scour,Loja Grimorium,2,4.50
+thought scour,Loja Grimorium,2,3.99
+thought scour,Loja Grimorium,1,13.99
+thought scour,Loja Grimorium,1,4.50
+thought scour,Magic Club,6,2.50
+thought scour,Magic Club,5,2.50
+thought scour,Magic Club,2,2.50
+thought scour,Magic Club,2,2.25
+thought scour,Magic Club,2,17.50
+thought scour,Skull Games,2,14.90
+thought scour,Skull Games,1,1.40
+thought scour,Skull Games,1,1.40
+thought scour,DeckMasterGames,2,19.50
+thought scour,DeckMasterGames,2,1.20
+thought scour,Neowalkers Geek Store,7,3.48
+thought scour,Neowalkers Geek Store,1,3.48
+thought scour,Neowalkers Geek Store,1,2.98
+thought scour,Neowalkers Geek Store,1,12.00
+thought scour,Neowalkers Geek Store,1,3.48
+thought scour,Cards Of Paradise,46,3.80
+thought scour,Cards Of Paradise,21,15.80
+thought scour,Cards Of Paradise,4,3.80
+thought scour,Cards Of Paradise,2,3.80
+thought scour,Newstation,4,4.00
+thought scour,Newstation,4,15.00
+thought scour,Newstation,3,3.70
+thought scour,Newstation,2,3.70
+thought scour,Newstation,1,4.00
+thought scour,LIMIAR STORE,1,12.51
+thought scour,Magicbembarato,4,2.43
+thought scour,Magicbembarato,4,2.35
+thought scour,Magicbembarato,4,2.43
+thought scour,Magicbembarato,2,13.70
+thought scour,Mineral Games,2,12.00
+thought scour,Load or Cast,2,11.05
+thought scour,Load or Cast,3,1.90
+thought scour,Load or Cast,7,1.75
+thought scour,Load or Cast,3,1.60
+thought scour,Load or Cast,3,1.60
+thought scour,Power9,2,10.00
+thought scour,Power9,1,2.50
+thought scour,Power9,5,2.00
+thought scour,Power9,8,2.00
+thought scour,Card Castle,2,11.99
+thought scour,Card Castle,1,0.74
+thought scour,Overrun Geek Store,4,1.00
+thought scour,Overrun Geek Store,1,11.50
+thought scour,Livraria do Infinito - MagicJebb,1,9.35
+thought scour,Livraria do Infinito - MagicJebb,1,1.02
+thought scour,Ilusões Industriais,1,10.00
+thought scour,Bazar de Bagdá,34,2.99
+thought scour,Bazar de Bagdá,17,2.99
+thought scour,Bazar de Bagdá,5,9.99
+thought scour,Medieval Cards,3,1.19
+thought scour,Medieval Cards,3,1.71
+thought scour,Medieval Cards,2,9.41
+thought scour,Chuck TCG,1,2.00
+thought scour,Chuck TCG,2,2.00
+thought scour,Chuck TCG,2,9.50
+thought scour,Condado Card Games,1,5.54
+thought scour,Prime MTG,8,1.40
+thought scour,Prime MTG,1,8.91
+thought scour,CL TCG,1,7.75
+thought scour,CHQ Cards,1,2.90
+thought scour,CHQ Cards,1,8.00
+thought scour,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,7.00
+thought scour,Universo Magic,3,7.00
+thought scour,Universo Magic,1,1.00
+thought scour,Padrinho: Card Store,1,5.49
+thought scour,Pi Games,1,4.99
+thought scour,Pi Games,1,2.35
+tome scour,Taverna Geek,1,0.15
+thought scour,Konklave FunStore,4,3.84
+thought scour,Konklave FunStore,4,3.60
+thought scour,Konklave FunStore,4,3.20
+thought scour,PRCShop,12,3.00
+thought scour,PRCShop,4,3.00
+thought scour,City Class Games,2,3.22
+thought scour,City Class Games,1,2.75
+thought scour,TCGeeK,3,2.70
+thought scour,TCGeeK,1,2.70
+thought scour,TCGeeK,1,3.00
+thought scour,Inside Games,16,2.50
+thought scour,Inside Games,12,2.75
+thought scour,Inside Games,9,3.00
+thought scour,Mulligan Geek Store,14,2.75
+thought scour,Mulligan Geek Store,4,2.75
+thought scour,Liga Arena,1,2.79
+thought scour,Liga Arena,4,2.79
+thought scour,Legends Game Store,3,2.69
+thought scour,Legends Game Store,1,2.69
+thought scour,Legends Game Store,1,2.57
+thought scour,Bahia Store,4,2.61
+thought scour,Flow Games,4,2.39
+thought scour,Cards Store,2,2.50
+thought scour,Cards Store,1,2.00
+thought scour,Lets Collect,2,2.25
+thought scour,Lets Collect,2,2.25
+thought scour,Cards Outlet,5,2.34
+thought scour,Cards Outlet,4,2.34
+thought scour,Cards Outlet,4,2.31
+thought scour,Cards Outlet,6,2.31
+thought scour,Cards Outlet,6,2.34
+thought scour,Porto Livre Games,1,2.34
+thought scour,Porto Livre Games,2,2.34
+thought scour,WCG - World Card Games,2,1.99
+thought scour,Meruru,2,2.25
+thought scour,Meruru,1,2.25
+thought scour,Meruru,1,1.75
+thought scour,Treasure Cards,3,1.80
+thought scour,Treasure Cards,3,1.80
+thought scour,Treasure Cards,1,2.03
+thought scour,Tokenlandia Cards,1,2.00
+thought scour,House of Cards - Card Games,1,1.95
+thought scour,MTG Cards Games,7,1.95
+thought scour,MTG Cards Games,2,1.95
+thought scour,Shandalar,2,1.90
+thought scour,Shandalar,2,1.75
+thought scour,Livraria de Alexandria,9,1.50
+thought scour,Livraria de Alexandria,2,1.25
+thought scour,Loja Blood Moon,4,1.50
+thought scour,Top Deck RN,6,1.19
+thought scour,under3,1,1.20
+thought scour,Basics Cards,2,1.10
+thought scour,Basics Cards,1,1.10
+thought scour,Fire Ice Card Games,1,0.85
+thought scour,Fire Ice Card Games,1,0.85
+thought scour,LOJA CALABOUÇO - HOBBIES E COLECIONÁVEIS,1,0.99
+thought scour,Loja Caverna do Dragão,1,0.90
+thought scour,Monster Games Cards,1,0.99
+thought scour,Reino Magic,2,1.00
+thought scour,Loja do Bardo,2,1.00
+thought scour,Geex Hobby Store,4,0.99
+mind sculpt,Cards Of Paradise,212,1.60
+mind sculpt,Cards Of Paradise,8,7.80
+mind sculpt,Cards Of Paradise,2,7.80
+mind sculpt,Cards Of Paradise,1,6.20
+mind sculpt,Newstation,8,1.50
+mind sculpt,Newstation,1,7.00
+mind sculpt,Legends Game Store,1,6.74
+mind sculpt,VampireX TCG,6,1.75
+mind sculpt,VampireX TCG,1,6.15
+mind sculpt,VampireX TCG,1,6.15
+mind sculpt,VampireX TCG,1,1.75
+mind sculpt,Bazar de Bagdá,29,1.99
+mind sculpt,Bazar de Bagdá,27,1.99
+mind sculpt,Bazar de Bagdá,3,1.49
+mind sculpt,TCGeeK,1,1.00
+mind sculpt,TCGeeK,1,6.00
+mind sculpt,Livraria do Infinito - MagicJebb,1,4.00
+mind sculpt,Livraria do Infinito - MagicJebb,1,0.85
+mind sculpt,Livraria do Infinito - MagicJebb,1,0.54
+mind sculpt,Power9,1,4.00
+mind sculpt,Power9,6,1.00
+mind sculpt,Power9,7,1.00
+mind sculpt,Lets Collect,1,4.05
+mind sculpt,DeckMasterGames,5,0.90
+mind sculpt,DeckMasterGames,2,1.00
+mind sculpt,DeckMasterGames,1,5.59
+mind sculpt,Multiverso Cards Comercio de Jogos e Acessorios Lt,1,3.54
+mind sculpt,Universo Magic,1,4.00
+mind sculpt,Cards e Games,2,3.49
+mind sculpt,Cards e Games,1,3.49
+mind sculpt,Tokenlandia Cards,1,4.00
+mind sculpt,Cards Outlet,8,2.73
+mind sculpt,Cards Outlet,6,2.73
+mind sculpt,City Class Games,5,1.83
+mind sculpt,Hobby Center,2,1.50
+mind sculpt,Hobby Center,1,1.50
+mind sculpt,Konklave FunStore,4,1.60
+mind sculpt,MTG Cards Games,51,1.50
+mind sculpt,MTG Cards Games,6,1.50
+mind sculpt,Mulligan Geek Store,16,1.50
+mind sculpt,Mulligan Geek Store,8,1.50
+mind sculpt,Skull Games,1,0.49
+mind sculpt,Skull Games,1,1.49
+mind sculpt,Skull Games,1,0.99
+mind sculpt,Magic Store Brasil,2,0.50
+mind sculpt,Loja Grimorium,35,1.37
+mind sculpt,Loja Grimorium,14,1.25
+mind sculpt,Loja Grimorium,5,1.25
+mind sculpt,Loja Grimorium,3,1.37
+mind sculpt,LIMIAR STORE,3,0.91
+mind sculpt,LIMIAR STORE,1,1.19
+mind sculpt,Nerdz Cards,3,1.00
+mind sculpt,Nerdz Cards,1,1.00
+mind sculpt,Portal,22,0.25
+mind sculpt,Portal,11,1.00
+mind sculpt,WCG - World Card Games,1,0.99
+mind sculpt,Toca do Quati,1,1.00
+mind sculpt,PRCShop,3,1.00
+mind sculpt,Meruru,19,0.99
+mind sculpt,Meruru,9,0.99
+mind sculpt,Meruru,3,0.99
+mind sculpt,Meruru,1,0.99
+mind sculpt,Shandalar,1,0.95
+mind sculpt,Card Tutor,3,0.95
+mind sculpt,Card Tutor,1,0.95
+mind sculpt,House of Cards - Card Games,5,0.95
+mind sculpt,Bahia Store,2,0.91
+mind sculpt,Load or Cast,12,0.85
+mind sculpt,Load or Cast,2,0.60
+mind sculpt,CHQ Cards,12,0.70
+mind sculpt,CHQ Cards,3,0.80
+mind sculpt,Cabala MtG,23,0.70
+mind sculpt,Cabala MtG,3,0.70
+mind sculpt,Mineral Games,1,0.75
+mind sculpt,Card Castle,9,0.49
+mind sculpt,Card Castle,1,0.59
+mind sculpt,Card Castle,1,0.49
+mind sculpt,Card Castle,1,0.39
+mind sculpt,Card Castle,1,0.49
+mind sculpt,RED Jogos,6,0.75
+mind sculpt,Overrun Geek Store,3,0.50
+mind sculpt,Overrun Geek Store,1,0.50
+mind sculpt,Segura Card & Games,3,0.25
+mind sculpt,Segura Card & Games,3,0.45
+mind sculpt,Fire Ice Card Games,2,0.15
+mind sculpt,Fire Ice Card Games,1,0.15
+mind sculpt,Taverna Geek,6,0.35
+mind sculpt,A Taverna,1,0.50
+mind sculpt,ProNerd,1,0.29
