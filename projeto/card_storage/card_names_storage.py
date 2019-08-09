@@ -8,7 +8,7 @@
 #
 #	card_names_storage.py:
 #	Este modulo realiza a filtragem de dados extraindo os nomes em ingles e portugues das cartas de magic
-#	Um arquivo AllCards.json é requerido como entrada para leitura dos dados
+#	Um arquivo AllCards.json é requerido como entrada para leitura dos dados - https://mtgjson.com/
 #	O arquivo AllCards.json é disponibilizado pelo projeto 'mtgjson.com'
 #
 #	python3 card_names_storage.py

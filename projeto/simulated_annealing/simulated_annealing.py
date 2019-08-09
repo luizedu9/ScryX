@@ -24,11 +24,10 @@ import pygmo as pg
 import math
 import time
 import random
+import logging
 import copy
 
-
 from input_reformat import *
-from error_exception import *
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -44,8 +43,10 @@ def initialize_parameters():
     global PRICE_INCREASE
     global QUANTITY_INCREASE
     global STORE_INCREASE
+    global PERCENT_MISSING
     global N_THREAD
     global N_SOLUTION_POOL
+    global RESULT
     INITITAL_TEMPERATURE = 0
     ALPHA = 0
     COOLING_OPTION = ''
@@ -57,13 +58,16 @@ def initialize_parameters():
     PRICE_INCREASE = 0
     QUANTITY_INCREASE = 1
     STORE_INCREASE = 1
+    PERCENT_MISSING = 100
     N_THREAD = 1
     N_SOLUTION_POOL = 0
+    RESULT = ''
 
     try:
         file = open('simulated_annealing_parameter.txt', 'r', encoding="utf-8")
     except:
-        error_exception('ERRO: simulated_annealing.py - ARQUIVO simulated_annealing_parameter.txt NÃO ENCONTRADO')
+        logger.warning('ERRO: simulated_annealing.py - ARQUIVO simulated_annealing_parameter.txt NÃO ENCONTRADO')
+        exit()
     lines = file.read().splitlines()
     for line in lines:
         if not((str(line).strip()) and (line[0] == '#')): # IGNORA SE VAZIO OU COMENTARIO
@@ -89,11 +93,16 @@ def initialize_parameters():
             elif (parameter[0] == 'QUANTITY_INCREASE'):
                 QUANTITY_INCREASE = int(parameter[1])
             elif (parameter[0] == 'STORE_INCREASE'):
-                STORE_INCREASE = int(parameter[1])  
+                STORE_INCREASE = int(parameter[1]) 
+            elif (parameter[0] == 'PERCENT_MISSING'):
+                PERCENT_MISSING = int(parameter[1])  
             elif (parameter[0] == 'N_THREAD'):
                 N_THREAD = int(parameter[1])
             elif (parameter[0] == 'N_SOLUTION_POOL'):
                 N_SOLUTION_POOL = int(parameter[1])
+            elif (parameter[0] == 'RESULT'):
+                RESULT = parameter[1]
+
     file.close()
 
     # TEMPERATURE_LIST = (0 TEMPERATURA_INICIAL, 1 TEMPERATURA_ATUAL, 2 ALPHA, 3 COOLING_OPTION, 4 FINAL_TEMPERATURE, 5 REHEAT)
@@ -272,6 +281,21 @@ def pareto(costs):
         next_point_index = np.sum(nondominated_point_mask[:next_point_index]) + 1
     return(is_efficient)
 
+def prepara_pareto(solutions):
+    first_pass = True
+    for solution in solutions:
+        if (first_pass):
+            solutions_calculated = np.array([(solution[1], solution[2], solution[3])])
+            first_pass = False
+        else:
+            solutions_calculated = np.append(solutions_calculated, [(solution[1], solution[2], solution[3])], axis=0)
+    new_solutions_index = pareto(solutions_calculated)
+    new_solutions = []
+    for index in new_solutions_index:
+        result_table = [list(x) for x in solutions[index][0]]
+        new_solutions.append( (result_table, solutions[index][1], solutions[index][2], solutions[index][3]) )
+    return(new_solutions)
+
 #####################################################################################################################
 #                                                                                                                   #
 #                                                      FIRST SOLUTION                                               #
@@ -430,10 +454,13 @@ def post_optimization(solutions):
     # TENTAR COLOCAR AS CARTAS NAS OUTRAS LOJAS DA SOLUÇÃO. ENQUANTO O RESULTADO ESTIVER MELHORANDO, 
     # CONTINUA REMOVENDO LOJAS.
 
+    logger.info('|--------------------------PÓS OTIMIZAÇÃO CALCULANDO------------------------|')
+
     remove_list = [] # GUARDA AS SOLUÇÕES QUE FORAM DOMINADAS PARA SER APAGADAS NO FINAL DA EXECUÇÃO
 
     # PARA CADA SOLUÇÃO, TENTA CRIAR UMA NOVA
-    for i in range(len(solutions)):
+    i = 0
+    while (i < len(solutions)):
         solution = solutions[i]
         
         # OTIMIZA SOLUÇÃO ATUAL UTILIZANDO O METODO GULOSO
@@ -454,13 +481,27 @@ def post_optimization(solutions):
             # SE A NOVA SOLUÇÃO DOMINA A ANTIGA E A QUANTIDADE DE CARTAS QUE FALTAM NÃO AUMENTAR, REMOVE SOLUÇÃO ANTIGA
             if (pg.pareto_dominance([new_solution[1], new_solution[2], solution[3]], [solution[1], solution[2], solution[3]]) and new_solution[3] <= solution[3]):
                 remove_list.append(i)
+        i += 1
 
-    # REMOVE SOLUÇÕES QUE: FORAM DOMINADAS E TEVE A QUANTIDADE DE CARTAS QUE FALTARAM AUMENTOU
-    print(len(remove_list))
+    # REMOVE SOLUÇÕES QUE FORAM DOMINADAS
     if len(remove_list) > 0:
-        remove_list = remove_list.reverse()
+        remove_list.reverse()
         for i in remove_list:
             solutions.pop(i)
+
+    # REMOVE SOLUÇÕES QUE QUANTIDADE DE CARTAS QUE FALTARAM PASSARAM DO LIMITE ESTABELECIDO
+    total_cards = 0
+    remove_list = []
+    for key, value in card_dict.items():
+        total_cards += value[1]
+    for i in range(len(solutions)):
+        if (solutions[i][2] / QUANTITY_INCREASE) > (total_cards * (PERCENT_MISSING * 0.01)):
+            remove_list.append(i)
+    if len(remove_list) > 0:
+        remove_list.reverse()
+        for i in remove_list:
+            solutions.pop(i)
+    
     return(solutions)
 
 # REALOCA TODAS AS CARTAS NAS LOJAS SELECIONADAS
@@ -497,7 +538,7 @@ def execute_thread(solution_deliver, id_thread):
 
     global N_SOLUTION_POOL
 
-    print('|-----------------------------THREAD ' +  str (id_thread) + ' INICIADA-----------------------------|')
+    logger.info('|-----------------------------THREAD ' +  str (id_thread) + ' INICIADA-----------------------------|')
 
     # GERA UMA SOLUÇÃO INICIAL - TUPLA DE (0 CONTEUDO DA SOLUÇÃO, 1 OBJETIVO1, 2 OBJETIVO2, ... )
     result_table = [list(x) for x in init_first_solution(empty_table)]
@@ -506,14 +547,24 @@ def execute_thread(solution_deliver, id_thread):
     solution = (result_table, objective1, objective2, objective3)
     solutions = []
 
+    # CONTA QUANTAS ITERAÇÕES O SIMULATED ANNEALING TERÁ
+    ITERATION = 0
+    progress = 0
+    if (id_thread == 0):
+        for i in range(TEMPERATURE_LIST[5]):
+            current_temperature = TEMPERATURE_LIST[0]
+            while ((current_temperature > TEMPERATURE_LIST[4])):
+                ITERATION += 1
+                current_temperature = cooling_scheme(current_temperature)
+
     # REPITA N VEZES, SENDO N O NUMERO DE REAQUECIMENTOS DO SISTEMA
     for i in range(TEMPERATURE_LIST[5]):
-        if (id_thread == 0):
-            print("|----------------------- PROGRESSO SIMULATED ANNEALING ------------ " + str('%.2f'%((100 * i) / TEMPERATURE_LIST[5])) + " %")
         
         current_temperature = TEMPERATURE_LIST[0]
         # ENQUANTO TEMPERATURA ESTIVER MAIOR QUE TEMPERATURA_FIM
         while ((current_temperature > TEMPERATURE_LIST[4])):
+            if ((id_thread == 0) and (progress % 10 == 0)):
+                logger.info("|----------------------- PROGRESSO SIMULATED ANNEALING ------------ " + str('%.2f'%((100 * progress) / ITERATION)) + " %")
             # GERA UMA NOVA SOLUÇÃO TROCANDO A QUANTIDADE DE DETERMINADA CARTA PARA NOVA LOJA
             for card in card_dict.items():
                 result_table = swap_change_all([list(x) for x in solution[0]], card)
@@ -529,10 +580,11 @@ def execute_thread(solution_deliver, id_thread):
                         solutions = []
 
             current_temperature = cooling_scheme(current_temperature)
+            progress += 1
 
     solution_deliver.put(solutions)
     solution_deliver.put('thread_finished')
-    print('|----------------------------THREAD ' +  str (id_thread) + ' FINALIZADA----------------------------|')
+    logger.info('|----------------------------THREAD ' +  str (id_thread) + ' FINALIZADA----------------------------|')
 
 # ESSA THREAD DADO UM CONJUNTO DE CANDIDATOS A SOLUÇÕES ENCONTRA A FRONTEIRA DE PARETO
 def pareto_thread(solution_deliver, result_deliver):
@@ -541,7 +593,7 @@ def pareto_thread(solution_deliver, result_deliver):
     global WEIGHT_LIST
     global N_THREAD
 
-    print('|---------------------------THREAD PARETO INICIADA--------------------------|')
+    logger.info('|---------------------------THREAD PARETO INICIADA--------------------------|')
     
     solutions = []
     n_thread_cont = N_THREAD
@@ -553,24 +605,12 @@ def pareto_thread(solution_deliver, result_deliver):
             n_thread_cont -= 1
         else:
             solutions += message
-            first_pass = True
-            for solution in solutions:
-                if (first_pass):
-                    solutions_calculated = np.array([(solution[1], solution[2], solution[3])])
-                    first_pass = False
-                else:
-                    solutions_calculated = np.append(solutions_calculated, [(solution[1], solution[2], solution[3])], axis=0)
-            new_solutions_index = pareto(solutions_calculated)
-            new_solutions = []
-            for index in new_solutions_index:
-                result_table = [list(x) for x in solutions[index][0]]
-                new_solutions.append( (result_table, solutions[index][1], solutions[index][2], solutions[index][3]) )
-            solutions = new_solutions
-    
+            solutions = prepara_pareto(solutions)
+
     # ENTREGA SOLUÇÃO PARA O MAIN
     result_deliver.put(solutions)
 
-    print('|-------------------------THREAD PARETO FINALIZADA--------------------------|')
+    logger.info('|-------------------------THREAD PARETO FINALIZADA--------------------------|')
 
 def initialize_thread():
     global solution_deliver
@@ -598,7 +638,7 @@ def terminate_thread(threads, solution_thread):
     solutions = result_deliver.get()   
     solution_thread.join()
 
-    print("|----------------------- PROGRESSO SIMULATED ANNEALING ------------ 100.00 %")
+    logger.info("|----------------------- PROGRESSO SIMULATED ANNEALING ------------ 100.00 %")
 
     return(solutions)
 
@@ -613,13 +653,24 @@ cooling_options = {'GEOMETRIC': cooling_geometric}
 roulette_options = {'UNIFORM': roulette_uniform, 'QUANTITY': roulette_quantity, 'PRICE': roulette_price, 'BOTH': roulette_both}
 acceptance_options = {'SL': rule_sl, 'W': rule_w}
 
-print('|---------------------------------------------------------------------------|')
-print('|------------------------SIMULATED ANNEALING INICIADO-----------------------|')
-print('|---------------------------------------------------------------------------|')
-print()
+logger = logging.getLogger()
+logger.setLevel(logging.WARNING)
 
 # INICIALIZA OS PARAMETROS DO "simulated_annealing_parameter.txt"
 initialize_parameters()
+
+
+if (RESULT == 'TERMINAL'):
+    logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+logger.info('|---------------------------------------------------------------------------|')
+logger.info('|------------------------SIMULATED ANNEALING INICIADO-----------------------|')
+logger.info('|---------------------------------------------------------------------------|')
+logger.info('')
+
 # INICIALIZA AS ESTRUTURAS DE DADOS DO PROGRAMA
 card_dict, store_dict, content_table, empty_table = run_input_reformat(sys.argv[1], sys.argv[2])
 # INICIALIZA A ROLETA
@@ -636,37 +687,48 @@ initialize_total_card_quantity()
 threads, solution_thread = initialize_thread()
 solutions = terminate_thread(threads, solution_thread)
 
-print()
-print('|---------------------------------------------------------------------------|')
-print('|-----------------------SIMULATED ANNEALING FINALIZADO----------------------|')
-print('|---------------------------------------------------------------------------|')
-print()
+logger.info('')
+logger.info('|---------------------------------------------------------------------------|')
+logger.info('|-----------------------SIMULATED ANNEALING FINALIZADO----------------------|')
+logger.info('|---------------------------------------------------------------------------|')
+logger.info('')
 
-print('RESULTADOS:')
-for solution in solutions:
-    objectives = get_final_fitness(solution[0])
-    print('Valor: ' + str('%.2f'%objectives[0]) + ' / Lojas: ' + str(objectives[2]) + ' / Faltou: ' + str(objectives[1]))
-print()
-
-print('|---------------------------------------------------------------------------|')
-print('|---------------------------PÓS OTIMIZAÇÃO INICIADA-------------------------|')
-print('|---------------------------------------------------------------------------|')
-print()
+logger.info('|---------------------------------------------------------------------------|')
+logger.info('|---------------------------PÓS OTIMIZAÇÃO INICIADA-------------------------|')
+logger.info('|---------------------------------------------------------------------------|')
+logger.info('')
 
 # UTILIZA UMA PÓS OTIMIZAÇÃO PARA TENTAR MELHORAR A SOLUÇÃO
 solutions = post_optimization(solutions)
+solutions = prepara_pareto(solutions)
 
-print('|---------------------------------------------------------------------------|')
-print('|--------------------------PÓS OTIMIZAÇÃO FINALIZADA------------------------|')
-print('|---------------------------------------------------------------------------|')
-print()
+logger.info('')
+logger.info('|---------------------------------------------------------------------------|')
+logger.info('|--------------------------PÓS OTIMIZAÇÃO FINALIZADA------------------------|')
+logger.info('|---------------------------------------------------------------------------|')
+logger.info('')
 
-print('RESULTADOS:')
-for solution in solutions:
-    objectives = get_final_fitness(solution[0])
-    print('Valor: ' + str('%.2f'%objectives[0]) + ' / Lojas: ' + str(objectives[2]) + ' / Faltou: ' + str(objectives[1]))
+logger.info('RESULTADOS:')
+if (RESULT == 'TERMINAL'):
+    for solution in solutions:
+        objectives = get_final_fitness(solution[0])
+        logger.info('Valor: ' + str('%.2f'%objectives[0]) + ' / Lojas: ' + str(objectives[2]) + ' / Faltou: ' + str(objectives[1]))
 
-print()
-print('|---------------------------------------------------------------------------|')
-print('|------------------------------------FIM------------------------------------|')
-print('|---------------------------------------------------------------------------|')
+elif (RESULT in 'CSV'):
+    try:
+        file = open('result' + sys.argv[2])
+        file.close()
+    except:
+        with open('result' + sys.argv[2], 'w') as file:
+            file.write('price\tstores\tmissing_cards\n')
+    with open('result' + sys.argv[2], 'a+') as file:
+        for solution in solutions:
+            objectives = get_final_fitness(solution[0])
+            file.write(str("%.2f"%objectives[0]) + '\t' + str(objectives[2]) + '\t' + str(objectives[1]) + '\n')
+elif (RESULT == 'BD'):
+    pass
+
+logger.info('')
+logger.info('|---------------------------------------------------------------------------|')
+logger.info('|------------------------------------FIM------------------------------------|')
+logger.info('|---------------------------------------------------------------------------|')

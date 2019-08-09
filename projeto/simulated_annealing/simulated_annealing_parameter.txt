@@ -8,10 +8,22 @@
 # Tipos: GEOMETRIC - T = T * ALPHA
 # REHEAT é a quantidade de vezes que o sistema irá se reaquecer
 
+# Tabela de tempos - por reheat
+# ALPHA - CARDS - TEMPO
+# 0.9   -   25  - 1 segundo
+# 0.99  -   25  - 6 segundos
+# 0.995 -   25  - 13 segundos
+# 0.9   -   80  - 6 segundos
+# 0.99  -   80  - 1.3 minutos
+# 0.995 -   80  - 2.5 minutos
+# 0.9   -  100  - 9 segundos
+# 0.99  -  100  - 2.3 minutos 
+# 0.995 -  100  - 4.5 minutos
+
 INITIAL_TEMPERATURE 50
 FINAL_TEMPERATURE 0.1
 COOLING_SCHEDULE GEOMETRIC
-ALPHA 0.99
+ALPHA 0.995
 REHEAT 2
 
 #######################################################################################################
@@ -40,9 +52,9 @@ ROULETTE_OPTION QUANTITY
 # LAMBDA3: Quantidade de lojas
 
 ACCEPTANCE_OPTION W
-LAMBDA1 0.5
+LAMBDA1 0.4
 LAMBDA2 0
-LAMBDA3 0.5
+LAMBDA3 0.6
 
 #######################################################################################################
 #                                                                                                     #
@@ -57,10 +69,12 @@ LAMBDA3 0.5
 # PRICE_INCREASE é a taxa de aumento por loja no preço (Valor de 0 a 1000)
 # QUANTITY_INCREASE é a taxa de aumento por carta (Valor de 1 a 1000)
 # STORE_INCREASE é a taxa de aumento por loja (Valor de 1 a 1000)
+# PERCENT_MISSING é a porcentagem maxima de cartas que podem faltar (Valor de 1 a 100) 
 
 PRICE_INCREASE 10
 QUANTITY_INCREASE 1000
-STORE_INCREASE 1000
+STORE_INCREASE 100
+PERCENT_MISSING 10
 
 #######################################################################################################
 #                                                                                                     #
@@ -72,7 +86,7 @@ STORE_INCREASE 1000
 # N_SOLUTIONS_POOL é o maximo de possiveis soluções que eu armazeno antes de calcular as soluções reais.
 
 N_THREAD 6
-N_SOLUTION_POOL 1000
+N_SOLUTION_POOL 500
 
 #######################################################################################################
 #                                                                                                     #
@@ -80,4 +94,10 @@ N_SOLUTION_POOL 1000
 #                                                                                                     #
 #######################################################################################################
 
-OUTPUT TERMINAL
+# RESULT:
+#	TERMINAL mostra os resultados no terminal
+#	BD salva os resultados DETALHADOS no banco de dados  (AINDA NÃO IMPLEMENTADO)
+#	CSV salva os resultados PARA ESTATISTICA em um arquivo CSV
+# FILE_RESULT é o directorio quando utilizar o modo CSV
+
+RESULT CSV
