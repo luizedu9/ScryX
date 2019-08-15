@@ -1,0 +1,200 @@
+1 Quest for the Goblin Lord
+1 Gruesome Deformity
+1 Disintegrate
+1 Despise
+1 Llanowar Elves
+1 Goblin Grappler
+1 Goblin Fireslinger
+1 Goblin Chirurgeon
+1 Frenzied Goblin
+1 Goblin Grenade
+1 Goblin Guide
+1 Adventurous Impulse
+1 Goblin War Strike
+1 Goblin Lackey
+1 Legion Loyalist
+1 Deathmark
+1 Goblin Arsonist
+1 Pongify
+1 Mogg Sentry
+1 Suffer the Past
+1 Prey's Vengeance
+1 Into the Roil
+1 Harbinger of the Tides
+1 Urge to Feed
+1 Root Snare
+1 Fog Bank
+1 Goblin Bomb
+1 Circle of Flame
+1 Blood Seeker
+1 Altar's Reap
+1 Gift of Strength
+1 Gift of Growth
+1 Elfhame Druid
+1 Cyclonic Rift
+1 Goblin Wardriver
+1 Grasp of Darkness
+1 Goblin Piledriver
+1 Goblin Piker
+1 Goblin Raider
+1 Warren Instigator
+1 Elemental Uprising
+1 Lead by Example
+1 Azure Mage
+1 Larger than Life
+1 Bloodmark Mentor
+1 Naturalize
+1 Seismic Stomp
+1 Gatekeeper of Malakir
+1 Goblin Recruiter
+1 Smash to Smithereens
+1 Rite of Consumption
+1 Smother
+1 Turn to Frog
+1 Vampire Interloper
+1 Bloodthrone Vampire
+1 Fathom Seer
+1 Goblin Lookout
+1 Predator's Rapport
+1 Blanchwood Armor
+1 Beastmaster Ascension
+1 Hordeling Outburst
+1 Guttersnipe
+1 Dark Banishing
+1 Barrage of Boulders
+1 Raid Bombardment
+1 Goblin Roughrider
+1 Meletis Charlatan
+1 Goblin Chieftain
+1 Goblin Warchief
+1 Skirk Commando
+1 Fade into Antiquity
+1 Dulcet Sirens
+1 Cackling Counterpart
+1 Exclude
+1 Mizzium Meddler
+1 Spikeshot Goblin
+1 Goblin Caves
+1 Goblin Ruinblaster
+1 Stroke of Genius
+1 Lead the Stampede
+1 Colossal Majesty
+1 Screeching Bat
+1 Sea Gate Oracle
+1 Goblin Rimerunner
+1 Markov Patrician
+1 Boggart Shenanigans
+1 Compulsive Research
+1 Aerial Predation
+1 Arc Lightning
+1 Goblin King
+1 Bloodhusk Ritualist
+1 Relic Bane
+1 Sadistic Sacrament
+1 Riptide Survivor
+1 Call to Mind
+1 Howl of the Horde
+1 Vampire Nighthawk
+1 Distorting Wake
+1 Karametra's Acolyte
+1 Goblin Razerunners
+1 Goblin Snowman
+1 Goblin Goon
+1 Concentrate
+1 Chorus of Might
+1 Baloth Gorger
+1 Domineering Will
+1 Barter in Blood
+1 Sultai Flayer
+1 Goreclaw, Terror of Qal Sisma
+1 Goblin Battle Jester
+1 Goblin Berserker
+1 Goblin Gardener
+1 Goblin Settler
+1 Goblin Wizard
+1 Goblin Grenadiers
+1 Horde of Boggarts
+1 Jace, Architect of Thought
+1 Jalira, Master Polymorphist
+1 Krenko, Mob Boss
+1 Kheru Spellsnatcher
+1 Falkenrath Noble
+1 Reckless One
+1 Desecration Plague
+1 Roaring Primadox
+1 Gaea's Protector
+1 Reef Worm
+1 Rite of Replication
+1 Sangromancer
+1 Cairn Wanderer
+1 Territorial Baloth
+1 Vigilant Baloth
+1 Baru, Fist of Krosa
+1 Malakir Bloodwitch
+1 Spike-Tailed Ceratops
+1 Dead Ringers
+1 Soul Collector
+1 Drana, Kalastria Bloodchief
+1 Silverglade Elemental
+1 Ageless Entity
+1 Battle Squadron
+1 Fool's Demise
+1 Intellectual Offering
+1 Ixidron
+1 Jace, Memory Adept
+1 World at War
+1 Conclave Naturalists
+1 Sengir Nosferatu
+1 Rhox Oracle
+1 Arborback Stomper
+1 Willbreaker
+1 Charging Rhino
+1 Stitcher Geralf
+1 Stormsurge Kraken
+1 Rush of Knowledge
+1 Traumatize
+1 Sengir Vampire
+1 AEther Gale
+1 Watcher in the Web
+1 Gratuitous Violence
+1 Soul of the Harvest
+1 Corrupt
+1 Prodigious Growth
+1 Brine Elemental
+1 Sphinx of Jwar Isle
+1 Sphinx of Magosi
+1 Garruk, Caller of Beasts
+1 Grunn, the Lonely King
+1 Jugan, the Rising Star
+1 Aggressive Mammoth
+1 Thousand Winds
+1 Epic Proportions
+1 Infinite Reflection
+1 Rage Reflection
+1 Sorin Markov
+1 Warstorm Surge
+1 Teferi, Temporal Archmage
+1 Frost Titan
+1 Well of Ideas
+1 Verdant Sun's Avatar
+1 Butcher of Malakir
+1 Chancellor of the Dross
+1 Chancellor of the Forge
+1 Siege Dragon
+1 Thorn Elemental
+1 Sphinx of Uthuun
+1 Regal Force
+1 Phyrexian Ingester
+1 Siege Behemoth
+1 Gaea's Revenge
+1 Duskdale Wurm
+1 Sifter Wurm
+1 Pelakka Wurm
+1 Zendikar Resurgent
+1 Praetor's Counsel
+1 Sandwurm Convergence
+1 Hoverguard Sweepers
+1 Stormtide Leviathan
+1 Lorthos, the Tidemaker
+1 Breaching Leviathan
+1 Deep-Sea Kraken
