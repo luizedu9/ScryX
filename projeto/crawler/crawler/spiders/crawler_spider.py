@@ -12,6 +12,7 @@
 
 import scrapy
 from pymongo import MongoClient
+import logging as log
 
 # GERA O LINK DA CARTA
 def card_link_mount(card):
@@ -29,9 +30,15 @@ class CrawlerSpider(scrapy.Spider):
     def parse(self, response):
         
         client = MongoClient('localhost',27017)
-        db = client["tcc"]
-        
-        card_dict = db.request_queue.find_one({'_id': self.id})
+        db = client["scryx"]
+        try:
+            client.server_info()
+        except:
+            log.error('Can\'t connect to MongoDB')
+            exit()
+
+        card_dict = db.request.find_one({'_id': self.id})
+        log.warning(card_dict)
         
         for card in card_dict['cards']:
             yield scrapy.Request(url=card_link_mount(card), callback=self.parse_page, meta={'card': card})

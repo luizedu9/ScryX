@@ -14,6 +14,6 @@
 import os
 import sys
 
-for i in range(80):
+for i in range(100):
 	print(str(i+1) + '%')
 	os.system('python3 -B simulated_annealing.py ' + sys.argv[1] + ' ' + sys.argv[2])

@@ -16,4 +16,4 @@
 import os
 import sys
 
-os.system('scrapy crawl crawler -a id=' +  sys.argv[1] + ' -o ' + sys.argv[2] + ' -t csv')
+os.system('scrapy crawl crawler -a id=' +  sys.argv[1] + ' -o ' + sys.argv[2] + ' -t json')

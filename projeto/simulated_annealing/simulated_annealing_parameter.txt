@@ -19,6 +19,13 @@
 # 0.9   -  100  - 9 segundos
 # 0.99  -  100  - 2.3 minutos 
 # 0.995 -  100  - 4.5 minutos
+# 0.9   -  200  - 36 segundos
+# 0.99  -  200  - 7.3 minutos
+# 0.995 -  200  - 15 minutos
+# 0.9   -  300  - 36 segundos
+# 0.99  -  300  - 7.3 minutos
+# 0.995 -  300  - 15 minutos
+
 
 INITIAL_TEMPERATURE 50
 FINAL_TEMPERATURE 0.1
@@ -85,7 +92,7 @@ PERCENT_MISSING 10
 # N_THREAD é o número de threads. Muitas threads não aumenta tanto a eficiencia (Ver número de núcleos).
 # N_SOLUTIONS_POOL é o maximo de possiveis soluções que eu armazeno antes de calcular as soluções reais.
 
-N_THREAD 5
+N_THREAD 3
 N_SOLUTION_POOL 500
 
 #######################################################################################################
