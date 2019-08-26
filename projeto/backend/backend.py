@@ -79,8 +79,8 @@ def create_user ():
     return redirect("/")
 
 # CRIAÇÃO DE REQUISIÇÃO DE COTAÇÃO DE PREÇO
-@app.route("/card_list", methods=['POST'])
-def card_list():
+@app.route("/request_list", methods=['POST'])
+def request_list():
     #try:
     error_list = register_request(db, request.values.get("card_list"), user_logged)
     if (error_list == []):

@@ -18,6 +18,7 @@
 
 import threading
 from multiprocessing import Process, Array, Queue
+from pymongo import MongoClient
 import sys
 import numpy as np
 import pygmo as pg
@@ -26,6 +27,7 @@ import time
 import random
 import logging
 import copy
+import json
 
 from input_reformat import *
 
@@ -442,6 +444,60 @@ def find_lesser(result_table, stores, card):
 
 #####################################################################################################################
 #                                                                                                                   #
+#                                                    PERSIST DATA                                                   #
+#                                                                                                                   #
+#####################################################################################################################
+
+def result_to_json():
+    solutions_list = []
+    for solution in solutions:  # PARA CADA SOLUÇÃO
+        solution_dict = {}
+        stores = find_stores(solution[0])
+        for store in stores:  # PARA CADA LOJA
+            store_local = []
+            for i in range(len(solution[0])):  # PARA CADA CARTA
+                if (solution[0][i][store] != 0):  # SE POSIÇÃO POSSUI CARTA
+                    quantity = solution[0][i][store]
+                    for tuple_ in content_table[i][store]:
+                        card_local = {}
+                        quantity_tuple = tuple_[0]
+                        # SE PRIMEIRA POSIÇÃO FOR SUFICIENTE, ARMAZENA
+                        if (quantity_tuple >= quantity):
+                            # ARMAZENA O NOME DA CARTA
+                            card_local['name'] = card_dict[i][0]
+                            card_local['quantity'] = quantity
+                            card_local['price'] = tuple_[1]
+                            store_local.append(card_local)
+                            break
+                        else:  # SE NÃO FOR, ARMAZENA E CONTINUA
+                            quantity = quantity - quantity_tuple
+                            # ARMAZENA O NOME DA CARTA
+                            card_local['name'] = card_dict[i][0]
+                            card_local['quantity'] = quantity_tuple
+                            card_local['price'] = tuple_[1]
+                            store_local.append(card_local)
+            solution_dict['missing_list'] = 'Eyjafjallajökull' # **************************************************
+            solution_dict[store_dict[store]] = store_local
+        solutions_list.append(solution_dict)
+    return(json.loads(json.dumps(solutions_list)))
+
+def persist_csv():
+    try:
+        file = open('result' + sys.argv[2])
+        file.close()
+    except:
+        with open('result' + sys.argv[2], 'w') as file:
+            file.write('price\tstores\tmissing_cards\n')
+    with open('result' + sys.argv[2], 'a+') as file:
+        for solution in solutions:
+            objectives = get_final_fitness(solution[0])
+            file.write(str("%.2f"%objectives[0]) + '\t' + str(objectives[2]) + '\t' + str(objectives[1]) + '\n')
+
+def persist_bd():
+    db.result.insert_one({'_id': sys.argv[1], 'user': sys.argv[2], 'result': result_to_json()})
+
+#####################################################################################################################
+#                                                                                                                   #
 #                                                   POST OPTIMIZATION                                               #
 #                                                                                                                   #
 #####################################################################################################################
@@ -653,12 +709,21 @@ cooling_options = {'GEOMETRIC': cooling_geometric}
 roulette_options = {'UNIFORM': roulette_uniform, 'QUANTITY': roulette_quantity, 'PRICE': roulette_price, 'BOTH': roulette_both}
 acceptance_options = {'SL': rule_sl, 'W': rule_w}
 
+# INICIALIZAÇÃO DE LOG
 logger = logging.getLogger()
 logger.setLevel(logging.WARNING)
 
 # INICIALIZA OS PARAMETROS DO "simulated_annealing_parameter.txt"
 initialize_parameters()
 
+if (RESULT == 'BD'):  # INICIALIZA BD SE ESTIVER NO MODO BD
+    client = MongoClient('localhost', 27017)
+    db = client["scryx"]
+    try:
+        client.server_info()
+    except:
+        log.error('Can\'t connect to MongoDB')
+        raise
 
 if (RESULT == 'TERMINAL'):
     logger.setLevel(logging.INFO)
@@ -715,18 +780,11 @@ if (RESULT == 'TERMINAL'):
         logger.info('Valor: ' + str('%.2f'%objectives[0]) + ' / Lojas: ' + str(objectives[2]) + ' / Faltou: ' + str(objectives[1]))
 
 elif (RESULT in 'CSV'):
-    try:
-        file = open('result' + sys.argv[2])
-        file.close()
-    except:
-        with open('result' + sys.argv[2], 'w') as file:
-            file.write('price\tstores\tmissing_cards\n')
-    with open('result' + sys.argv[2], 'a+') as file:
-        for solution in solutions:
-            objectives = get_final_fitness(solution[0])
-            file.write(str("%.2f"%objectives[0]) + '\t' + str(objectives[2]) + '\t' + str(objectives[1]) + '\n')
+    persist_csv()
+    
 elif (RESULT == 'BD'):
-    pass
+    persist_bd()
+    client.close()
 
 logger.info('')
 logger.info('|---------------------------------------------------------------------------|')

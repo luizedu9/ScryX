@@ -38,7 +38,6 @@ class CrawlerSpider(scrapy.Spider):
             exit()
 
         card_dict = db.request.find_one({'_id': self.id})
-        log.warning(card_dict)
         
         for card in card_dict['cards']:
             yield scrapy.Request(url=card_link_mount(card), callback=self.parse_page, meta={'card': card})
@@ -73,8 +72,8 @@ class CrawlerSpider(scrapy.Spider):
             elif ("desconto" in value[i].extract()): # POSSUI DESCONTO, MODO DE SCRAPYING DIFERENTE
                 price = (''.join(value[i].xpath('./font/text()').extract())).split()[1].replace('.', '').replace(',', '.')
                 if (price != '0.00'):
-                    yield {'card': card, 'store': store, 'quantity': quantity[i].split()[0], 'value': price}
+                    yield {'id': self.id, 'card': card, 'store': store, 'quantity': quantity[i].split()[0], 'value': price}
             else:
                 price = (''.join(value[i].xpath('./text()').extract())).split()[1].replace('.', '').replace(',', '.')
                 if (price != '0.00'):
-                    yield {'card': card, 'store': store, 'quantity': quantity[i].split()[0], 'value': price}
+                    yield {'id': self.id, 'card': card, 'store': store, 'quantity': quantity[i].split()[0], 'value': price}

@@ -30,7 +30,7 @@
 INITIAL_TEMPERATURE 50
 FINAL_TEMPERATURE 0.1
 COOLING_SCHEDULE GEOMETRIC
-ALPHA 0.995
+ALPHA 0.9
 REHEAT 2
 
 #######################################################################################################
@@ -107,4 +107,4 @@ N_SOLUTION_POOL 500
 #	CSV salva os resultados PARA ESTATISTICA em um arquivo CSV
 # FILE_RESULT é o directorio quando utilizar o modo CSV
 
-RESULT CSV
+RESULT BD

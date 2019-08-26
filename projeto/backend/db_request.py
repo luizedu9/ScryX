@@ -68,7 +68,7 @@ def insert_user(db, user):
 #######################################################################################################
 
 def insert_request(db, id_request, id_user, card_dict):
-    db.request.insert_one({'_id': id_request, 'user': id_user, 'cards': card_dict})
+    db.request.insert_one({'_id': id_request, 'user': id_user, 'cards': card_dict, 'crawler': []})
 
 #######################################################################################################
 #                                                                                                     #
