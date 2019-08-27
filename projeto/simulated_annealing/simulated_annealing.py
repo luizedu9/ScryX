@@ -516,7 +516,7 @@ def persist_csv():
             file.write(str("%.2f"%objectives[0]) + '\t' + str(objectives[2]) + '\t' + str(objectives[1]) + '\n')
 
 def persist_bd():
-    db.result.insert_one({'_id': sys.argv[1], 'user': sys.argv[2], 'result': result_to_json()})
+    db.result.insert_one({'_id': sys.argv[1], 'user': str(user), 'result': result_to_json()})
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -758,7 +758,7 @@ logger.info('|------------------------------------------------------------------
 logger.info('')
 
 # INICIALIZA AS ESTRUTURAS DE DADOS DO PROGRAMA
-card_dict, store_dict, content_table, empty_table = run_input_reformat(sys.argv[1], sys.argv[2])
+card_dict, store_dict, content_table, empty_table, user = run_input_reformat(db, sys.argv[1])
 # INICIALIZA A ROLETA
 initialize_roulette_wheel()
 initialize_total_card_quantity()

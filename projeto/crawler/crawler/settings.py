@@ -15,7 +15,7 @@ SPIDER_MODULES = ['crawler.spiders']
 NEWSPIDER_MODULE = 'crawler.spiders'
 
 # Log
-LOG_ENABLED = False
+LOG_ENABLED = True
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

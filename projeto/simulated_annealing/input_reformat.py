@@ -18,24 +18,17 @@
 from pymongo import MongoClient
 import csv
 
-def list_reformat(_id):
-    # CONECTA COM MONGODB
-    client = MongoClient('localhost',27017)
-    db = client["tcc"]
-    # ADICIONA {ID CARTA: (NOME CARTA, QUANTIDADE CARTA)} NO DICIONARIO
-    card_dict_temp = db.request_queue.find_one({'_id': _id}, {'cards': 1, '_id':0})
+# ORDENA CARTAS EM ORDEM CRESCENTE E TRANSFORMA NO DICIONARIO {0: ('time walk', 1), ...}
+def list_reformat(card_request):
     cont = 0
     card_dict = {}
-    for key, value in dict(sorted(card_dict_temp['cards'].items(), key=lambda kv: kv[0])).items():
+    for key, value in dict(sorted(card_request.items(), key=lambda kv: kv[0])).items():
         card_dict[cont] = ((key, int(value))) 
         cont += 1
     return(card_dict)
 
-def crawler_reformat(csv_file, card_dict): 
-    # ORDENA ARQUIVO CSV
-    with open(csv_file, newline='') as file:
-        reader = csv.DictReader(file, delimiter=",")
-        sortedlist = sorted(reader, key=lambda row:(row['card'], row['store'], float(row['value']), int(row['quantity'])), reverse=False)
+def crawler_reformat(card_crawler, card_dict): 
+    sortedlist = sorted(card_crawler, key=lambda row:(row['card'], row['store'], float(row['value']), -int(row['quantity'])), reverse=False)
     # CRIA UM DICIONARIO COM TODAS AS LOJAS QUE SERÃO UTILIZADAS
     store_dict_temp = {}
     cont_store = 0
@@ -57,7 +50,13 @@ def crawler_reformat(csv_file, card_dict):
     for row in sortedlist:
         content_table[card_dict_temp[row['card']]][store_dict_temp[row['store']]].append((int(row['quantity']), float(row['value'])))
     store_dict = dict(map(reversed, store_dict_temp.items()))
-    return(card_dict, store_dict, content_table, empty_table)
+    return(store_dict, content_table, empty_table)
 
-def run_input_reformat(card_id, crawler_file):
-    return(crawler_reformat(crawler_file, list_reformat(card_id)))
+def run_input_reformat(db, request_id):
+    request = db.request.find_one({'_id': request_id}) # BUSCA REQUEST NO BANCO
+    user = request['user']
+    card_request = request['cards']
+    card_crawler = request['crawler']
+    card_dict = list_reformat(card_request) # TRANSFORMA CARDS EM UM DICIONARIO
+    store_dict, content_table, empty_table = crawler_reformat(card_crawler, card_dict)
+    return(card_dict, store_dict, content_table, empty_table, user)

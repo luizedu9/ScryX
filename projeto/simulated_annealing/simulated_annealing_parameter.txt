@@ -30,7 +30,7 @@
 INITIAL_TEMPERATURE 50
 FINAL_TEMPERATURE 0.1
 COOLING_SCHEDULE GEOMETRIC
-ALPHA 0.9
+ALPHA 0.995
 REHEAT 2
 
 #######################################################################################################

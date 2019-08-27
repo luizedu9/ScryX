@@ -17,7 +17,7 @@ import os
 import sys
 
 # SALVA APENAS NO BANCO
-#os.system('scrapy crawl crawler -a id=' +  sys.argv[1])
+os.system('scrapy crawl crawler -a id=' + sys.argv[1])
 
 # SALVA NO BANCO E EM UM ARQUIVO DO TIPO ESCOLHIDO
-os.system('scrapy crawl crawler -a id=' + sys.argv[1] + ' -o ' + sys.argv[2] + ' -t json')
+#os.system('scrapy crawl crawler -a id=' + sys.argv[1] + ' -o ' + sys.argv[2] + ' -t json')

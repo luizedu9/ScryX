@@ -10,7 +10,6 @@ from flask import Flask, render_template,request,redirect,url_for
 from pymongo import MongoClient, errors
 import logging as log
 from unicodedata import normalize
-from contextlib import contextmanager
 from bson import ObjectId
 import os
 import sys
