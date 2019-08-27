@@ -442,6 +442,28 @@ def find_lesser(result_table, stores, card):
     sort_stores.sort(key=lambda tup: float(tup[2]))
     return(sort_stores)
 
+# ENCONTRA AS CARTAS QUE ESTÃO FALTANDO
+def find_missing(result_table):
+    card_list = []
+    missing_list = []
+    for i in range(len(result_table)):
+        card_list.append(0)
+        missing_list.append(0)
+    for i in range(len(result_table)): # PARA CADA CARTA, INCREMENTA QUANTIDADE DAQUELA CARTA NA LISTA CONTADORA
+        for j in range(len(result_table[0])):
+            card_list[i] += result_table[i][j]
+    missing_list = []
+    for i in range(len(card_list)): # CONFERE QUAIS CARTAS NÃO POSSUEM A QUANTIDADE ESPERADA EM CARD_DICT
+        missing_list.append(card_dict[i][1] - card_list[i])
+    result = []
+    for i in range(len(missing_list)):
+        if (missing_list[i] != 0):
+            result_dict = {}
+            result_dict['name'] = card_dict[i][0]
+            result_dict['quantity'] = missing_list[i]
+            result.append(result_dict)
+    return(result)
+
 #####################################################################################################################
 #                                                                                                                   #
 #                                                    PERSIST DATA                                                   #
@@ -476,8 +498,8 @@ def result_to_json():
                             card_local['quantity'] = quantity_tuple
                             card_local['price'] = tuple_[1]
                             store_local.append(card_local)
-            solution_dict['missing_list'] = 'Eyjafjallajökull' # **************************************************
             solution_dict[store_dict[store]] = store_local
+        solution_dict['missing_list'] = find_missing(solution[0])
         solutions_list.append(solution_dict)
     return(json.loads(json.dumps(solutions_list)))
 
@@ -716,14 +738,13 @@ logger.setLevel(logging.WARNING)
 # INICIALIZA OS PARAMETROS DO "simulated_annealing_parameter.txt"
 initialize_parameters()
 
-if (RESULT == 'BD'):  # INICIALIZA BD SE ESTIVER NO MODO BD
-    client = MongoClient('localhost', 27017)
-    db = client["scryx"]
-    try:
-        client.server_info()
-    except:
-        log.error('Can\'t connect to MongoDB')
-        raise
+client = MongoClient('localhost', 27017)
+db = client["scryx"]
+try:
+    client.server_info()
+except:
+    log.error('Can\'t connect to MongoDB')
+    raise
 
 if (RESULT == 'TERMINAL'):
     logger.setLevel(logging.INFO)
@@ -785,6 +806,11 @@ elif (RESULT in 'CSV'):
 elif (RESULT == 'BD'):
     persist_bd()
     client.close()
+
+for solution in solutions:
+    objectives = get_final_fitness(solution[0])
+    print('Valor: ' + str('%.2f' % objectives[0]) + ' / Lojas: ' + str(
+        objectives[2]) + ' / Faltou: ' + str(objectives[1]))
 
 logger.info('')
 logger.info('|---------------------------------------------------------------------------|')
