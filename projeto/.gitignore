@@ -9,6 +9,7 @@
 [Ll]ocal
 [Ss]cripts
 [Ss]hare
+python-wheels
 pyvenv.cfg
 .venv
 pip-selfcheck.json
