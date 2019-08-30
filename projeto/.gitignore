@@ -10,6 +10,7 @@
 [Ss]cripts
 [Ss]hare
 python-wheels
+.whl
 pyvenv.cfg
 .venv
 pip-selfcheck.json
