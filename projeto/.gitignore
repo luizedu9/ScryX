@@ -9,6 +9,9 @@
 [Ll]ocal
 [Ss]cripts
 [Ss]hare
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
 python-wheels
 .whl
 pyvenv.cfg
