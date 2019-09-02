@@ -6,7 +6,11 @@
 #   
 #   Luiz Eduardo Pereira    
 
-from flask import Flask, render_template,request,redirect,url_for
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+from flask_login import LoginManager
+from werkzeug.security import generate_password_hash
+import uuid
 from pymongo import MongoClient, errors
 import logging as log
 from unicodedata import normalize
@@ -18,32 +22,53 @@ from db_request import *
 from functions import *
 from user import User
 
+BOOKS = [
+    {
+        'id': uuid.uuid4().hex,
+        'title': 'On the Road',
+        'author': 'Jack Kerouac',
+        'read': True
+    },
+    {
+        'id': uuid.uuid4().hex,
+        'title': 'Harry Potter and the Philosopher\'s Stone',
+        'author': 'J. K. Rowling',
+        'read': False
+    },
+    {
+        'id': uuid.uuid4().hex,
+        'title': 'Green Eggs and Ham',
+        'author': 'Dr. Seuss',
+        'read': True
+    }
+]
+
 #######################################################################################################
 #                                                                                                     #
 #                                                 INIT                                                #
 #                                                                                                     #
 #######################################################################################################
+# CONFIGURAÇÃO
+DEBUG = True
 
 app = Flask(__name__)
-title = "ScryX"
-heading = "Prototipo"
+app.config.from_object(__name__)
+
+# ENABLE CORS
+CORS(app, resources={r'/*': {'origins': '*'}})
 
 user_logged = 1 # ********************************************************************
 
 # CONECTA COM MONGODB
 client = MongoClient('localhost', 27017)
-
-# INICIA BD, SE NÃO EXISTIR, CRIA UM
-if ('scryx' not in client.list_database_names()):
-    db = client["scryx"]
-    insert_current_queue(db)
-    insert_length_queue(db)
-else:
-    db = client["scryx"]
-
-todos = db.todo #REMOVER AHHHHHHHHHHHHHHHH ************************************************************************
-
 try:
+    # INICIA BD, SE NÃO EXISTIR, CRIA UM
+    if ('scryx' not in client.list_database_names()):
+        db = client["scryx"]
+        insert_current_queue(db)
+        insert_length_queue(db)
+    else:
+        db = client["scryx"]        
     client.server_info()
 except:
     log.error('Can\'t connect to MongoDB')
@@ -58,143 +83,109 @@ except:
 
 #######################################################################################################
 #                                                                                                     #
-#                                                  ROTE                                               #
+#                                                 ROUTER                                              #
 #                                                                                                     #
 #######################################################################################################
 
 # CRIAÇÃO DE USUARIO
+# STATUS:
+#   0 - SUCESSO
+#   1 - USUARIO JA EXISTE
+#   2 - HOUVE PROBLEMAS
 @app.route("/create_user", methods=['POST'])
-def create_user ():
-    if (request.values.get("password") != request.values.get("confirm_password")):
-        return('ERRO') # **************************************************
-    insert_user(db, User(
-        request.values.get("username"),
-        request.values.get("password"),
-        request.values.get("name"),
-        request.values.get("email"),
-        request.values.get("birthdate"),
-        request.values.get("gender")
-        ))
-    return redirect("/")
+def create_user():
+    if user_exists(db, request.values.get("username")): # SE USUARIO JA EXISTE, RETORNA 1
+        response_object = {'status': '1'}
+    else:
+        try:
+            insert_user(db, User(
+                request.values.get("username"),
+                request.values.get("password"),
+                request.values.get("name"),
+                request.values.get("email"),
+                request.values.get("birthdate"),
+                request.values.get("gender")
+                ))
+        except:
+           response_object = {'status': '2'}
+        return jsonify(response_object)
 
 # CRIAÇÃO DE REQUISIÇÃO DE COTAÇÃO DE PREÇO
 @app.route("/request_list", methods=['POST'])
 def request_list():
-    #try:
-    error_list = register_request(db, request.values.get("card_list"), user_logged)
-    if (error_list == []):
-        return("Sucesso")
-    else:
-        return(str(error_list))
-    #except:
-    #    return('Houve um erro, tente mais tarde')
+    try:
+        error_list = register_request(db, request.values.get("card_list"), user_logged)
+        if (error_list == []):
+            response_object = {'status': 'True'}
+            print('DEU', file=sys.stderr)
+        else:
+            response_object = {'error_list': error_list}
+            print('ERRADO DEU', file=sys.stderr)
+    except:
+        response_object = {'status': 'False'}
+        print('NÃO DEU', file=sys.stderr)
+    return jsonify(response_object)
 
 # INSERÇÃO DE CARTAS NO BANCO DE NOMES DE CARTAS
-@app.route("/update_card_list", methods=['POST'])
-def update_card_list():
-    storage_cards(db, request.files['myfile'].read())
-    return redirect("/")
-
-
-
+@app.route("/insert_card_names", methods=['POST'])
+def insert_card_names():
+    storage_cards(db, request.files['file'].read())
+    response_object = {'status': 'True'}   
+    return jsonify(response_object)
+    
 #######################################################################################################
 #                                                                                                     #
 #                                                  EXEMPLO                                            #
 #                                                                                                     #
 #######################################################################################################
-def redirect_url():
-    return request.args.get('next') or \
-           request.referrer or \
-           url_for('index')
 
-@app.route("/list")
-def lists ():
-    #Display the all Tasks
-    todos_l = todos.find()
-    a1="active"
-    return render_template('index.html',a1=a1,todos=todos_l,t=title,h=heading)
-
-@app.route("/")
-@app.route("/uncompleted")
-def tasks ():
-    #Display the Uncompleted Tasks
-    todos_l = todos.find({"done":"no"})
-    a2="active"
-    return render_template('index.html',a2=a2,todos=todos_l,t=title,h=heading)
+def remove_book(book_id):
+    for book in BOOKS:
+        if book['id'] == book_id:
+            BOOKS.remove(book)
+            return True
+    return False
 
 
-@app.route("/completed")
-def completed ():
-    #Display the Completed Tasks
-    todos_l = todos.find({"done":"yes"})
-    a3="active"
-    return render_template('index.html',a3=a3,todos=todos_l,t=title,h=heading)
+# sanity check route
+@app.route('/ping', methods=['GET'])
+def ping_pong():
+    return jsonify('pong!')
 
-@app.route("/done")
-def done ():
-    #Done-or-not ICON
-    id=request.values.get("_id")
-    task=todos.find({"_id":ObjectId(id)})
-    if(task[0]["done"]=="yes"):
-        todos.update({"_id":ObjectId(id)}, {"$set": {"done":"no"}})
+@app.route('/books', methods=['GET', 'POST'])
+def all_books():
+    response_object = {'status': 'success'}
+    if request.method == 'POST':
+        post_data = request.get_json()
+        BOOKS.append({
+            'id': uuid.uuid4().hex,
+            'title': post_data.get('title'),
+            'author': post_data.get('author'),
+            'read': post_data.get('read')
+        })
+        response_object['message'] = 'Book added!'
     else:
-        todos.update({"_id":ObjectId(id)}, {"$set": {"done":"yes"}})
-    redir=redirect_url()    
-
-    return redirect(redir)
-
-@app.route("/action", methods=['POST'])
-def action ():
-    #Adding a Task
-    name=request.values.get("name")
-    desc=request.values.get("desc")
-    date=request.values.get("date")
-    pr=request.values.get("pr")
-    todos.insert({ "name":name, "desc":desc, "date":date, "pr":pr, "done":"no"})
-    return redirect("/list")
+        response_object['books'] = BOOKS
+    return jsonify(response_object)
 
 
-
-@app.route("/remove")
-def remove ():
-    #Deleting a Task with various references
-    key=request.values.get("_id")
-    todos.remove({"_id":ObjectId(key)})
-    return redirect("/")
-
-@app.route("/update")
-def update ():
-    id=request.values.get("_id")
-    task=todos.find({"_id":ObjectId(id)})
-    return render_template('update.html',tasks=task,h=heading,t=title)
-
-@app.route("/action3", methods=['POST'])
-def action3 ():
-    #Updating a Task with various references
-    name=request.values.get("name")
-    desc=request.values.get("desc")
-    date=request.values.get("date")
-    pr=request.values.get("pr")
-    id=request.values.get("_id")
-    todos.update({"_id":ObjectId(id)}, {'$set':{ "name":name, "desc":desc, "date":date, "pr":pr }})
-    return redirect("/")
-
-@app.route("/search", methods=['GET'])
-def search():
-    #Searching a Task with various references
-
-    key=request.values.get("key")
-    refer=request.values.get("refer")
-    if(key=="_id"):
-        todos_l = todos.find({refer:ObjectId(key)})
-    else:
-        todos_l = todos.find({refer:key})
-    return render_template('searchlist.html',todos=todos_l,t=title,h=heading)
-
-
-
-
-
+@app.route('/books/<book_id>', methods=['PUT', 'DELETE'])
+def single_book(book_id):
+    response_object = {'status': 'success'}
+    if request.method == 'PUT':
+        post_data = request.get_json()
+        remove_book(book_id)
+        BOOKS.append({
+            'id': uuid.uuid4().hex,
+            'title': post_data.get('title'),
+            'author': post_data.get('author'),
+            'read': post_data.get('read')
+        })
+        response_object['message'] = 'Book updated!'
+    if request.method == 'DELETE':
+        remove_book(book_id)
+        response_object['message'] = 'Book removed!'
+    return jsonify(response_object)
 
 if __name__ == "__main__":
     app.run()

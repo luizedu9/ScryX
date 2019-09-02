@@ -22,6 +22,7 @@ class User(object):
         self.__gender = gender
         self.__entrydate = date.today()
         self.__budget = []
+        self.__admin = False
 
     @property
     def username(self):
@@ -66,3 +67,7 @@ class User(object):
     @budget.setter
     def budget(self, value):
         self.__budget.append(value)
+
+    @property
+    def admin(self):
+        return self.__admin

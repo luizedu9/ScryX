@@ -57,9 +57,15 @@ def insert_user(db, user):
             'gender': str(user.gender),
             'entrydate': str(user.entrydate),
             'budget': {}})
-        return(0)
+        return(True)
     except errors.DuplicateKeyError:
-        return(1)
+        return(False)
+
+def user_exists(db, username):
+    if (db.user.find_one({'_id': username}) != None):
+        return(True)
+    else:
+        return(False)
 
 #######################################################################################################
 #                                                                                                     #

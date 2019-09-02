@@ -118,6 +118,15 @@
         </b-button-group>
       </b-form>
     </b-modal>
+    <router-link to="/admin">admin</router-link>
+    <b-form-textarea
+      id="textarea"
+      v-model="card_list"
+      placeholder="Enter something..."
+      rows="3"
+      max-rows="6"
+    ></b-form-textarea>
+    <b-button type="submit" variant="primary" v-on:click=submitList()>Enviar</b-button>
   </div>
 </template>
 
@@ -128,6 +137,8 @@ import Alert from './Alert.vue';
 export default {
   data() {
     return {
+      card_list: '',
+      error_list: '',
       books: [],
       addBookForm: {
         title: '',
@@ -148,6 +159,20 @@ export default {
     alert: Alert,
   },
   methods: {
+    submitList() {
+      const formData = new FormData();
+      formData.append('card_list', this.card_list);
+      axios.post('http://localhost:5000/request_list', formData)
+        .then((res) => {
+          this.error_list = res.data.error_list;
+          // eslint-disable-next-line
+          console.log(res.data.error_list);
+        })
+        .catch((error) => {
+          // eslint-disable-next-line
+          console.error(error);
+        });
+    },
     getBooks() {
       const path = 'http://localhost:5000/books';
       axios.get(path)

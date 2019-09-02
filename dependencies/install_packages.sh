@@ -36,6 +36,10 @@ npm install -g @vue/cli
 
 npm install -g @vue/cli-init
 
+npm install axios@0.18.0 --save
+
+npm install bootstrap@4.3.1 --save
+
 sudo apt-get install python3-dev
 
 pip3 install pipenv
@@ -44,10 +48,16 @@ pip3 install flask
 
 pipenv install flask marshmallow
 
+pip install Flask-Cors
+
 pip3 install bson
+
+pip3 install pymongo
 
 # Multi-objective optimization utilities
 # https://esa.github.io/pagmo2/docs/python/utils/py_mo_utils.html
 pip3 install pygmo
 
 pip3 install matplotlib
+
+pip3 install flask-login
