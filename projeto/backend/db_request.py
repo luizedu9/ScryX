@@ -7,6 +7,8 @@
 #   Luiz Eduardo Pereira    
 
 from pymongo import MongoClient, errors
+import json
+from user import User
 
 #######################################################################################################
 #                                                                                                     #
@@ -49,14 +51,14 @@ def insert_card(db, card_english, card_portuguese):
 def insert_user(db, user):
     try:
         db.user.insert_one({
-            '_id': str(user.username),
-            'password': str(user.password),
-            'name': str(user.name),
-            'email': str(user.email),
+            '_id': user.username,
+            'password': user.password,
+            'name': user.name,
+            'email': user.email,
             'birthdate': str(user.birthdate),
-            'gender': str(user.gender),
+            'gender': user.gender,
             'entrydate': str(user.entrydate),
-            'budget': {}})
+            'admin': user.admin})
         return(True)
     except errors.DuplicateKeyError:
         return(False)
@@ -66,6 +68,16 @@ def user_exists(db, username):
         return(True)
     else:
         return(False)
+
+def find_user(db, username):
+    result = db.user.find_one({'_id': username})
+    try:
+        user = User(result['_id'], result['password'], result['name'],
+                    result['email'], result['birthdate'], result['gender'], 
+                    result['entrydate'], result['admin'])
+    except:
+        user = None
+    return(user)
 
 #######################################################################################################
 #                                                                                                     #

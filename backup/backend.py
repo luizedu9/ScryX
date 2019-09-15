@@ -6,8 +6,9 @@
 #   
 #   Luiz Eduardo Pereira    
 
-from flask import Flask, jsonify, request, Blueprint, current_app
+from flask import Flask, jsonify, request
 from flask_cors import CORS
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 from pymongo import MongoClient, errors
@@ -16,16 +17,30 @@ from unicodedata import normalize
 from bson import ObjectId
 import os
 import sys
-import jwt
-from datetime import datetime, timedelta
-from functools import wraps
 
 from db_request import *
 from functions import *
 from user import User
 
 BOOKS = [
-    {}
+    {
+        'id': uuid.uuid4().hex,
+        'title': 'On the Road',
+        'author': 'Jack Kerouac',
+        'read': True
+    },
+    {
+        'id': uuid.uuid4().hex,
+        'title': 'Harry Potter and the Philosopher\'s Stone',
+        'author': 'J. K. Rowling',
+        'read': False
+    },
+    {
+        'id': uuid.uuid4().hex,
+        'title': 'Green Eggs and Ham',
+        'author': 'Dr. Seuss',
+        'read': True
+    }
 ]
 
 #######################################################################################################
@@ -41,6 +56,12 @@ app.config.from_object(__name__)
 
 # ENABLE CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+app.secret_key = "super secret key"
+app.config['TESTING'] = False
+login_manager.session_protection = "strong"
 
 # CONECTA COM MONGODB
 client = MongoClient('localhost', 27017)
@@ -63,36 +84,6 @@ try: # CARREGA GERENCIADOR DE FILA
 except:
     log.error('Can\'t read current_queue or length_queue')
     exit()
-
-#######################################################################################################
-#                                                                                                     #
-#                                                 TOKEN                                               #
-#                                                                                                     #
-#######################################################################################################
-
-# https://stackabuse.com/single-page-apps-with-vue-js-and-flask-jwt-authentication/
-def token_required(f):
-    @wraps(f)
-    def _verify(*args, **kwargs):
-        auth_headers = request.headers.get('Authorization', '').split()
-        invalid_msg = {'message': 'Token invalido.', 'authenticated': False}
-        expired_msg = {'message': 'Token expirado', 'authenticated': False}
-        if len(auth_headers) != 2:
-            return jsonify(invalid_msg), 401
-        try:
-            token = auth_headers[1]
-            data = jwt.decode(token, str(current_app.config['SECRET_KEY']))
-            user = find_user(db, data['sub'])
-            if not user:
-                raise RuntimeError('User not found')
-            return f(user, *args, **kwargs)
-        except jwt.ExpiredSignatureError:
-            # 401 is Unauthorized HTTP status code
-            return jsonify(expired_msg), 401
-        except (jwt.InvalidTokenError, Exception) as e:
-            print(e)
-            return jsonify(invalid_msg), 401
-    return _verify
 
 #######################################################################################################
 #                                                                                                     #
@@ -130,28 +121,36 @@ def create_user():
 #   2 - USUARIO OU SENHA INCORRETOS
 @app.route("/login", methods=['POST'])
 def login():
-    #try:
-    post_data = request.get_json()
-    user = find_user(db, post_data.get("username")) # BUSCA USUARIO
-    if (user != False):
-        if (user.check_password(post_data.get("password"))): # CHECA SE SENHA ESTA CORRETA            
-            token = jwt.encode({'sub': user.username, 'iat': datetime.utcnow(), 'exp': datetime.utcnow() + timedelta(minutes=30)}, str(current_app.config['SECRET_KEY']))
-            print(str(token), file=sys.stderr)
-            return jsonify({'token': token.decode('UTF-8')})
+    try:
+        post_data = request.get_json()
+        user = find_user(db, post_data.get("username")) # BUSCA USUARIO
+        if (user != False):
+            if (user.check_password(post_data.get("password"))): # CHECA SE SENHA ESTA CORRETA
+                response_object = {'status': '0'}
+                login_user(user, remember=True)
+                print(current_user.username, file=sys.stderr)
+            else:
+                response_object = {'status': '2'}
         else:
-            return jsonify({'message': 'Usuário ou senha incorretos', 'authenticated': False})
-    else:
-        return jsonify({'message': 'Usuário ou senha incorretos', 'authenticated': False})
-    #except:
-    #    return jsonify({'message': 'Houve um problema inesperado', 'authenticated': False})
+            response_object = {'status': '2'} # USUARIO NÃO EXISTE
+    except:
+        response_object = {'status': '1'}
+    return jsonify(response_object)
+
+@app.route("/logout")
+@login_required
+def logout():
+    response_object = {'status': '0'}
+    logout_user()
+    return jsonify(response_object)
 
 # CRIAÇÃO DE REQUISIÇÃO DE COTAÇÃO DE PREÇO
 # STATUS:
 #   0 - SUCESSO
 #   1 - OCORREU UM PROBLEMA INESPERADO
 @app.route("/request_list", methods=['POST'])
-@token_required
 def request_list():
+    print(current_user.username, file=sys.stderr)
     post_data = request.get_json()
     try:
         error_list = register_request(db, post_data.get("card_list"), user_logged)
@@ -168,6 +167,7 @@ def request_list():
 #   0 - SUCESSO
 #   1 - OCORREU UM PROBLEMA INESPERADO
 @app.route("/insert_card_names", methods=['POST'])
+@login_required
 def insert_card_names():
     print('This is error output', file=sys.stderr)
     try:
@@ -176,6 +176,10 @@ def insert_card_names():
     except:
         response_object = {'status': '1'}
     return jsonify(response_object)
+
+@login_manager.user_loader
+def user_loader(username):
+    return find_user(db, username)
     
 #######################################################################################################
 #                                                                                                     #

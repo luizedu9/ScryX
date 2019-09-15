@@ -60,4 +60,4 @@ pip3 install pygmo
 
 pip3 install matplotlib
 
-pip3 install flask-login
+pip install PyJWT
