@@ -14,13 +14,12 @@ from datetime import date
 from werkzeug.security import check_password_hash
 
 class User(object):
-    def __init__(self, username, password, name, email, birthdate, gender, entrydate=date.today(), admin=False):
+    def __init__(self, username, password, name, email, birthdate, entrydate=date.today(), admin=False):
         self.__username = username
         self.__password = password
         self.__name = name
         self.__email = email
         self.__birthdate = birthdate
-        self.__gender = gender
         self.__entrydate = entrydate
         self.__admin = admin
 
@@ -51,10 +50,6 @@ class User(object):
     @property
     def birthdate(self):
         return self.__birthdate
-
-    @property
-    def gender(self):
-        return self.__gender
 
     @property
     def entrydate(self):

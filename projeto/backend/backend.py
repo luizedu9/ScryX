@@ -7,16 +7,16 @@
 #   Luiz Eduardo Pereira    
 
 from flask import Flask, jsonify, request, Blueprint, current_app
+from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 from pymongo import MongoClient, errors
-import logging as log
 from unicodedata import normalize
 from bson import ObjectId
+import json
 import os
 import sys
-import jwt
 from datetime import datetime, timedelta
 from functools import wraps
 
@@ -39,8 +39,10 @@ DEBUG = True
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-# ENABLE CORS
-CORS(app, resources={r'/*': {'origins': '*'}})
+app.config['JWT_SECRET_KEY'] = 'Super_Secret_JWT_KEY'
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = False
+CORS(app)
+jwt = JWTManager(app)
 
 # CONECTA COM MONGODB
 client = MongoClient('localhost', 27017)
@@ -66,36 +68,6 @@ except:
 
 #######################################################################################################
 #                                                                                                     #
-#                                                 TOKEN                                               #
-#                                                                                                     #
-#######################################################################################################
-
-# https://stackabuse.com/single-page-apps-with-vue-js-and-flask-jwt-authentication/
-def token_required(f):
-    @wraps(f)
-    def _verify(*args, **kwargs):
-        auth_headers = request.headers.get('Authorization', '').split()
-        invalid_msg = {'message': 'Token invalido.', 'authenticated': False}
-        expired_msg = {'message': 'Token expirado', 'authenticated': False}
-        if len(auth_headers) != 2:
-            return jsonify(invalid_msg), 401
-        try:
-            token = auth_headers[1]
-            data = jwt.decode(token, str(current_app.config['SECRET_KEY']))
-            user = find_user(db, data['sub'])
-            if not user:
-                raise RuntimeError('User not found')
-            return f(user, *args, **kwargs)
-        except jwt.ExpiredSignatureError:
-            # 401 is Unauthorized HTTP status code
-            return jsonify(expired_msg), 401
-        except (jwt.InvalidTokenError, Exception) as e:
-            print(e)
-            return jsonify(invalid_msg), 401
-    return _verify
-
-#######################################################################################################
-#                                                                                                     #
 #                                                 ROUTER                                              #
 #                                                                                                     #
 #######################################################################################################
@@ -104,12 +76,15 @@ def token_required(f):
 #   0 - SUCESSO
 #   1 - OCORREU UM PROBLEMA INESPERADO
 #   2 - USUARIO JA EXISTE
+#   3 - EMAIL JÁ EXISTE
 @app.route("/create_user", methods=['POST'])
 def create_user():
     try:
         post_data = request.get_json()
-        if user_exists(db, post_data.get("username")): # SE USUARIO JA EXISTE, NÃO CONTINUA
+        if user_exists(db, post_data.get("username")):
             return jsonify({'status': '2'})
+        if email_exists(db, post_data.get("email")):
+            return jsonify({'status': '3'})
         else:
             insert_user(db, User(
                 post_data.get("username"),
@@ -119,63 +94,114 @@ def create_user():
                 post_data.get("birthdate"),
                 post_data.get("gender")
                 ))
-            response_object = {'status': '0'}
+            return jsonify({'status': '0'})
     except:
-        response_object = {'status': '1'}
-    return jsonify(response_object)
+        return jsonify({'status': '1'})
 
 # STATUS:
 #   0 - SUCESSO
 #   1 - OCORREU UM PROBLEMA INESPERADO
-#   2 - USUARIO OU SENHA INCORRETOS
-@app.route("/login", methods=['POST'])
-def login():
-    #try:
-    post_data = request.get_json()
-    user = find_user(db, post_data.get("username")) # BUSCA USUARIO
-    if (user != False):
-        if (user.check_password(post_data.get("password"))): # CHECA SE SENHA ESTA CORRETA            
-            token = jwt.encode({'sub': user.username, 'iat': datetime.utcnow(), 'exp': datetime.utcnow() + timedelta(minutes=30)}, str(current_app.config['SECRET_KEY']))
-            print(str(token), file=sys.stderr)
-            return jsonify({'token': token.decode('UTF-8')})
+@app.route('/user/<username>', methods=['GET', 'PUT', 'DELETE'])
+def user(username):
+    if request.method == 'GET':
+        user = find_user(db, username)
+        if (user):
+            return jsonify({'status': '0', 'username': user.username, 'name': user.name, 'email': user.email, 'birthdate': user.birthdate, 'entrydate': user.entrydate, 'admin': user.admin})
         else:
-            return jsonify({'message': 'Usuário ou senha incorretos', 'authenticated': False})
-    else:
-        return jsonify({'message': 'Usuário ou senha incorretos', 'authenticated': False})
-    #except:
-    #    return jsonify({'message': 'Houve um problema inesperado', 'authenticated': False})
+            return jsonify({'status': '1'})
+    
+    
+    
+    """if request.method == 'PUT':
+        post_data = request.get_json()
+        remove_book(book_id)
+        BOOKS.append({
+            'id': uuid.uuid4().hex,
+            'title': post_data.get('title'),
+            'author': post_data.get('author'),
+            'read': post_data.get('read')
+        })
+        response_object['message'] = 'Book updated!'"""
+    if request.method == 'DELETE':
+        if (delete_user(db, username)):
+            return jsonify({'status': '0'})
+        else:
+            return jsonify({'status': '1'})
 
 # CRIAÇÃO DE REQUISIÇÃO DE COTAÇÃO DE PREÇO
 # STATUS:
 #   0 - SUCESSO
 #   1 - OCORREU UM PROBLEMA INESPERADO
+#   2 - POSSUI CARTAS NÃO RECONHECIDAS
+#   3 - SINTAXE INCORRETA
 @app.route("/request_list", methods=['POST'])
-@token_required
+@jwt_required
 def request_list():
     post_data = request.get_json()
+    if (len(post_data.get("card_list")) == 0):
+        return(jsonify({'status': '3'}))
     try:
-        error_list = register_request(db, post_data.get("card_list"), user_logged)
-        if (error_list == []):
-            response_object = {'status': '0'}
+        error_list = register_request(db, post_data.get("card_list"), post_data.get("username"))
+        if (error_list == None):
+            return jsonify({'status': '3'})
+        elif (error_list == []):
+            return jsonify({'status': '0'})
         else:
-            response_object = {'error_list': error_list}
+            return jsonify({'status': '2', 'error_list': error_list})
     except:
-        response_object = {'status': '1'}
-    return jsonify(response_object)
+        return jsonify({'status': '1'})
 
 # INSERÇÃO DE CARTAS NO BANCO DE NOMES DE CARTAS
 # STATUS:
 #   0 - SUCESSO
 #   1 - OCORREU UM PROBLEMA INESPERADO
+#   2 - ACESSO NEGADO
 @app.route("/insert_card_names", methods=['POST'])
+@jwt_required
 def insert_card_names():
-    print('This is error output', file=sys.stderr)
     try:
         storage_cards(db, request.files['file'].read())
-        response_object = {'status': '0'}   
+        return jsonify({'status': '0'})
     except:
-        response_object = {'status': '1'}
-    return jsonify(response_object)
+        return jsonify({'status': '1'})
+
+#######################################################################################################
+#                                                                                                     #
+#                                           ROUTER - LOGIN                                            #
+#                                                                                                     #
+#######################################################################################################
+
+# STATUS:
+#   0 - SUCESSO
+#   1 - OCORREU UM PROBLEMA INESPERADO
+#   2 - USUARIO OU SENHA INCORRETOS
+@app.route('/login', methods=['POST'])
+def login():
+    try:
+        username = request.json['username']
+        password = request.json['password']
+        user = find_user(db, username)  # BUSCA USUARIO
+        if (user):
+            if (user.check_password(password)):  # CHECA SE SENHA ESTA CORRETA
+                access_token = create_access_token(identity=username)
+                return jsonify({'status': 0, 'token': access_token})
+            else:
+                return jsonify({'status': 2})
+        else:
+            return jsonify({'status': 2})
+    except:
+        return jsonify({'status': 1})
+
+@app.route('/verify-token', methods=['POST'])
+@jwt_required
+def verify_token():
+    return jsonify({'success': True}), 200
+
+@app.route('/protected', methods=['GET'])
+@jwt_required
+def protected():
+    current_user = get_jwt_identity()
+    return jsonify(logged_in_as=current_user), 200
     
 #######################################################################################################
 #                                                                                                     #
@@ -189,11 +215,6 @@ def remove_book(book_id):
             BOOKS.remove(book)
             return True
     return False
-
-# sanity check route
-@app.route('/ping', methods=['GET'])
-def ping_pong():
-    return jsonify('pong!')
 
 @app.route('/books', methods=['GET', 'POST'])
 def all_books():

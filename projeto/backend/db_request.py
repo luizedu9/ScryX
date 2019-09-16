@@ -8,6 +8,8 @@
 
 from pymongo import MongoClient, errors
 import json
+import sys
+
 from user import User
 
 #######################################################################################################
@@ -56,7 +58,6 @@ def insert_user(db, user):
             'name': user.name,
             'email': user.email,
             'birthdate': str(user.birthdate),
-            'gender': user.gender,
             'entrydate': str(user.entrydate),
             'admin': user.admin})
         return(True)
@@ -69,15 +70,29 @@ def user_exists(db, username):
     else:
         return(False)
 
+
+def email_exists(db, email):
+    if (db.user.find_one({'email': email}) != None):
+        return(True)
+    else:
+        return(False)
+
 def find_user(db, username):
-    result = db.user.find_one({'_id': username})
     try:
+        result = db.user.find_one({'_id': username})
         user = User(result['_id'], result['password'], result['name'],
-                    result['email'], result['birthdate'], result['gender'], 
+                    result['email'], result['birthdate'], 
                     result['entrydate'], result['admin'])
     except:
         user = None
     return(user)
+
+def delete_user(db, username):
+    try:
+        db.user.delete_one({'_id': username})
+        return(True)
+    except:
+        return(False)
 
 #######################################################################################################
 #                                                                                                     #

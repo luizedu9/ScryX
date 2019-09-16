@@ -32,28 +32,33 @@ def accent_removal_list(cards):
 # TRANSFORMA card_list EM card_dict
 def request_to_dict(card_list):
     card_dict = {}
-    cards = card_list.splitlines()
-    cards = accent_removal_list(cards)
-    for card in cards:
-        if (str(card).strip()):  # SE VAZIO, IGNORA
-            card_dict[card.split(" ", 1)[1]] = card.split(" ", 1)[0]
+    try:
+        cards = card_list.splitlines()
+        cards = accent_removal_list(cards)
+        for card in cards:
+            if (str(card).strip()):  # SE VAZIO, IGNORA
+                card_dict[card.split(" ", 1)[1]] = card.split(" ", 1)[0]
+    except:
+        card_dict = None
     return(card_dict)
 
 # VERIFICA SE ALGUMA CARTA NÃO SE ENCONTRA NO BANCO DE DADOS
 def names_resolver(db, card_dict):
+    if (card_dict == None):
+        return (None)
     error_list = []
     for key, value in card_dict.items():
         if (not(value.isdigit())):  # VERIFICA SE FOI PASSADO A QUANTIDADE DA CARTA
-            error_list.append(key)
-        else:  # VERIFICA SE A CARTA PASSADA NÃO SE ENCONTRA EM NO BANCO DE DADOS EM INGLES OU PORTUGUES
+            error_list.append(str(value) + ' ' + str(key) + ' (Quantidade requerida)')
+        else:  # VERIFICA SE A CARTA PASSADA NÃO SE ENCONTRA NO BANCO DE DADOS EM INGLES OU PORTUGUES
             try:
                 english = find_name_english(db, key)
                 portuguese = find_name_portuguese(db, key)
             except:
                 raise Exception('find_name_...()')
             if (not(english) and not(portuguese)):
-                error_list.append(key)
-        return(error_list)
+                error_list.append(str(value) + ' ' + str(key) + ' (Carta inexistente)')
+    return(error_list)
 
 #######################################################################################################
 #                                                                                                     #
@@ -64,7 +69,7 @@ def names_resolver(db, card_dict):
 def register_request(db, card_list, user_logged):
 	card_dict = request_to_dict(card_list) # TRANSFORMA LISTA DE CARTAS EM DICIONARIO
 	error_list = names_resolver(db, card_dict) # VERIFICA SE CARTAS EXISTEM NO BANCO DE DADOS
-	if (len(error_list) == 0): # SE NÃO ENCONTROU ERRO, SALVA REQUISIÇÃO NO BANCO DE DADOS
+	if ((error_list != None) and (len(error_list) == 0)): # SE NÃO ENCONTROU ERRO, SALVA REQUISIÇÃO NO BANCO DE DADOS
 		increment_length_queue(db) # ATUALIZA TAMANHO DA FILA
 		insert_request(db, get_length_queue(db), user_logged, card_dict)
 	return(error_list)
