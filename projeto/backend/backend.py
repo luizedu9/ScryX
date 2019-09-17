@@ -91,8 +91,7 @@ def create_user():
                 generate_password_hash(post_data.get("password")),
                 post_data.get("name"),
                 post_data.get("email"),
-                post_data.get("birthdate"),
-                post_data.get("gender")
+                post_data.get("birthdate")
                 ))
             return jsonify({'status': '0'})
     except:
@@ -102,6 +101,7 @@ def create_user():
 #   0 - SUCESSO
 #   1 - OCORREU UM PROBLEMA INESPERADO
 @app.route('/user/<username>', methods=['GET', 'PUT', 'DELETE'])
+@jwt_required
 def user(username):
     if request.method == 'GET':
         user = find_user(db, username)
@@ -109,24 +109,50 @@ def user(username):
             return jsonify({'status': '0', 'username': user.username, 'name': user.name, 'email': user.email, 'birthdate': user.birthdate, 'entrydate': user.entrydate, 'admin': user.admin})
         else:
             return jsonify({'status': '1'})
-    
-    
-    
-    """if request.method == 'PUT':
-        post_data = request.get_json()
-        remove_book(book_id)
-        BOOKS.append({
-            'id': uuid.uuid4().hex,
-            'title': post_data.get('title'),
-            'author': post_data.get('author'),
-            'read': post_data.get('read')
-        })
-        response_object['message'] = 'Book updated!'"""
     if request.method == 'DELETE':
         if (delete_user(db, username)):
             return jsonify({'status': '0'})
         else:
             return jsonify({'status': '1'})
+
+# STATUS:
+#   0 - SUCESSO
+#   1 - OCORREU UM PROBLEMA INESPERADO
+#   2 - EMAIL JA EXISTE
+@app.route('/user/email', methods=['PUT'])
+@jwt_required
+def user_email():
+    try:
+        post_data = request.get_json()
+        if email_exists(db, post_data.get("email")):
+            return jsonify({'status': '2'})
+        else:
+            if (update_email(db, post_data.get("username"), post_data.get("email")) != None):
+                return jsonify({'status': '0'})
+            else:
+                jsonify({'status': '1'})
+    except:
+        return jsonify({'status': '1'})
+
+#   0 - SUCESSO
+#   1 - OCORREU UM PROBLEMA INESPERADO
+#   2 - SENHA INCORRETA
+@app.route('/user/password', methods=['PUT'])
+@jwt_required
+def user_password():
+    #try:
+    post_data = request.get_json()
+    user = find_user(db, post_data.get("username"))
+    if (user.check_password(post_data.get("password"))):
+        new_password = generate_password_hash(post_data.get("newPassword"))
+        if (update_password(db, user.username, new_password) != None):
+            return jsonify({'status': '0'})
+        else:
+            jsonify({'status': '1'})
+    else:
+        return jsonify({'status': '2'})
+    #except:
+    #    return jsonify({'status': '1'})
 
 # CRIAÇÃO DE REQUISIÇÃO DE COTAÇÃO DE PREÇO
 # STATUS:
@@ -162,6 +188,18 @@ def insert_card_names():
     try:
         storage_cards(db, request.files['file'].read())
         return jsonify({'status': '0'})
+    except:
+        return jsonify({'status': '1'})
+
+# STATUS:
+#   0 - SUCESSO
+#   1 - OCORREU UM PROBLEMA INESPERADO
+@app.route("/history/<username>", methods=['GET'])
+@jwt_required
+def history(username):
+    try:
+        result = find_result(db, username)
+        return jsonify({'status': '0', 'history': result})
     except:
         return jsonify({'status': '1'})
 

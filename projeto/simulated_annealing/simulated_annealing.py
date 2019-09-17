@@ -28,6 +28,7 @@ import random
 import logging
 import copy
 import json
+import datetime
 
 from input_reformat import *
 
@@ -516,7 +517,11 @@ def persist_csv():
             file.write(str("%.2f"%objectives[0]) + '\t' + str(objectives[2]) + '\t' + str(objectives[1]) + '\n')
 
 def persist_bd():
-    db.result.insert_one({'_id': sys.argv[1], 'user': str(user), 'result': result_to_json()})
+    try:
+        db.result.insert_one({'_id': sys.argv[1], 'user': str(user), 'date': datetime.datetime.now().strftime("%c"), 'result': result_to_json()})
+        db.request.delete_one({'_id': sys.argv[1]})
+    except:
+        raise
 
 #####################################################################################################################
 #                                                                                                                   #
@@ -806,11 +811,6 @@ elif (RESULT in 'CSV'):
 elif (RESULT == 'BD'):
     persist_bd()
     client.close()
-
-for solution in solutions:
-    objectives = get_final_fitness(solution[0])
-    print('Valor: ' + str('%.2f' % objectives[0]) + ' / Lojas: ' + str(
-        objectives[2]) + ' / Faltou: ' + str(objectives[1]))
 
 logger.info('')
 logger.info('|---------------------------------------------------------------------------|')

@@ -44,6 +44,9 @@
     </b-form>
     <b-modal ref="registerModal" id="register-modal" title="Cadastro" hide-footer>
       <b-form @submit="onSubmitNewUser" @reset="onReset" class="w-100">
+        <div class="alert alert-danger" role="alert" v-if="modalAlert">
+          {{ message }}
+        </div>
         <b-form-group id="form-name-group" label="Nome:" label-for="form-name-input">
           <b-form-input
             id="form-name-input"
@@ -123,6 +126,7 @@ export default {
       message: '',
       successfulAlert: false,
       warningAlert: false,
+      modalAlert: false,
       addUserForm: {
         name: '',
         username: '',
@@ -155,44 +159,48 @@ export default {
       }
       this.$store.dispatch('auth/login', formData);
     },
-    addUser(payload) {
-      this.resetAlert();
-      const path = 'http://localhost:5000/create_user';
-      axios.post(path, payload)
-        .then((response) => {
-          if (response.data.status == '0') { 
-            this.message = 'Cadastro realizado com sucesso!'
-            this.successfulAlert = true;
-          } else if (response.data.status == '2') {
-            this.message = 'Nome de usuário indisponível.'
-            this.warningAlert = true;
-          } else if (response.data.status == '3') {
-            this.message = 'E-mail já cadastrado.'
-            this.warningAlert = true;
-          } else {
-            this.message = 'Houve um problema, tente mais tarde.';
-            this.warningAlert = true;
-          }
-        })
-        .catch((error) => {
-          this.message = 'Houve um problema, tente mais tarde.';
-          this.warningAlert = true;
-          // eslint-disable-next-line
-          console.error(error);
-        });
-    },
     onSubmitNewUser(evt) {
       evt.preventDefault();
-      this.$refs.registerModal.hide();
-      const payload = {
-        name: this.addUserForm.name,
-        username: this.addUserForm.username,
-        password: this.addUserForm.password,
-        email: this.addUserForm.email,
-        birthdate: this.addUserForm.birthdate,
-      };
-      this.addUser(payload);
-      this.initForm();
+      this.resetAlert();
+      if (this.addUserForm.password != this.addUserForm.repassword) {
+        this.message = 'Senhas divergentes'
+        this.modalAlert = true;
+      } else {
+        const payload = {
+          name: this.addUserForm.name,
+          username: this.addUserForm.username,
+          password: this.addUserForm.password,
+          email: this.addUserForm.email,
+          birthdate: this.addUserForm.birthdate,
+        };    
+        const path = 'http://localhost:5000/create_user';
+        axios.post(path, payload)
+          .then((response) => {
+            if (response.data.status == '0') { 
+              this.message = 'Cadastro realizado com sucesso!'
+              this.successfulAlert = true;
+              this.initForm();
+              this.$refs.registerModal.hide();
+            } else if (response.data.status == '2') {
+              this.message = 'Nome de usuário indisponível.'
+              this.modalAlert = true;
+            } else if (response.data.status == '3') {
+              this.message = 'E-mail já cadastrado.'
+              this.modalAlert = true;
+            } else {
+              this.message = 'Houve um problema, tente mais tarde.';
+              this.warningAlert = true;
+              this.initForm();
+              this.$refs.registerModal.hide();
+            }
+          })
+          .catch(() => {
+            this.message = 'Houve um problema, tente mais tarde.';
+            this.warningAlert = true;
+            this.initForm();
+            this.$refs.registerModal.hide();
+          });
+      }
     },
     initForm() {
       this.addUserForm.name = '';
@@ -208,6 +216,7 @@ export default {
     },
     resetAlert() {
       this.message = '';
+      this.modalAlert = false;
       this.successfulAlert = false;
       this.warningAlert = false;
     },

@@ -75,6 +75,9 @@
               id="password-modal"
               title="Alterar Senha"
               hide-footer>
+      <div class="alert alert-danger" role="alert" v-if="passwordAlert">
+        {{ message }}
+      </div>
       <b-form-group id="form-title-edit-group"
                     label="Senha Atual:"
                     label-for="form-title-edit-input">
@@ -90,19 +93,20 @@
                     label-for="form-title-edit-input">
       <b-form-input type="password" v-model="user.rePassword" placeholder="Confirme a nova senha"></b-form-input>
       </b-form-group>
-      <b-button type="submit" variant="primary" v-on:click=submitPassword()>Alterar</b-button>
+      <b-button type="submit" variant="primary" v-on:click=updatePassword()>Alterar</b-button>
     </b-modal>
 
     <b-modal ref="emailModal"
               id="email-modal"
               title="Alterar Email"
               hide-footer>
-    <b-form-group id="form-title-edit-group"
-                    label="Novo E-mail:"
-                    label-for="form-title-edit-input">
-        <b-form-input type="email" v-model="user.email" placeholder="Digite o novo e-mail"></b-form-input>
+      <div class="alert alert-danger" role="alert" v-if="emailAlert">
+        {{ message }}
+      </div>
+      <b-form-group id="form-email-group" label="Novo E-mail:" label-for="form-email-input">
+        <b-form-input id="form-email-input" type="email" v-model="newEmail" placeholder="Digite o novo e-mail" required></b-form-input>
       </b-form-group>
-      <b-button type="submit" variant="primary" v-on:click=submitEmail()>Alterar</b-button>
+      <b-button type="submit" variant="primary" v-on:click=updateEmail()>Alterar</b-button>
     </b-modal>
 
     <b-modal ref="deleteModal"
@@ -132,13 +136,16 @@ export default {
       successfulAlert: false,
       warningAlert: false,
       infoAlert: false,
+      emailAlert: false,
+      passwordAlert: false,
       adminMode: false,
+      newEmail: '',
       user: {
         name: '',
         username: '',
         password: '',
-        repassword: '',
-        newPassowrd: '',
+        rePassword: '',
+        newPassword: '',
         email: '',
         birthdate: '',
         entrydate: '',
@@ -204,11 +211,65 @@ export default {
           }
       })
     },
+    updateEmail() {
+      this.resetAlert();
+      const payload = {
+          username: this.user.username,
+          email: this.newEmail,
+      }
+      axiosAuth.put('http://localhost:5000/user/email', payload)
+        .then((res) => {
+          if (res.data.status == 0) {
+            this.message = 'E-mail alterado com sucesso';
+            this.successfulAlert = true;
+            this.user.email = this.newEmail;
+            this.newEmail = '';
+            this.$refs.emailModal.hide();
+          } else if (res.data.status == 2) {
+            this.message = 'E-mail já está cadastrado';
+            this.emailAlert = true;
+          } else {
+            this.message = 'Houve um erro inesperado. Tente mais tarde';
+            this.warningAlert = true;
+            this.$refs.emailModal.hide();
+          }
+      })
+    },
+    updatePassword() {
+      this.resetAlert();
+      if (this.user.newPassword != this.user.rePassword) {
+        this.message = 'Senhas divergentes'
+        this.passwordAlert = true;
+      } else {
+        const payload = {
+            username: this.user.username,
+            password: this.user.password,
+            newPassword: this.user.newPassword,
+        }
+        axiosAuth.put('http://localhost:5000/user/password', payload)
+          .then((res) => {
+            if (res.data.status == 0) {
+              this.message = 'Senha alterada com sucesso';
+              this.successfulAlert = true;                  
+              this.$refs.passwordModal.hide();
+            } else if (res.data.status == 2) {
+              this.message = 'Senha atual incorreta';
+              this.passwordAlert = true;
+            } else {
+              this.message = 'Houve um erro inesperado. Tente mais tarde';
+              this.warningAlert = true;
+              this.$refs.emailModal.hide();
+            }
+        })
+      }
+    },
     resetAlert() {
       this.message = '';
       this.successfulAlert = false;
       this.warningAlert = false;
       this.infoAlert = false;
+      this.emailAlert = false;
+      this.passwordAlert = false;
     },
   },
 };

@@ -48,6 +48,7 @@ export default {
           if (res.data.status == 0) {
             this.message = 'Requisição em processamento. Isso pode demorar alguns minutos. O resultado será enviado para seu e-mail após concluido.';
             this.successfulAlert = true;
+            this.card_list = '';
           } else if (res.data.status == 2) {
             this.message = 'Ocorreu um erro. Verifique as seguintes cartas: ';
             this.errorList = res.data.error_list;

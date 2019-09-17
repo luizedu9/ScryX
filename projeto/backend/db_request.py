@@ -9,6 +9,7 @@
 from pymongo import MongoClient, errors
 import json
 import sys
+from bson.json_util import dumps
 
 from user import User
 
@@ -87,6 +88,18 @@ def find_user(db, username):
         user = None
     return(user)
 
+def update_email(db, username, email):
+    try:
+        return(db.user.update_one({'_id': username}, {'$set': {'email': email}}))
+    except:
+        return(None)
+
+def update_password(db, username, password):
+    try:
+        return(db.user.update_one({'_id': username}, {'$set': {'password': password}}))
+    except:
+        return(None)
+
 def delete_user(db, username):
     try:
         db.user.delete_one({'_id': username})
@@ -101,7 +114,22 @@ def delete_user(db, username):
 #######################################################################################################
 
 def insert_request(db, id_request, id_user, card_dict):
-    db.request.insert_one({'_id': id_request, 'user': id_user, 'cards': card_dict, 'crawler': []})
+    try:
+        db.request.insert_one({'_id': id_request, 'user': id_user, 'cards': card_dict, 'crawler': []})
+    except:
+        return(None)
+
+#######################################################################################################
+#                                                                                                     #
+#                                            BD_REQUEST_QUEUE                                         #
+#                                                                                                     #
+#######################################################################################################
+
+def find_result(db, username):
+    try:
+        return(dumps(db.result.find({'user': username})))
+    except:
+        return(None)
 
 #######################################################################################################
 #                                                                                                     #
