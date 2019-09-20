@@ -7,3 +7,23 @@ Ex:
 Só vai estar registrado um desses dois no banco
 
 ###############################################################
+
+Se não houver cartas suficientes ao pedido, o simulated annealing dá erro:
+Ex:
+	4 Time Walk
+	Sendo que existe nas lojas da ligamagic apenas 1
+
+###############################################################
+
+Cartas duplas não possuem o mesmo nome na ligamagic e no MTGJson
+Ex:
+	ligamagic: Expansion // Explosion
+	MTGJson: Expansion
+
+###############################################################
+
+Redirecionamento do roteamento ao fazer login incorreto
+Ex:
+	http://localhost:8080/?#/ se houver a interrogação, vai normal, se não, ele adiciona a ? e depois é possivel fazer login
+
+###############################################################

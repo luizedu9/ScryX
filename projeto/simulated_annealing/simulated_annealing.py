@@ -410,6 +410,12 @@ def get_final_fitness(result_table):
                 stores.add(store_dict[j])
     return( (price, (total_card_quantity - quantity), len(stores)) )
 
+def get_fitness_store(result_table, store):
+	price = 0
+	for card in range(len(result_table)):
+		price += get_price_content(result_table, card, store)
+	return(price)
+
 # ARMAZENA O INDEX DAS COLUNAS QUE POSSUEM CARTAS
 def find_stores(result_table):
     stores = []
@@ -478,6 +484,7 @@ def result_to_json():
         stores = find_stores(solution[0])
         for store in stores:  # PARA CADA LOJA
             store_local = []
+            result_store_dict = {}
             for i in range(len(solution[0])):  # PARA CADA CARTA
                 if (solution[0][i][store] != 0):  # SE POSIÇÃO POSSUI CARTA
                     quantity = solution[0][i][store]
@@ -490,6 +497,7 @@ def result_to_json():
                             card_local['name'] = card_dict[i][0]
                             card_local['quantity'] = quantity
                             card_local['price'] = tuple_[1]
+                            card_local['total_price'] = get_price_content(solution[0], i, store)
                             store_local.append(card_local)
                             break
                         else:  # SE NÃO FOR, ARMAZENA E CONTINUA
@@ -499,8 +507,11 @@ def result_to_json():
                             card_local['quantity'] = quantity_tuple
                             card_local['price'] = tuple_[1]
                             store_local.append(card_local)
-            solution_dict[store_dict[store]] = store_local
+            result_store_dict['price'] = get_fitness_store(solution[0], store)
+            result_store_dict['cards'] = store_local
+            solution_dict[store_dict[store]] = result_store_dict
         solution_dict['missing_list'] = find_missing(solution[0])
+        solution_dict['price'] = get_final_fitness(solution[0])[0]
         solutions_list.append(solution_dict)
     return(json.loads(json.dumps(solutions_list)))
 
