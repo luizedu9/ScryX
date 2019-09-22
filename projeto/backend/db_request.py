@@ -88,6 +88,12 @@ def find_user(db, username):
         user = None
     return(user)
 
+def find_user_email(db, username):
+    try:
+        return(db.user.find_one({'_id': username}, {'_id': 0, 'email': 1})['email'])
+    except:
+        return(None)
+
 def update_email(db, username, email):
     try:
         return(db.user.update_one({'_id': username}, {'$set': {'email': email}}))
@@ -113,9 +119,9 @@ def delete_user(db, username):
 #                                                                                                     #
 #######################################################################################################
 
-def insert_request(db, id_request, id_user, card_dict):
+def insert_request(db, id_request, id_user, card_dict, deck_name):
     try:
-        db.request.insert_one({'_id': id_request, 'user': id_user, 'cards': card_dict, 'crawler': []})
+        db.request.insert_one({'_id': id_request, 'user': id_user, 'cards': card_dict, 'deck_name': deck_name, 'crawler': []})
     except:
         return(None)
 
@@ -128,6 +134,12 @@ def insert_request(db, id_request, id_user, card_dict):
 def find_result(db, username):
     try:
         return(dumps(db.result.find({'user': username})))
+    except:
+        return(None)
+        
+def find_result_id(db, id_):
+    try:
+        return(db.result.find_one({'_id': id_}))
     except:
         return(None)
 

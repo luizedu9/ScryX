@@ -66,12 +66,12 @@ def names_resolver(db, card_dict):
 #                                                                                                     #
 #######################################################################################################
 
-def register_request(db, card_list, user_logged):
+def register_request(db, deck_name, card_list, user_logged):
 	card_dict = request_to_dict(card_list) # TRANSFORMA LISTA DE CARTAS EM DICIONARIO
 	error_list = names_resolver(db, card_dict) # VERIFICA SE CARTAS EXISTEM NO BANCO DE DADOS
 	if ((error_list != None) and (len(error_list) == 0)): # SE NÃO ENCONTROU ERRO, SALVA REQUISIÇÃO NO BANCO DE DADOS
 		increment_length_queue(db) # ATUALIZA TAMANHO DA FILA
-		insert_request(db, get_length_queue(db), user_logged, card_dict)
+		insert_request(db, get_length_queue(db), user_logged, card_dict, deck_name)
 	return(error_list)
 
 # ADICIONA OS NOMES DAS CARTAS NO BANCO. RECEBE UM file.read() COMO mtg_cards

@@ -6,7 +6,7 @@
 
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-0" role="tab">
-            <b-button block v-b-toggle="'accordion-' + i" variant="primary"> {{ card_list[lengthOptions - i]['date'] }} </b-button>
+            <b-button block v-b-toggle="'accordion-' + i" variant="primary"> {{ card_list[lengthOptions - i]['deck_name'].concat(' - ', card_list[lengthOptions - i]['date']) }} </b-button>
           </b-card-header>
           <b-collapse :id="'accordion-' + i" accordion="quote-accordion" role="tabpanel">
             <b-card-body>

@@ -55,8 +55,9 @@ def crawler_reformat(card_crawler, card_dict):
 def run_input_reformat(db, request_id):
     request = db.request.find_one({'_id': request_id}) # BUSCA REQUEST NO BANCO
     user = request['user']
+    deck_name = request['deck_name']
     card_request = request['cards']
     card_crawler = request['crawler']
     card_dict = list_reformat(card_request) # TRANSFORMA CARDS EM UM DICIONARIO
     store_dict, content_table, empty_table = crawler_reformat(card_crawler, card_dict)
-    return(card_dict, store_dict, content_table, empty_table, user)
+    return(card_dict, store_dict, content_table, empty_table, user, deck_name)

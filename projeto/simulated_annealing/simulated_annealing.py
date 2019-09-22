@@ -28,7 +28,7 @@ import random
 import logging
 import copy
 import json
-import datetime
+from datetime import datetime
 
 from input_reformat import *
 
@@ -529,7 +529,7 @@ def persist_csv():
 
 def persist_bd():
     try:
-        db.result.insert_one({'_id': sys.argv[1], 'user': str(user), 'date': datetime.datetime.now().strftime("%c"), 'result': result_to_json()})
+        db.result.insert_one({'_id': sys.argv[1], 'user': str(user), 'deck_name': deck_name, 'date': str(datetime.now().strftime('%d/%m/%Y %H:%M')), 'result': result_to_json()})
         db.request.delete_one({'_id': sys.argv[1]})
     except:
         raise
@@ -774,7 +774,7 @@ logger.info('|------------------------------------------------------------------
 logger.info('')
 
 # INICIALIZA AS ESTRUTURAS DE DADOS DO PROGRAMA
-card_dict, store_dict, content_table, empty_table, user = run_input_reformat(db, sys.argv[1])
+card_dict, store_dict, content_table, empty_table, user, deck_name = run_input_reformat(db, sys.argv[1])
 # INICIALIZA A ROLETA
 initialize_roulette_wheel()
 initialize_total_card_quantity()

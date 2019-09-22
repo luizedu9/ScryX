@@ -6,6 +6,7 @@
 #   
 #   Luiz Eduardo Pereira    
 
+from flask_mail import Mail, Message
 from flask import Flask, jsonify, request, Blueprint, current_app
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
 from flask_cors import CORS
@@ -24,10 +25,6 @@ from db_request import *
 from functions import *
 from user import User
 
-BOOKS = [
-    {}
-]
-
 #######################################################################################################
 #                                                                                                     #
 #                                                 INIT                                                #
@@ -38,6 +35,17 @@ DEBUG = True
 
 app = Flask(__name__)
 app.config.from_object(__name__)
+
+
+app.config['SECRET_KEY'] = 'a really really really really long secret key'
+app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'scryx.magic@gmail.com'  # enter your email here
+# enter your email here
+app.config['MAIL_DEFAULT_SENDER'] = 'scryx.magic@gmail.com'
+app.config['MAIL_PASSWORD'] = 'scryxscryx'  # enter your password here
+mail = Mail(app)
 
 app.config['JWT_SECRET_KEY'] = 'Super_Secret_JWT_KEY'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = False
@@ -167,7 +175,7 @@ def request_list():
     if (len(post_data.get("card_list")) == 0):
         return(jsonify({'status': '3'}))
     try:
-        error_list = register_request(db, post_data.get("card_list"), post_data.get("username"))
+        error_list = register_request(db, post_data.get("deck_name"), post_data.get("card_list"), post_data.get("username"))
         if (error_list == None):
             return jsonify({'status': '3'})
         elif (error_list == []):
@@ -200,6 +208,21 @@ def history(username):
     try:
         result = find_result(db, username)
         return jsonify({'status': '0', 'history': result})
+    except:
+        return jsonify({'status': '1'})
+
+
+@app.route('/email', methods=['GET'])
+def email():
+    try:
+        for i in range(100):
+            msg = Message(str(i+1) + " RATO", recipients=['thiago.pereira8@yahoo.com.br'])
+            if (i+1 == 1):
+                msg.body = str(i+1) + " rato incomoda muita gente. " + str(i+2) + ' ratos incomoda muito mais'
+            else:
+                msg.body = str(i+1) + " ratos incomoda muita gente. " + str(i+2) + ' ratos incomoda muito mais'
+            mail.send(msg)
+        return jsonify({'status': '0'})
     except:
         return jsonify({'status': '1'})
 
@@ -240,56 +263,18 @@ def verify_token():
 def protected():
     current_user = get_jwt_identity()
     return jsonify(logged_in_as=current_user), 200
-    
+
+
 #######################################################################################################
 #                                                                                                     #
-#                                                  EXEMPLO                                            #
+#                                               INIT                                                  #
 #                                                                                                     #
 #######################################################################################################
-
-def remove_book(book_id):
-    for book in BOOKS:
-        if book['id'] == book_id:
-            BOOKS.remove(book)
-            return True
-    return False
-
-@app.route('/books', methods=['GET', 'POST'])
-def all_books():
-    response_object = {'status': 'success'}
-    if request.method == 'POST':
-        post_data = request.get_json()
-        BOOKS.append({
-            'id': uuid.uuid4().hex,
-            'title': post_data.get('title'),
-            'author': post_data.get('author'),
-            'read': post_data.get('read')
-        })
-        response_object['message'] = 'Book added!'
-    else:
-        response_object['books'] = BOOKS
-    return jsonify(response_object)
-
-
-@app.route('/books/<book_id>', methods=['PUT', 'DELETE'])
-def single_book(book_id):
-    response_object = {'status': 'success'}
-    if request.method == 'PUT':
-        post_data = request.get_json()
-        remove_book(book_id)
-        BOOKS.append({
-            'id': uuid.uuid4().hex,
-            'title': post_data.get('title'),
-            'author': post_data.get('author'),
-            'read': post_data.get('read')
-        })
-        response_object['message'] = 'Book updated!'
-    if request.method == 'DELETE':
-        remove_book(book_id)
-        response_object['message'] = 'Book removed!'
-    return jsonify(response_object)
 
 if __name__ == "__main__":
     app.run()
+    msg = Message("Subject", recipients=["infooveriq@gmail.com"])
+    msg.html = "<h2>Email Heading</h2>\n<p>Email Body</p>"
+    mail.send(msg)
 
 #print('This is error output', file=sys.stderr)
