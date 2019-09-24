@@ -1,8 +1,12 @@
 # Backend-ScryX
 
-## Crie uma Virtual Enviroment - virtualenv
+## Crie e inicie uma Virtual Enviroment - virtualenv
 ```
 python3 -m venv venv
+```
+
+```
+source venv/bin/activate
 ```
 
 ## Importe os requisitos
@@ -17,7 +21,7 @@ pip install -r requeriments.txt
 python3 backend.py
 ``` 
 
-## Inicio o servidor de cotações
+## Inicie o servidor de cotações
 ```
 python3 research_assistant.py
 ```
