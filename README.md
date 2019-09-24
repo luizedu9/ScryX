@@ -1,3 +1,5 @@
-# TCC
+# ScryX - Trabalho de Conclusão de Curso
 
-...
+## USO DE METAHEURÍSCA EM UMA FERRAMENTA DE COTAÇÃO PARA COMPRAS DE CARTAS DE MAGIC: THE GATHERING
+
+Luiz Eduardo Pereira
