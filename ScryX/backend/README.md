@@ -1,8 +1,23 @@
 # Backend-ScryX
 
-## Server
+## Crie uma Virtual Enviroment - virtualenv
 ```
-sudo bash start_server.sh
+python3 -m venv venv
 ```
 
-Inicia MongoDB, Servidor e Servidor de Requisições
+## Importe os requisitos
+```
+pip install -r requeriments.txt
+```
+
+## Inicie o Banco de Dados MongoDB - Porta 27017
+
+## Inicie o servidor
+```
+python3 backend.py
+``` 
+
+## Inicio o servidor de cotações
+```
+python3 research_assistant.py
+```

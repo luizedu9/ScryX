@@ -1,11 +1,11 @@
 # Vue-ScryX
 
-## Project setup
+## Instalação
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Iniciar
 ```
 npm run serve
 ```
