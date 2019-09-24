@@ -125,3 +125,6 @@ dmypy.json
 
 # Vue
 node_modules/
+
+# VSCode
+.vscode/
