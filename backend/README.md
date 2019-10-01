@@ -11,7 +11,7 @@ source venv/bin/activate
 
 ## Importe os requisitos
 ```
-pip install -r requeriments.txt
+pip install -r requirements.txt
 ```
 
 ## Inicie o Banco de Dados MongoDB - Porta 27017

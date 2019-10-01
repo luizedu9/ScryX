@@ -16,7 +16,7 @@
       O ScryX foi desenvolvido por Luiz Eduardo Pereira como Trabalho de Conclusão de Curso para 
       o curso de <br> Ciência da Computação no IFMG - Campus Formiga.
       <br>
-      Você pode conferir todos os detalhes da criação desse projeto aqui LINK.
+      Você pode conferir todos os detalhes da criação desse projeto <a target="_blank" HREF="https://github.com/luizedu9/ScryX">aqui</a>.
     </div>
 </template>
 
