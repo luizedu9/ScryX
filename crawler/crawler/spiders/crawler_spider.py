@@ -47,7 +47,7 @@ class CrawlerSpider(scrapy.Spider):
 
         lines = response.xpath('//div[@class="e-col1"]/a')
         links = lines.xpath('./@href').extract()
-        names = lines.xpath('./img/@title').extract()
+        names = lines.xpath('./@title').extract()
 
         for link, name in zip(links, names):
             yield scrapy.Request(url=store_link_mount(link), callback=self.parse_item, meta={'card_store': (response.meta['card'], name)})
