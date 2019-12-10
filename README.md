@@ -1,5 +1,5 @@
 # ScryX - Trabalho de Conclusão de Curso
 
-## USO DE METAHEURÍSCA EM UMA FERRAMENTA DE COTAÇÃO PARA COMPRAS DE CARTAS DE MAGIC: THE GATHERING
+## [Uso de Metaheurística em uma Ferramenta de Cotação para Compras de Cartas de Magic: The Gathering](https://github.com/luizedu9/Monografia)
 
 Luiz Eduardo Pereira
